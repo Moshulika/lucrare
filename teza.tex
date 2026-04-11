@@ -1,0 +1,306 @@
+\documentclass[12pt, a4paper, oneside, romanian, draft]{teza-upb}
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+\usepackage[T1]{fontenc}
+\usepackage{babel}
+\usepackage{graphicx}
+\usepackage{xcolor} % xcolor e mai modern decât color
+\usepackage{booktabs} 
+\usepackage{tabularx} % Pentru tabele care se auto-ajustează
+\usepackage{listings}
+\usepackage{color}
+\usepackage[
+  bookmarks,
+  bookmarksopen=true,
+  pdftitle={Licenta},
+  colorlinks=true,
+  allcolors=black,
+  linktocpage,
+  plainpages=false, 
+  pdfpagelabels]{hyperref}
+\usepackage{acro}
+
+\singlespacing
+
+% Define abbreviations
+\DeclareAcronym{llm}{short = LLM, long = Large Language Model}
+\DeclareAcronym{ai}{short = AI, long = Artificial Intelligence}
+\DeclareAcronym{ia}{short = IA, long = Inteligență Artificială}
+\DeclareAcronym{rag}{short = RAG, long = Retrieval Augmented Generation}
+\DeclareAcronym{api}{short = API, long = Application Programming Interface}
+\DeclareAcronym{rca}{short = RCA, long = Root Cause Analysis}
+\DeclareAcronym{ci}{short = CI, long = Continuous Integration}
+\DeclareAcronym{cd}{short = CD, long = Continuous Deployment}
+\DeclareAcronym{e2e}{short = E2E, long = End to End}
+\DeclareAcronym{slm}{short = SLM, long = Small Language Model}
+\DeclareAcronym{tui}{short = TUI, long = Terminal User Interface}
+\DeclareAcronym{oos}{short = OOS, long = Out of Scope}
+ 
+% Define custom colors for code listings
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+% Define custom styles
+\lstdefinestyle{mystyle}{
+	language=Matlab,
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{blue},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+	  basicstyle=\ttfamily\scriptsize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+% Set custom styles
+\lstset{style=mystyle}
+
+\begin{document}
+
+% Variables
+\author{Eduard-Daniel NANESCU}
+\grupa{441A}
+\title{Arhitectură Agentică pentru Asistență Inteligentă în Dezvoltarea Software}
+\facultatea{Facultatea de Electronică, Telecomunicații și Tehnologia Informației}
+\tiplucrare{licență}
+\domeniu{Calculatoare si Tehnologia Informatiei}
+\catedra{Electronică Aplicată şi Ingineria Informaţiei}
+\campus{Leu}
+\program{Ingineria Informatiei}
+\titlulobtinut{Inginer}
+\director{Ș.L. dr. ing. Mihai DOGARIU}
+\directordepartament{Conf. dr. ing Bogdan FLOREA}
+\decan{Prof. dr. ing. Mihnea UDREA}
+\submissionmonth{Iunie}
+\submissionyear{2026}
+
+% Expand variables
+\makeatletter
+
+% Set the description of the project as seen on the ETTI website
+\renewcommand{\projectdescription} {
+
+  \newpage
+  \thispagestyle{empty}
+
+  \noindent
+
+  \begin{minipage}[t]{0.75\textwidth}
+    Universitatea Națională de Știință și Tehnologie POLITEHNICA București\\
+    Facultatea de Electronică, Telecomunicații și Tehnologia Informației\\
+    Program de studiu \textbf{INF}
+  \end{minipage}%
+
+  \begin{minipage}[t]{0.25\textwidth}
+    \raggedleft
+    \textbf{}
+  \end{minipage}
+
+  \vspace{1cm}
+
+  \begin{center}
+    \textbf{TEMA PROIECTULUI DE DIPLOMĂ}\\
+    a studentului \textbf{\@author, \@grupa}
+  \end{center}
+
+  \vspace{0.5cm}
+
+  \noindent \textbf{1. Titlul temei:} \@title
+
+  \vspace{0.4cm}
+
+  \noindent \textbf{2. Descrierea temei:}\\
+  Contribuția originală a lucrării va consta în dezvoltarea unei arhitecturi software bazată pe Modele Mari de Limbaj (LLMs - Large Language Models), capabilă să asiste utilizatorul în scrierea, depanarea, documentarea și explicarea codului sursă. Aplicațiile vizate sunt eficientizarea procesului de dezvoltare software și automatizarea sarcinilor repetitive întâlnite în programare. Sistemul propus nu vizează antrenarea de la zero a modelelor, ci implementarea unei soluții agentice care utilizează modele pre-antrenate pentru a executa acțiuni complexe. Cercetarea aferentă va include: sinteza bibliografică a realizărilor actuale din domeniu, utilizarea unui mecanism care permite modelului să utilizeze instrumente pentru a interacționa cu mediul virtual, implementarea unor tehnici de inginerie a prompturilor și management-ul contextului pentru a asigura relevanța răspunsurilor, validarea experimentală a prototipului dezvoltat prin scenarii de utilizare reale utilizând medii de dezvoltare precum PyCharm/VS Code și biblioteci specifice precum LangChain, LangGraph sau GoogleADK, concluzionarea rezultatelor obținute și a contribuției originale, cât și enunțarea perspectivelor ulterioare de cercetare.
+
+  \vspace{0.4cm}
+
+  \noindent \textbf{3. Contribuția originală:}\\
+  Proiectarea și implementarea arhitecturii agentului, incluzând logica de selecție și utilizare a instrumentelor, gestionarea contextului și dezvoltarea unei interfețe sau integrarea cu interfețe existente care să permită interacțiunea facilă cu asistentul.
+
+  \vspace{0.4cm}
+
+  \noindent \textbf{4. Resurse și bibliografie:}
+  \begin{itemize}
+    \item Vaswani, Ashish, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N. Gomez, Łukasz Kaiser, and Illia Polosukhin. "Attention is all you need." Advances in neural information processing systems 30 (2017).
+    \item Yao, Shunyu, Jeffrey Zhao, Dian Yu, Nan Du, Izhak Shafran, Karthik R. Narasimhan, and Yuan Cao. "React: Synergizing reasoning and acting in language models." In The eleventh international conference on learning representations. 2022.
+    \item Bozkurt, Aras, and Ramesh C. Sharma. "Generative AI and prompt engineering: The art of whispering to let the genie out of the algorithmic world." Asian Journal of Distance Education 18, no. 2 (2023): i-vii.
+    \item Alto, Valentina. Building LLM Powered Applications: Create intelligent apps and agents with large language models. Packt Publishing Ltd, 2024.
+    \item Zhu, He, Tianrui Qin, King Zhu, Heyuan Huang, Yeyi Guan, Jinxiang Xia, Yi Yao et al. "Oagents: An empirical study of building effective agents." arXiv preprint arXiv:2506.15741 (2025).
+  \end{itemize}
+  \vspace{1.5cm}
+
+  \noindent \textbf{5. Data înregistrării temei:} 2025-12-11 22:54:00
+
+  \vspace{1.5cm}
+
+  \noindent
+  \begin{tabular*}{\textwidth}{@{}l@{\extracolsep{\fill}}r@{}}
+    \textbf{Conducător(i) lucrare,} & \textbf{Student,} \\
+    \@director & \@author \\
+    & \\
+    & \\
+    & \\
+    \textbf{Director departament,} & \textbf{Decan,} \\
+    \@directordepartament & \@decan
+  \end{tabular*}
+
+  \vspace{1.5cm}
+
+  \noindent Cod Validare: \textbf{621d9dfde3}
+  \newpage
+}
+
+% Don't expand variables
+\makeatother
+
+% Template generated content -----------------
+
+\beforepreface
+
+\listoffigures
+\listoftables
+
+\printacronyms[name=LISTA DE ACRONIME]
+
+\afterpreface
+
+% --------------------------------------------
+
+\newpage
+
+\chapter*{INTRODUCERE}
+\addcontentsline{toc}{chapter}{INTRODUCERE}
+
+\section*{CONTEXT SI MOTIVATIE}
+\addcontentsline{toc}{section}{CONTEXT SI MOTIVATIE}
+
+  Motivatia acestei lucrari vine din experienta personala in industria dezvoltarii software. 
+  Atributiile unui inginer software sunt multe, diverse si adesea repetitive si ingreuneaza procesul de dezvoltare. 
+  A scrie cod a devenit doar o mica parte din sarcinile intrebuintate unui inginer software, pierzand teren in fata design-urilor, 
+  documentatiei, review-urilor,
+  a testelor unitare de integrare si \ac{e2e}, instrumentarii si monitorizarii, procesului de \ac{ci}/\ac{cd}, 
+  infrastructurii, iar in cazul problemelor a debugging-ului si a analiza cauzelor principale (\ac{rca}).
+  
+  Un inginer software care lucreaza intr-o companie ce serveste milioane de clienti din intreaga lume trebuie sa fie la 
+  curent cu cele mai noi practici
+  din domeniu, sa stie notiuni de programare, securitate cibernetica, networking si infrastructura, 
+  dar sa si retina simultan informatii vitale despre arhitectura si sistemele companiei, totul pe langa instruirea colegilor 
+  noi sau sedinte.
+  
+  Timpul unui inginer este astfel impartit de foarte multe procese dinamice care trebuiesc adresate de un angajat 
+  cu experienta.
+  
+  Avand in vedere cele de mai sus, cat si evolutia recenta a sistemelor bazate pe \ac{ia} ce folosesc un \ac{llm} pentru intelegerea
+  si generarea de text, era natural ca directia in care dezvoltarea software sa se schimbe catre un proces in care
+  multe din sarcinile pe care un inginer le-ar fi avut sunt acum delegate sistemelor automate.
+  
+  Datorita faptului ca aceste modele functioneaza cu text ca date de intrare iar programarea este realizata de asemenea folosind
+  text, nu a fost dificil sa se treaca de la o experienta pur conversationala cu aceste modele la intrebuintari pentru cautare prin
+  limbaj natural, iar in final integrandu-se cu mediile de dezvoltare software si cu terminalul sistemului de operare pentru
+  a avea acces la un context mai bun dar si pentru executia de comenzi putand astfel ca un model de IA sa interactioneze cu
+  mediul inconjurator.
+
+\section*{SCOPUL SI OBIECTIVELE LUCRARII}
+\addcontentsline{toc}{section}{SCOPUL SI OBIECTIVELE LUCRARII}
+
+  Scopul acestei lucrari este de a realiza un asistent bazat pe \ac{ia}, agnostic fata de platforma, care poate functiona cu o multitudine
+  de modele de tipul \ac{llm} sau \ac{slm}, ce ruleaza local sau in cloud si ce poate interactiona cu mediul inconjurator (sistem de operare, mediu de dezvoltare,
+  internet) prin intermediul uneltelor (
+    tool-uri
+    \footnote{In \ac{ia} folosita cu ajutorul agentilor \textbf{tool}-urile sunt functii cu descrieri detaliate 
+    de folosire pe care agentul le populeaza cu parametrii, le executa si receptioneaza raspunsul pentru 
+    a-l folosi mai departe in rezolvarea problemelor complexe}), realizat de un workflow agentic
+    \footnote{\textbf{Agentii} sunt aplicatii ce folosesc inteligenta artificiala pentru a interactiona cu mediul inconjurator}
+
+  Obiectivul principal care trebuie atins este realizarea unui produs functional ce poate ajuta un inginer software in cat mai multe aspecte ale meseriei sale.
+  Pentru a reusi sa indeplinim acest obiectiv, trebuie sa avem in vedere urmatoarele necesitati: interfata facila ce poate fi folosita oriunde folosind terminalul
+  sistemului de operare (\ac{tui}), suficiente unelte pentru a indeplini sarcini cat mai complexe, management-ul conversatiei, contextului si al memoriei,
+  versionare, evaluari si teste de regresie, monitorizare si observabilitate (metrici), siguranta (code execution sandboxes pentru
+  executia de cod, guardrails, \ac{oos} detection), si cel mai important: un system prompt ales cu grija.
+
+\newpage
+\chapter{LUCRARI ANTERIOARE}
+\chapter{TEHNOLOGII UTILIZATE}
+\chapter{IMPLEMENTARE}
+\chapter{REZULTATE EXPERIMENTALE}
+\chapter{CONCLUZII}
+\chapter{IMBUNATATIRI VIITOARE}
+
+
+% Copy-paste stuff to use later
+
+\chapter{Utils}
+
+Cucoșul, cum scăpă din mânile moșneagului, fugi de-acasă și umbla pe
+drumuri, bezmetec. Și cum mergea el pe-un drum, numai iată găsește o
+punguță cu doi bani (Figura \ref{fig:punguta}). Și cum o găsește, o și ia în clonț și se întoarnă
+cu dânsa înapoi către casa moșneagului. Pe drum se întâlnește c-o
+trăsură c-un boier și cu niște cucoane. Boierul se uită cu băgare de
+seamă la cucoș, vede în clonțu-i o punguță și zice vezeteului:
+
+— Măi! ia dă-te jos și vezi ce are cucoșul cela în plisc.
+
+\begin{figure}[tb]
+  \centering
+  \includegraphics*[width=0.4\columnwidth]{figuri/punguta.jpg}
+  \caption{Cucoșu găsește o pungă cu doi galbeni.}
+  \label{fig:punguta}
+\end{figure}
+
+(Publicată pentru prima oară în \cite{alzubiEvoSkillAutomatedSkill2026}.)
+
+
+% Bibliografie -----------------
+
+\bibliographystyle{unsrt}
+\bibliography{licenta}
+
+% ------------------------------
+
+
+% Anexe ------------------------
+
+\appendix
+
+\chapter{Math}
+A aduce 3 pâini, iar B aduce 2 pâini. C plătește 5 lei.  Se împarte
+fiecare pâine în 3 părți egale: $3 \times 3 + 2 \times 3 = 15$
+bucăți. Fiecare mesean capătă câte 5 bucăți. Reiese că A i-a dat lui C
+$3 \times 3 - 5 = 4$ pâini, iar B i-a dat $2 \times 3 - 5 = 1$
+pâine. Împărțeală cinstită este deci 4 lei pentru A, și 1 leu pentru B.
+
+\chapter{Table}
+
+Vezi tabela \ref{tab:basme} cu alte povești și autorii/culegătorii lor.
+
+\lstinputlisting[language=Matlab]{cod/Cod.m}
+
+\section{Tabele complexe}
+% Folosim tabularx pentru a preveni overflow-ul pe orizontală
+\begin{table}[ht]
+  \centering
+  \small
+  \begin{tabularx}{\textwidth}{l|X|X|X|l}
+    \toprule
+    \textbf{Nr.} & \textbf{Basm 1}    & \textbf{Basm 2}    & \textbf{Basm 3} & \textbf{Autor} \\
+    \midrule
+    1            & Dănilă Prepeleac   & Prâslea cel Voinic & Făt-Frumos      & I. Creangă     \\
+    2            & Capra cu trei iezi & Greuceanu          & Sarea în bucate & P. Ispirescu   \\
+    \bottomrule
+  \end{tabularx}
+  \caption{Alte basme și autorii lor.}
+  \label{tab:basme}
+\end{table}
+
+
+\end{document}
