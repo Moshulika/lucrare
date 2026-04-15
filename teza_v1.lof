@@ -1,0 +1,15 @@
+\acswitchoff 
+\babel@toc {romanian}{}\relax 
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Modelul unui perceptron}}{7}{figure.caption.8}%
+\contentsline {figure}{\numberline {1.2}{\ignorespaces Convolutia cu un nucleu a unei imagini}}{8}{figure.caption.9}%
+\contentsline {figure}{\numberline {1.3}{\ignorespaces \ac {rnn} si \ac {lstm} comparate}}{8}{figure.caption.10}%
+\contentsline {figure}{\numberline {1.4}{\ignorespaces Arhitectura transformer}}{9}{figure.caption.11}%
+\contentsline {figure}{\numberline {1.5}{\ignorespaces Evolutia modelelor in anii recenti \cite {zhaoSurveyLargeLanguage2026}}}{10}{figure.caption.12}%
+\contentsline {figure}{\numberline {1.6}{\ignorespaces Evolutia modelelor GPT \cite {zhaoSurveyLargeLanguage2026}}}{10}{figure.caption.13}%
+\contentsline {figure}{\numberline {1.7}{\ignorespaces Clasamentul modelelor in SWE-Bench Pro \cite {dengSWEBenchProCan2025} la momentul actual in functie de performanta rezolvarii sarcinilor complexe in limba engleza}}{12}{figure.caption.15}%
+\contentsline {figure}{\numberline {1.8}{\ignorespaces Clasamentul modelelor in SWE-Bench Pro \cite {dengSWEBenchProCan2025} la momentul actual in functie de cost}}{13}{figure.caption.16}%
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Structura directoarelor proiectului}}{18}{figure.caption.20}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Prima versiune a interfetei, realizata cu ajutorul librariei Textual}}{19}{figure.caption.21}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Continuarea conversatiei cu prima versiune a interfetei, realizata cu ajutorul librariei Textual}}{19}{figure.caption.22}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces A doua versiune a interfetei, realizata fara libraria Textual}}{20}{figure.caption.23}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Continuarea conversatiei cu a doua versiune a interfetei, realizata fara libraria Textual}}{20}{figure.caption.24}%

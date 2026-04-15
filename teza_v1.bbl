@@ -1,0 +1,50 @@
+\begin{thebibliography}{10}
+
+\bibitem{zhaoSurveyLargeLanguage2026}
+Wayne~Xin Zhao, Kun Zhou, Junyi Li, Tianyi Tang, Xiaolei Wang, Yupeng Hou, Yingqian Min, Beichen Zhang, Junjie Zhang, Zican Dong, Yifan Du, Chen Yang, Yushuo Chen, Zhipeng Chen, Jinhao Jiang, Ruiyang Ren, Yifan Li, Xinyu Tang, Zikang Liu, Peiyu Liu, Jian-Yun Nie, and Ji-Rong Wen.
+\newblock A {{Survey}} of {{Large Language Models}}, March 2026.
+
+\bibitem{dengSWEBenchProCan2025}
+Xiang Deng, Jeff Da, Edwin Pan, Yannis~Yiming He, Charles Ide, Kanak Garg, Niklas Lauffer, Andrew Park, Nitin Pasari, Chetan Rane, Karmini Sampath, Maya Krishnan, Srivatsa Kundurthy, Sean Hendryx, Zifan Wang, Vijay Bharadwaj, Jeff Holm, Raja Aluri, Chen Bo~Calvin Zhang, Noah Jacobson, Bing Liu, and Brad Kenstler.
+\newblock {{SWE-Bench Pro}}: {{Can AI Agents Solve Long-Horizon Software Engineering Tasks}}?, November 2025.
+
+\bibitem{rosenblattPerceptronProbabilisticModel1958}
+F.~Rosenblatt.
+\newblock The perceptron: {{A}} probabilistic model for information storage and organization in the brain.
+\newblock {\em Psychological Review}, 1958.
+
+\bibitem{lecunGradientbasedLearningApplied1998}
+Y.~Lecun, L.~Bottou, Y.~Bengio, and P.~Haffner.
+\newblock Gradient-based learning applied to document recognition.
+\newblock {\em Proceedings of the IEEE}, 86(11):2278--2324, November 1998.
+
+\bibitem{hochreiterLongShortTermMemory1997}
+Sepp Hochreiter and Jürgen Schmidhuber.
+\newblock Long {{Short-Term Memory}}.
+\newblock {\em Neural Computation}, 9:1735--1780, November 1997.
+
+\bibitem{vaswaniAttentionAllYou2017}
+Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan~N Gomez, Ł~ukasz Kaiser, and Illia Polosukhin.
+\newblock Attention is {{All}} you {{Need}}.
+\newblock In {\em Advances in {{Neural Information Processing Systems}}}, volume~30. Curran Associates, Inc., 2017.
+
+\bibitem{brownLanguageModelsAre2020a}
+Tom~B. Brown, Benjamin Mann, Nick Ryder, Melanie Subbiah, Jared Kaplan, Prafulla Dhariwal, Arvind Neelakantan, Pranav Shyam, Girish Sastry, Amanda Askell, Sandhini Agarwal, Ariel {Herbert-Voss}, Gretchen Krueger, Tom Henighan, Rewon Child, Aditya Ramesh, Daniel~M. Ziegler, Jeffrey Wu, Clemens Winter, Christopher Hesse, Mark Chen, Eric Sigler, Mateusz Litwin, Scott Gray, Benjamin Chess, Jack Clark, Christopher Berner, Sam McCandlish, Alec Radford, Ilya Sutskever, and Dario Amodei.
+\newblock Language {{Models}} are {{Few-Shot Learners}}, July 2020.
+
+\bibitem{weiChainofThoughtPromptingElicits2022}
+Jason Wei, Xuezhi Wang, Dale Schuurmans, Maarten Bosma, Brian Ichter, Fei Xia, Ed~Chi, Quoc~V. Le, and Denny Zhou.
+\newblock Chain-of-{{Thought Prompting Elicits Reasoning}} in {{Large Language Models}}.
+\newblock {\em Advances in Neural Information Processing Systems}, 35:24824--24837, December 2022.
+
+\bibitem{yaoReActSynergizingReasoning2022}
+Shunyu Yao, Jeffrey Zhao, Dian Yu, Nan Du, Izhak Shafran, Karthik~R. Narasimhan, and Yuan Cao.
+\newblock {{ReAct}}: {{Synergizing Reasoning}} and {{Acting}} in {{Language Models}}.
+\newblock In {\em The {{Eleventh International Conference}} on {{Learning Representations}}}, September 2022.
+
+\bibitem{lewisRetrievalAugmentedGenerationKnowledgeIntensive2020}
+Patrick Lewis, Ethan Perez, Aleksandra Piktus, Fabio Petroni, Vladimir Karpukhin, Naman Goyal, Heinrich Küttler, Mike Lewis, Wen-tau Yih, Tim Rocktäschel, Sebastian Riedel, and Douwe Kiela.
+\newblock Retrieval-{{Augmented Generation}} for {{Knowledge-Intensive NLP Tasks}}.
+\newblock In {\em Advances in {{Neural Information Processing Systems}}}, volume~33, pages 9459--9474. Curran Associates, Inc., 2020.
+
+\end{thebibliography}

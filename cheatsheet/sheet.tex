@@ -1,0 +1,71 @@
+\documentclass[12pt, a4paper]{article}
+
+% --- Essential Packages ---
+\usepackage[utf8]{inputenc}    % UTF-8 support
+\usepackage[T1]{fontenc}       % Better font encoding
+\usepackage[romanian]{babel}   % Romanian hyphenation and naming
+\usepackage{graphicx}          % Images
+\usepackage{booktabs}          % Professional tables
+\usepackage{amsmath, amssymb}  % Math power
+\usepackage{hyperref}          % Clickable links
+\usepackage[backend=biber, style=numeric]{biblatex} % Modern Citations
+
+% Add your Zotero-exported file here
+% \addbibresource{references.bib} 
+
+\title{LaTeX Developer's Cheat-Sheet Template}
+\author{Your Name}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{Text Editing}
+You can write \textbf{bold}, \textit{italics}, or \texttt{inline code}. 
+For Romanian diacritics, you can type them directly if your editor is UTF-8: ă, î, â, ș, ț.
+
+\section{Mathematical Formulas}
+Inline math looks like this: $a^2 + b^2 = c^2$. 
+Numbered equations for formal papers:
+\begin{equation}
+    E = mc^2 \label{eq:einstein}
+\end{equation}
+
+And aligned equations (perfect for derivations):
+\begin{align}
+    f(x) &= (x+1)^2 \\
+         &= x^2 + 2x + 1
+\end{align}
+
+\section{Tables (Clean \& Professional)}
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{lcr} 
+        \toprule
+        \textbf{Header L} & \textbf{Header C} & \textbf{Header R} \\
+        \midrule
+        Data A & 100 & Best \\
+        Data B & 200 & Better \\
+        \bottomrule
+    \end{tabular}
+    \caption{Always put captions above or below tables.}
+\end{table}
+
+\section{Images and Graphics}
+% Note: 'filename' should be in the same folder (png, jpg, or pdf)
+\begin{figure}[ht]
+    \centering
+    % \includegraphics[width=0.5\textwidth]{image_name} 
+    \small (Image Placeholder)
+    \caption{This is a figure caption.}
+    \label{fig:example}
+\end{figure}
+
+\section{Referencing}
+Reference an equation like this: \ref{eq:einstein}. 
+Reference a bibliography entry like this: \cite{label_from_zotero}.
+
+% \printbibliography 
+
+\end{document}
