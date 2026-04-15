@@ -1,0 +1,10 @@
+\acswitchoff 
+\babel@toc {romanian}{}\relax 
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Modelul unui perceptron}}{3}{figure.caption.8}%
+\contentsline {figure}{\numberline {1.2}{\ignorespaces Convolutia cu un nucleu a unei imagini}}{4}{figure.caption.9}%
+\contentsline {figure}{\numberline {1.3}{\ignorespaces \ac {rnn} si \ac {lstm} comparate}}{4}{figure.caption.10}%
+\contentsline {figure}{\numberline {1.4}{\ignorespaces Arhitectura transformer}}{5}{figure.caption.11}%
+\contentsline {figure}{\numberline {1.5}{\ignorespaces Evolutia modelelor in anii recenti \cite {zhaoSurveyLargeLanguage2026}}}{6}{figure.caption.12}%
+\contentsline {figure}{\numberline {1.6}{\ignorespaces Evolutia modelelor GPT \cite {zhaoSurveyLargeLanguage2026}}}{6}{figure.caption.13}%
+\contentsline {figure}{\numberline {1.7}{\ignorespaces Clasamentul modelelor in SWE-Bench Pro \cite {dengSWEBenchProCan2025} la momentul actual in functie de performanta rezolvarii sarcinilor complexe in limba engleza}}{8}{figure.caption.15}%
+\contentsline {figure}{\numberline {1.8}{\ignorespaces Clasamentul modelelor in SWE-Bench Pro \cite {dengSWEBenchProCan2025} la momentul actual in functie de cost}}{8}{figure.caption.16}%

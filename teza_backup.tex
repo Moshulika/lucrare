@@ -20,7 +20,6 @@
   pdfpagelabels]{hyperref}
 \usepackage{acro}
 \usepackage{multicol}
-\usepackage{subcaption}
 
 \singlespacing
 
@@ -41,8 +40,6 @@
 \DeclareAcronym{a2a}{short = A2A, long = Agent to Agent}
 \DeclareAcronym{lstm}{short = LSTM, long = Long Short Term Memory}
 \DeclareAcronym{rnn}{short = RNN, long = Recurrent Neural Network}
-\DeclareAcronym{cnn}{short = CNN, long = Convolutional Neural Network}
-\DeclareAcronym{btt}{short = BTT, long = Backpropagation Through Time}
  
 % Define custom colors for code listings
 \definecolor{codegreen}{rgb}{0,0.6,0}
@@ -252,118 +249,14 @@
   obligatoriu pentru alegeri informate in cadrul implementarii proiectului, evitarea problemelor deja recunoscute 
   si confera o vedere de ansamblu asupra stadiului final al lucrarii.
 
-  \section{Drumul catre modelele mari de limbaj (\ac{llm})}
+  \section{Modele mari de limbaj (\ac{llm})}
 
-  Domeniul inteligentei artificiale a fost studiat o perioada indelungata iar cateva publicatii au marcat industria
-  prin concepte revolutionare si progrese importante.
+  Inceputul inteligentei aritificiale a fost.. perceptron, CNN iar in final s-a ajuns la modelele mari de limbaj \ac{llm}.
+  Modelele mari de limbaj sunt urmatorul pas dupa \ac{lstm} si \ac{rnn} care functionau pe baza.
 
-  Unul din conceptele de baza ale inteligentei artificiale a aparut pentru prima data publicat in anul 1958 de catre F. Rosenblatt in \cite{rosenblattPerceptronProbabilisticModel1958}, 
-  unde ni se prezenta perceptronul: o replica a unui neuron biologic capabil sa invete clasificare binara. Modelul invata prin
-  ajustarea ponderilor proprii in functie de eroarea produsa la iesire, formand baza invatarii artificiale. Desi revolutionar, aceasta abordare
-  restrictiona la o singura dimensiune datele de intrare. 
+  \section{Maturizarea modelelor mari de limbaj si cercetari actuale(\ac{llm})}
 
-  \begin{figure}[htbp]
-    \centering
-    \includegraphics*[width=0.4\columnwidth]{figuri/perceptron.png}
-    \caption{Modelul unui perceptron}
-    \label{fig:perceptron}
-  \end{figure}
-  
-
-  Schimbarea a venit cand Yann LeCun si echipa sa au introdus in \cite{lecunGradientbasedLearningApplied1998}
-  retelele neurale convolutionale (\ac{cnn}), un concept care planuia sa rezolve aceasta problema. Au aparut astfel primele
-  aplicatii ale inteligentei artificiale in domeniul imaginilor. Ideea de baza era simplu: in loc de datele unidimensionale caracteristice
-  perceptronului, acum modelul folosea "ferestre" ale unei imagini, mai multe straturi cat si
-  operatii speciale pentru a invata caracteristici spatiale complexe.
-
-  \newpage
-
-  \begin{figure}[htbp]
-    \centering
-    \includegraphics*[width=0.4\columnwidth]{figuri/convolutie.png}
-    \caption{Convolutia cu un nucleu a unei imagini}
-    \label{fig:convolutie}
-  \end{figure}
-
-  Desi \ac{cnn} sunt foarte bune in a procesa date statice, alte aplicatii precum procesarea limbajului nu pot fi incadrate intr-o "fereastra".
-  Vorbirea si textul sunt secventiale, deci se intampla in timp. Incercarile initiale in a infrunta aceasta problema se folosind
-  \ac{rnn} se loveau de o problema fundamentala a invatarii artificiale: disparitia gradientilor. Datorita conceptului de \ac{btt},
-  in cadrul unor secvente foarte lungi, gradientii deveneau atat de mici incat ajungeau sa fie irelevanti, cauzand modelul sa uite date
-  de la inceputul secventei. Progresul a fost atins cand Hochreiter and Schmbithuber au introdus conceptul de \ac{lstm} in \cite{hochreiterLongShortTermMemory1997} care
-  a dat inteligentei artificiale o memorie functionala. Prin conceptul de "porti", reteaua reusea sa controleze ce informatie trebuie
-  sa fie uitata si care trebuie sa fie pastrata.
-
-  \begin{figure}[htbp]
-    \centering
-    \begin{subfigure}[b]{0.48\textwidth}
-      \centering
-      \includegraphics[width=\linewidth]{figuri/rnn.png}
-      \caption{\ac{rnn}}
-      \label{fig:rnn}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.48\textwidth}
-      \centering
-      \includegraphics[width=\linewidth]{figuri/lstm.png}
-      \caption{\ac{lstm}}
-      \label{fig:lstm}
-    \end{subfigure}
-    \caption{\ac{rnn} si \ac{lstm} comparate}
-    \label{fig:rnn-lstm}
-  \end{figure}
-
-  Urmatorul mare pas pentru industria urma sa fie arhitectura transformer prezentata de Vaswani et al. in celebra lucrare
-   \cite{vaswaniAttentionAllYou2017}. Arhitectura \ac{lstm} trebuia sa proceseze pas cu pas o secventa, iar aceasta limitare
-   facea antrenarea lor pe o cantitate mare dee date foarte ineficienta. Arhitectura transformer utilizeaza o tehnica numita
-   "self-attention" pentru a se uita la fiecare cuvant dintr-o secventa simultan, calculand astfel legatura dintre acestea.
-   Odata disparuta limitarea din punctul de vedere al vitezei de antrenare, s-a deschis poarta antrenarii pe baze de date
-    uriase, lucru care a dat nastere modelelor mari de limbaj. 
-
-  \newpage
-
-  \begin{figure}[htbp]
-    \centering
-    \includegraphics*[width=0.4\columnwidth]{figuri/transformer.png}
-    \caption{Arhitectura transformer}
-    \label{fig:transformer}
-  \end{figure}
-
-  Modelele mari de limbaj sunt produsul antrenarii pe cantitati masive de date sustrase din intreg internetul. Vazand ca 
-  daca continuau sa introduca si mai multe date de antrenare, cercetatorii de la OpenAI performanta modelului nu parea sa scada,
-  au reusit sa introduce 175 de miliarde de parametrii in modelul GPT-3, iar descoperirile au fost relatate in lucrarea 
-  "Language Models are Few-Shot Learners" \cite{brownLanguageModelsAre2020a}. Marea realizare a fost ca fara o instruire prealabila
-  modelul a invatat singur cum sa rezolve sarcini de programare si sumarizare a textului, poezie dar si raspunsuri punctuale la intrebari.
-  Inteligenta artificiala a facut pasul de la intrebuintari specializate la proficienta intr-o multitudine de domenii.
-
-  \section{Maturizarea modelelor mari de limbaj si cercetari actuale}
-
-  Odata cu aparitia primelor foundation models
-  \footnote{Un foundation model este un model mare de limbaj de uz general antrenat pe cantitati foarte mari date diverse,
-  ce poate fi adaptat pentru un numar mare de intrebuintari} precum GPT-3 sau GPT-4, Sonnet sau Opus, industria inteligentei artificiale a explodat. Aplicatii de toate
-  tipurile au inceput sa foloseasca aceste modele pentru diverse sarcini: programare, traduceri sau experiente conversationale.
-  Odata cu cererea, companiile au investit masiv in cercetare si centre ce pot antrena modele mai puternice. Astfel, in fiecare
-  an au aparut modele din ce in ce mai performante. Marii jucatori in domeniul acestor modele, printre care si OpenAI, Anthropic,
-  Google si Meta se intrec in a scoate cel mai bun model. 
-
-  \begin{figure}[htbp]
-    \centering
-    \includegraphics*[width=0.4\columnwidth]{figuri/evolutie_ai.png}
-    \caption{Evolutia modelelor in anii recenti \cite{zhaoSurveyLargeLanguage2026}}
-    \label{fig:evolutia_ai}
-  \end{figure}
-
-  \newpage
-
-  Multe dintre evolutiile facute in anii recenti au fost facute in capabilitatea de a gandi mai adanc, marimea contextului, 
-  pre-antrenarea pe anumite date si integrarea cu aplicatii sau \ac{api}-uri terte. Un exemplu de evolutie al unui model fundational
-  poate fi regasit in figura de mai jos:
-
-  \begin{figure}[htbp]
-    \centering
-    \includegraphics*[width=0.4\columnwidth]{figuri/evolutie_open_ai.png}
-    \caption{Evolutia modelelor GPT \cite{zhaoSurveyLargeLanguage2026}}
-    \label{fig:evolutia_open_ai}
-  \end{figure}
+  % Optimizari recente, si arhitecturi
 
   \section{Solutii agentice pentru industria dezvoltarii software}
 
@@ -384,13 +277,12 @@
 \chapter{NOTIUNI FUNDAMENTALE, CERINTE SI OBSTACOLE}
 
   \section{Notiuni fundamentale}
-
+    \subsection{LLMs}
     \subsection{Context}
     \subsection{Memorie}
     \subsection{Skills}
     \subsection{Tools}
     \subsection{RAG}
-    %Spec driven dev/test driven dev
 
   \section{Cerinte functionale}
     \subsection{Cerinte hardware}
@@ -414,7 +306,7 @@
   \section{LLMs}
 
 
-  \section{Arhitectura generala a unui \ac{llm} in productie}
+  \section{Arhitectura generala a unui model de LLM in productie}
   Dorim sa suportam mai multe modele dar pentru simplitate vom prezenta arhitectura unuia dintre modelele suportate.
 
 
@@ -515,6 +407,28 @@ Medii de dezvoltare dev/stage/prod in ce consta fiecare si ce trebuie in prod.
   \section{multi model support and SLMs}
   schema / token stuff
 
+% Copy-paste stuff to use later
+
+\chapter{Utils}
+
+Cucoșul, cum scăpă din mânile moșneagului, fugi de-acasă și umbla pe
+drumuri, bezmetec. Și cum mergea el pe-un drum, numai iată găsește o
+punguță cu doi bani (Figura \ref{fig:punguta}). Și cum o găsește, o și ia în clonț și se întoarnă
+cu dânsa înapoi către casa moșneagului. Pe drum se întâlnește c-o
+trăsură c-un boier și cu niște cucoane. Boierul se uită cu băgare de
+seamă la cucoș, vede în clonțu-i o punguță și zice vezeteului:
+
+— Măi! ia dă-te jos și vezi ce are cucoșul cela în plisc.
+
+\begin{figure}[tb]
+  \centering
+  \includegraphics*[width=0.4\columnwidth]{figuri/punguta.jpg}
+  \caption{Cucoșu găsește o pungă cu doi galbeni.}
+  \label{fig:punguta}
+\end{figure}
+
+(Publicată pentru prima oară în \cite{alzubiEvoSkillAutomatedSkill2026}.)
+
 
 % Bibliografie -----------------
 
@@ -522,5 +436,41 @@ Medii de dezvoltare dev/stage/prod in ce consta fiecare si ce trebuie in prod.
 \bibliography{licenta}
 
 % ------------------------------
+
+
+% Anexe ------------------------
+
+\appendix
+
+\chapter{Math}
+A aduce 3 pâini, iar B aduce 2 pâini. C plătește 5 lei.  Se împarte
+fiecare pâine în 3 părți egale: $3 \times 3 + 2 \times 3 = 15$
+bucăți. Fiecare mesean capătă câte 5 bucăți. Reiese că A i-a dat lui C
+$3 \times 3 - 5 = 4$ pâini, iar B i-a dat $2 \times 3 - 5 = 1$
+pâine. Împărțeală cinstită este deci 4 lei pentru A, și 1 leu pentru B.
+
+\chapter{Table}
+
+Vezi tabela \ref{tab:basme} cu alte povești și autorii/culegătorii lor.
+
+\lstinputlisting[language=Matlab]{cod/Cod.m}
+
+\section{Tabele complexe}
+% Folosim tabularx pentru a preveni overflow-ul pe orizontală
+\begin{table}[ht]
+  \centering
+  \small
+  \begin{tabularx}{\textwidth}{l|X|X|X|l}
+    \toprule
+    \textbf{Nr.} & \textbf{Basm 1}    & \textbf{Basm 2}    & \textbf{Basm 3} & \textbf{Autor} \\
+    \midrule
+    1            & Dănilă Prepeleac   & Prâslea cel Voinic & Făt-Frumos      & I. Creangă     \\
+    2            & Capra cu trei iezi & Greuceanu          & Sarea în bucate & P. Ispirescu   \\
+    \bottomrule
+  \end{tabularx}
+  \caption{Alte basme și autorii lor.}
+  \label{tab:basme}
+\end{table}
+
 
 \end{document}

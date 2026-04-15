@@ -21,6 +21,7 @@
 \usepackage{acro}
 \usepackage{multicol}
 \usepackage{subcaption}
+\usepackage{ragged2e}
 
 \singlespacing
 
@@ -43,6 +44,8 @@
 \DeclareAcronym{rnn}{short = RNN, long = Recurrent Neural Network}
 \DeclareAcronym{cnn}{short = CNN, long = Convolutional Neural Network}
 \DeclareAcronym{btt}{short = BTT, long = Backpropagation Through Time}
+\DeclareAcronym{sdd}{short = SDD, long = Spec-Driven Development}
+\DeclareAcronym{tdd}{short = TDD, long = Test-Driven Development}
  
 % Define custom colors for code listings
 \definecolor{codegreen}{rgb}{0,0.6,0}
@@ -367,154 +370,216 @@
 
   \section{Solutii agentice pentru industria dezvoltarii software}
 
-  % Cum s-a ajuns la solutiile agentice in industria dezvoltarii soft
+  Arhitecturile agentice presupun inzestrarea modelelor mari de limbaj cu uneltele necesare interactionarii cu ecosistemul in care ruleaza.
+  Odata cu implementarea procedeului "Chain of Thought" \cite{weiChainofThoughtPromptingElicits2022} care permite navigarea problemelor complexe de catre un model de limbaj, 
+  generarea de planuri si cu abordarea ReAct \cite{yaoReActSynergizingReasoning2022} care impreuna incearca sa combata fenomenul halucinatiilor
+  \footnote{Fenomenul de halucinatii in modelele de limbaj se refera la generarea unor raspunsuri care nu sunt ancorate in fapte reale sau care nu au legatura
+  cu prompt-ul de intrare}
+  si inconsistenta in raspunsuri cu care se confruntau primele modele mari de limbaj.
 
-  \section{Necesitati pentru dezvoltarea unei solutii agentice}
+  Increderea in procesul de gandire al modelelor de inteligenta artificiala s-a cimentat, incepand sa produca rezultate consistente, iar astfel
+  a urmat inzestrarea acestora cu unelte care sa le permita interactiunea cu mediul in care ruleaza. Numarul uneltelor ce le ofera
+  capabilitatea de a cauta pe internet pentru a gasi date actuale si a nu se limita la datele de antrenare, la posibilitatea
+  rularii de comenzi in terminalul sistemului de operare sau chiar preluarea controlului browserului personal pentru automatizari,
+  a crescut exponential, si odata cu el si numarul de aplicatii ale acestor modele.
 
-  % Corelat cu ce folosesc jucatorii curenti
+  Industria dezvoltarii software are probabil una din cele mai profitabile intrebuintari datorita volumului masiv de munca existent in domeniu, asa ca
+  nu a durat mult pana ce marii jucatori pe piata modelelor de \ac{ia} au inceput sa ofere produse care sa asiste programatorii in sarcinile lor. La momentul actual
+  exista mai multe solutii competitive: Codex de la OpenAI, Gemini CLI de la Google sau Claude Caude de la Anthropic. Toate acestea sunt solutii proprietare
+  care sunt facute sa ruleze cu modelele proprii si pentru care utilizatorul trebuie sa plateasca. Exista si solutii open-source precum
+  precum OpenCode, Kiro sau OpenClaw cu care detinatorii de modele se lupta pentru a domina piata, desi lupta nu este stransa din cauza monopolului
+  solutiilor proprietare.
+
+  \begin{table}[htbp]
+    \centering
+    \small
+    \begin{tabularx}{\textwidth}{|>{\hsize=0.6\hsize\RaggedRight}X|>{\hsize=1.0\hsize\RaggedRight}X|>{\hsize=0.8\hsize\RaggedRight}X|>{\hsize=1.6\hsize\RaggedRight}X|}
+      \hline
+        \textbf{Companie} & \textbf{Model} & \textbf{Pret [\$/MTok]} & \textbf{Capabilitati} \\
+        \hline
+
+        \textbf{Anthropic (\href{https://platform.claude.com/docs/en/about-claude/models/overview}{link})} & Claude Opus 4.6 & \$5/input MTok, \$25/output MTok & Lent, cel mai inteligent, gandire adaptiva, 1M fereastra de context, 128k tokens max. la iesire \\
+        \hline
+        & Claude Sonnet 4.6 & \$3/input MTok, \$15/output MTok & Mai rapid, compromite niste inteligenta pentru performante, gandire adaptiva, 1M fereastra de context, 64k tokens max. la iesire \\
+        \hline
+        & Claude Haiku & \$1/input MTok, \$5/output MTok & Cel mai rapid, fara gandire adaptiva, 200k fereastra de context, 64k tokens max. la iesire \\
+        \hline
+
+        \textbf{OpenAI (\href{https://developers.openai.com/api/docs/models}{link})} & gpt-5.4 & \$2.5/input MTok, \$15/output MTok & Cel mai inteligent pentru sarcini agentice, de programare si profesionale. 1M fereastra de context si 128k tokens max. la iesire \\
+        \hline
+        & gpt-5.4-mini & \$0.75/input MTok, \$4.5/output MTok & Model mai mic, rapid dar puternic pentru programare si subagenti. 400k fereastra de context si 128k tokens max. la iesire \\
+        \hline
+        & gpt-5.4-nano & \$0.20/input MTok, \$1.25/output MTok & Model mic si foarte rapid pentru sarcini usoare in volum mare. 200k fereastra de context si 128k tokens max. la iesire \\
+        \hline
+
+        \textbf{Google (\href{https://ai.google.dev/gemini-api/docs/models}{link})} & Gemini 3.1 Pro & \$2/input MTok, \$12/output MTok < 200k tokens, \$4/input MTok, \$118/output MTok >= 200k tokens & Model pentru sarcini complexe ce necesita cunostiinte dezvoltate. Fereastra de context 1M in / 64k out \\
+        \hline
+        & Gemini 3.1 Flash & \$0.5/input MTok, \$3/output MTok & Inteligenta comparabila cu modelul Pro la o viteza mai mare. Fereastra de context 1M in / 64k out \\
+        \hline
+        & Gemini 3.1 Flash-Lite & \$0.25/input MTok, \$1.5/output MTok & Model construit pentru costuri reduse si volum mare de sarcini. Fereastra de context 1M in / 64k out \\
+        \hline
+
+        \textbf{DeepSeek (\href{https://api-docs.deepseek.com/quick_start/pricing}{link})} & Deepseek Chat 3.2 & \$0.028 sau \$0.28/input MTok, \$0.42/output MTok & Mod fara gandire adanca, 128k fereastra de context, max. out token: 8k \\
+        \hline
+        & Deepseek Reasoner 3.2 & \$0.028 sau \$0.28/input MTok, \$0.42/output MTok & Mod cu gandire adanca, 128k fereastra de context, max. out token: 64k \\
+        \hline
+
+        \textbf{Meta (\href{https://www.llama.com/docs/model-cards-and-prompt-formats/llama4/}{link})} & Llama 4 & Open Source & Performante similare cu GPT4-o sau Gemini 2.0 Flash, dar open-source. Fereastra de context 10M/1M in functie de model.\\
+        \hline
+
+
+      \hline
+    \end{tabularx}
+    \caption{Comparatia modelelor existente si a capabilitatilor acestora}
+    \label{tab:modele_ia}
+    \par\vspace{0.3cm}
+    {\small \textit{Nota:} Toate modelele au si versiuni pentru diferite nivele de efort pentru gandire (reasoning effort) sau pentru date multimodale ce pot influenta si costul dar si rezultatele}
+  \end{table}
+
+  \newpage
+
+  Din punct de vedere al puterii de rezolvare ale sarcinilor reale din industria dezvoltarii software, clasamentul celor mai bune modele
+  se schimba frecvent. Utilizand SWE-Bench Pro \cite{dengSWEBenchProCan2025}, putem masura puterea de abordare a acestor modele de top contra
+  unor probleme reale.
+
+  \begin{figure}[htbp]
+    \centering
+    \includegraphics*[width=0.4\columnwidth]{figuri/swe_performanta.png}
+    \caption{Clasamentul modelelor in SWE-Bench Pro \cite{dengSWEBenchProCan2025} la momentul actual in functie de performanta rezolvarii sarcinilor complexe in limba engleza}
+    \label{fig:swe_performanta}
+  \end{figure}
+
+  Pe langa puterea de rezolvare, un alt fenomen a aparut care schimba rata de adoptie a unui model: costul. Desi performantele modelelor cresc si acestea
+  sunt din ce in ce mai integrate in vietile noastre de zi cu zi, asemenea telefoanelor mobile, costurile de rulare ale acestor modele creste si el.
+  Cele mai puternice modele au nevoie de foarte multe resurse pentru antrenare dar si pentru inferenta. Acest lucru se reflecta asupra
+  utilizatorului final care trebuie sa plateasca per-token
+  \footnote{Token-ul este un cuvant sau o parte din cuvant si este elementul fundamental procesat de modelele mari de limbaj}
+  sau un abonament lunar care include un numar limitat de tokens. Modelele cu capacitati de gandire adanca, pe langa faptul ca au un cost mai mare per-token,
+  consuma si mai multi tokeni din cauza gandirii dezvoltate sau a ferestrei de context mari, ridicand si mai mult costurile. Pentru asta, fiecare detinator de modele
+  fundationale, are mai multe versiuni ale aceluiasi model, pentru intrebuintari de diverse complexitati, pentru a ajuta cu
+  costurile dar si cu balansarea resurselor. Spre exemplu Google detine modelele din gama Gemini, cu versiunile "Flash", "Thinking",
+  "Pro".
+
+  \begin{figure}[htbp]
+    \centering
+    \includegraphics*[width=0.4\columnwidth]{figuri/swe_cost.png}
+    \caption{Clasamentul modelelor in SWE-Bench Pro \cite{dengSWEBenchProCan2025} la momentul actual in functie de cost}
+    \label{fig:swe_cost}
+  \end{figure}
+
+  Avand in vedere problema costului dar si a balansarii traficului, aplicatiile de asistenti de programare de pe piata, au implementat o modalitate
+  de a clasifica prompt-urile utilizatorului in functie de complexitate si rutarea acestui prompt catre un model potrivit sa rezolve aceasta problema
+  si optim din punct de vedere al costului. 
+
+  \section{Necesitati pentru dezvoltarea unei solutii agentice in domeniul dezvoltarii software}
+
+  Pentru a realiza un asistent inteligent in domeniul dezvoltarii software este nevoie sa atingem cateva obiective principale, printre care:
+  o interfata accesibila din diferite medii de dezvoltare pentru a satisface cat mai multe nevoie, unelte ce pot rula in terminalul oricarui sistem de operare, 
+  posibilitatea de a alege dintr-o sumedenie de modele, comenzi pentru a controla parametrii modelelor si un prompt de sistem si skill-uri specializate
+  pentru operatii din domeniu.
+
+  Agentii functioneaza, pe langa procedeele expuse anterior, pe una dintre aceste filozofii de programare: \ac{sdd} sau \ac{tdd}. Primul se refera la
+  programarea pe baza unor documente de specificatie ce expun in detaliu toate necesitatile implementarii, iar cel din urma se refera la programarea dupa cerintele
+  sumare si executarea testelor la final pentru a confirma comportamentul dorit.
+
+  Pe langa aceste obiective de baza, trebuie sa ne asiguram ca modelul raspunde doar prompt-urilor cu scop legitim, si sa ne asiguram ca modelul
+  nu poate rula comenzi care pun in pericol integritatea sistemului pe care ruleaza sau compromite date sensibile, lucruri pe care le vom discuta in capitolele ce urmeaza.
 
   \section{Puncte slabe ale arhitecturilor agentice}
 
-  % Ce nu merge - context, memorie, trash data, regresii, guardrails
+  Desi entuziasmul pentru bula \ac{ia} atinge cote maxime, inca este mult loc de imbunatarie, iar aceste platforme de asistenti de programare au inca
+  multe defecte pe care trebuie sa le depaseasca.
 
-  \section{Alegerea solutiei de implementare pe baza lucrarilor studiate}
+  In primul rand, bariera principala in avansarea acestor asistenti este fereastra de context. Aceasta fereastra reprezinta cata informatie poate sa tina minte agentul.
+  Pentru sisteme dezvoltate cu zeci de mii de linii de cod, sau solutii impartite pe micro servicii in mai multe proiecte, acest context limiteaza masiv capabilitatile
+  agentilor. Exista multe tehnici de optimizare a acestui context de la compresie, realizarea unor fisiere ce rezuma cunostiintele actuale si inceperea unei
+  conversatii noi care pleaca de la acel rezumat pana la rularea de cod pentru actiuni repetitive sau alegerea cu grija a prompt-ului. Dar din pacate toate aceste tehnici nu sunt de ajuns. Multe functionalitati
+  care fac un agent suficient de performant, precum tool-urile sau \ac{rag} \cite{lewisRetrievalAugmentedGenerationKnowledgeIntensive2020} reusesc sa consume rapid aceasta fereastra de context.
+  Poate 200.000 de tokeni pot parea un numar mare, dar defapt chiar si acest numar, precum la memoria hardware este defapt mai mic. Din aceasta fereastra doar ~160.000 de tokens sunt disponibili cu adevarat. O parte
+  din ei sunt rezervati pentru auto-compactare sau pentru iesire. Depasirea acestei ferestre de context scade astfel performantele agentului si se recomanda inceperea unei
+  conversatii noi.
 
-  % In functie de ce este folosit
+  In al doilea rand, modelele curente par sa genereze date de iesire mai detaliate decat este necesar, preferand calitatea peste cantitate. De multe ori in
+  sarcini de tipul "PR Review", agentii se grabesc sa relateze multe probleme simple sau de formatare si rateaza probleme de logica.
 
-\chapter{NOTIUNI FUNDAMENTALE, CERINTE SI OBSTACOLE}
+  In al treilea mod, similar cu punctul anterior, agentii nu au o buna intelegere legata de cand ar trebui sa opreasca investigatiile sau sa incerce alte solutii si raman
+  blocati in bucle infinite de a incerca aceleasi lucruri si a esua.
 
-  \section{Notiuni fundamentale}
+  Pentru toate aceste probleme se lucreaza in mod curent la rezolvari de care vom vorbi ulterior.
 
-    \subsection{Context}
-    \subsection{Memorie}
-    \subsection{Skills}
-    \subsection{Tools}
-    \subsection{RAG}
-    %Spec driven dev/test driven dev
+  \section{Alegerea solutiei de implementare pe baza lucrarilor studiate si a standardelor din industrie}
 
-  \section{Cerinte functionale}
-    \subsection{Cerinte hardware}
-    \subsection{Cerinte software}
-    \subsection{Cerinte UX}
-    \subsection{Cerinte LLMs (guardrails, oos-detection)}
-    \subsection{RAG}
-    \subsection{Sanity checks/E2E/evals/quality because LLMs}
-    \subsection{Extensions}
-    
-  \section{Obstacole}
-    \subsection{Memorie}
-    \subsection{Context}
-    \subsection{Sandboxing, securitate}
-    \subsection{Consistenta}
-    \subsection{Dangerous intent/multi-lingual/UTF-8}
+  Alegerea solutiei nu a fost dificiala datorita numeroaselor exemple existente in piata.
 
-\chapter{TEHNOLOGII UTILIZATE}
+  Modelele disponibile vor fi Gemini, Claude, OpenAI, cu posibilitatea de extindere
 
+  Pentru partea de framework agentic, ofertele sunt numeroase si variate. Fiecare dintre optiunile de mai jos are avantaje si dezavantaje
+  care trebuiesc cantarite in contextul aplicatiei noastre.
 
-  \section{LLMs}
+  \begin{table}[htbp]
+    \centering
+    \small
+    \begin{tabularx}{\textwidth}{|>{\hsize=0.6\hsize\RaggedRight}X|>{\hsize=1.0\hsize\RaggedRight}X|>{\hsize=0.8\hsize\RaggedRight}X|>{\hsize=1.6\hsize\RaggedRight}X|}
+      \hline
 
+        \textbf{Framework} & \textbf{Pro} & \textbf{Contra} & \textbf{Observatii} \\
+        \hline
 
-  \section{Arhitectura generala a unui \ac{llm} in productie}
-  Dorim sa suportam mai multe modele dar pentru simplitate vom prezenta arhitectura unuia dintre modelele suportate.
+        \textbf{LangGraph} & Este bun & Nu este bun & Obs \\
+        \hline
 
+      \hline
+    \end{tabularx}
+    \caption{Comparatia framework-urilor agentice}
+    \label{tab:frameworks_agentic}
+  \end{table}
 
-  \section{Tehnologii functionale de baza}
-    \subsection{Python}
-    unit tests, env vars, makefile, precommit stuffs, code quality, libraries, easy, runs on everything, easy install
-    \subsection{Modelele de limbaj}
-    \subsection{LangGraph}
-    Framework AI
-    Tools, MCP, context (what to do if context too large, compaction), memory (long term, episodic, vector db), chats,
-    events, traces (telemetry)
-    \subsection{Fast API}
-    endpoints
-    \subsection{swagger/postbuster}
-    json, curl
+  In final am ales sa folosesc LangGraph.
 
+  Pentru partea de interactiune cu utilizatorul, de asmenea optiuni vaste.
 
-  \section{Sisteme de stocare si baze de date}
-    \subsection{RAG, vector DB}
-    \subsection{SQL DBs, redis}
+  \begin{table}[htbp]
+    \centering
+    \small
+    \begin{tabularx}{\textwidth}{|>{\hsize=0.6\hsize\RaggedRight}X|>{\hsize=1.0\hsize\RaggedRight}X|>{\hsize=0.8\hsize\RaggedRight}X|>{\hsize=1.6\hsize\RaggedRight}X|}
+      \hline
 
+        \textbf{Framework} & \textbf{Pro} & \textbf{Contra} & \textbf{Observatii} \\
+        \hline
 
-  \section{Solutii pentru securitate si interactiunea cu sistemul}
-    \subsection{Sandboxes}
-    code execution low latency - sprites.dev, h2b
-    \subsection{Bearer tokens}
-    \subsection{Guardrails}
-    \subsection{OOS detection}
-    \subsection{Dangerous intent, and multilingual/UTF-8 inputs}
+        \textbf{LangGraph} & Este bun & Nu este bun & Obs \\
+        \hline
 
+      \hline
+    \end{tabularx}
+    \caption{Comparatia framework-urilor pentru interfata}
+    \label{tab:frameworks_ui}
+  \end{table}
 
-  \section{Tehnologii pentru interactiunea cu utilizatorul}
-    
-    \subsection{TUI}
-    \subsection{Alte modalitati de integrare}
-
-
-  \section{Tehnologii pentru asigurarea calitatii si monitorizare}
-    \subsection{Evaluations}
-      \subsubsection{LLM as a Judge}
-      \subsubsection{Datasets}
-      \subsubsection{Human review}
-      \subsubsection{Annotations}
-    \subsection{Reliability}
-      \subsubsection{System and tools prompt changes}
-      \subsubsection{Temperature}
-      \subsubsection{Conversation, memory and context}
-      \subsubsection{Regression testing}
-      \subsubsection{Sanity checks}
-      \subsubsection{Guardrails}
-      \subsubsection{OOS detection}
-      \subsubsection{End to end testing}
-      \subsubsection{Continous learning}
-    \subsection{Observability}
-      \subsubsection{OpenTelemetry}
-      \subsubsection{Prometheus}
-      \subsubsection{Grafana}
-      \subsubsection{Splunk}
-      \subsubsection{Alerts}
-    \subsection{Development process}
-      \subsubsection{GitHub actions (CI/CD)}
-      \subsubsection{Synthax checks}
-      \subsubsection{Code Quality}
-      \subsubsection{Tests and image build}
-      \subsubsection{Deployment with ArgoCD}
-
-
-  \section{Modalitati de extensibilitate}
-    \subsection{MCP}
-    \subsection{A2A}
-
+  Alte decizii arhitecturale initiale importante: memorie, sandbox, mcp
 
 \chapter{IMPLEMENTARE}
 
-  \section{Inceput}
-  \section{Proces}
-  \section{sys prompt}
-  \section{Provocari}
-  \section{Solutii}
+  \section{Mediul de dezvoltare}
+
+  Expunerea elementelor constituente disponibile care alcatuiesc mediul hardware cat si software este imperativa pentru
+  relatarea procesului de dezvoltare si reproducerea pasilor prin care s-a ajuns la produsul final.
+
+    \subsection{Mediul hardware}
+
+    Ca si hardware au fost folosite doua medii de dezvoltare total diferite: un laptop Lenovo si un laptop MacBrook Pro.
+
+    \subsection{Mediul software}
 
 
-
-\chapter{REZULTATE EXPERIMENTALE}
-
-\chapter{LANSAREA IN PRODUCTIE}
-Medii de dezvoltare dev/stage/prod in ce consta fiecare si ce trebuie in prod.
-
-\chapter{CONCLUZII}
-
-
-
-\chapter{IMBUNATATIRI VIITOARE}
-
-  \section{distributed system with dbs agents for the future with kubernetes,docker}
-  ui + token/metrics panel
-  \section{Feature flags for the future}
-  \section{security/tokens/accounts}
-  \section{multi model support and SLMs}
-  schema / token stuff
-
+  \section{Structura}
+  \section{Configurare}
+  \section{Conexiunea cu modelele}
+  \section{Interfata cu utilizatorul si instructiuni de utilizare}
+  % \section{sys prompt}
+  % \section{Tools/stuff}
+  % \section{Provocari}
+  % \section{Solutii}
 
 % Bibliografie -----------------
 
