@@ -2,49 +2,127 @@
 
 \bibitem{zhaoSurveyLargeLanguage2026}
 Wayne~Xin Zhao, Kun Zhou, Junyi Li, Tianyi Tang, Xiaolei Wang, Yupeng Hou, Yingqian Min, Beichen Zhang, Junjie Zhang, Zican Dong, Yifan Du, Chen Yang, Yushuo Chen, Zhipeng Chen, Jinhao Jiang, Ruiyang Ren, Yifan Li, Xinyu Tang, Zikang Liu, Peiyu Liu, Jian-Yun Nie, and Ji-Rong Wen.
-\newblock A {{Survey}} of {{Large Language Models}}, March 2026.
+\newblock A survey of large language models.
+
+\bibitem{beltagy_longformer_2020-1}
+Iz~Beltagy, Matthew~E. Peters, and Arman Cohan.
+\newblock Longformer: The long-document transformer.
+
+\bibitem{su_roformer_2023-1}
+Jianlin Su, Yu~Lu, Shengfeng Pan, Ahmed Murtadha, Bo~Wen, and Yunfeng Liu.
+\newblock {RoFormer}: Enhanced transformer with rotary position embedding.
+
+\bibitem{huLoRALowRankAdaptation2021}
+Edward~J. Hu, Yelong Shen, Phillip Wallis, Zeyuan Allen-Zhu, Yuanzhi Li, Shean Wang, and Weizhu Chen.
+\newblock {LoRA}: Low-rank adaptation of large language models.
+\newblock version: 1.
+
+\bibitem{zhang_embarrassingly_2026-2}
+Ruixiang Zhang, Richard~He Bai, Huangjie Zheng, Navdeep Jaitly, Ronan Collobert, and Yizhe Zhang.
+\newblock Embarrassingly simple self-distillation improves code generation.
+
+\bibitem{dettmersQLoRAEfficientFinetuning2023}
+Tim Dettmers, Artidoro Pagnoni, Ari Holtzman, and Luke Zettlemoyer.
+\newblock {QLoRA}: Efficient finetuning of quantized {LLMs}.
+\newblock 36:10088--10115.
+
+\bibitem{ouyangTrainingLanguageModels2022}
+Long Ouyang, Jeffrey Wu, Xu~Jiang, Diogo Almeida, Carroll Wainwright, Pamela Mishkin, Chong Zhang, Sandhini Agarwal, Katarina Slama, Alex Ray, John Schulman, Jacob Hilton, Fraser Kelton, Luke Miller, Maddie Simens, Amanda Askell, Peter Welinder, Paul~F Christiano, Jan Leike, and Ryan Lowe.
+\newblock Training language models to follow instructions with human feedback.
+\newblock In {\em Advances in Neural Information Processing Systems}, volume~35, pages 27730--27744. Curran Associates, Inc.
+
+\bibitem{weiChainofThoughtPromptingElicits2022}
+Jason Wei, Xuezhi Wang, Dale Schuurmans, Maarten Bosma, Brian Ichter, Fei Xia, Ed~Chi, Quoc~V. Le, and Denny Zhou.
+\newblock Chain-of-thought prompting elicits reasoning in large language models.
+\newblock 35:24824--24837.
+
+\bibitem{yaoTreeThoughtsDeliberate2023}
+Shunyu Yao, Dian Yu, Jeffrey Zhao, Izhak Shafran, Tom Griffiths, Yuan Cao, and Karthik Narasimhan.
+\newblock Tree of thoughts: Deliberate problem solving with large language models.
+\newblock In {\em Advances in Neural Information Processing Systems}, volume~36, pages 11809--11822. Curran Associates, Inc.
+
+\bibitem{yaoReActSynergizingReasoning2022}
+Shunyu Yao, Jeffrey Zhao, Dian Yu, Nan Du, Izhak Shafran, Karthik~R. Narasimhan, and Yuan Cao.
+\newblock {ReAct}: Synergizing reasoning and acting in language models.
+
+\bibitem{xuReWOODecouplingReasoning2023}
+Binfeng Xu, Zhiyuan Peng, Bowen Lei, Subhabrata Mukherjee, Yuchen Liu, and Dongkuan Xu.
+\newblock {ReWOO}: Decoupling reasoning from observations for efficient augmented language models.
+
+\bibitem{liuLostMiddleHow2024}
+Nelson~F. Liu, Kevin Lin, John Hewitt, Ashwin Paranjape, Michele Bevilacqua, Fabio Petroni, and Percy Liang.
+\newblock Lost in the middle: How language models use long contexts.
+\newblock 12:157--173.
+
+\bibitem{vodrahalli_michelangelo_2024}
+Kiran Vodrahalli, Santiago Ontanon, Nilesh Tripuraneni, Kelvin Xu, Sanil Jain, Rakesh Shivanna, Jeffrey Hui, Nishanth Dikkala, Mehran Kazemi, Bahare Fatemi, Rohan Anil, Ethan Dyer, Siamak Shakeri, Roopali Vij, Harsh Mehta, Vinay Ramasesh, Quoc Le, Ed~Chi, Yifeng Lu, Orhan Firat, Angeliki Lazaridou, Jean-Baptiste Lespiau, Nithya Attaluri, and Kate Olszewska.
+\newblock Michelangelo: Long context evaluations beyond haystacks via latent structure queries.
+\newblock version: 2.
 
 \bibitem{dengSWEBenchProCan2025}
 Xiang Deng, Jeff Da, Edwin Pan, Yannis~Yiming He, Charles Ide, Kanak Garg, Niklas Lauffer, Andrew Park, Nitin Pasari, Chetan Rane, Karmini Sampath, Maya Krishnan, Srivatsa Kundurthy, Sean Hendryx, Zifan Wang, Vijay Bharadwaj, Jeff Holm, Raja Aluri, Chen Bo~Calvin Zhang, Noah Jacobson, Bing Liu, and Brad Kenstler.
-\newblock {{SWE-Bench Pro}}: {{Can AI Agents Solve Long-Horizon Software Engineering Tasks}}?, November 2025.
+\newblock {SWE}-bench pro: Can {AI} agents solve long-horizon software engineering tasks?
 
 \bibitem{rosenblattPerceptronProbabilisticModel1958}
 F.~Rosenblatt.
-\newblock The perceptron: {{A}} probabilistic model for information storage and organization in the brain.
-\newblock {\em Psychological Review}, 1958.
+\newblock The perceptron: A probabilistic model for information storage and organization in the brain.
 
 \bibitem{lecunGradientbasedLearningApplied1998}
 Y.~Lecun, L.~Bottou, Y.~Bengio, and P.~Haffner.
 \newblock Gradient-based learning applied to document recognition.
-\newblock {\em Proceedings of the IEEE}, 86(11):2278--2324, November 1998.
+\newblock 86(11):2278--2324.
 
 \bibitem{hochreiterLongShortTermMemory1997}
 Sepp Hochreiter and Jürgen Schmidhuber.
-\newblock Long {{Short-Term Memory}}.
-\newblock {\em Neural Computation}, 9:1735--1780, November 1997.
+\newblock Long short-term memory.
+\newblock 9:1735--1780.
 
 \bibitem{vaswaniAttentionAllYou2017}
 Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan~N Gomez, Ł~ukasz Kaiser, and Illia Polosukhin.
-\newblock Attention is {{All}} you {{Need}}.
-\newblock In {\em Advances in {{Neural Information Processing Systems}}}, volume~30. Curran Associates, Inc., 2017.
+\newblock Attention is all you need.
+\newblock In {\em Advances in Neural Information Processing Systems}, volume~30. Curran Associates, Inc.
 
 \bibitem{brownLanguageModelsAre2020a}
-Tom~B. Brown, Benjamin Mann, Nick Ryder, Melanie Subbiah, Jared Kaplan, Prafulla Dhariwal, Arvind Neelakantan, Pranav Shyam, Girish Sastry, Amanda Askell, Sandhini Agarwal, Ariel {Herbert-Voss}, Gretchen Krueger, Tom Henighan, Rewon Child, Aditya Ramesh, Daniel~M. Ziegler, Jeffrey Wu, Clemens Winter, Christopher Hesse, Mark Chen, Eric Sigler, Mateusz Litwin, Scott Gray, Benjamin Chess, Jack Clark, Christopher Berner, Sam McCandlish, Alec Radford, Ilya Sutskever, and Dario Amodei.
-\newblock Language {{Models}} are {{Few-Shot Learners}}, July 2020.
+Tom~B. Brown, Benjamin Mann, Nick Ryder, Melanie Subbiah, Jared Kaplan, Prafulla Dhariwal, Arvind Neelakantan, Pranav Shyam, Girish Sastry, Amanda Askell, Sandhini Agarwal, Ariel Herbert-Voss, Gretchen Krueger, Tom Henighan, Rewon Child, Aditya Ramesh, Daniel~M. Ziegler, Jeffrey Wu, Clemens Winter, Christopher Hesse, Mark Chen, Eric Sigler, Mateusz Litwin, Scott Gray, Benjamin Chess, Jack Clark, Christopher Berner, Sam {McCandlish}, Alec Radford, Ilya Sutskever, and Dario Amodei.
+\newblock Language models are few-shot learners.
 
-\bibitem{weiChainofThoughtPromptingElicits2022}
-Jason Wei, Xuezhi Wang, Dale Schuurmans, Maarten Bosma, Brian Ichter, Fei Xia, Ed~Chi, Quoc~V. Le, and Denny Zhou.
-\newblock Chain-of-{{Thought Prompting Elicits Reasoning}} in {{Large Language Models}}.
-\newblock {\em Advances in Neural Information Processing Systems}, 35:24824--24837, December 2022.
+\bibitem{xu_kv_2026}
+Yichun Xu, Navjot~K. Khaira, and Tejinder Singh.
+\newblock {KV} cache optimization strategies for scalable and efficient {LLM} inference.
+\newblock version: 1.
 
-\bibitem{yaoReActSynergizingReasoning2022}
-Shunyu Yao, Jeffrey Zhao, Dian Yu, Nan Du, Izhak Shafran, Karthik~R. Narasimhan, and Yuan Cao.
-\newblock {{ReAct}}: {{Synergizing Reasoning}} and {{Acting}} in {{Language Models}}.
-\newblock In {\em The {{Eleventh International Conference}} on {{Learning Representations}}}, September 2022.
+\bibitem{leviathanFastInferenceTransformers2023}
+Yaniv Leviathan, Matan Kalman, and Yossi Matias.
+\newblock Fast inference from transformers via speculative decoding.
+
+\bibitem{zandieh_turboquant_2025-2}
+Amir Zandieh, Majid Daliri, Majid Hadian, and Vahab Mirrokni.
+\newblock {TurboQuant}: Online vector quantization with near-optimal distortion rate.
+
+\bibitem{heHARDTESTGENHighQualityRL2025}
+Zhongmou He, Yee~Man Choi, Kexun Zhang, Ivan Bercovich, Jiabao Ji, Junting Zhou, Dejia Xu, Aidan Zhang, Yixiao Zeng, and Lei Li.
+\newblock {HARDTESTGEN}: A high-quality {RL} verifier generation pipeline for {LLM} algorithimic coding.
+
+\bibitem{schulhoffPromptReportSystematic2025}
+Sander Schulhoff, Michael Ilie, Nishant Balepur, Konstantine Kahadze, Amanda Liu, Chenglei Si, Yinheng Li, Aayush Gupta, {HyoJung} Han, Sevien Schulhoff, Pranav~Sandeep Dulepet, Saurav Vidyadhara, Dayeon Ki, Sweta Agrawal, Chau Pham, Gerson Kroiz, Feileen Li, Hudson Tao, Ashay Srivastava, Hevander~Da Costa, Saloni Gupta, Megan~L. Rogers, Inna Goncearenco, Giuseppe Sarli, Igor Galynker, Denis Peskoff, Marine Carpuat, Jules White, Shyamal Anadkat, Alexander Hoyle, and Philip Resnik.
+\newblock The prompt report: A systematic survey of prompt engineering techniques.
+
+\bibitem{khattabDSPyCompilingDeclarative2023}
+Omar Khattab, Arnav Singhvi, Paridhi Maheshwari, Zhiyuan Zhang, Keshav Santhanam, Sri~Vardhamanan A, Saiful Haq, Ashutosh Sharma, Thomas~T. Joshi, Hanna Moazam, Heather Miller, Matei Zaharia, and Christopher Potts.
+\newblock {DSPy}: Compiling declarative language model calls into state-of-the-art pipelines.
+
+\bibitem{wangPlanandSolvePromptingImproving2023}
+Lei Wang, Wanyu Xu, Yihuai Lan, Zhiqiang Hu, Yunshi Lan, Roy Ka-Wei Lee, and Ee-Peng Lim.
+\newblock Plan-and-solve prompting: Improving zero-shot chain-of-thought reasoning by large language models.
+\newblock In Anna Rogers, Jordan Boyd-Graber, and Naoaki Okazaki, editors, {\em Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)}, pages 2609--2634. Association for Computational Linguistics.
+
+\bibitem{liLycheeClusterEfficientLongContext2026}
+Dongfang Li, Zixuan Liu, Gang Lin, Baotian Hu, and Min Zhang.
+\newblock {LycheeCluster}: Efficient long-context inference with structure-aware chunking and hierarchical {KV} indexing.
 
 \bibitem{lewisRetrievalAugmentedGenerationKnowledgeIntensive2020}
 Patrick Lewis, Ethan Perez, Aleksandra Piktus, Fabio Petroni, Vladimir Karpukhin, Naman Goyal, Heinrich Küttler, Mike Lewis, Wen-tau Yih, Tim Rocktäschel, Sebastian Riedel, and Douwe Kiela.
-\newblock Retrieval-{{Augmented Generation}} for {{Knowledge-Intensive NLP Tasks}}.
-\newblock In {\em Advances in {{Neural Information Processing Systems}}}, volume~33, pages 9459--9474. Curran Associates, Inc., 2020.
+\newblock Retrieval-augmented generation for knowledge-intensive {NLP} tasks.
+\newblock In {\em Advances in Neural Information Processing Systems}, volume~33, pages 9459--9474. Curran Associates, Inc.
 
 \end{thebibliography}

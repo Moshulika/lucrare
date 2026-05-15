@@ -2,45 +2,69 @@ This is BibTeX, Version 0.99e (TeX Live 2026)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: teza_v1.aux
 The style file: unsrt.bst
-Database file #1: licenta.bib
-You've used 10 entries,
+Database file #1: licenta_v4.bib
+Warning--empty journal in dettmersQLoRAEfficientFinetuning2023
+Warning--empty year in dettmersQLoRAEfficientFinetuning2023
+Warning--empty year in ouyangTrainingLanguageModels2022
+Warning--empty journal in weiChainofThoughtPromptingElicits2022
+Warning--empty year in weiChainofThoughtPromptingElicits2022
+Warning--empty year in yaoTreeThoughtsDeliberate2023
+Warning--empty booktitle in yaoReActSynergizingReasoning2022
+Warning--empty year in yaoReActSynergizingReasoning2022
+Warning--empty journal in liuLostMiddleHow2024
+Warning--empty year in liuLostMiddleHow2024
+Warning--empty journal in rosenblattPerceptronProbabilisticModel1958
+Warning--empty year in rosenblattPerceptronProbabilisticModel1958
+Warning--empty journal in lecunGradientbasedLearningApplied1998
+Warning--empty year in lecunGradientbasedLearningApplied1998
+Warning--empty journal in hochreiterLongShortTermMemory1997
+Warning--empty year in hochreiterLongShortTermMemory1997
+Warning--empty year in vaswaniAttentionAllYou2017
+Warning--empty booktitle in heHARDTESTGENHighQualityRL2025
+Warning--empty year in heHARDTESTGENHighQualityRL2025
+Warning--empty booktitle in khattabDSPyCompilingDeclarative2023
+Warning--empty year in khattabDSPyCompilingDeclarative2023
+Warning--empty year in wangPlanandSolvePromptingImproving2023
+Warning--empty year in lewisRetrievalAugmentedGenerationKnowledgeIntensive2020
+You've used 28 entries,
             1791 wiz_defined-function locations,
-            514 strings with 7295 characters,
-and the built_in function-call counts, 3446 in all, are:
-= -- 195
-> -- 373
-< -- 3
-+ -- 128
-- -- 118
-* -- 332
-:= -- 619
-add.period$ -- 29
-call.type$ -- 10
-change.case$ -- 10
+            591 strings with 12707 characters,
+and the built_in function-call counts, 8800 in all, are:
+= -- 486
+> -- 918
+< -- 8
++ -- 315
+- -- 287
+* -- 770
+:= -- 1494
+add.period$ -- 74
+call.type$ -- 28
+change.case$ -- 28
 chr.to.int$ -- 0
-cite$ -- 10
-duplicate$ -- 97
-empty$ -- 238
-format.name$ -- 118
-if$ -- 693
+cite$ -- 51
+duplicate$ -- 264
+empty$ -- 660
+format.name$ -- 287
+if$ -- 1808
 int.to.chr$ -- 0
-int.to.str$ -- 10
-missing$ -- 7
-newline$ -- 50
-num.names$ -- 10
-pop$ -- 43
+int.to.str$ -- 28
+missing$ -- 14
+newline$ -- 128
+num.names$ -- 30
+pop$ -- 159
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 49
+skip$ -- 197
 stack$ -- 0
-substring$ -- 139
-swap$ -- 26
-text.length$ -- 3
+substring$ -- 337
+swap$ -- 79
+text.length$ -- 8
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 0
-while$ -- 19
-width$ -- 12
-write$ -- 104
+warning$ -- 23
+while$ -- 51
+width$ -- 30
+write$ -- 237
+(There were 23 warnings)

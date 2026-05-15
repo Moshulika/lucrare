@@ -22,6 +22,7 @@
 \usepackage{multicol}
 \usepackage{subcaption}
 \usepackage{ragged2e}
+\usepackage{float}
 
 \singlespacing
 
@@ -46,6 +47,16 @@
 \DeclareAcronym{btt}{short = BTT, long = Backpropagation Through Time}
 \DeclareAcronym{sdd}{short = SDD, long = Spec-Driven Development}
 \DeclareAcronym{tdd}{short = TDD, long = Test-Driven Development}
+\DeclareAcronym{oss}{short = OSS, long = Open Source Software}
+\DeclareAcronym{nlp}{short = NLP, long = Natural Language Processing}
+\DeclareAcronym{gpu}{short = GPU, long = Graphics Processing Unit}
+\DeclareAcronym{mha}{short = MHA, long = Multi-Head Attention}
+\DeclareAcronym{rl}{short = RL, long = Reinforcement Learning}
+\DeclareAcronym{kv}{short = KV, long = Key-Value}
+\DeclareAcronym{cot}{short = CoT, long = Chain-of-Thought}
+\DeclareAcronym{tot}{short = ToT, long = Tree-of-Thought}
+\DeclareAcronym{rope}{short = RoPE, long = Rotary Position Embedding}
+
  
 % Define custom colors for code listings
 \definecolor{codegreen}{rgb}{0,0.6,0}
@@ -203,36 +214,47 @@
 \addcontentsline{toc}{section}{CONTEXT SI MOTIVATIE}
 
   Motivatia acestei lucrari vine din experienta personala in industria dezvoltarii software. 
-  Atributiile unui inginer software sunt multe, diverse si adesea repetitive si ingreuneaza procesul de dezvoltare. 
-  A scrie cod a devenit doar o mica parte din sarcinile intrebuintate unui inginer software, pierzand teren in fata design-urilor, 
+  Atributiile unui inginer software sunt numeroase, diverse si adesea repetitive. Aceasta congestie a timpului ingreuneaza procesul de dezvoltare. 
+  A scrie cod a devenit doar o mica parte din sarcinile unui inginer software, pierzand teren in fata design-urilor, 
   documentatiei, review-urilor,
   a testelor unitare de integrare si \ac{e2e}, instrumentarii si monitorizarii, procesului de \ac{ci}/\ac{cd}, 
   infrastructurii, iar in cazul problemelor a debugging-ului si a analizei cauzelor principale (\ac{rca}).
   
-  Un inginer software care lucreaza intr-o companie ce serveste milioane de clienti din intreaga lume trebuie sa fie la 
-  curent cu cele mai noi practici
-  din domeniu, sa stie notiuni de programare, securitate cibernetica, networking si infrastructura, 
-  dar sa si retina simultan informatii vitale despre arhitectura si sistemele companiei, totul pe langa instruirea colegilor 
+  Un inginer software care lucreaza intr-o companie ce deserveste milioane de clienti din intreaga lume trebuie sa fie competitiv, 
+  iar aceasta competitivitate se rezuma la a fi la curent cu cele mai noi practici
+  din domeniu, cunoasterea notiunilor de programare, securitate cibernetica, retelistica si infrastructura, 
+  dar sa si retina simultan informatii vitale despre arhitectura si sistemele interne ale companiei, totul pe langa instruirea colegilor 
   noi sau sedinte.
   
-  Timpul unui inginer este astfel impartit de foarte multe procese dinamice care trebuiesc adresate de un angajat 
-  cu experienta.
+  Timpul unui inginer este astfel impartit de foarte multe procese dinamice care trebuiesc adresate de un angajat capabil sa sustina
+  acest ritm alert.
   
   Avand in vedere cele de mai sus, cat si evolutia recenta a sistemelor bazate pe \ac{ia} ce folosesc un \ac{llm} pentru intelegerea
   si generarea de text, era natural ca directia in care dezvoltarea software urma sa se schimbe catre un proces in care
-  multe din sarcinile pe care un inginer le-ar fi avut sunt acum delegate sistemelor automate.
+  multe din sarcinile pe care un inginer le-ar fi avut sunt acum delegate sistemelor automate. Astfel, atentia inginerului se muta 
+  de la a scrie cod, la supravegherea instrumentelor de programare bazate pe inteligenta artificiala si asumarea deciziilor arhitecturale.
+  Restul grijilor cotidiene pot fi abordate de aceste instrumente, eliberand programul operatorului.
   
-  Datorita faptului ca aceste modele functioneaza cu text ca date de intrare iar programarea este realizata de asemenea folosind
-  text, nu a fost dificil sa se treaca de la o experienta pur conversationala cu aceste modele la intrebuintari pentru cautare prin
+  Trecerea de la o experienta pur conversationala cu aceste modele la intrebuintari pentru cautare prin
   limbaj natural, iar in final integrandu-se cu mediile de dezvoltare software si cu terminalul sistemului de operare pentru
-  a avea acces la un context mai bun dar si pentru executia de comenzi putand astfel ca un model de IA sa interactioneze cu
-  mediul inconjurator.
+  a avea acces la un context mai bun dar si pentru executia de comenzi, nu a fost una dificila, avand in vedere competentele avansate de
+  prelucrare si generare de text ale acestor modele.
+
+  Momentan, in domeniul modelelor de limbaj, exista cativa jucatori mari precum Google, Anthropic si OpenAI care controleaza o buna parte
+  din cota de piata. Acestia sunt in stadiul in care isi fortifica ecosistemul pentru a-si maximiza retentia de utilizatori. Fiecare furnizor
+  de astfel de servicii lanseaza produse care se folosesc de aceste modele. De la asistenti de cercetare, la asistenti de programare si la programe
+  ce automatizeaza sarcini zilnice. Odata cu aceste produse, incearca sa restrictioneze sau sa ofere tarife diferite pentru utilizatori ce folosesc
+  modelele pentru astfel de sarcini in afara ecosistemului lor.
+
+  Exista si modele de limbaj de tipul \ac{oss}, de diferite marimi si cu diverse proprietati, dar ecosistemul uneltelor gratuite sau \ac{oss} care folosesc aceste modele
+  pentru sarcini avansate inca este in proces de dezvoltare. Astfel, este un mediu propice pentru un produs ce livreaza un asistent inteligent pentru dezvoltarea software,
+  independent de furnizor, construit pentru costuri reduse, performanta ridicata, abordarea problemelor complexe ce poate rula local, precum cel pe care imi propun sa il realizez in aceasta lucrare.
 
 \section*{SCOPUL SI OBIECTIVELE LUCRARII}
 \addcontentsline{toc}{section}{SCOPUL SI OBIECTIVELE LUCRARII}
 
-  Scopul acestei lucrari este de a realiza un asistent extensibil bazat pe \ac{ia}, agnostic fata de platforma, care poate functiona cu o multitudine
-  de modele de tipul \ac{llm} sau \ac{slm}, ce ruleaza local sau in cloud si ce poate interactiona cu mediul inconjurator (sistem de operare, mediu de dezvoltare,
+  Scopul acestei lucrari este de a realiza un asistent inteligent extensibil si transparent bazat pe \ac{ia}, agnostic fata de platforma sau de furnizori de modele de limbaj,
+  ce ruleaza local sau in cloud si ce poate interactiona cu mediul virtual in care ruleaza (sistem de operare, mediu de dezvoltare,
   internet) prin intermediul uneltelor (
     tool-uri
     \footnote{In \ac{ia} folosita cu ajutorul agentilor \textbf{tool}-urile sunt functii cu descrieri detaliate 
@@ -241,13 +263,10 @@
     \footnote{\textbf{Agentii} sunt aplicatii ce folosesc inteligenta artificiala pentru a interactiona cu mediul inconjurator}
 
   Obiectivul principal care trebuie atins este realizarea unui produs functional ce poate ajuta un inginer software in cat mai multe aspecte ale meseriei sale.
-  Pentru a reusi sa indeplinim acest obiectiv, trebuie sa avem in vedere urmatoarele necesitati: interfata facila ce poate fi folosita oriunde folosind terminalul
+  Pentru a indeplini acest obiectiv, trebuie sa avem in vedere urmatoarele necesitati: interfata facila ce poate fi folosita oriunde folosind terminalul
   sistemului de operare (\ac{tui}), suficiente unelte pentru a indeplini sarcini cat mai complexe, management-ul conversatiei, contextului si al memoriei,
-  versionare, evaluari si teste de regresie, monitorizare si observabilitate (metrici), siguranta (code execution sandboxes pentru
-  executia de cod, guardrails, \ac{oos} detection), si cel mai important: un system prompt ales cu grija.
-
-  Doua obiective pe care aceasta lucrare nu le prezinta sunt acceptarea de date de intrare multimodale (imagini, documente, videoclipuri)
-  si punerea in piata a acestui produs.
+  versionare, evaluari si teste de regresie, monitorizare si observabilitate (metrici), siguranta (medii sigure pentru executarea codului,
+  masuri de protectie pentru date de intrare malitioase, \ac{oos} detection), si cel mai important: un prompt de sistem ales cu grija.
 
 \newpage
 
@@ -264,10 +283,16 @@
   Domeniul inteligentei artificiale a fost studiat o perioada indelungata iar cateva publicatii au marcat industria
   prin concepte revolutionare si progrese importante.
 
-  Unul din conceptele de baza ale inteligentei artificiale a aparut pentru prima data publicat in anul 1958 de catre F. Rosenblatt in \cite{rosenblattPerceptronProbabilisticModel1958}, 
-  unde ni se prezenta perceptronul: o replica a unui neuron biologic capabil sa invete clasificare binara. Modelul invata prin
-  ajustarea ponderilor proprii in functie de eroarea produsa la iesire, formand baza invatarii artificiale. Desi revolutionar, aceasta abordare
-  restrictiona la o singura dimensiune datele de intrare. 
+  Unul din conceptele de baza ale inteligentei artificiale a aparut pentru prima data publicat in anul 1958 de catre F. Rosenblatt in lucrarea \cite{rosenblattPerceptronProbabilisticModel1958}, 
+  unde este prezentat perceptronul: un model inspirat din fizionomia neuronului biologic, capabil sa realizeze sarcini de clasificare binara. Perceptronul primeste un set de date
+  de intrare, fiecare asociata unei ponderi, iar rezultatul final este determinat prin combinarea acestor valori si aplicarea unei functii de activare. Procesul de invatare
+  are loc prin ajustarea iterativa aponderilor in functie de eroarea obtinuta la iesire, mecanism ce reprezinta baza invatarii automate moderne. Aceasta abordare a demonstrat pentru prima data
+  posibilitatea construirii unor sisteme capabile sa invete din experienta, fara a fi programate explicit pentru fiecare situatie.
+
+  Cu toate acestea, desi perceptronul a reprezentat un pas revolutonar in dezvoltarea inteligentei artificiale, modelul prezenta limitari importante. In forma sa initiala,
+  acesta putea clasifica doar date liniar separabile, ceea ce restrictiona capacitatea de rezolvare a problemelor complexe. Din acest motiv, perceptronul simplu era eficient doar pentru reprezentari de
+  date de intrare relativ simple, intr-un singur strat de procesare. Aceste limitari au dus ulterior la dezvoltarea retelelor neuronale multistrat si a algoritmilor mai avansati de antrenare, care au stat la
+  baza progreselor moderne din domeniul inteligentei artificiale.
 
   \begin{figure}[htbp]
     \centering
@@ -277,11 +302,19 @@
   \end{figure}
   
 
-  Schimbarea a venit cand Yann LeCun si echipa sa au introdus in \cite{lecunGradientbasedLearningApplied1998}
-  retelele neurale convolutionale (\ac{cnn}), un concept care planuia sa rezolve aceasta problema. Au aparut astfel primele
-  aplicatii ale inteligentei artificiale in domeniul imaginilor. Ideea de baza era simplu: in loc de datele unidimensionale caracteristice
-  perceptronului, acum modelul folosea "ferestre" ale unei imagini, mai multe straturi cat si
-  operatii speciale pentru a invata caracteristici spatiale complexe.
+  Un progres major s-a ivit odata cu introducerea retelelor neurale convolutionale (\ac{cnn}) de catre Yann LeCun si colaboratorii sai in lucrarea \cite{lecunGradientbasedLearningApplied1998}.
+  Aceasta abordare a fost conceputa pentru a depasi limitarile modelelor anterioare, precum perceptronul simplu care nu putea procesa eficient informatii
+  complexe din imagini. Aparitia retelelor convolutionale a marcat inceputul aplicarii pe scara larga a inteligentei artificiale in domeniul procesarii si analizei imaginilor.
+
+  Ideea fundamentala din spatele acestor retele era relativ rudimentara, insa extrem de eficienta: datele de intrare nu mai sunt tratate ca pe un vector unidimensional, astfel
+  modelul analiza portiuni locale ale imaginii prin intermediul unor "ferestre" de convolutie. Aceste filtre parcurg imaginea si extrag automat trasaturi relevante, precum muchii,
+  forme sau texturi. In plus, utilizarea mai multor straturi succesive permitea retelei sa invete reprezentari din ce in ce mai abstracte si mai complexe
+  ale datelor vizuale.
+
+  Un alt element important introdus de retelele convolutionale a fost utilizarea operatiilor specializate, precum convolutia si subsampling-ul (pooling), care reduceau
+  dimensionalitatea datelor si imbunatateau capacitatea de generalizare a modelului. Astfel, \ac{cnn} au devenit capabile sa identifice tipare spatiale
+  complexe si sa obtina performante superioare in sarcini precum recunoasterea faciala, clasificarea imaginilor sau detectia obiectelor. Aceste inovatii au reprezentat
+  fundamentul dezvoltarii ulterioare a tehnologiilor moderne de computer vision si deep learning.
 
   \newpage
 
@@ -292,13 +325,30 @@
     \label{fig:convolutie}
   \end{figure}
 
-  Desi \ac{cnn} sunt foarte bune in a procesa date statice, alte aplicatii precum procesarea limbajului nu pot fi incadrate intr-o "fereastra".
-  Vorbirea si textul sunt secventiale, deci se intampla in timp. Incercarile initiale in a infrunta aceasta problema se folosind
-  \ac{rnn} se loveau de o problema fundamentala a invatarii artificiale: disparitia gradientilor. Datorita conceptului de \ac{btt},
-  in cadrul unor secvente foarte lungi, gradientii deveneau atat de mici incat ajungeau sa fie irelevanti, cauzand modelul sa uite date
-  de la inceputul secventei. Progresul a fost atins cand Hochreiter and Schmbithuber au introdus conceptul de \ac{lstm} in \cite{hochreiterLongShortTermMemory1997} care
-  a dat inteligentei artificiale o memorie functionala. Prin conceptul de "porti", reteaua reusea sa controleze ce informatie trebuie
-  sa fie uitata si care trebuie sa fie pastrata.
+  Desi retelele neurale convolutionale (\ac{cnn}) au demonstrat performante remarcabile in procesarea datelor statice, precum imaginile,
+  acestea nu erau potrivite pentru aplicatii in care informatia are caracter secvential. Domenii precum procesarea limbajului natural (\ac{nlp}),
+  recunoasterea vorbirii sau analiza datelor in timp presupun existenta unei dependente intre elementele succesive ale datelor, informatia desfasurandu-se
+  in timp si nu intr-o structura fixa bidimensionala. Din acest motiv, utilizarea unor "ferestre" locale nu era suficienta pentru captarea relatiilor
+  pe termen lung dintre elementele unei secvente.
+
+  Primele incercari de rezolvare a acestei probleme au fost realizate prin intermediul retelelor neuronale recurente (\ac{rnn}), arhitecturi capabile sa
+  pastreze informatia din pasii anteriori prin intermediul unei stari interne. Astfel, modelul putea utiliza contextul anterior pentru a influenta predictiile curente, ceea ce
+  reprezenta un progres important pentru procesarea datelor temporale. Cu toate acestea, antrenarea \ac{rnn} clasice s-a confruntat rapid cu o problema fundamentala a invatarii
+  profunde: disparitia gradientului.
+
+  Aceasta problema aparea in timpul procesului de propagare inversa prin timp (\ac{btt}), atunci cand secventele analizate deveneau foarte lungi.
+  Gradientii calculati in timpul antrenarii se diminuau exponential pe masura ce informatia era propagata catre inceputul secventei, devenind atat de mici incat actualizarile ponderilor
+  ajungeau neglijabile. In consecinta, reteaua "uita" informatiile importante del a inceputul secventei si nu putea invata dependente pe termen lung.
+
+  Un progress major a fost realizat de Sepp Hochreiter si Jürgen Schmidhuber prin introducerea arhitecturii \ac{lstm} in lucrarea 
+  \cite{hochreiterLongShortTermMemory1997}. Acest model a oferit retelelor neuronale o forma functionala de memorie pe termen lung, capabila sa pastreze
+  informatii relevante pentru perioade extinse de timp. Elementul central al acestei arhitecturi il reprezinta mecanismul de "porti" care controleaza
+  fluxul informatiei in interiorul retelei. Prin aceste mecanisme, modelul poate decide ce informatii trebuie pastrate, ce informatii trebuie actualizate
+  si ce informatii trebuie eliminate din memorie.
+
+  Datorita acestei capacitati de gestionare eficienta a contextului temporal, retelele \ac{lstm} au devenid fundamentul multor
+  aplicatii moderne de inteligenta artificiala, fiind utilizate cu succes in traducere automata, recunoastere vocala, generare de text
+  si analiza de secvente temporale, desi problema disparitiei gradientilor nu disparuse complet.
 
   \begin{figure}[htbp]
     \centering
@@ -319,12 +369,21 @@
     \label{fig:rnn-lstm}
   \end{figure}
 
-  Urmatorul mare pas pentru industria urma sa fie arhitectura transformer prezentata de Vaswani et al. in celebra lucrare
-   \cite{vaswaniAttentionAllYou2017}. Arhitectura \ac{lstm} trebuia sa proceseze pas cu pas o secventa, iar aceasta limitare
-   facea antrenarea lor pe o cantitate mare dee date foarte ineficienta. Arhitectura transformer utilizeaza o tehnica numita
-   "self-attention" pentru a se uita la fiecare cuvant dintr-o secventa simultan, calculand astfel legatura dintre acestea.
-   Odata disparuta limitarea din punctul de vedere al vitezei de antrenare, s-a deschis poarta antrenarii pe baze de date
-    uriase, lucru care a dat nastere modelelor mari de limbaj. 
+  Punctul de cotitura in evolutia inteligentei artificiale a fost reprezentat de introducerea arhitecturii "transformer", prezentata
+  de Vaswani si colaboratorii sai in lucrarea devenita celebra \cite{vaswaniAttentionAllYou2017}. Pana in acel moment, modelele bazate pe 
+  \ac{lstm} dominau procesarea limbajului natural, insa acestea prezentau o limitare importanta: datele secventiale trebuiau procesate pas cu pas,
+  fiecare element depinzand de rezultatul precedent. Aceasta caracteristica facea antrenarea pe volume foarte mari de date sa fie lenta si dificil
+  de paralelizat, limitand scalabilitatea modelelor.
+
+  Arhitectura transformer a schimbat fundamental aceasta abordare prin introducerea mecanismului de "self-attention". In loc sa proceseze secvential,
+  modelul putea analiza simultan toate elementele unei propozitii si putea calcula relatiile dintre aceastea indiferent de distanta lor intext.
+  Astfel, fiecare cuvant primea informatii contextuale din intreaga secventa, ceea ce permitea captarea mult mai eficienta a dependentelor
+  semantice si sintactice. In plus, eliminarea procesarii strict secventiale a permis paralelizarea operatiilor pe hardware modern precum \ac{gpu}, 
+  reducand seminifcativ timpul de antrenare.
+
+  Mai tarziu, mecanismul de "self-attention" s-a transformat in "multi-head attention" care avea cate un cap de atentie pentru caracteristici specifice, putand astfel
+  sa invete multiple tipuri de dependente intre date, fiecare cap specializandu-se pe un anumit tip mai mult sau mai putin abstract de dependenta intre date. Pe langa deblocarea
+  intelegerii relatiilor complexe, \ac{mha} a adus si o optimizare in timpul de antrenare si de inferenta, dar si la imbunatatirea generalizarii modelelor.
 
   \newpage
 
@@ -335,64 +394,310 @@
     \label{fig:transformer}
   \end{figure}
 
-  Modelele mari de limbaj sunt produsul antrenarii pe cantitati masive de date sustrase din intreg internetul. Vazand ca 
-  daca continuau sa introduca si mai multe date de antrenare, cercetatorii de la OpenAI performanta modelului nu parea sa scada,
-  au reusit sa introduce 175 de miliarde de parametrii in modelul GPT-3, iar descoperirile au fost relatate in lucrarea 
-  "Language Models are Few-Shot Learners" \cite{brownLanguageModelsAre2020a}. Marea realizare a fost ca fara o instruire prealabila
-  modelul a invatat singur cum sa rezolve sarcini de programare si sumarizare a textului, poezie dar si raspunsuri punctuale la intrebari.
-  Inteligenta artificiala a facut pasul de la intrebuintari specializate la proficienta intr-o multitudine de domenii.
+  Odata eliminata limitarea din punct de vedere computational, cercetatorii au putut antrena modele pe seturi de date de dimensiuni fara precedent.
+  Acest progres a deschis drumul catre aparitia modelelor mari de limbaj, \ac{llm}. Acestea sunt capabile sa invete reprezentari complexe ale
+  limbajului natural prin analizarea unor cantitati uriase de text provenite din carti, articole, pagini web si alte surse disponibile pe internet.
+  Transformerul a devenit rapid fundamentul majoritatii sistemelor moderne de inteligenta artificiala dedicate limbajului natural, influentand profund atat cercetarea academica,
+  cat si aplicatiile comerciale.
+
+  Modelele mari de limbaj reprezinta rezultatul direct al antrenarii retelelor pe volume masive de date si folosind un numar foarte mare de parametrii.
+  Cercetatorii au observat ca performanta modelelor continua sa creasca odata cu extinderea dimensiunii acestora si a cantitatii de date
+  utilizate la antrenare. Pornind de la aceasta idee, echipa OpenAI a dezvoltat modelul GPT-3, care includea aproximativ 175 de miliarde
+  de parametrii, descoperirile fiind prezentate in lucrarea „Language Models are Few-Shot Learners” \cite{brownLanguageModelsAre2020a}. La momentul
+  aparitiei, GPT-3 reprezenta unul dintre cele mai mari si mai performante modele lingvistice create.
+
+  Una din cele mai importante realizari ale acestui model a fost capacitatea de a rezolva sarcini complexe fara a necesita o antrenare
+  suplimentara specifica fiecarei probleme. Prin simpla furnizare a catorva exemple sau chiar doar a unei instructiuni formulate in limbaj natural,
+  modelul putea genera cod sursa, realza sumarizari de text, raspunde la intrebari, traduce texte sau crea continut creativ precum poezii si eseuri. Aceasta
+  particularitate a fost documentata articolul prezentat anterior a demonstrat ca modelele de mari dimensiuni pot generaliza cunostiinte intre domenii diferite si
+  isi pot adapta comportamentul fara modificari suplimentare ale parametrilor interni.
+
+  Prin aceste progrese, inteligenta artificiala a facut tranzitia de la sisteme specializate, concepute pentru rezolvarea unei sarcini predefinite, la
+  modele capabile sa manifeste competente generale avansate. Aceasta schimbare a reprezentat inceputul unei noi etape in dezvoltarea inteligentei artificiale moderne,
+  in care accentul s-a mutat de la proiectarea unor solutii dedicate catre construirea unor modele inteligente universal, capabile
+  sa interactioneze natural cu oamenii si sa rezolve probleme complexe.
 
   \section{Maturizarea modelelor mari de limbaj si cercetari actuale}
 
   Odata cu aparitia primelor foundation models
   \footnote{Un foundation model este un model mare de limbaj de uz general antrenat pe cantitati foarte mari date diverse,
-  ce poate fi adaptat pentru un numar mare de intrebuintari} precum GPT-3 sau GPT-4, Sonnet sau Opus, industria inteligentei artificiale a explodat. Aplicatii de toate
-  tipurile au inceput sa foloseasca aceste modele pentru diverse sarcini: programare, traduceri sau experiente conversationale.
-  Odata cu cererea, companiile au investit masiv in cercetare si centre ce pot antrena modele mai puternice. Astfel, in fiecare
-  an au aparut modele din ce in ce mai performante. Marii jucatori in domeniul acestor modele, printre care si OpenAI, Anthropic,
-  Google si Meta se intrec in a scoate cel mai bun model. 
-
-  \begin{figure}[htbp]
+  ce poate fi adaptat pentru un numar mare de intrebuintari} 
+  precum GPT-4, GPT-5, Sonnet sau Opus, industria inteligentei artificiale a cunoscut o crestere exponentiala. Aceste modele
+  prezinta o eficacitate impresionanta in rezolvarea problemelor din domenii diverse, de la generare si analiza textului, pana la
+  programare, traduceri automate, automatizari complexe sau gandire logica. Datorita acestei flexibilitati, integrarea acestor modele
+  a devenit o prioritate pentru majoritatea companiilor ce activau in domeniul tehnologiei.
+  
+  \begin{figure}[H]
     \centering
     \includegraphics*[width=0.8\columnwidth]{figuri/evolutie_ai.png}
-    \caption{Evolutia modelelor in anii recenti \cite{zhaoSurveyLargeLanguage2026}}
+    \caption{Evolutia recenta a modelelor mari de limbaj \cite{zhaoSurveyLargeLanguage2026}}
     \label{fig:evolutia_ai}
   \end{figure}
 
-  \newpage
+  Astfel, cresterea rapida a cererii pentru sisteme bazate pe inteligenta artificiala a determinat furnizorii de astfel de modele si alte
+  companii care ar beneficia de pe urma modelelor, sa investeasca masiv in cercetare si infrastructura. Aceste investitii au permis in final
+  antrenarea unor modele cu capacitati din ce in ce mai sofisticate, fiecare noua generatie de modele aducand imbunatatiri semnificative
+  in ceea ce priveste rationamentul, intelegerea limbajului si capacitatea de a rezolva probleme complexe.
 
-  Multe dintre evolutiile facute in anii recenti au fost facute in capabilitatea de a gandi mai adanc, marimea contextului, 
-  pre-antrenarea pe anumite date si integrarea cu aplicatii sau \ac{api}-uri terte. Un exemplu de evolutie al unui model fundational
-  poate fi regasit in figura de mai jos:
-
-  \begin{figure}[htbp]
+  \begin{figure}[H]
     \centering
     \includegraphics*[width=0.8\columnwidth]{figuri/evolutie_open_ai.png}
     \caption{Evolutia modelelor GPT \cite{zhaoSurveyLargeLanguage2026}}
     \label{fig:evolutia_open_ai}
   \end{figure}
 
+  Investitiile in infrastructura nu au fost singurul motiv pentru care modelele de limbaj au avut o crestere impresionanta. Cercetarea
+  a jucat de asemenea un rol crucial in optimizarea lor. Multe optimizari au fost aduse acestor modele de limbaj, printre care
+  si imbunatatiri ale arhitecturii transformer care isi propun optimizeze modelele pentru procesarea secventelor mai lungi de date de intrare, precum
+  este ilustrat in lucrarea "Longformer: The Long-Document Transformer" \cite{beltagy_longformer_2020-1} de Beltagy si colaboratorii sai care isi propun
+  sa optimizeze mecanismul de atentie, folosind serii trigonometrice pentru a stabiliza compresia cache-ului \ac{kv}
+  \footnote{Un token reprezinta datele de intrare pentru arhitectura transformer si uzual sunt cuvinte, parti din cuvinte sau caractere. Acestea permit modelului sa sparga un cuvant posibil mai rar in parti mai cunoscute.}
+  \footnote{Cache-ul \ac{kv} este o optimizare fundamentala a arhitecturii transformer ce elimina calculele redundante ale token-urilor anterioare in generarea autoregresiva, conform lucrarii "KV Cache Optimization Strategies for Scalable and Efficient LLM Inference" de Xu si colaboratorii \cite{xu_kv_2026}}
+  imbunatatind astfel gandirea pe termen lung, lucru documentat in lucrarea "TriAttention: Efficient Long Reasoning with Trigonometric KV Compression" de Mao si colaboratorii sai.
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics*[width=0.8\columnwidth]{figuri/longformer1.png}
+    \caption{Performanta tipurilor de arhitecturi de tipul "Longformer" \cite{beltagy_longformer_2020-1}. 
+    In timp ce mecanismul tipic de atentie utilizeaza memorie exponential, arhitectura Longformer foloseste memorie liniar
+    odata cu cresterea contextului}
+    \label{fig:longformer1}
+  \end{figure}
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics*[width=0.8\columnwidth]{figuri/longformer2.png}
+    \caption{Diferite configuratii de atentie folosite in arhitectura Longformer in comparatie cu mecanismul obisnuit de atentie \cite{beltagy_longformer_2020-1}}
+    \label{fig:longformer2}
+  \end{figure}
+
+  Inca un punct de optimizare al arhitecturii curente este imbunatatirea embedding-urilor,
+  \footnote{Embedding-ul este transformarea token-ului intr-un vector abstract multi-dimensional ce reprezinta informatia extrasa de model din acel token, plus un vector ce aduce informatii despre pozitia acestui in secventa.}
+  precum studiul realizat in lucrarea "RoFormer: Enhanced Transformer with Rotary Position Embedding" \cite{su_roformer_2023-1} care isi propune sa optimizeze pozitia exacta a token-ului in secventa cu o matrice de rotatie in 
+  timp ce incorporeaza dependenta pozitiei relative in formula mecanismului de atentie, reusind astfel sa capteze informatii importante din secventa de intrare precum, lungimea secventei, relatiile intre tokens care se diminueaza pe masura ce distanta relativa dintre ei creste,
+  echipand astfel mecanismul de atentie cu o codare pozitionala relativa.
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics*[width=0.8\columnwidth]{figuri/roformer.png}
+    \caption{Principiul de baza pentru \ac{rope} \cite{su_roformer_2023-1}}
+    \label{fig:roformer}
+  \end{figure}
+
+  Imbunatatiri s-au adus si in partea de fine-tuning
+  \footnote{Fine tuning-ul este un procedeu prin care parametrii unui model sunt ajustati pentru eficienta sporita intr-un anumit domeniu.}
+  mai ales prin lucrarea LoRA: Low-Rank Adaptation of Large Language Models" \cite{huLoRALowRankAdaptation2021} care aduce imbunatatiri prin inghetarea ponderilor modelului
+  si injectarea unor matrici antrenabile de descompunere in fiecare strat al arhitecturii transformer, reducand numarul de parametrii antrenabili, reducand numarul acestor de pana la 10.000 de ori
+  si puterea de calcul necesara de 3 ori in comparatie cu fine-tuning-ul normal.
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics*[width=0.4\columnwidth]{figuri/lora.png}
+    \caption{Fine-tuning-ul se realizeaza doar pe A si B \cite{huLoRALowRankAdaptation2021}}
+    \label{fig:lora}
+  \end{figure}
+
+  Performanta a vazut de asemenea progrese, spre exemplu prin procedeul de decodare speculativa prezentata in articolul "Fast Inference from Transformers via Speculative Decoding" \cite{leviathanFastInferenceTransformers2023}
+  care ilustreaza problema timpului de inferenta
+  \footnote{Inferenta este procedeul prin care un model de limbaj ia datele de intrare, aplica transformarile necesare si produce un raspuns final.}
+  care continua sa creasca pe masura ce marimea modelelor creste si ea. Autorii propun un algoritm care sa permita livrarea mai multor tokeni in paralel. La baza lucrarii stau doua observatii funamentale:
+  (1) majoritatea sarcinilor abordate de modelele mari de limbaj pot fi scindate in obiective mai usoare care pot fi abordate de modele mai eficiente si (2) folosind executia speculativa si o noua metoda de esantionare, decodarea
+  poate fi accelerata rulandu-le in paralel pe baza iesirilor modelele mai eficiente ce aproximeaza pe cat de bine pot, generand mai multi tokeni simultan fara a modifica distributia.
+
+  Continuand incercarile de a eficientiza modelele mari de limbaj, a aparut intrebarea: "Daca marimea modelul incetineste antrenarea si inferenta, de ce nu cautam sa micsoram modelul?".
+  Astfel, au aparut procedeele de cuantizare
+  \footnote{Cuantizarea este reducerea tipului de date care stocheaza parametrii retelei. Spre exemplu daca in loc de 8 biti, stocam parametrii pe 4 biti, injumatatim amprenta modelului}
+  si distilare
+  \footnote{Distilarea este antrenarea unui model mai mic prin obiectivul reproducerii raspunsurilor modelului mai mare}. Problema distilarii este nevoia unui model superior care sa poarte rolul
+  de "invatator". Zhang si echipa sa de cercetatori documenteaza o alternativa a acestei metode prin procedeul de distilare proprie in lucrarea "Embarrassingly Simple Self-Distillation Improves Code Generation"
+  \cite{zhang_embarrassingly_2026-2} prin esantionarea cu anumite valori ale temperaturii 
+  \footnote{Temperatura este o setare pentru modelele de limbaj care controleaza "creativitatea" modelului. O temperatura mica (spre exemplu 0) obliga modelul sa scoata la iesirea sa 
+  cel mai probabil token posibil, pe cand o temperatura mare (spre exemplu 0.9), permite modelului sa aleaga un alt token probabil.}
+  si configuratii ale trunchierii, in final executand fine-tuning supervizat
+  \footnote{Supervizarea se refera la abilitatea modelului de a folosi exemple etichetate corect de oameni in prealabil pentru antrenare. Antrenarea supervizata nu include raspunsurile corecte, iar modelul trebuie sa descopere singur tiparele ce reprezinta raspunsul corect}
+  pe acele esantioane. 
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics*[width=0.8\columnwidth]{figuri/embarr1.png}
+    \caption{Rezultatele procesului de Simple Self Distillation \cite{zhang_embarrassingly_2026-2}}
+    \label{fig:embarr1}
+  \end{figure}
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics*[width=0.8\columnwidth]{figuri/embarr3.png}
+    \caption{Imbunatatiri in sarcini de programare ale modelelor dupa ce au fost supuse procesului de Simple Self Distillation\cite{zhang_embarrassingly_2026-2}}
+    \label{fig:embarr3}
+  \end{figure}
+
+  Pe de alta parte, problema cuantizarii este dezbatuta in lucrarea "TurboQuant: Online Vector Quantization with Near-optimal Distortion Rate" \cite{zandieh_turboquant_2025-2} ce isi propune sa cuantizeze vectori multi-dimensionali fara distorsiuni majore ale datelor.
+  Acest lucru este posibil prin transformari ale vectorilor de intrare, precum rotatii aleatoare inducand o distributie "Beta" si folosindu-se de independenta aproximativa ale 
+  coordonatelor distrincte in vectorii multi-dimensionali. Se reuseste astfel minimizarea memoriei necesare, a timpului de inferente si a latimii de banda necesare pentru
+  rularea modelului prin reducerea preciziei numerice. Acesta este eficient si in cazul ponderilor modelului, dar este foarte important si in
+  cache-ul \ac{kv} deoarece permite rularea modelelor cu ferestre de context
+  \footnote{Contextul se refera la} 
+  lungi, optimizand necesitatile de memorie. Odata cu aceasta descoperire, au venit adaptari ale procedeelor anterioare, precum LoRA \cite{huLoRALowRankAdaptation2021} in cazul modelelor cuantizate.
+  O astfel de lucrare este "QLoRA: Efficient Finetuning of Quantized LLMs" \cite{dettmersQLoRAEfficientFinetuning2023} care isi propune sa imbunatateascsa fine-tuning-ul pentru modele cuantizate.
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics*[width=0.8\columnwidth]{figuri/qlora.png}
+    \caption{Comparatia procedeelor de fine-tuning: fine-tuning clasic vs LoRA vs QLoRA \cite{dettmersQLoRAEfficientFinetuning2023}}
+    \label{fig:qlora}
+  \end{figure}
+
+  Pe langa optimizarile aduse arhitecturii transformer, o buna parte din evolutia gandirii adanci se bazeaza pe procedeul de \ac{rl}. Pe scurt, modelul este recompensat
+  mai mult sau mai putin in functie de raspunsurile pe care le da, iar obiectivul sau este sa fie recompensat cat mai mult. Raspunsurile care prezinta gandire, mai exact \ac{cot} sunt recompensate
+  mai mult decat cele ce nu prezinta aceasta particularitate, iar raspunsurile gresite, care nu sunt fundamentate sau contin fraze nedorite sunt penalizate. In felul acesta, modelele invata sa prefere
+  sa scoata date de iesire care prezinta particularitati ale gandirii, care duc in final la raspunsuri mai logice si capabilitatea de a rezolva probleme mai complexe, avand in vedere functionarea decodorului din transformer
+  care genereaza pas cu pas, in functie de pasii anteriori. In lucrarea "HARDTESTGEN: A High-Quality RL Verifier Generation Pipeline for LLM Algorithimic Coding" \cite{heHARDTESTGENHighQualityRL2025}, de exemplu e discutata importanta
+  \ac{rl} si a modalitatii de a avea semnale mai bune de recompensa pentru aplicatii de programare prin generarea de cazuri de test complexe, pe care verificatorul le evalueaza si recompenseaza modelul
+  in functie de raspunsul dat.
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics*[width=0.8\columnwidth]{figuri/ouyang.png}
+    \caption{Ilustrarea procedeului de \ac{rl} \cite{ouyangTrainingLanguageModels2022}}
+    \label{fig:ouyang}
+  \end{figure}
+
+  In final, o alta latura care a beneficiat de atentie sporita este prompt-ul 
+  \footnote{Prompt-ul este reprezentat de datele de intrare ale modelelor de limbaj, instructiunile pentru care trebuie sa produca un raspuns la iesire}
+  pe care il primeste modelul. Modelele de limbaj, fiind autoregresive adica generand date de iesire pe baza datelor anterioare sunt dependente de un prompt bine gandit care
+  maximizeaza contextul pe care il are modelul si care ii impune limite si directive pe care sa le respecte. Importanta acestui prompt fiind accentuata si de o noua arie de specializare,
+  de "Prompt Engineering" ce presupune constructia unor prompt-uri eficiente, lucru ilustrat in lucrarea "The Prompt Report: A Systematic Survey of Prompt Engineering Techniques" \cite{schulhoffPromptReportSystematic2025}.
+  
+  Avand in vedere nevoia de prompt-uri ce produc rezultate consistente si versionabile, echipa condusa de Khattab a publicat lucrarea "DSPy: Compiling Declarative Language Model Calls into State-of-the-Art Pipelines" \cite{khattabDSPyCompilingDeclarative2023}, 
+  ce propune o abordare sistematica pentru a crea si optimiza prompt-uri. Au introdus astfel un model de programare ce abstractizeaza aceste prompt-uri prin grafuri de transformari textuale sau grafuri
+  computationale imperative si un compilator care functioneaza cu acest nou limbaj, rezultatele fiind instructiuni optimizate ce intrec performantele prompt-urilor scrise de mana.
+
   \section{Solutii agentice pentru industria dezvoltarii software}
 
   Arhitecturile agentice presupun inzestrarea modelelor mari de limbaj cu uneltele necesare interactionarii cu ecosistemul in care ruleaza.
-  Odata cu implementarea procedeului "Chain of Thought" \cite{weiChainofThoughtPromptingElicits2022} care permite navigarea problemelor complexe de catre un model de limbaj, 
-  generarea de planuri si cu abordarea ReAct \cite{yaoReActSynergizingReasoning2022} care impreuna incearca sa combata fenomenul halucinatiilor
+  Fundamentul acestor arhitecturi a fost pus de procedeul \ac{cot} \cite{weiChainofThoughtPromptingElicits2022}, precedat mai tarziu de \ac{tot} \cite{yaoTreeThoughtsDeliberate2023} care a demonstrat ca un model de limbaj poate naviga
+  probleme complexe prin descompunerea rationamentului in pasi intermediari expliciti. Aceasta tehnica a deschis calea catre generarea de planuri structurate,
+  iar Wang si colaboratorii sai au extins aceasta idee prin metoda Plan-and-Solve \cite{wangPlanandSolvePromptingImproving2023}, in care modelul este instruit
+  sa conceapa mai intai un plan de actiune ce divide sarcina in sub-obiective mai mici, iar apoi sa le execute conform planului stabilit. Abordarea a reusit
+  sa elimine erorile de pasi lipsa frecvente in \ac{cot} clasic, obtinand performante comparabile cu promptarea few-shot pe probleme de rationament matematic,
+  fara a necesita exemple manuale.
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics*[width=0.8\columnwidth]{figuri/cot.png}
+    \caption{Exemple de \ac{cot} \cite{weiChainofThoughtPromptingElicits2022}}
+    \label{fig:chainthoughts}
+  \end{figure}
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics*[width=0.8\columnwidth]{figuri/tot.png}
+    \caption{Diferenta intre procedee de gandire \cite{yaoTreeThoughtsDeliberate2023}}
+    \label{fig:treethoughts}
+  \end{figure}
+
+
+  Mai tarziu, abordarea ReAct \cite{yaoReActSynergizingReasoning2022} a combinat rationamentul cu actiunea, permitand modelului sa alterneze intre
+  generarea de ganduri intermediare si executia de actiuni concrete in mediul extern. Aceasta sinergie intre gandire si actiune a incercat sa combata
+  fenomenul halucinatiilor
   \footnote{Fenomenul de halucinatii in modelele de limbaj se refera la generarea unor raspunsuri care nu sunt ancorate in fapte reale sau care nu au legatura
   cu prompt-ul de intrare}
-  si inconsistenta in raspunsuri cu care se confruntau primele modele mari de limbaj.
+  si inconsistenta in raspunsuri cu care se confruntau primele modele mari de limbaj. Totusi, paradigma ReAct presupunea o intercalare costisitoare
+  intre rationament si observatii: modelul genera un gand, apela o unealta, astepta raspunsul, apoi decidea urmatoarea actiune pe baza tuturor token-urilor
+  anterioare. 
 
-  Increderea in procesul de gandire al modelelor de inteligenta artificiala s-a cimentat, incepand sa produca rezultate consistente, iar astfel
-  a urmat inzestrarea acestora cu unelte care sa le permita interactiunea cu mediul in care ruleaza. Numarul uneltelor ce le ofera
+  \begin{figure}[H]
+    \centering
+    \includegraphics*[width=0.8\columnwidth]{figuri/react.png}
+    \caption{Paradigma ReAct \cite{yaoReActSynergizingReasoning2022}}
+    \label{fig:react1}
+  \end{figure}
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics*[width=0.8\columnwidth]{figuri/react2.png}
+    \caption{Imbunatatirile pe care le aduce ReAct \cite{yaoReActSynergizingReasoning2022}}
+    \label{fig:react2}
+  \end{figure}
+  
+  Xu si colaboratorii sai au identificat aceasta ineficienta si au propus arhitectura ReWOO \cite{xuReWOODecouplingReasoning2023} care decupleaza
+  complet procesul de rationament de observatiile externe. In loc sa astepte raspunsul fiecarei unelte inainte de a planifica urmatorul pas, modelul genereaza
+  intregul plan de actiuni dintr-o singura trecere, iar observatiile sunt colectate independent si integrate ulterior. Aceasta separare a redus consumul de tokeni
+  de pana la 5 ori si a imbunatatit acuratetea cu 4\% pe benchmark-ul HotpotQA, demonstrand totodata robustete crescuta in scenarii de esec al uneltelor.
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics*[width=0.8\columnwidth]{figuri/rewoo.png}
+    \caption{Ideea din spatele ReWOO \cite{xuReWOODecouplingReasoning2023}}
+    \label{fig:rewoo1}
+  \end{figure}
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics*[width=0.6\columnwidth]{figuri/rewoo2.png}
+    \caption{Comparatia de performante intre paradigme pentru imbunatatirea gandirii din punctul de vedere
+    al acuratetii vs. numarul de tokeni consumati \cite{xuReWOODecouplingReasoning2023}}
+    \label{fig:rewoo2}
+  \end{figure}
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics*[width=0.8\columnwidth]{figuri/rewoo3.png}
+    \caption{Imbunatatirea adusa de ReWOO este delegarea mai multor libertati catre worker ce poate apela mai multe unelte pana sa produca un raspuns. P = Plan, E = Evidence, A = Answer, O = Observation, A = Act, T = Thought \cite{xuReWOODecouplingReasoning2023}}
+    \label{fig:rewoo3}
+  \end{figure}
+
+  Increderea in procesul de gandire al modelelor de inteligenta artificiala s-a cimentat pe masura ce aceste tehnici au inceput sa produca rezultate consistente,
+  iar astfel a urmat inzestrarea acestora cu unelte care sa le permita interactiunea cu mediul in care ruleaza. Numarul uneltelor ce le ofera
   capabilitatea de a cauta pe internet pentru a gasi date actuale si a nu se limita la datele de antrenare, la posibilitatea
   rularii de comenzi in terminalul sistemului de operare sau chiar preluarea controlului browserului personal pentru automatizari,
   a crescut exponential, si odata cu el si numarul de aplicatii ale acestor modele.
 
-  Industria dezvoltarii software are probabil una din cele mai profitabile intrebuintari datorita volumului masiv de munca existent in domeniu, asa ca
-  nu a durat mult pana ce marii jucatori pe piata modelelor de \ac{ia} au inceput sa ofere produse care sa asiste programatorii in sarcinile lor. La momentul actual
-  exista mai multe solutii competitive: Codex de la OpenAI, Gemini CLI de la Google sau Claude Caude de la Anthropic. Toate acestea sunt solutii proprietare
-  care sunt facute sa ruleze cu modelele proprii si pentru care utilizatorul trebuie sa plateasca. Exista si solutii open-source precum
-  precum OpenCode, Kiro sau OpenClaw cu care detinatorii de modele se lupta pentru a domina piata, desi lupta nu este stransa din cauza monopolului
-  solutiilor proprietare.
+  Cu toate acestea, pe masura ce agentii au inceput sa proceseze cantitati din ce in ce mai mari de informatii din mediul in care opereaza, fereastra de context
+  a devenit o limitare critica. Desi, multe modele sunt promovate ca avand o fereastra de context maxima de 1 milion de tokeni precum
+  Opus 4.7 de la Anthropic sau GPT-5.5 de la OpenAI, modelele se lovesc de anumite limitari in a accesa tot acel context. Liu si colaboratorii sai au demonstrat in lucrarea "Lost in the Middle" \cite{liuLostMiddleHow2024} ca performanta modelelor
+  de limbaj se degradeaza semnificativ atunci cand informatia relevanta se afla in mijlocul unui context lung. Modelele tind sa utilizeze eficient informatiile
+  de la inceputul si de la sfarsitul secventei de intrare, dar pierd din vedere elementele plasate in zona centrala, chiar si in cazul modelelor concepute
+  explicit pentru contexte lungi. Aceasta descoperire are implicatii directe asupra agentilor care acumuleaza istoricul conversatiei, apelurile la unelte
+  si observatiile intr-un context tot mai voluminos.
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics*[width=0.4\columnwidth]{figuri/lost_middle.png}
+    \caption{Modele tind sa aiba o acuratete foarte slaba contra intrebarilor ce vizeaza informatii care se afla la mijlocul ferestrei curente de context \cite{liuLostMiddleHow2024}}
+    \label{fig:lostmiddle}
+  \end{figure}
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics*[width=0.8\columnwidth]{figuri/lost_middle2.png}
+    \caption{Vizualizarea problemei si al rezultatului dorit la intrebare. De multe ori, modelele intampina dificultati in accesarea acestor informatii ascunse in mijlocul ferestrei de context \cite{liuLostMiddleHow2024}}
+    \label{fig:lostmiddle2}
+  \end{figure}
+
+  Pentru a evalua riguros aceste limitari, Vodrahalli si echipa sa au propus framework-ul Michelangelo \cite{vodrahalli_michelangelo_2024}, o metoda de evaluare
+  sintetica si minimala care depaseste testele clasice de tip 'needle-in-a-haystack'. In loc sa masoare doar capacitatea de a regasi o singura informatie dintr-un
+  context lung, Michelangelo testeaza abilitatea modelului de a sintetiza si corecta informatii dispersate, relevand o structura latenta din datele de intrare.
+  Rezultatele au confirmat ca exista un spatiu semnificativ de imbunatatire in procesarea informatiei din contexte lungi, chiar si pentru modelele de ultima generatie.
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics*[width=0.8\columnwidth]{figuri/michelangelo.png}
+    \caption{In majoritatea modelelor se observa o scadere a performantelor dupa 32K tokeni pe sarcini de gandire complexa\cite{vodrahalli_michelangelo_2024}}
+    \label{fig:michelangelo}
+  \end{figure}
+
+  Din punct de vedere al eficientei computationale, Li si colaboratorii sai au propus LycheeCluster \cite{liLycheeClusterEfficientLongContext2026}, o metoda
+  de gestionare a cache-ului \ac{kv} care pastreaza coerenta semantica locala prin fragmentare bazata pe delimitatori si construieste un index ierarhic recursiv.
+  Aceasta abordare transforma cautarea in cache dintr-o scanare liniara intr-un proces de eliminare in timp logaritmic, obtinand o accelerare de pana la 3.6 ori
+  a inferentei cu o degradare neglijabila a performantelor modelului. Pentru aplicatiile agentice care implica conversatii lungi cu apeluri frecvente la unelte,
+  astfel de optimizari sunt esentiale pentru a mentine latenta scazuta si costurile sub control.
+
+  Industria dezvoltarii software are probabil una din cele mai profitabile intrebuintari ale acestor arhitecturi agentice, datorita volumului masiv de munca existent
+  in domeniu, asa ca nu a durat mult pana ce marii jucatori pe piata modelelor de \ac{ia} au inceput sa ofere produse care sa asiste programatorii in sarcinile lor.
+  La momentul actual exista mai multe solutii competitive: Codex de la OpenAI, Gemini CLI de la Google sau Claude Code de la Anthropic. Toate acestea sunt solutii
+  proprietare care sunt facute sa ruleze cu modelele proprii si pentru care utilizatorul trebuie sa plateasca. Exista si solutii open-source precum OpenCode, Kiro
+  sau OpenClaw cu care detinatorii de modele se lupta pentru a domina piata, desi lupta nu este stransa din cauza monopolului solutiilor proprietare.
 
   \begin{table}[htbp]
     \centering
@@ -402,14 +707,18 @@
         \textbf{Companie} & \textbf{Model} & \textbf{Pret [\$/MTok]} & \textbf{Capabilitati} \\
         \hline
 
-        \textbf{Anthropic (\href{https://platform.claude.com/docs/en/about-claude/models/overview}{link})} & Claude Opus 4.6 & \$5/input MTok, \$25/output MTok & Lent, cel mai inteligent, gandire adaptiva, 1M fereastra de context, 128k tokens max. la iesire \\
+        \textbf{Anthropic (\href{https://platform.claude.com/docs/en/about-claude/models/overview}{link})} & Claude Opus 4.7 & \$5/input MTok, \$25/output MTok & Cel mai capabil model disponibil, imbunatatire semnificativa pentru programare agentica fata de 4.6, gandire adaptiva, 1M fereastra de context, 128k tokens max. la iesire \\
+        \hline
+        & Claude Opus 4.6 & \$5/input MTok, \$25/output MTok & Lent, cel mai inteligent, gandire adaptiva, 1M fereastra de context, 128k tokens max. la iesire \\
         \hline
         & Claude Sonnet 4.6 & \$3/input MTok, \$15/output MTok & Mai rapid, compromite niste inteligenta pentru performante, gandire adaptiva, 1M fereastra de context, 64k tokens max. la iesire \\
         \hline
         & Claude Haiku & \$1/input MTok, \$5/output MTok & Cel mai rapid, fara gandire adaptiva, 200k fereastra de context, 64k tokens max. la iesire \\
         \hline
 
-        \textbf{OpenAI (\href{https://developers.openai.com/api/docs/models}{link})} & gpt-5.4 & \$2.5/input MTok, \$15/output MTok & Cel mai inteligent pentru sarcini agentice, de programare si profesionale. 1M fereastra de context si 128k tokens max. la iesire \\
+        \textbf{OpenAI (\href{https://developers.openai.com/api/docs/models}{link})} & gpt-5.5 & \$5/input MTok, \$30/output MTok & Noua clasa de inteligenta pentru programare si munca profesionala, gandire adaptiva cu niveluri multiple de efort (low/medium/high/xhigh), suport multimodal, 1M fereastra de context si 128k tokens max. la iesire \\
+        \hline
+        & gpt-5.4 & \$2.5/input MTok, \$15/output MTok & Cel mai inteligent pentru sarcini agentice, de programare si profesionale. 1M fereastra de context si 128k tokens max. la iesire \\
         \hline
         & gpt-5.4-mini & \$0.75/input MTok, \$4.5/output MTok & Model mai mic, rapid dar puternic pentru programare si subagenti. 400k fereastra de context si 128k tokens max. la iesire \\
         \hline
@@ -425,18 +734,28 @@
         & Gemma 4 & Open Source & Familie de modele open-source pentru rulare locala, cost redus si personalizare \\
         \hline
 
-        \textbf{DeepSeek (\href{https://api-docs.deepseek.com/quick_start/pricing}{link})} & Deepseek Chat 3.2 & \$0.028 sau \$0.28/input MTok, \$0.42/output MTok & Mod fara gandire adanca, 128k fereastra de context, max. out token: 8k \\
+        \textbf{DeepSeek (\href{https://api-docs.deepseek.com/quick_start/pricing}{link})} & DeepSeek V4 & \$0.30/input MTok, \$0.50/output MTok & Model general de ultima generatie, suporta mod cu si fara gandire adanca, 1M fereastra de context, cache hit: \$0.03/input MTok \\
         \hline
-        & Deepseek Reasoner 3.2 & \$0.028 sau \$0.28/input MTok, \$0.42/output MTok & Mod cu gandire adanca, 128k fereastra de context, max. out token: 64k \\
+        & DeepSeek R1 & \$0.55/input MTok, \$2.19/output MTok & Model specializat in rationament si gandire adanca pentru probleme complexe, 128k fereastra de context, cache hit: \$0.14/input MTok \\
         \hline
 
         \textbf{Meta (\href{https://www.llama.com/docs/model-cards-and-prompt-formats/llama4/}{link})} & Llama 4 & Open Source & Performante similare cu GPT4-o sau Gemini 2.0 Flash, dar open-source. Fereastra de context 10M/1M in functie de model.\\
         \hline
 
+        \textbf{Qwen/Alibaba (\href{https://huggingface.co/Qwen}{link})} & Qwen 3 & Open Source & Familie de modele open-source (Apache 2.0) cu arhitectura hibrida MoE, gandire adaptiva activabila, performante frontier la programare si rationament. Disponibil in variante de 0.6B pana la 235B parametri \\
+        \hline
+        & Qwen 3.6 Plus & \$0.325/input MTok, \$1.95/output MTok & Varianta API proprietara (Alibaba Cloud), arhitectura hibrida MoE cu atentie liniara, gandire adaptiva, 1M fereastra de context, 64k tokens max. la iesire \\
+        \hline
+
+        \textbf{Mistral AI (\href{https://docs.mistral.ai/getting-started/models/models_overview/}{link})} & Mistral Large 3 & \$0.50/input MTok, \$1.50/output MTok & Cel mai capabil model Mistral, open-weight, multimodal, performante de nivel frontier. 262k fereastra de context \\
+        \hline
+        & Mixtral 8x22B & Open Source & Model Mixture-of-Experts open-source (Apache 2.0), 8 experti de 22B parametri fiecare, disponibil pentru rulare locala sau prin API. 66k fereastra de context \\
+        \hline
+
 
       \hline
     \end{tabularx}
-    \caption{Comparatia modelelor existente si a capabilitatilor acestora}
+    \caption{Comparatia catorva din modelele existente si a capabilitatile acestora in comparatie cu pretul de utilizare}
     \label{tab:modele_ia}
     \par\vspace{0.3cm}
     {\small \textit{Nota:} Toate modelele au si versiuni pentru diferite nivele de efort pentru gandire (reasoning effort) sau pentru date multimodale ce pot influenta si costul dar si rezultatele}
@@ -444,9 +763,17 @@
 
   \newpage
 
-  Din punct de vedere al puterii de rezolvare ale sarcinilor reale din industria dezvoltarii software, clasamentul celor mai bune modele
+  Din tabelul \ref{tab:modele_ia} se poate deduce ca utilizarea frecventa a unui model de ultima generatie poate ajunge cu usurinta sa coste o mica avere.
+  Cu o mica aproximare, 200.000 de tokens sunt echivalentul unei carti de 400 de pagini. Dar contorizarea nu este facuta doar pentru instructiunile originale. Intr-o conversatie cu un model de limbaj
+  fiecare pereche raspund-intrebare din istoricul conversatiei respective este introdus ca date de intrare pentru urmatorul prompt pe care utilizatorul il introduce. Astfel, in loc de cativa tokeni de intrare,
+  intr-o conversatie lunga cu un istoric dezvoltat, costul de intretinere al conversatiei creste exponential.
+
+  De asemenea, fiecare apel catre unelte externe precum cautarile web, raman in istoricul conversatiei pentru ca modelul sa aiba context in query-urile ulterioare. Fiecare dintre aceste apeluri la unelte
+  consuma o buna parte din fereastra de context a modelului, crescand costul.
+
+  Din punct de vedere al capabilitatii de rezolvare a sarcinilor reale din industria dezvoltarii software, clasamentul celor mai bune modele
   se schimba frecvent. Utilizand SWE-Bench Pro \cite{dengSWEBenchProCan2025}, putem masura puterea de abordare a acestor modele de top contra
-  unor probleme reale.
+  unor sarcini complexe.
 
   \begin{figure}[htbp]
     \centering
@@ -456,11 +783,10 @@
   \end{figure}
 
   Pe langa puterea de rezolvare, un alt fenomen a aparut care schimba rata de adoptie a unui model: costul. Desi performantele modelelor cresc si acestea
-  sunt din ce in ce mai integrate in vietile noastre de zi cu zi, asemenea telefoanelor mobile, costurile de rulare ale acestor modele creste si el.
+  sunt din ce in ce mai integrate in vietile noastre de zi cu zi, asemenea telefoanelor mobile, costul de rulare al acestor modele creste si el.
   Cele mai puternice modele au nevoie de foarte multe resurse pentru antrenare dar si pentru inferenta. Acest lucru se reflecta asupra
   utilizatorului final care trebuie sa plateasca per-token
-  \footnote{Token-ul este un cuvant sau o parte din cuvant si este elementul fundamental procesat de modelele mari de limbaj}
-  sau un abonament lunar care include un numar limitat de tokens. Modelele cu capacitati de gandire adanca, pe langa faptul ca au un cost mai mare per-token,
+  sau un abonament lunar care include un numar limitat de tokeni. Modelele cu capacitati de gandire adanca, pe langa faptul ca au un cost mai mare per-token,
   consuma si mai multi tokeni din cauza gandirii dezvoltate sau a ferestrei de context mari, ridicand si mai mult costurile. Pentru asta, fiecare detinator de modele
   fundationale, are mai multe versiuni ale aceluiasi model, pentru intrebuintari de diverse complexitati, pentru a ajuta cu
   costurile dar si cu balansarea resurselor. Spre exemplu Google detine modelele din gama Gemini, cu versiunile "Flash", "Thinking",
@@ -501,14 +827,21 @@
   agentilor. Exista multe tehnici de optimizare a acestui context de la compresie, realizarea unor fisiere ce rezuma cunostiintele actuale si inceperea unei
   conversatii noi care pleaca de la acel rezumat pana la rularea de cod pentru actiuni repetitive sau alegerea cu grija a prompt-ului. Dar din pacate toate aceste tehnici nu sunt de ajuns. Multe functionalitati
   care fac un agent suficient de performant, precum tool-urile sau \ac{rag} \cite{lewisRetrievalAugmentedGenerationKnowledgeIntensive2020} reusesc sa consume rapid aceasta fereastra de context.
-  Poate 200.000 de tokeni pot parea un numar mare, dar defapt chiar si acest numar, precum la memoria hardware este defapt mai mic. Din aceasta fereastra doar ~160.000 de tokens sunt disponibili cu adevarat. O parte
+  Poate 200.000 de tokeni pot parea un numar mare, dar defapt chiar si acest numar similar cu memoria hardware este defapt mai mic. Din aceasta fereastra doar ~160.000 de tokens sunt disponibili cu adevarat. O parte
   din ei sunt rezervati pentru auto-compactare sau pentru iesire. Depasirea acestei ferestre de context scade astfel performantele agentului si se recomanda inceperea unei
   conversatii noi.
 
-  In al doilea rand, modelele curente par sa genereze date de iesire mai detaliate decat este necesar, preferand calitatea peste cantitate. De multe ori in
-  sarcini de tipul "PR Review", agentii se grabesc sa relateze multe probleme simple sau de formatare si rateaza probleme de logica.
+  \begin{figure}[htbp]
+    \centering
+    \includegraphics*[width=0.8\columnwidth]{figuri/context.png}
+    \caption{Reprezentarea ferestrei de context intr-o conversatie uzuala (\href{https://platform.claude.com/docs/en/build-with-claude/context-windows}{sursa})}
+    \label{fig:context_window}
+  \end{figure}
 
-  In al treilea mod, similar cu punctul anterior, agentii nu au o buna intelegere legata de cand ar trebui sa opreasca investigatiile sau sa incerce alte solutii si raman
+  In al doilea rand, modelele curente par sa genereze date de iesire mai detaliate decat este necesar, preferand cantitatea peste calitate. De multe ori in
+  sarcini de tipul "PR Review", agentii se grabesc sa relateze multe probleme simple sau de formatare si rateaza probleme importante de logica.
+
+  In al treilea rand, similar cu punctul anterior, agentii nu au o buna intelegere legata de cand ar trebui sa opreasca investigatiile sau sa incerce alte solutii si raman
   blocati in bucle infinite de a incerca aceleasi lucruri si a esua.
 
   Pentru toate aceste probleme se lucreaza in mod curent la rezolvari de care vom vorbi ulterior.
@@ -557,8 +890,8 @@
   \end{table}
 
   In final am ales sa folosesc LangGraph datorita controlului mare pe care il ofera asupra desfasurarii workflow-ului agentic si a integrarii cu LangSmith
-  \footnote{Unealta de observabilitate integrata cu LangGraph si nu numai} si LangFuse
-  \footnote{Unealta de observabilitate similara cu LangSmith dar open-source} dar si pentru compatibilitatea cu logica desfasurarii procesului de asistenta in dezvoltarea software, respectiv
+  \footnote{Unealta de observabilitate open-source pentru agenti}
+  dar si pentru compatibilitatea cu logica desfasurarii procesului de asistenta in dezvoltarea software, respectiv
   buclele de scriere de cod, feedback, investigare si imbunatatire, in ciuda complexitatii mai mari pe care o constituie acest framework.
   
   \newpage
@@ -610,13 +943,232 @@
 
   \newpage
 
-  Initial, am ales sa folosesc abordarea cu Textual pentru ca ofera un sistem de layout foarte puternic, care poate fi folosit pentru a construi o interfata complexa, 
-  cu panouri laterale, tab-uri si meniuri. Insa, in timpul implementarii a trebuit sa abandonez aceasta idee deoarece am intampinat anumite probleme pe care o sa le dezvoltam
-  in capitolul de implementare.
+  Initial, abordarea cu Textual parea corecta pentru ca ofera un sistem de layout foarte puternic care poate fi folosit pentru a construi o interfata complexa
+  cu panouri laterale si meniuri. Insa, in timpul implementarii a trebuit sa abandonez aceasta idee deoarece am intampinat probleme cu comportamentul interfetei in cadrul
+  unei conversatii mai lungi cu elemente animate, pe care o sa le dezvoltam in capitolul de implementare.
 
   Astfel, am finalizat lista alegerilor arhitecturale principale, vom motiva si restul alegerilor punctual, pe parcursul implementarii.
 
-\chapter{IMPLEMENTARE}
+\chapter{PLASAREA IN INDUSTRIE}
+
+  In acest capitol vom aborda problematica plasarii proiectului in industrie si alegerile pe care le-am facut pentru a propune
+  un produs competitiv.
+
+  \section{Open source software}
+
+  Momentan, cea mai mare cota de piata o au furnizorii de modele mari de limbaj precum Anthropic, Google sau OpenAI care
+  lanseaza aplicatii care au ca obiectiv blocarea utilizatorilor in ecosistemul lor personal, prin unelte ce urmaresc domenii diverse.
+
+  \begin{table}[h!]
+  \centering
+  \scriptsize
+  \setlength{\tabcolsep}{4pt}
+  \renewcommand{\arraystretch}{1.5}
+  \caption{Produse AI ale principalilor furnizori de modele de limbaj}
+  \vspace{2mm}
+    \begin{tabularx}{\textwidth}{@{} >{\hsize=0.55\hsize\RaggedRight}X >{\hsize=0.75\hsize\RaggedRight}X >{\hsize=1.3\hsize\RaggedRight}X >{\hsize=0.7\hsize\RaggedRight}X >{\hsize=0.7\hsize\RaggedRight}X @{}}
+      \toprule
+      \textbf{Companie} & \textbf{Produs} & \textbf{Descriere} & \textbf{Audienta} & \textbf{Pret} \\
+      \midrule
+
+      \textbf{Anthropic} & Claude (web/app) & Asistent AI conversational pentru analiza, scriere, programare si rationament, cu suport multimodal si artefacte interactive & Utilizatori generali, profesionisti & Freemium (Pro: \$20/luna, Max: \$100--200/luna) \\
+      \cmidrule(l){2-5}
+      & Claude Code & Agent de programare agentic care ruleaza in terminal, IDE sau Slack; poate naviga coduri mari, crea PR-uri si rula teste automat & Dezvoltatori software & Inclus in Pro/Max (API: cost per token) \\
+      \cmidrule(l){2-5}
+      & Claude Cowork & Agent agentic de productivitate care lucreaza cu fisiere locale si aplicatii cloud (Slack, Google Drive) pentru a automatiza sarcini recurente & Profesionisti, echipe & Inclus in Pro/Max \\
+      \cmidrule(l){2-5}
+      & Claude Design & Instrument de prototipare vizuala integrat in Claude, care genereaza interfete UI interactive si mockup-uri pe baza descrierilor in limbaj natural & Designeri, dezvoltatori & Inclus in Pro/Max \\
+
+      \midrule
+
+      \textbf{Google} & Gemini (web/app) & Asistent AI conversational multimodal cu acces la cautare Google, extensii si generare de imagini; disponibil pe web, Android si iOS & Utilizatori generali & Freemium (Advanced: \$19.99/luna in Google One AI Premium) \\
+      \cmidrule(l){2-5}
+      & Gemini CLI & Agent de programare open-source (Apache 2.0) care ruleaza in terminal, cu suport MCP, cautare Google si context de 1M tokeni & Dezvoltatori software & Gratuit (60 req/min, 1000 req/zi cu cont Google) \\
+      \cmidrule(l){2-5}
+      & NotebookLM & Asistent de cercetare alimentat de Gemini care analizeaza documente incarcate (PDF, site-uri, video-uri) si genereaza rezumate, podcast-uri audio si conexiuni intre surse & Cercetatori, studenti & Gratuit (Plus: \$7.99/luna, Business: contact) \\
+      \cmidrule(l){2-5}
+      & Vertex AI & Platforma enterprise pentru constructia, antrenarea si implementarea de agenti AI si modele ML, cu acces la 200+ modele si instrumente MLOps & Echipe enterprise, ingineri ML & Platit (pay-as-you-go, de la \$0.0001 per operatie) \\
+      \cmidrule(l){2-5}
+      & Firebase Studio & Mediu de dezvoltare cloud (IDE) cu agenti AI integrati pentru constructia de aplicatii full-stack (backend, frontend, mobil) direct din browser & Dezvoltatori software & Gratuit in previzualizare (3 workspace-uri; se inchide in 2027) \\
+
+      \midrule
+
+      \textbf{OpenAI} & ChatGPT (web/app) & Asistent AI conversational cu suport multimodal, cautare web, generare de imagini, analiza de date si plugin-uri; disponibil pe web, iOS, Android si desktop & Utilizatori generali, profesionisti & Freemium (Plus: \$20/luna, Pro: \$200/luna) \\
+      \cmidrule(l){2-5}
+      & Codex & Agent de inginerie software cloud care executa sarcini de programare in paralel, in sandbox-uri izolate preincarcate cu codul din repository-ul GitHub & Dezvoltatori software, echipe & Inclus in ChatGPT Pro/Business/Enterprise (API: \$1.50/\$6 per MTok) \\
+
+      \midrule
+
+      \textbf{Microsoft/ GitHub} & GitHub Copilot & Agent de programare integrat in GitHub si disponibil ca aplicatie CLI, extensie IDE (VS Code, JetBrains) si in github.com; ofera completare de cod, chat, revizuire PR-uri si rezolvare automata de issue-uri & Dezvoltatori software, echipe & Freemium (gratuit pentru repo-uri publice; Pro: \$10/luna, Business: \$19/luna, Enterprise: \$39/luna) \\
+
+      \bottomrule
+    \end{tabularx}
+  \label{tab:produse_ai}
+  \end{table}
+
+  In timp ce exista si alternative open source, acestea se lovesc de problemele tipice pentru astfel de programe.
+  Pentru inceput, companiile ce furnizeaza accesul la aceste modele au tarife diferentiale pentru utilizarea cheilor \ac{api} in astfel de programe
+  si orice incercare de a insela sistemul poate rezulta in restrictionarea accesului la platformele furnizorilor.
+
+  De asemenea, o alta problema intampinata de platformele open source sunt lipsa fondurilor sau numarul mic de contribuitori, suportul pentru
+  suita intreaga de functionalitati a programelor detinute de marile firme sau publicitate.
+
+  In ciuda acestor dificultati, avand in vedere cresterea vertiginioasa a costurilor, faptul ca accesul la program este gratuit este un mare plus
+  pentru utilizatori. Un alt avantaj este suportul pentru modele de limbaj open source. Acestea sunt foarte usor de folosit chiar pe calculatorul utilizatorului
+  daca detine componente hardware suficiente pentru modelul ales, reducand costurile si mai mult. Desi si pentru solutiile proprietare se pot face ajustari
+  care sa permita folosirea modelelor open source, este preferat un program a carui scop este o platforma agnostica de furnizor.
+
+  \section{Flux agentic ce ruleaza local}
+
+  Un alt plus este confidentialitatea datelor si controlul asupra aplicatiei. Toate datele raman pe dispozitivul sau serverul utilizatorului (exceptand cazurile
+  in care acesta alege explicit sa foloseasca modele de la furnizori si nu modele open source). Acesta ofera un mare avantaj pentru domenii in care se lucreaza
+  cu date importante sau care necesita o confidentialitate ridicata. 
+
+  Toate fisierele de configuratie sunt disponibile local si au o sumedenie de setari pe care utilizatorul
+  le poate modifica dupa bunul plac.
+
+  Ruland aplicatia local, agentul are acces direct la mediul de lucru si astfel are context despre sarcinile pe care trebuie sa le execute. Mai mult, 
+  este eliminata necesitatea interventiei umane (pe langa actiunile periculoase ce necesita permisiuni speciale). Acesta poate executa actiuni si prelua controlul asupra dispozitivului, permitand astfel
+  automatizari complexe, recurente sau care ruleaza o singura data, usurand sarcini repetitive salvand astfel foarte mult timp utilizatorului.
+
+  Actiunile pe care le poate rula un agent local sunt numeroase datorita integrarii cu terminalul sistemului de operare
+  prin care poate controla o multime de aspecte.
+
+  \section{Observability}
+
+  Majoritatea panourilor cu informatii de utilizare de la furnizorii de modele de limbaj sunt sumare sau insuficiente.
+  Aplicatiile in terminal au uzual mai multe date de utilizare spre deosebire de website-urile in care se desfasoare experienta conversationala, 
+  dar nu ofera prea multe date despre ce unelte in mod cert consuma cel mai mult context.
+
+  \begin{figure}[H]
+    \centering
+    \begin{minipage}{0.48\columnwidth}
+      \centering
+      \includegraphics*[width=\linewidth]{figuri/context-claude.png}
+      \caption{Reprezentarea ferestrei de context intr-o conversatie in Claude Code}
+      \label{fig:context_window_claude}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.48\columnwidth}
+      \centering
+      \includegraphics*[width=\linewidth]{figuri/context-claude2.png}
+      \caption{Reprezentarea utilizarii in Claude (varianta web) (\href{https://claude.ai/settings/usage}{sursa})}
+      \label{fig:context_window_claude2}
+    \end{minipage}
+  \end{figure}
+
+  Astfel, in implementarea acestui asistent de programare, observabilitatea va juca un rol important pentru transparenta cu utilizatorul. Acesta poate interoga
+  orice metrica disponibila in legatura cu consumul de tokeni si functionarea sistemului in timp real folosind Langfuse cat si panoul web inclus cu aplicatia.
+
+  \section{Securitate si confidentialitate}
+
+  Din punctul de vedere al datelor utilizatorului si confidentialitate utilizarea aplicatiei ofera confidentialitate totala. Datele acestuia nu pleaca
+  dispozitivul sau decat daca acesta opteaza pentru modele ale furnizorilor sau daca isi configureaza Langfuse pentru observabilitate.
+
+  In ceea ce priveste securitatea si integritatea sistemului, programul va avea mai multe masuri, optionale sau obligatorii care se asigura ca
+  agentul nu poate realiza actiuni cu totul destructive. Cateva din aceste sisteme sunt: rularea comenzilor intr-un container pe principiul de sandboxing, 
+  gardarea logica a apelarii uneltelor (protejarea apelarii secventiale a uneltelor, de exemplu trebuie sa citeasca un fisier inainte sa scrie in el), si gardarea
+  intrarilor si iesirilor contra comportamentelor malitioase.
+
+  \section{Cost}
+
+  Costul este minim pentru asistentul de programare pe care urmeaza sa il prezint in urmatoarele capitole. Costul de utilizare este gratuit. De asemenea, daca utilizatorul
+  alege sa opteze pentru modele open source, singurele costuri pe care va trebui sa le suporte pe langa achizitionarea unui dispozitiv capabil sa ruleze aceste modele sunt curentul electric
+  si internetul.
+
+  Mai mult, aplicatia este optimizata pentru a reduce consumul de tokeni, deci si in cazul folosirii furnizorilor de modele,
+  costul va fi unul pe cat se poate de redus, lasand la o parte taxele puse de acestia pe utilizarea modelelor in aplicatii terte.
+
+  \section{Aplicatii rivale}
+
+  Pe langa aplicatiile furnizorilor exista si cateva aplicatii open source care s-au bucurat de o oarecare adoptie.
+
+  \begin{table}[H]
+  \centering
+  \scriptsize
+  \setlength{\tabcolsep}{4pt}
+  \renewcommand{\arraystretch}{1.5}
+  \caption{Top 6 asistenti de programare open source}
+  \vspace{2mm}
+    \begin{tabularx}{\textwidth}{@{} >{\hsize=0.5\hsize\RaggedRight}X >{\hsize=0.7\hsize\RaggedRight}X >{\hsize=1.1\hsize\RaggedRight}X >{\hsize=1.1\hsize\RaggedRight}X >{\hsize=0.6\hsize\RaggedRight}X @{}}
+      \toprule
+      \textbf{Aplicatie} & \textbf{Audienta si scop} & \textbf{Puncte forte} & \textbf{Puncte slabe} & \textbf{Functionalitati cheie} \\
+      \midrule
+
+      \textbf{OpenClaw} \newline (\href{https://github.com/openclaw/openclaw}{GitHub}) \newline MIT &
+      Utilizatori care doresc un asistent AI personal, always-on, accesibil pe orice canal de comunicare &
+      $\bullet$ Cel mai popular proiect open source din categorie\newline
+      $\bullet$ Suport multi-canal masiv (WhatsApp, Telegram, Slack, Discord, iMessage, Signal etc.)\newline
+      $\bullet$ Sandboxing cu Docker, SSH si OpenShell\newline
+      $\bullet$ Aplicatii native macOS, iOS, Android\newline
+      $\bullet$ Agnostic fata de furnizor, gateway local-first &
+      $\bullet$ Orientat spre asistent personal, nu exclusiv programare\newline
+      $\bullet$ Configurare complexa pentru multi-canal\newline
+      $\bullet$ Necesita Node.js 22+ si infrastructura gateway\newline
+      $\bullet$ Nu are integrare directa in IDE &
+      Gateway local, multi-canal, sandboxing, voice wake, live canvas, cron, skills, multi-agent, apps native \\
+      \midrule
+
+      \textbf{OpenHands} \newline (\href{https://github.com/OpenHands/OpenHands}{GitHub}) \newline MIT &
+      Dezvoltatori si echipe enterprise care necesita un agent autonom complet cu izolare securizata &
+      $\bullet$ Sandboxing in containere Docker -- cel mai robust din lista\newline
+      $\bullet$ GUI web si CLI disponibile\newline
+      $\bullet$ SDK Python pentru constructia de agenti personalizati\newline
+      $\bullet$ Suport Kubernetes si enterprise\newline
+      $\bullet$ Agnostic fata de furnizor (Claude, GPT, Ollama etc.) &
+      $\bullet$ Necesita Docker -- cerinte de resurse ridicate\newline
+      $\bullet$ Configurare initiala complexa\newline
+      $\bullet$ Nu are integrare directa in IDE\newline
+      $\bullet$ Curba de invatare mai abrupta &
+      Sandboxing, SDK, GUI web, CLI, Kubernetes, integrari Slack/Jira/Linear \\
+      \midrule
+
+      \textbf{Cline} \newline (\href{https://github.com/cline/cline}{GitHub}) \newline Apache 2.0 &
+      Dezvoltatori care prefera lucrul direct din IDE cu control granular si automatizari avansate &
+      $\bullet$ Extensie VS Code si plugin JetBrains\newline
+      $\bullet$ SDK Node.js si CLI headless pentru CI/CD\newline
+      $\bullet$ Echipe multi-agent si agenti programati\newline
+      $\bullet$ Suport MCP si plugin-uri extensibile\newline
+      $\bullet$ Agnostic fata de furnizor (200+ modele via OpenRouter) &
+      $\bullet$ Consum ridicat de tokeni datorita contextului mare\newline
+      $\bullet$ Fara sandboxing nativ incorporat\newline
+      $\bullet$ Complexitate ridicata -- multe functionalitati\newline
+      $\bullet$ Dependent de ecosistemul VS Code/JetBrains &
+      Extensie IDE, SDK, CLI, multi-agent, MCP, agenti programati, integrari Slack/Discord/Telegram \\
+      \midrule
+
+      \textbf{Goose} \newline (\href{https://github.com/aaif-goose/goose}{GitHub}) \newline Apache 2.0 &
+      Utilizatori generali si dezvoltatori care doresc un agent AI nativ, performant si extensibil &
+      $\bullet$ Aplicatie nativa desktop (macOS, Linux, Windows)\newline
+      $\bullet$ Construit in Rust -- performanta ridicata\newline
+      $\bullet$ Suport MCP (70+ extensii)\newline
+      $\bullet$ Agent general -- nu doar pentru cod\newline
+      $\bullet$ Agnostic fata de furnizor (15+ furnizori, suport ACP) &
+      $\bullet$ Mai putin specializat pe programare\newline
+      $\bullet$ Ecosistem de extensii mai tanar\newline
+      $\bullet$ Nu are integrare directa in IDE\newline
+      $\bullet$ Documentatie in curs de maturizare &
+      App nativa, CLI, API, MCP, ACP, Rust, multi-platform, Linux Foundation \\
+      \midrule
+
+      \textbf{Aider} \newline (\href{https://github.com/Aider-AI/aider}{GitHub}) \newline Apache 2.0 &
+      Dezvoltatori individuali care prefera un workflow minimalist din terminal cu integrare Git &
+      $\bullet$ Mapare automata a codului sursa (repo map)\newline
+      $\bullet$ Integrare Git nativa -- commit-uri automate\newline
+      $\bullet$ Suport 100+ limbaje de programare\newline
+      $\bullet$ Linting si testare automata\newline
+      $\bullet$ Agnostic fata de furnizor (Claude, GPT, DeepSeek, Ollama) &
+      $\bullet$ Fara sandboxing\newline
+      $\bullet$ Exclusiv terminal -- fara GUI\newline
+      $\bullet$ Capabilitati agentice limitate fata de concurenta\newline
+      $\bullet$ Nu are extensie nativa de IDE &
+      Terminal, Git auto-commit, repo map, voice-to-code, linting, modele locale \\
+      \bottomrule
+    \end{tabularx}
+  \label{tab:asistenti_opensource}
+  \end{table}
+
+  \newpage
 
   \section{Mediul de dezvoltare}
 
@@ -652,6 +1204,8 @@
     \label{tab:llm_hardware}
     \end{table}
 
+    \newpage
+
     \subsection{Cerinte software}
 
     Cerintele software pentru rularea acestei aplicatii sunt minime de asemenea. Este necesar doar un sistem de operare cu terminal precum Windows, Linux sau macOS, cu Python 3 instalat si acces la internet.
@@ -661,74 +1215,89 @@
 
   \section{Structura}
 
-  Structura aplicatiei este una simpla si include directoare pentru documentatie, cod sursa, interfata si fisiere de configurare.
-  Codul este impartit in doua directoare principale \texttt{src} pentru codul sursa al agentului propriu zis si
-  \texttt{ui} pentru codul sursa al interfetei cu utilizatorul. Documentatia este organizata in directorul \texttt{docs} si in fisierul \texttt{README.md}, iar fisierele de configurare si de management al dependintelor sunt in folderul principal al proiectului.
+  Structura aplicatiei reflecta separarea responsabilitatilor in mai multe directoare specializate.
+  Directorul \texttt{src} contine logica agentului: graful LangGraph, uneltele, sistemul de permisiuni, clientul \ac{mcp}, pipeline-ul de compactare,
+  sub-agentii, sandbox-ul Docker si tracing-ul. Directorul \texttt{ui} contine interfata cu utilizatorul: bucla principala, comenzile slash,
+  sistemul de skill-uri, gestionarea sesiunilor si preferintelor. Directorul \texttt{web} contine un dashboard analitic Flask care vizualizeaza
+  sesiunile, consumul de tokeni si activitatea uneltelor. Directorul \texttt{eval} contine un runner de evaluari cu metrici precum BLEU, ROUGE
+  si potrivire semantica. Documentatia detaliata per-subsistem se gaseste in \texttt{docs}, iar configurarea implicita in \texttt{config/config.yml}.
 
-  \begin{figure}[htbp]
+  \begin{figure}[H]
     \centering
     {\ttfamily\small
-    \begin{tabular}{@{}l@{}}
-      vibe-cli/ \\
-      |-- docs/ \\
-      |   |-- api/ \\
-      |   |   |-- postman\_collection.json \\
-      |   |   \textbackslash-- swagger.yaml \\
-      |   \textbackslash-- USAGE.md \\
-      |-- quality/ \\
-      |-- scripts/ \\
-      |-- src/ \\
-      |   |-- \_\_init\_\_.py \\
-      |   \textbackslash-- main.py \\
-      |-- ui/ \\
-      |   |-- \_\_init\_\_.py \\
-      |   |-- app.py \\
-      |   |-- app\_old.py \\
-      |   |-- commands.py \\
-      |   \textbackslash-- ui.py \\
-      |-- Makefile \\
-      |-- README.md \\
-      |-- config.yml \\
-      |-- pyproject.toml \\
-      \textbackslash-- uv.lock
+    \begin{tabular}{@{}l@{\hspace{3em}}l@{}}
+      vibe-cli/                & config/ \\
+      |-- config/              & |-- config.yml \\
+      |-- docs/                & \textbackslash-- eval.yml \\
+      |-- eval/                & \\
+      |-- scripts/             & src/ \\
+      |-- src/                 & |-- main.py \\
+      |-- tests/               & |-- tools.py \\
+      |-- ui/                  & |-- tool\_guards.py \\
+      |-- web/                 & |-- providers.py \\
+      |-- Makefile             & |-- permissions.py \\
+      |-- pyproject.toml       & |-- sandbox.py \\
+      \textbackslash-- ARCHITECTURE.md & |-- mcp\_client.py \\
+                               & |-- artifacts.py \\
+                               & |-- tracing.py \\
+                               & |-- compaction/ \\
+                               & \textbackslash-- subagents/ \\
+                               & \\
+                               & ui/ \\
+                               & |-- app.py \\
+                               & |-- ui.py \\
+                               & |-- commands.py \\
+                               & |-- skills.py \\
+                               & |-- sessions.py \\
+                               & |-- preferences.py \\
+                               & |-- provider\_handler.py \\
+                               & |-- pastes.py \\
+                               & \textbackslash-- updater.py \\
     \end{tabular}
     }
-    \caption{Structura directoarelor proiectului}
+    \caption{Structura directoarelor vitale ale proiectului}
     \label{fig:project_structure}
   \end{figure}
 
   \section{Configurare}
 
-  Configurarea aplicatiei se face prin intermediul fisierului \texttt{config.yml} care contine toate setarile necesare pentru a rula aplicatia, precum cheile de API pentru modelele de inteligenta artificiala.
-  Pentru a rula aplicatia, utilizatorul trebuie sa populeze variabilele declarate in fisierul de configuratre cu cheile \ac{api} corespunzatoare pentru fiecare provider. In cazul in care
-  nu este configurata nici o cheie valida, aplicatia nu va putea trimite request-uri catre \ac{llm} si va atentiona utilizatorul ca trebuie sa populeze una dintre acele valori.
+  Configurarea aplicatiei se face prin intermediul fisierului \texttt{config.yml} care contine catalogul de furnizori (Ollama, OpenAI, Claude, Bedrock, Gemini),
+  modelele disponibile pentru fiecare, pipeline-ul de compactare, setarile de tracing, configuratia sandbox-ului sau a subagentilor si a uneltelor.
+  Cheile \ac{api} sunt declarate ca variabile de mediu (de exemplu \texttt{\$\{OPENAI\_API\_KEY\}}) si sunt rezolvate la pornire. Daca nici o cheie nu este setata si Ollama nu este accesibil,
+  aplicatia solicita interactiv introducerea unei chei la pornire prin comanda \texttt{/model} sau \texttt{/key}.
 
-  Cateva setari sunt de asemenea disponibile direct in interfata cu utilizatorul, precum selectarea modelului (daca au fost introduse cheile pentru acesta), selectarea efortului de gandire, gestionarea conversastiilor
-  si inca cateva.
+  De asemenea pentru procesul de evaluare al capabilitatilor folosit pentru teste de sanitate si regresie, se pot modifica setarile din fisierul \texttt{~/.vibe-cli/eval/eval.yml}
 
+  Preferintele utilizatorului (provider-ul implicit, modelul selectat per provider, nivelul de efort, serverele \ac{mcp}, listele de permisiuni)
+  sunt persistate in \texttt{\textasciitilde/.vibe-cli/preferences.json} si supravietuiesc intre sesiuni.
+  Sesiunile de conversatie sunt salvate ca log-uri de evenimente in \texttt{\textasciitilde/.vibe-cli/sessions/}, sortate per proiect (directorul de lucru).
+  
   \section{Interfata cu utilizatorul si instructiuni de utilizare}
 
   Interfata serveste ca un mediu de legatura intre utilizator si agent, dar si ca un spatiu de configurare al aplicatiei. 
-  Acesata apeleaza functii ale agentului de la distanta, putand rula si cu un agent local sau cu unul in cloud.
+  Aceasta apeleaza functii ale agentului in acelasi proces Python, comunicarea fiind prin apeluri de functii, nu prin retea.
 
   In dezvoltarea interfetei, am pornit folosind solutia oferita de libraria Textual. La finalul primului prototip interfata
   arata modern si functiona corect. Insa, pe masura ce am populat conversatia cu asistentul, am observat ca functionalitatea de scroll
   a ferestrei nu functiona corect, sarind catre partea de sus a ecranului. Dupa ce m-am interesat mai atent la solutiile implementate de alte
   programe asemanatoare precum Claude Code, am observat ca acestea nu folosesc un \ac{tui} propriu zis, ci doar scriu in terminal folosind stdout, lasand astfel scroll-ul nativ al terminalului sa se ocupe de istoricul conversatiei. 
-  Am decis astfel sa abandonez solutia cu Textual si sa implementez o interfata simpla care sa scrie in terminal folosind print-uri, oferind astfel o experienta mult mai fluida si fara probleme de scroll sau lag.
+  Am decis astfel sa abandonez solutia cu Textual si sa implementez o interfata bazata pe prompt\_toolkit si Rich care sa scrie in terminal, oferind astfel o experienta mult mai fluida si fara probleme de scroll sau lag.
 
-  \begin{figure}[htbp]
+  \begin{figure}[H]
     \centering
-    \includegraphics*[width=0.8\columnwidth]{figuri/ui_4.jpeg}
-    \caption{Prima versiune a interfetei, realizata cu ajutorul librariei Textual}
-    \label{fig:ui_4}
-  \end{figure}
-
-  \begin{figure}[htbp]
-    \centering
-    \includegraphics*[width=0.8\columnwidth]{figuri/ui_2.jpeg}
-    \caption{Continuarea conversatiei cu prima versiune a interfetei, realizata cu ajutorul librariei Textual}
-    \label{fig:ui_2}
+    \begin{minipage}[t]{0.48\columnwidth}
+      \centering
+      \includegraphics*[width=\linewidth]{figuri/ui_4.jpeg}
+      \caption{Prima versiune a interfetei, realizata cu ajutorul librariei Textual}
+      \label{fig:ui_4}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.48\columnwidth}
+      \centering
+      \includegraphics*[width=\linewidth]{figuri/ui_2.jpeg}
+      \caption{Continuarea conversatiei cu prima versiune a interfetei, realizata cu ajutorul librariei Textual}
+      \label{fig:ui_2}
+    \end{minipage}
   \end{figure}
 
   In final, a fost o decizie buna sa abandonez implementarea cu Textual, deoarece am reusit sa produc rezultate mai bune folosind terminalul clasic.
@@ -737,65 +1306,139 @@
   Schimbarea nu s-a produs intr-un stadiu avansat al dezvoltarii, ci chiar de la primele prototipuri de interfata, lucru care nu a ingreunat cu mult procesul
   de dezvoltare.
 
-  \begin{figure}[htbp]
+  \begin{figure}[H]
     \centering
-    \includegraphics*[width=0.8\columnwidth]{figuri/ui_3.jpeg}
-    \caption{A doua versiune a interfetei, realizata fara libraria Textual}
-    \label{fig:ui_3}
-  \end{figure}
-
-  \begin{figure}[htbp]
-    \centering
-    \includegraphics*[width=0.8\columnwidth]{figuri/ui_1.jpeg}
-    \caption{Continuarea conversatiei cu a doua versiune a interfetei, realizata fara libraria Textual}
-    \label{fig:ui_1}
+    \begin{minipage}[t]{0.48\columnwidth}
+      \centering
+      \includegraphics*[width=\linewidth]{figuri/ui_3.jpeg}
+      \caption{A doua versiune a interfetei, realizata fara libraria Textual}
+      \label{fig:ui_3}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.48\columnwidth}
+      \centering
+      \includegraphics*[width=\linewidth]{figuri/ui_1.jpeg}
+      \caption{Continuarea conversatiei cu a doua versiune a interfetei, realizata fara libraria Textual}
+      \label{fig:ui_1}
+    \end{minipage}
   \end{figure}
 
   Dupa inlocuirea implementarii, am continuat sa adaug functionalitati pentru a imbogati experienta utilizatorului.
-  
-  Printre aceste functionalitati se numara:
+  Interfata ofera mai multe elemente vizuale menite sa informeze utilizatorul in timp real despre activitatea agentului:
+
   \begin{itemize}
-    \item Alegerea modelului si a efortului de gandire pentru fiecare prompt
-    \item Gestionarea conversatiilor, cu posibilitatea de a salva, sterge sau continua conversatii 
-    \item Conectarea cu servere MCP
-    \item Utilizarea unor skill-uri specializate
-    \item Consultarea contextului sau a consumului de tokens
+    \item \textbf{Spinner animat cu eticheta de faza si cronometru}: textul spinner-ului reflecta faza curenta si masoara timpul scurs,
+      de exemplu \texttt{$\diamond$ thinking... 1.2s} in timpul inferentei \ac{llm}, sau \texttt{$\diamond$ Read(README.md)... 0.4s} in timpul executiei unei unelte
+    \item \textbf{Log persistent de unelte}: fiecare apel de unealta lasa o linie \texttt{$\hookrightarrow$ Tool(arg)} in istoricul vizibil, astfel incat si uneltele care se executa rapid sunt vizibile
+    \item \textbf{Panouri de diff pentru \texttt{write\_file}}: apelurile reusite de scriere sunt redate ca un diff unificat intr-un panou Rich cu numarul de linii adaugate si sterse
+    \item \textbf{Paste folding}: textele lipite mai lungi de 200 de caractere sunt inlocuite in prompt cu un placeholder scurt \texttt{[Paste \#N <len> chars]} pentru lizibilitate, continutul original fiind restaurat inainte de trimitere
+    \item \textbf{Footer de timp la sfarsitul fiecarui tur}: o linie care indica durata turului, cu o fraza aleasa aleator
   \end{itemize}
 
-  Pentru utilizarea aplicatiei, utilizatorul trebuie sa ruleze comanda \texttt{make ui} in terminal, asigurandu-se ca a configurat corect programul sau facand-o direct din \ac{tui} daca a uitat sa o faca in prealabil.
-  Dupa rularea comenzii, utilizatorul va fi intampinat de un meniu de start care ii va oferi optiunea de a incepe o conversatie noua sau de a continua una veche, precum si alte optiuni de configurare. 
-  Dupa selectarea uneia dintre aceste optiuni, utilizatorul va putea interactiona cu asistentul pentru a primi ajutor in sarcinile de dezvoltare software.
+  Pe langa elementele vizuale, functionalitatile principale includ:
+  \begin{itemize}
+    \item Unelte inteligente de interactiune cu mediul virtual (create/editare/citire fisiere, cautare web, executare comenzi in terminal) 
+    care instruiesc modelul de limbaj sa le foloseasca intr-un mod inteligent din punct de vedere al consumului ferestrei de context.
+    \item Gardarea apelului logic al uneltelor. Uneltele au anumite restrictii pentru a asigura folosirea corecta. De exemplu, modelul nu poate apela unealta \texttt{edit\_file} fara ca mai intai sa apeleze unealta \texttt{read\_file}. De asemenea sunt gardari de citire a fisierelor.
+     Modelul nu poate citi un fisier intreg pentru a garanta ca nu isi va umple toata 
+     fereastra de context cu output-ul acelei unelte.
+    \item Alegerea modelului din 5 provideri (Ollama, OpenAI, Claude, Bedrock, Gemini)
+     si a efortului de gandire. Furnizorii de modele de limbaj nu sunt limitati si lista poate creste prin extinderea clasei de baza \texttt{BaseProvider}.
+    \item Gestionarea sesiunilor cu posibilitatea de a salva, sterge, lista sau continua conversatii anterioare. Fiecare proiect include istoricul propriu al conversatiilor.
+    \item Sistemul de permisiuni per-unealta cu liste de always-allow si always-deny persistente
+    \item Conectarea cu servere \ac{mcp} prin transport stdio, HTTP sau SSE
+    \item Skill-uri bazate pe fisiere Markdown cu incarcare progresiva (doar numele si descrierea in prompt-ul de sistem, corpul incarcat la cerere)
+    \item Sub-agenti specializati extensibili (cativa agenti de baza precum: general, code search, web research, dar pot fi adaugati mai multi sub-agenti prin extinderea clasei \texttt{Subagent}) care ruleaza in paralel cu modele configurabile per-agent. 
+    \item Pipeline de compactare a contextului cu mai multe stadii (trunchiere, sumarizare, deduplicare) configurabil.
+    \item Sandbox Docker optional pentru executia izolata a comenzilor
+    \item Tracing prin LangFuse Cloud pentru observabilitate
+    \item Dashboard web analitic (Flask) cu vizualizare de metrici, cost si activitate
+    \item Auto-completare pentru comenzile slash si actualizare automata a versiunii
+  \end{itemize}
 
-  Comenzile pot fi rulate in orice moment al conversatiei, si au formatul \texttt{/comanda}. De asemenea exista si scurtaturi rapide pe tastatura, precum
+  Pentru instalarea aplicatiei, utilizatorul poate rula comanda de instalare cu o singura linie:
+  
+  \texttt{curl -fsSL https://raw.githubusercontent.com/Moshulika/vibe-cli/install.sh | bash}
+  
+  Dupa instalare, comanda \texttt{vibe} este disponibila global din orice director. Pentru dezvoltare, se foloseste \texttt{make ui} din directorul proiectului.
+  Dupa pornire, utilizatorul este intampinat de un ecran de start care ofera optiunea de a incepe o conversatie noua sau de a continua una veche.
+
+  Comenzile pot fi rulate in orice moment al conversatiei, si au formatul \texttt{/comanda} cu auto-completare la apasarea tastei Tab. De asemenea exista si scurtaturi rapide pe tastatura, precum
   \texttt{CTRL+L} pentru a sterge conversatia si a incepe una noua, si \texttt{CTRL+C} pentru a inchide aplicatia.
   
-  \begin{table}[htbp]
+  \begin{table}[H]
     \centering
     \small
-    \begin{tabularx}{0.8\textwidth}{l X}
+    \begin{tabularx}{\textwidth}{l X}
       \toprule
       \textbf{Comanda} & \textbf{Descriere} \\
       \midrule
-      \texttt{/help} & Comanda pentru listarea paginii de ajutor \\
-      \texttt{/model} & Selectarea modelului si introducerea cheii \ac{api} \\
-      \texttt{/effort} & Selectarea nivelului de efort al modelului \\
-      \texttt{/mcp} & Meniul de configurare a serverelor \ac{mcp} \\
-      \texttt{/skill} & Selectarea skill-urilor \\
-      \texttt{/plan} & Selectarea modului de planificare \\
-      \texttt{/agent} & Selectarea modului agentic \\
-      \texttt{/clear} & Stergerea conversatiei curente \\
-      \texttt{/exit} & Inchiderea aplicatiei \\
-      \texttt{/resume} & Continuarea unei conversatii anterioare \\
+      \texttt{/help} & Listarea tuturor comenzilor si a scurtaturilor de tastatura \\
+      \texttt{/model} & Selectarea provider-ului si modelului, sau setarea cheii \ac{api} \\
+      \texttt{/key} & Setarea sau actualizarea cheii \ac{api} per provider \\
+      \texttt{/effort} & Selectarea nivelului de efort al modelului (low/medium/high) \\
+      \texttt{/mcp} & Configurarea serverelor \ac{mcp} (adaugare/stergere/activare) \\
+      \texttt{/skills} & Listarea, activarea sau reincarcarea skill-urilor \\
+      \texttt{/subagents} & Listarea tipurilor de sub-agenti si configurarea modelelor per tip \\
+      \texttt{/plan} & Activarea/dezactivarea modului de planificare \\
+      \texttt{/agent} & Activarea/dezactivarea modului agentic \\
+      \texttt{/permissions} & Vizualizarea si editarea listelor de permisiuni per unealta \\
+      \texttt{/clear} & Stergerea conversatiei curente si rotirea la o sesiune noua \\
+      \texttt{/sessions} & Listarea sesiunilor salvate pentru proiectul curent \\
+      \texttt{/resume} & Continuarea ultimei sesiuni sau a uneia specifice prin ID \\
+      \texttt{/compaction} & Inspectarea pipeline-ului de compactare si selectarea modelului \\
+      \texttt{/compact} & Fortarea unei compactari imediate a contextului \\
+      \texttt{/tracing} & Configurarea si activarea tracing-ului LangFuse \\
+      \texttt{/score} & Evaluarea ultimului tur in LangFuse (good/bad) \\
+      \texttt{/dataset} & Adaugarea ultimului tur la un dataset LangFuse \\
+      \texttt{/update} & Actualizarea la ultima versiune din git \\
+      \texttt{/exit} & Salvarea conversatiei si inchiderea aplicatiei \\
       \bottomrule
     \end{tabularx}
     \caption{Comenzi disponibile in interfata}
     \label{tab:ui-commands}
   \end{table}
 
+  \section{Management-ul contextului si al memoriei}
+    \subsection{Memoria}
+    \subsection{Contextul}
+
+    \begin{figure}[H]
+      \centering
+      \includegraphics*[width=0.8\columnwidth]{figuri/context-window3.png}
+      \caption{Impartirea ferestrei de context (\href{https://www.letta.com/blog/guide-to-context-engineering}{sursa})}
+      \label{fig:context_window2}
+  \end{figure}
+
+  \section{Subagenti, Unelte si capabilitati}
+    \subsection{Tools}
+    \subsection{Skills}
+    \subsection{Subagents}
+  \section{Extensibilitate}
+    \subsection{\ac{mcp}}
+    \subsection{Subagenti si arhitectura agnostica de furnizori}
+  \section{Securitate}
+    \subsection{Sandboxing}
+    \subsection{Guardrails, \ac{oos} and dangerous intent}
+    \subsection{Tool execution order and logic}
+  \section{Observabilitate}
+    \subsection{Langfuse}
+    \subsection{Panou web}
+
+\chapter{REZULTATE EXPERIMENTALE}
+  \section{Experimente, evals si benchmarking}
+  \section{Contextul in mediul agentic}
+  \section{Modele vs context si unelte}
+
+\chapter{CONCLUZII}
+
+\chapter{IMBUNATATIRI VIITOARE}
+  \section{Automatizari, integrari cu alte programe}
+
 % Bibliografie -----------------
 
 \bibliographystyle{unsrt}
-\bibliography{licenta}
+\bibliography{licenta_v4}
 
 % ------------------------------
 
