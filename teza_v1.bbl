@@ -1,5 +1,10 @@
 \begin{thebibliography}{10}
 
+\bibitem{vaswaniAttentionAllYou2017}
+Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan~N Gomez, Ł~ukasz Kaiser, and Illia Polosukhin.
+\newblock Attention is all you need.
+\newblock In {\em Advances in Neural Information Processing Systems}, volume~30. Curran Associates, Inc.
+
 \bibitem{zhaoSurveyLargeLanguage2026}
 Wayne~Xin Zhao, Kun Zhou, Junyi Li, Tianyi Tang, Xiaolei Wang, Yupeng Hou, Yingqian Min, Beichen Zhang, Junjie Zhang, Zican Dong, Yifan Du, Chen Yang, Yushuo Chen, Zhipeng Chen, Jinhao Jiang, Ruiyang Ren, Yifan Li, Xinyu Tang, Zikang Liu, Peiyu Liu, Jian-Yun Nie, and Ji-Rong Wen.
 \newblock A survey of large language models.
@@ -77,11 +82,6 @@ Sepp Hochreiter and Jürgen Schmidhuber.
 \newblock Long short-term memory.
 \newblock 9:1735--1780.
 
-\bibitem{vaswaniAttentionAllYou2017}
-Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan~N Gomez, Ł~ukasz Kaiser, and Illia Polosukhin.
-\newblock Attention is all you need.
-\newblock In {\em Advances in Neural Information Processing Systems}, volume~30. Curran Associates, Inc.
-
 \bibitem{brownLanguageModelsAre2020a}
 Tom~B. Brown, Benjamin Mann, Nick Ryder, Melanie Subbiah, Jared Kaplan, Prafulla Dhariwal, Arvind Neelakantan, Pranav Shyam, Girish Sastry, Amanda Askell, Sandhini Agarwal, Ariel Herbert-Voss, Gretchen Krueger, Tom Henighan, Rewon Child, Aditya Ramesh, Daniel~M. Ziegler, Jeffrey Wu, Clemens Winter, Christopher Hesse, Mark Chen, Eric Sigler, Mateusz Litwin, Scott Gray, Benjamin Chess, Jack Clark, Christopher Berner, Sam {McCandlish}, Alec Radford, Ilya Sutskever, and Dario Amodei.
 \newblock Language models are few-shot learners.
@@ -90,6 +90,10 @@ Tom~B. Brown, Benjamin Mann, Nick Ryder, Melanie Subbiah, Jared Kaplan, Prafulla
 Yichun Xu, Navjot~K. Khaira, and Tejinder Singh.
 \newblock {KV} cache optimization strategies for scalable and efficient {LLM} inference.
 \newblock version: 1.
+
+\bibitem{mao_triattention_2026}
+Weian Mao, Xi~Lin, Wei Huang, Yuxin Xie, Tianfu Fu, Bohan Zhuang, Song Han, and Yukang Chen.
+\newblock {TriAttention}: Efficient long reasoning with trigonometric {KV} compression.
 
 \bibitem{leviathanFastInferenceTransformers2023}
 Yaniv Leviathan, Matan Kalman, and Yossi Matias.
@@ -124,5 +128,27 @@ Dongfang Li, Zixuan Liu, Gang Lin, Baotian Hu, and Min Zhang.
 Patrick Lewis, Ethan Perez, Aleksandra Piktus, Fabio Petroni, Vladimir Karpukhin, Naman Goyal, Heinrich Küttler, Mike Lewis, Wen-tau Yih, Tim Rocktäschel, Sebastian Riedel, and Douwe Kiela.
 \newblock Retrieval-augmented generation for knowledge-intensive {NLP} tasks.
 \newblock In {\em Advances in Neural Information Processing Systems}, volume~33, pages 9459--9474. Curran Associates, Inc.
+
+\bibitem{shahriarSurveyAgenticSecurity2025}
+Asif Shahriar, Md~Nafiu Rahman, Sadif Ahmed, Farig Sadeque, and Md~Rizwan Parvez.
+\newblock A survey on agentic security: Applications, threats and defenses.
+
+\bibitem{hackettBypassingLLMGuardrails2025}
+William Hackett, Lewis Birch, Stefan Trawicki, Neeraj Suri, and Peter Garraghan.
+\newblock Bypassing {LLM} guardrails: An empirical analysis of evasion attacks against prompt injection and jailbreak detection systems.
+\newblock In Leon Derczynski, Jekaterina Novikova, and Muhao Chen, editors, {\em Proceedings of the The First Workshop on {LLM} Security ({LLMSEC})}, pages 101--114. Association for Computational Linguistics.
+
+\bibitem{baiConstitutionalAIHarmlessness2022}
+Yuntao Bai, Saurav Kadavath, Sandipan Kundu, Amanda Askell, Jackson Kernion, Andy Jones, Anna Chen, Anna Goldie, Azalia Mirhoseini, Cameron {McKinnon}, Carol Chen, Catherine Olsson, Christopher Olah, Danny Hernandez, Dawn Drain, Deep Ganguli, Dustin Li, Eli Tran-Johnson, Ethan Perez, Jamie Kerr, Jared Mueller, Jeffrey Ladish, Joshua Landau, Kamal Ndousse, Kamile Lukosuite, Liane Lovitt, Michael Sellitto, Nelson Elhage, Nicholas Schiefer, Noemi Mercado, Nova {DasSarma}, Robert Lasenby, Robin Larson, Sam Ringer, Scott Johnston, Shauna Kravec, Sheer~El Showk, Stanislav Fort, Tamera Lanham, Timothy Telleen-Lawton, Tom Conerly, Tom Henighan, Tristan Hume, Samuel~R. Bowman, Zac Hatfield-Dodds, Ben Mann, Dario Amodei, Nicholas Joseph, Sam {McCandlish}, Tom Brown, and Jared Kaplan.
+\newblock Constitutional {AI}: Harmlessness from {AI} feedback.
+
+\bibitem{rebedeaNeMoGuardrailsToolkit2023}
+Traian Rebedea, Razvan Dinu, Makesh~Narsimhan Sreedhar, Christopher Parisien, and Jonathan Cohen.
+\newblock {NeMo} guardrails: A toolkit for controllable and safe {LLM} applications with programmable rails.
+\newblock In Yansong Feng and Els Lefever, editors, {\em Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing: System Demonstrations}, pages 431--445. Association for Computational Linguistics.
+
+\bibitem{liuGuardReasonerReasoningbasedLLM2025}
+Yue Liu, Hongcheng Gao, Shengfang Zhai, Yufei He, Jun Xia, Zhengyu Hu, Yulin Chen, Xihong Yang, Jiaheng Zhang, Stan~Z. Li, Hui Xiong, and Bryan Hooi.
+\newblock {GuardReasoner}: Towards reasoning-based {LLM} safeguards.
 
 \end{thebibliography}

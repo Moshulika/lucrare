@@ -1,0 +1,52 @@
+compaction:
+  tool_persistence: false
+  enforce_session_model: true
+  trigger:
+    threshold: 0.80
+    min_turns_kept: 4
+  pipeline:
+    - tool_truncate:
+        enabled: false
+        max_tool_tokens: 2000
+        head_tail: [800, 400]
+    - tool_summarize:
+        enabled: false
+        max_tool_tokens: 2000
+        head_tail: [800, 400]
+        timeout_s: 30
+        max_summary_tokens: 500
+        model:
+    - format_compress:
+        enabled: false
+        per_tool: {}
+    - ref_substitute:
+        enabled: false
+        min_ref_tokens: 1500
+        excerpt_tokens: 200
+    - dedupe:
+        enabled: false
+        similarity: 0.92
+        backend: string 
+    - importance_prune:
+        enabled: false
+        keep_kinds: [human, system_prompt, assistant_text, tool_result_last]
+        drop_kinds: [assistant_thinking]
+    # Strategies:
+    # - trim - Drop the oldest whole turns until size <= target.
+    # Cheapest, no LLM, deterministic. Loses information.
+    # - summarize - Drop the oldest whole turns AND LLM-summarize their
+    # content into one SystemMessage so the model retains
+    # high-level continuity.
+    # - hybrid - Keep the most recent `compaction.trigger.min_turns_kept`
+    # turns verbatim; summarize everything older into one
+    # SystemMessage. Recommended default.
+    - bulk:
+        enabled: false
+        strategy: hybrid 
+        summarize:
+          model: ${COMPACTION_MODEL}
+          max_summary_tokens: 1500
+  storage:
+    backup: true
+    keep_backups: 3 
+    artifacts: true  

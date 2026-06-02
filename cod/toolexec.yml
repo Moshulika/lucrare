@@ -1,0 +1,8 @@
+tool_guards:
+  enabled: true # master switch - false disables ALL guards
+  read_before_write:
+    enabled: true
+    # When true (default), a freshness check requires the file's current SHA
+    # to match what was read. When false, only "ever read in this session"
+    # is required - looser, but skips the disk read on every write/edit.
+    check_freshness: true

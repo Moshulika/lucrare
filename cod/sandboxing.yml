@@ -1,0 +1,11 @@
+sandboxing:
+  enabled: false
+  image: python:3.13-slim
+  network: bridge # bridge | none
+  memory: 2g
+  cpus: 2
+  timeout_default: 30 # default `run_command` timeout in seconds
+  blocked_paths:
+    - "~/"                       
+  ambiguous_max_mb: 500
+  ambiguous_max_files: 10000

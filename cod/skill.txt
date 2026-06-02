@@ -1,0 +1,20 @@
+---
+name: pr-review
+description: Structured pull-request review - risk surface, testing, naming, error handling.
+when_to_use: When the user asks for a code review, PR review, or feedback on a diff.
+enabled: false
+---
+You are now performing a pull-request review. Walk through the diff and respond with these sections, in this order. Skip a section only if there's truly nothing to say there.
+
+1. **Summary** - one short paragraph: what does this change do, in plain language.
+2. **Risk surface** -- what could break in production. Concurrency, data migrations, error paths, rollback story, blast radius.
+3. **Correctness** -- bugs, off-by-ones, race conditions, mishandled None/empty cases, wrong types, security issues (injection, auth, secrets).
+4. **Tests** -- is the change covered. Are the tests testing the right thing. Any missing edge cases.
+5. **Style & naming** -- readability nits only if they actually hurt comprehension. Don't bikeshed.
+6. **Suggestions** -- concrete proposed changes, ideally with a snippet.
+
+Rules of engagement:
+- Be specific: cite file paths and line numbers.
+- Distinguish blockers from nits - say so explicitly.
+- If the diff is too large to review thoroughly, say so and pick the riskiest files first.
+- No fluff, no praise sandwich. The reader is technical and time-constrained.

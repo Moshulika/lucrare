@@ -7,47 +7,63 @@
 \contentsline {section}{CONTEXT SI MOTIVATIE}{6}{section*.6}%
 \contentsline {section}{SCOPUL SI OBIECTIVELE LUCRARII}{7}{section*.7}%
 \contentsline {chapter}{\numberline {1}LUCRARI ANTERIOARE}{8}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Drumul catre modelele mari de limbaj (\ac {llm})}{8}{section.1.1}%
-\contentsline {section}{\numberline {1.2}Maturizarea modelelor mari de limbaj si cercetari actuale}{13}{section.1.2}%
-\contentsline {section}{\numberline {1.3}Solutii agentice pentru industria dezvoltarii software}{19}{section.1.3}%
-\contentsline {section}{\numberline {1.4}Necesitati pentru dezvoltarea unei solutii agentice in domeniul dezvoltarii software}{27}{section.1.4}%
-\contentsline {section}{\numberline {1.5}Puncte slabe ale arhitecturilor agentice}{27}{section.1.5}%
-\contentsline {section}{\numberline {1.6}Alegerea solutiei de implementare pe baza lucrarilor studiate si a standardelor din industrie}{28}{section.1.6}%
-\contentsline {chapter}{\numberline {2}PLASAREA IN INDUSTRIE}{32}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Open source software}{32}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Flux agentic ce ruleaza local}{32}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Observability}{33}{section.2.3}%
-\contentsline {section}{\numberline {2.4}Securitate si confidentialitate}{33}{section.2.4}%
-\contentsline {section}{\numberline {2.5}Cost}{33}{section.2.5}%
-\contentsline {section}{\numberline {2.6}Aplicatii rivale}{34}{section.2.6}%
-\contentsline {section}{\numberline {2.7}Mediul de dezvoltare}{35}{section.2.7}%
-\contentsline {subsection}{\numberline {2.7.1}Cerinte hardware}{35}{subsection.2.7.1}%
-\contentsline {subsection}{\numberline {2.7.2}Cerinte software}{36}{subsection.2.7.2}%
-\contentsline {section}{\numberline {2.8}Structura}{36}{section.2.8}%
-\contentsline {section}{\numberline {2.9}Configurare}{37}{section.2.9}%
-\contentsline {section}{\numberline {2.10}Interfata cu utilizatorul si instructiuni de utilizare}{37}{section.2.10}%
-\contentsline {section}{\numberline {2.11}Management-ul contextului si al memoriei}{41}{section.2.11}%
-\contentsline {subsection}{\numberline {2.11.1}Memoria}{41}{subsection.2.11.1}%
-\contentsline {subsection}{\numberline {2.11.2}Contextul}{41}{subsection.2.11.2}%
-\contentsline {section}{\numberline {2.12}Subagenti, Unelte si capabilitati}{42}{section.2.12}%
-\contentsline {subsection}{\numberline {2.12.1}Tools}{42}{subsection.2.12.1}%
-\contentsline {subsection}{\numberline {2.12.2}Skills}{42}{subsection.2.12.2}%
-\contentsline {subsection}{\numberline {2.12.3}Subagents}{42}{subsection.2.12.3}%
-\contentsline {section}{\numberline {2.13}Extensibilitate}{42}{section.2.13}%
-\contentsline {subsection}{\numberline {2.13.1}\ac {mcp}}{42}{subsection.2.13.1}%
-\contentsline {subsection}{\numberline {2.13.2}Subagenti si arhitectura agnostica de furnizori}{42}{subsection.2.13.2}%
-\contentsline {section}{\numberline {2.14}Securitate}{42}{section.2.14}%
-\contentsline {subsection}{\numberline {2.14.1}Sandboxing}{42}{subsection.2.14.1}%
-\contentsline {subsection}{\numberline {2.14.2}Guardrails, \ac {oos} and dangerous intent}{42}{subsection.2.14.2}%
-\contentsline {subsection}{\numberline {2.14.3}Tool execution order and logic}{42}{subsection.2.14.3}%
-\contentsline {section}{\numberline {2.15}Observabilitate}{42}{section.2.15}%
-\contentsline {subsection}{\numberline {2.15.1}Langfuse}{42}{subsection.2.15.1}%
-\contentsline {subsection}{\numberline {2.15.2}Panou web}{42}{subsection.2.15.2}%
-\contentsline {chapter}{\numberline {3}REZULTATE EXPERIMENTALE}{45}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Experimente, evals si benchmarking}{45}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Contextul in mediul agentic}{45}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Modele vs context si unelte}{45}{section.3.3}%
-\contentsline {chapter}{\numberline {4}CONCLUZII}{46}{chapter.4}%
-\contentsline {chapter}{\numberline {5}IMBUNATATIRI VIITOARE}{47}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Automatizari, integrari cu alte programe}{47}{section.5.1}%
-\contentsline {unnumberedsection}{BIBLIOGRAFIE}{48}{chapter*.47}%
+\contentsline {section}{\numberline {1.1}Evolutia catre modelele mari de limbaj (\ac {llm})}{8}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Maturizarea modelelor mari de limbaj si cercetari actuale}{14}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Solutii agentice pentru industria dezvoltarii software}{20}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Cerinte pentru o solutie agentica in dezvoltarea software}{28}{section.1.4}%
+\contentsline {section}{\numberline {1.5}Limitari ale arhitecturilor agentice}{28}{section.1.5}%
+\contentsline {section}{\numberline {1.6}Justificarea alegerilor de implementare}{29}{section.1.6}%
+\contentsline {chapter}{\numberline {2}PRACTICI CURENTE IN INDUSTRIE}{33}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Software open-source}{33}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Flux agentic ce ruleaza local}{33}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Observabilitate}{34}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Securitate si confidentialitate}{34}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Cost}{34}{section.2.5}%
+\contentsline {section}{\numberline {2.6}Aplicatii concurente}{35}{section.2.6}%
+\contentsline {chapter}{\numberline {3}IMPLEMENTARE}{37}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Mediul de dezvoltare}{37}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Cerinte hardware}{37}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Cerinte software}{38}{subsection.3.1.2}%
+\contentsline {section}{\numberline {3.2}Structura}{38}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Configurare}{39}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Interfata cu utilizatorul}{39}{section.3.4}%
+\contentsline {section}{\numberline {3.5}Instalare si utilizare}{41}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}Cerinte preliminare}{41}{subsection.3.5.1}%
+\contentsline {subsection}{\numberline {3.5.2}Instalare}{41}{subsection.3.5.2}%
+\contentsline {subsection}{\numberline {3.5.3}Configurare la prima rulare}{41}{subsection.3.5.3}%
+\contentsline {subsection}{\numberline {3.5.4}Utilizare}{42}{subsection.3.5.4}%
+\contentsline {subsubsection}{\numberline {3.5.4.1}Modul headless}{42}{subsubsection.3.5.4.1}%
+\contentsline {section}{\numberline {3.6}Gestionarea contextului si a memoriei}{43}{section.3.6}%
+\contentsline {subsection}{\numberline {3.6.1}Memoria si istoricul conversatiei}{43}{subsection.3.6.1}%
+\contentsline {subsection}{\numberline {3.6.2}Contextul}{44}{subsection.3.6.2}%
+\contentsline {subsubsection}{\numberline {3.6.2.1}\ac {rag}}{45}{subsubsection.3.6.2.1}%
+\contentsline {subsubsection}{\numberline {3.6.2.2}Compactarea}{45}{subsubsection.3.6.2.2}%
+\contentsline {subsubsection}{\numberline {3.6.2.3}Tehnici pentru eficientizarea ferestrei de context}{48}{subsubsection.3.6.2.3}%
+\contentsline {section}{\numberline {3.7}Componente ale arhitecturilor agentice moderne}{48}{section.3.7}%
+\contentsline {subsection}{\numberline {3.7.1}Unelte}{48}{subsection.3.7.1}%
+\contentsline {subsection}{\numberline {3.7.2}Modul de planificare}{50}{subsection.3.7.2}%
+\contentsline {subsection}{\numberline {3.7.3}Skills}{51}{subsection.3.7.3}%
+\contentsline {subsection}{\numberline {3.7.4}Subagenti}{52}{subsection.3.7.4}%
+\contentsline {section}{\numberline {3.8}Extensibilitate}{54}{section.3.8}%
+\contentsline {subsection}{\numberline {3.8.1}\ac {mcp} si adaugarea de unelte}{54}{subsection.3.8.1}%
+\contentsline {subsection}{\numberline {3.8.2}Adaugarea de subagenti}{54}{subsection.3.8.2}%
+\contentsline {subsection}{\numberline {3.8.3}Creare de skill-uri}{56}{subsection.3.8.3}%
+\contentsline {subsection}{\numberline {3.8.4}Suportul pentru furnizori de modele de limbaj}{56}{subsection.3.8.4}%
+\contentsline {subsection}{\numberline {3.8.5}Adaugarea tehnicilor de compactare}{57}{subsection.3.8.5}%
+\contentsline {section}{\numberline {3.9}Securitatea in mediul agentic}{58}{section.3.9}%
+\contentsline {subsection}{\numberline {3.9.1}Sandboxing}{58}{subsection.3.9.1}%
+\contentsline {subsection}{\numberline {3.9.2}Permisiuni}{59}{subsection.3.9.2}%
+\contentsline {subsection}{\numberline {3.9.3}Guardrails, intentii periculoase si cereri in afara scopului (\ac {oos})}{60}{subsection.3.9.3}%
+\contentsline {section}{\numberline {3.10}Observabilitate}{60}{section.3.10}%
+\contentsline {subsection}{\numberline {3.10.1}Langfuse}{60}{subsection.3.10.1}%
+\contentsline {subsection}{\numberline {3.10.2}Panou web}{62}{subsection.3.10.2}%
+\contentsline {chapter}{\numberline {4}REZULTATE EXPERIMENTALE}{63}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Pozitionarea fata de concurenta}{63}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Experimente, evaluari si benchmarking}{63}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Influenta lungimii prompt-ului}{63}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Contextul in mediul agentic}{63}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Interactiunea dintre modele, context si unelte}{63}{section.4.5}%
+\contentsline {chapter}{\numberline {5}CONCLUZII}{64}{chapter.5}%
+\contentsline {chapter}{\numberline {6}DEZVOLTARI VIITOARE}{65}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Automatizari, integrari cu alte programe}{65}{section.6.1}%
+\contentsline {unnumberedsection}{BIBLIOGRAFIE}{66}{chapter*.58}%

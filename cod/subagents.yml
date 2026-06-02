@@ -1,0 +1,22 @@
+subagents:
+  enabled: true
+  default_timeout_s: 120
+  max_timeout_s: 600
+  max_depth: 2 # max recursive subagent spawn
+  types:
+    general:
+      model_override: opus4-7 # model override
+      max_iterations: 25
+      default_timeout_s: 180
+    code_search:
+      model_override: sonnet4-6
+      max_iterations: 15
+      default_timeout_s: 90
+    web_research:
+      model_override: gemma4
+      max_iterations: 18
+      default_timeout_s: 120
+  max_parallel: 3
+  child_context:
+    max_tool_tokens: 2000      # tool_result body cap (tokens, ~4 chars each)
+    head_tail: [800, 400]      # head/tail excerpt sizes when truncating
