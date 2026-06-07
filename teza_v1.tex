@@ -7,6 +7,7 @@
 \usepackage{xcolor} % xcolor e mai modern decât color
 \usepackage{booktabs} 
 \usepackage{tabularx} % Pentru tabele care se auto-ajustează
+\usepackage{multirow}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{listings}
@@ -27,9 +28,9 @@
 \usepackage{float}
 
 \singlespacing
-
 % Define abbreviations
 \DeclareAcronym{llm}{short = LLM, long = Large Language Model}
+\DeclareAcronym{slm}{short = SLM, long = Small Language Model}
 \DeclareAcronym{ia}{short = IA, long = Inteligență Artificială}
 \DeclareAcronym{rag}{short = RAG, long = Retrieval Augmented Generation}
 \DeclareAcronym{api}{short = API, long = Application Programming Interface}
@@ -67,6 +68,30 @@
 \DeclareAcronym{posix}{short = POSIX, long = Portable Operating System Interface}
 \DeclareAcronym{aml}{short = AML, long = Adversarial Machine Learning}
 \DeclareAcronym{cpu}{short = CPU, long = Central Processing Unit}
+\DeclareAcronym{sdk}{short = SDK, long = Software Development Kit}
+\DeclareAcronym{ide}{short = IDE, long = Integrated Development Environment}
+\DeclareAcronym{mit}{short = MIT, long = Massachusetts Institute of Technology}
+\DeclareAcronym{aws}{short = AWS, long = Amazon Web Services}
+\DeclareAcronym{cli}{short = CLI, long = Command Line Interface}
+\DeclareAcronym{gui}{short = GUI, long = Graphical User Interface}
+\DeclareAcronym{css}{short = CSS, long = Cascading Style Sheets}
+\DeclareAcronym{dom}{short = DOM, long = Document Object Model}
+\DeclareAcronym{ml}{short = ML, long = Machine Learning}
+\DeclareAcronym{pdf}{short = PDF, long = Portable Document Format}
+\DeclareAcronym{ram}{short = RAM, long = Random Access Memory}
+\DeclareAcronym{vram}{short = VRAM, long = Video Random Access Memory}
+\DeclareAcronym{ssh}{short = SSH, long = Secure Shell}
+\DeclareAcronym{gpt}{short = GPT, long = Generative Pre-trained Transformer}
+\DeclareAcronym{acp}{short = ACP, long = Agent Communication Protocol}
+\DeclareAcronym{bleu}{short = BLEU, long = Bilingual Evaluation Understudy}
+\DeclareAcronym{rouge}{short = ROUGE, long = Recall-Oriented Understudy for Gisting Evaluation}
+\DeclareAcronym{moe}{short = MoE, long = Mixture of Experts}
+\DeclareAcronym{mlops}{short = MLOps, long = Machine Learning Operations}
+\DeclareAcronym{uuid}{short = UUID, long = Universally Unique Identifier}
+\DeclareAcronym{tp}{short = TP, long = True Positive}
+\DeclareAcronym{fp}{short = FP, long = False Positive}
+\DeclareAcronym{fn}{short = FN, long = False Negative}
+\DeclareAcronym{tn}{short = TN, long = True Negative}
 
  
 % Define custom colors for code listings
@@ -168,7 +193,7 @@
   \vspace{0.4cm}
 
   \noindent \textbf{2. Descrierea temei:}\\
-  Contribuția originală a lucrării va consta în dezvoltarea unei arhitecturi software bazată pe Modele Mari de Limbaj (LLMs - Large Language Models), capabilă să asiste utilizatorul în scrierea, depanarea, documentarea și explicarea codului sursă. Aplicațiile vizate sunt eficientizarea procesului de dezvoltare software și automatizarea sarcinilor repetitive întâlnite în programare. Sistemul propus nu vizează antrenarea de la zero a modelelor, ci implementarea unei soluții agentice care utilizează modele pre-antrenate pentru a executa acțiuni complexe. Cercetarea aferentă va include: sinteza bibliografică a realizărilor actuale din domeniu, utilizarea unui mecanism care permite modelului să utilizeze instrumente pentru a interacționa cu mediul virtual, implementarea unor tehnici de inginerie a prompturilor și management-ul contextului pentru a asigura relevanța răspunsurilor, validarea experimentală a prototipului dezvoltat prin scenarii de utilizare reale utilizând medii de dezvoltare precum PyCharm/VS Code și biblioteci specifice precum LangChain, LangGraph sau GoogleADK, concluzionarea rezultatelor obținute și a contribuției originale, cât și enunțarea perspectivelor ulterioare de cercetare.
+  Contribuția originală a lucrării va consta în dezvoltarea unei arhitecturi software bazată pe Modele Mari de Limbaj (LLMs - Large Language Models), capabilă să asiste utilizatorul în scrierea, depanarea, documentarea și explicarea codului sursă. Aplicațiile vizate sunt eficientizarea procesului de dezvoltare software și automatizarea sarcinilor repetitive întâlnite în programare. Sistemul propus nu vizează antrenarea de la zero a modelelor, ci implementarea unei soluții agentice care utilizează modele pre-antrenate pentru a executa acțiuni complexe. Cercetarea aferentă va include: sinteza bibliografică a realizărilor actuale din domeniu, utilizarea unui mecanism care permite modelului să utilizeze instrumente pentru a interacționa cu mediul virtual, implementarea unor tehnici de inginerie a prompturilor și management-ul contextului pentru a asigura relevanța răspunsurilor, validarea experimentală a prototipului dezvoltat prin scenarii de utilizare reale utilizând medii de dezvoltare precum \href{https://www.jetbrains.com/pycharm/}{PyCharm}/\href{https://code.visualstudio.com}{VS Code} și biblioteci specifice precum \href{https://www.langchain.com}{LangChain}, \href{https://www.langchain.com/langgraph}{LangGraph} sau \href{https://google.github.io/adk-docs/}{GoogleADK}, concluzionarea rezultatelor obținute și a contribuției originale, cât și enunțarea perspectivelor ulterioare de cercetare.
 
   \vspace{0.4cm}
 
@@ -266,7 +291,7 @@
   a avea acces la un context mai bun dar si pentru executia de comenzi, nu a fost una dificila, avand in vedere competentele avansate de
   prelucrare si generare de text ale acestor modele.
 
-  Momentan, in domeniul modelelor de limbaj, exista cativa jucatori mari precum Google, Anthropic si OpenAI care controleaza o buna parte
+  Momentan, in domeniul modelelor de limbaj, exista cativa jucatori mari precum \href{https://www.google.com}{Google}, \href{https://www.anthropic.com}{Anthropic} si \href{https://openai.com}{OpenAI} care controleaza o buna parte
   din cota de piata. Acestia sunt in stadiul in care isi fortifica ecosistemul pentru a-si maximiza retentia de utilizatori. Fiecare furnizor
   de astfel de servicii lanseaza produse care se folosesc de aceste modele. De la asistenti de cercetare, la asistenti de programare si la programe
   ce automatizeaza sarcini zilnice. Odata cu aceste produse, incearca sa restrictioneze sau sa ofere tarife diferite pentru utilizatori ce folosesc
@@ -312,7 +337,7 @@
   Unul din conceptele de baza ale inteligentei artificiale a aparut pentru prima data publicat in anul 1958 de catre F. Rosenblatt in lucrarea \cite{rosenblattPerceptronProbabilisticModel1958}, 
   unde este prezentat \textbf{perceptronul}: un model inspirat din fizionomia neuronului biologic, capabil sa realizeze sarcini de clasificare binara. Perceptronul primeste un set de date
   de intrare, fiecare asociata unei ponderi, iar rezultatul final este determinat prin combinarea acestor valori si aplicarea unei functii de activare. Procesul de invatare
-  are loc prin ajustarea iterativa aponderilor in functie de eroarea obtinuta la iesire, mecanism ce reprezinta baza invatarii automate moderne. Aceasta abordare a demonstrat pentru prima data
+  are loc prin ajustarea iterativa a ponderilor in functie de eroarea obtinuta la iesire, mecanism ce reprezinta baza invatarii automate moderne. Aceasta abordare a demonstrat pentru prima data
   posibilitatea construirii unor sisteme capabile sa invete din experienta, fara a fi programate explicit pentru fiecare situatie (Figura~\ref{fig:perceptron}).
 
   Formal, pentru un vector de intrare $\mathbf{x} \in \mathbb{R}^{n}$, un vector de ponderi $\mathbf{w} \in \mathbb{R}^{n}$ si un termen de prag $b$, iesirea perceptronului este data de:
@@ -322,7 +347,7 @@
   \end{equation}
   unde $\varphi(\cdot)$ este functia de activare (treapta in formularea originala). Regula de invatare consta in actualizarea ponderilor proportional cu eroarea $e = y_{\text{tinta}} - y$ si cu o rata de invatare $\eta$, $\mathbf{w} \leftarrow \mathbf{w} + \eta\, e\, \mathbf{x}$.
 
-  Cu toate acestea, desi perceptronul a reprezentat un pas revolutonar in dezvoltarea inteligentei artificiale, modelul prezenta limitari importante. In forma sa initiala,
+  Cu toate acestea, desi perceptronul a reprezentat un pas revolutionar in dezvoltarea inteligentei artificiale, modelul prezenta limitari importante. In forma sa initiala,
   acesta putea clasifica doar date liniar separabile, ceea ce restrictiona capacitatea de rezolvare a problemelor complexe. Din acest motiv, perceptronul simplu era eficient doar pentru reprezentari de
   date de intrare relativ simple, intr-un singur strat de procesare. Aceste limitari au dus ulterior la dezvoltarea retelelor neuronale multistrat si a algoritmilor mai avansati de antrenare, care au stat la
   baza progreselor moderne din domeniul inteligentei artificiale.
@@ -371,15 +396,15 @@
 
   Aceasta problema aparea in timpul procesului de propagare inversa prin timp (\ac{btt}), atunci cand secventele analizate deveneau foarte lungi.
   Gradientii calculati in timpul antrenarii se diminuau exponential pe masura ce informatia era propagata catre inceputul secventei, devenind atat de mici incat actualizarile ponderilor
-  ajungeau neglijabile. In consecinta, reteaua "uita" informatiile importante del a inceputul secventei si nu putea invata \textit{dependente pe termen lung}.
+  ajungeau neglijabile. In consecinta, reteaua "uita" informatiile importante de la inceputul secventei si nu putea invata \textit{dependente pe termen lung}.
 
-  Un progress major a fost realizat de Sepp Hochreiter si Jürgen Schmidhuber prin introducerea arhitecturii \ac{lstm} in lucrarea 
+  Un progres major a fost realizat de Sepp Hochreiter si Jürgen Schmidhuber prin introducerea arhitecturii \ac{lstm} in lucrarea 
   \cite{hochreiterLongShortTermMemory1997}. Acest model a oferit retelelor neuronale o forma functionala de memorie pe termen lung, capabila sa pastreze
   informatii relevante pentru perioade extinse de timp. Elementul central al acestei arhitecturi il reprezinta mecanismul de "porti" care controleaza
   fluxul informatiei in interiorul retelei. Prin aceste mecanisme, modelul poate decide ce informatii trebuie pastrate, ce informatii trebuie actualizate
   si ce informatii trebuie eliminate din memorie.
 
-  Datorita acestei capacitati de gestionare eficienta a contextului temporal, retelele \ac{lstm} au devenid fundamentul multor
+  Datorita acestei capacitati de gestionare eficienta a contextului temporal, retelele \ac{lstm} au devenit fundamentul multor
   aplicatii moderne de inteligenta artificiala, fiind utilizate cu succes in traducere automata, recunoastere vocala, generare de text
   si analiza de secvente temporale, desi problema disparitiei gradientilor nu disparuse complet. O comparatie schematica intre cele doua arhitecturi este prezentata in Figura~\ref{fig:rnn-lstm}.
 
@@ -422,10 +447,10 @@
   de paralelizat, limitand scalabilitatea modelelor.
 
   Arhitectura transformer (Figura~\ref{fig:transformer}) a schimbat fundamental aceasta abordare prin introducerea mecanismului de \textbf{self-attention}. In loc sa proceseze secvential,
-  modelul putea analiza simultan toate elementele unei propozitii si putea calcula relatiile dintre aceastea indiferent de distanta lor intext.
+  modelul putea analiza simultan toate elementele unei propozitii si putea calcula relatiile dintre acestea indiferent de distanta lor in text.
   Astfel, fiecare cuvant primea informatii contextuale din intreaga secventa, ceea ce permitea captarea mult mai eficienta a dependentelor
   semantice si sintactice. In plus, eliminarea procesarii strict secventiale a permis paralelizarea operatiilor pe hardware modern precum \ac{gpu}, 
-  reducand seminifcativ timpul de antrenare.
+  reducand semnificativ timpul de antrenare.
 
   Mecanismul de \textit{scaled dot-product attention} este definit, pentru matricile de interogari $\mathbf{Q} \in \mathbb{R}^{n \times d_k}$, chei $\mathbf{K} \in \mathbb{R}^{n \times d_k}$ si valori $\mathbf{V} \in \mathbb{R}^{n \times d_v}$, prin:
   \begin{equation}
@@ -463,8 +488,8 @@
 
   Modelele mari de limbaj reprezinta rezultatul direct al antrenarii retelelor pe volume masive de date si folosind un numar foarte mare de parametrii.
   Cercetatorii au observat ca performanta modelelor continua sa creasca odata cu extinderea dimensiunii acestora si a cantitatii de date
-  utilizate la antrenare. Pornind de la aceasta idee, echipa OpenAI a dezvoltat modelul GPT-3, care includea aproximativ \textbf{175 de miliarde de parametrii}, descoperirile fiind prezentate in lucrarea „Language Models are Few-Shot Learners” \cite{brownLanguageModelsAre2020a}. La momentul
-  aparitiei, GPT-3 reprezenta unul dintre cele mai mari si mai performante modele lingvistice create.
+  utilizate la antrenare. Pornind de la aceasta idee, echipa \href{https://openai.com}{OpenAI} a dezvoltat modelul \ac{gpt}-3, care includea aproximativ \textbf{175 de miliarde de parametrii}, descoperirile fiind prezentate in lucrarea „Language Models are Few-Shot Learners” \cite{brownLanguageModelsAre2020a}. La momentul
+  aparitiei, \ac{gpt}-3 reprezenta unul dintre cele mai mari si mai performante modele lingvistice create.
 
   Una din cele mai importante realizari ale acestui model a fost capacitatea de a rezolva sarcini complexe fara a necesita o antrenare
   suplimentara specifica fiecarei probleme. Prin simpla furnizare a catorva exemple sau chiar doar a unei instructiuni formulate in limbaj natural,
@@ -482,7 +507,7 @@
   Odata cu aparitia primelor foundation models
   \footnote{Un foundation model este un model mare de limbaj de uz general antrenat pe cantitati foarte mari date diverse,
   ce poate fi adaptat pentru un numar mare de intrebuintari} 
-  precum GPT-4, GPT-5, Sonnet sau Opus, industria inteligentei artificiale a cunoscut o crestere exponentiala. Aceste modele
+  precum \ac{gpt}-4, \ac{gpt}-5, Sonnet sau Opus, industria inteligentei artificiale a cunoscut o crestere exponentiala. Aceste modele
   prezinta o eficacitate impresionanta in rezolvarea problemelor din domenii diverse, de la generare si analiza textului, pana la
   programare, traduceri automate, automatizari complexe sau gandire logica. Datorita acestei flexibilitati, integrarea acestor modele
   a devenit o prioritate pentru majoritatea companiilor ce activau in domeniul tehnologiei.
@@ -502,7 +527,7 @@
   \begin{figure}[H]
     \centering
     \includegraphics*[width=0.8\columnwidth]{figuri/evolutie_open_ai.png}
-    \caption{Evolutia modelelor GPT \cite{zhaoSurveyLargeLanguage2026}}
+    \caption{Evolutia modelelor \ac{gpt} \cite{zhaoSurveyLargeLanguage2026}}
     \label{fig:evolutia_open_ai}
   \end{figure}
 
@@ -603,7 +628,7 @@
   cache-ul \ac{kv} deoarece permite rularea modelelor cu ferestre de context
   \footnote{Contextul se refera la informatia pe care modelul o are disponibila pentru a gandi un raspuns la cererea utilizatorului} 
   lungi, optimizand necesitatile de memorie. Odata cu aceasta descoperire, au venit adaptari ale procedeelor anterioare, precum LoRA \cite{huLoRALowRankAdaptation2021} in cazul modelelor cuantizate.
-  O astfel de lucrare este "QLoRA: Efficient Finetuning of Quantized LLMs" \cite{dettmersQLoRAEfficientFinetuning2023} care isi propune sa imbunatateascsa fine-tuning-ul pentru modele cuantizate.
+  O astfel de lucrare este "QLoRA: Efficient Finetuning of Quantized LLMs" \cite{dettmersQLoRAEfficientFinetuning2023} care isi propune sa imbunatateasca fine-tuning-ul pentru modele cuantizate.
 
   \begin{figure}[H]
     \centering
@@ -731,7 +756,7 @@
 
   Cu toate acestea, pe masura ce agentii au inceput sa proceseze cantitati din ce in ce mai mari de informatii din mediul in care opereaza, fereastra de context
   a devenit o limitare critica. Desi, multe modele sunt promovate ca avand o fereastra de context maxima de 1 milion de tokeni precum
-  Opus 4.8 de la Anthropic sau GPT-5.5 de la OpenAI, modelele se lovesc de anumite limitari in a accesa tot acel context. Liu si colaboratorii sai au demonstrat in lucrarea "Lost in the Middle" \cite{liuLostMiddleHow2024} ca \textit{performanta modelelor de limbaj se degradeaza semnificativ atunci cand informatia relevanta se afla in mijlocul unui context lung}. Modelele tind sa utilizeze eficient informatiile
+  Opus 4.8 de la Anthropic sau \ac{gpt}-5.5 de la OpenAI, modelele se lovesc de anumite limitari in a accesa tot acel context. Liu si colaboratorii sai au demonstrat in lucrarea "Lost in the Middle" \cite{liuLostMiddleHow2024} ca \textit{performanta modelelor de limbaj se degradeaza semnificativ atunci cand informatia relevanta se afla in mijlocul unui context lung}. Modelele tind sa utilizeze eficient informatiile
   de la inceputul si de la sfarsitul secventei de intrare, dar pierd din vedere elementele plasate in zona centrala, chiar si in cazul modelelor concepute
   explicit pentru contexte lungi (Figura~\ref{fig:lostmiddle}). Aceasta descoperire are implicatii directe asupra agentilor care acumuleaza istoricul conversatiei, apelurile la unelte
   si observatiile intr-un context tot mai voluminos.
@@ -769,7 +794,7 @@
 
   Industria dezvoltarii software are probabil una din cele mai profitabile intrebuintari ale acestor arhitecturi agentice, datorita volumului masiv de munca existent
   in domeniu, asa ca nu a durat mult pana ce marii jucatori pe piata modelelor de \ac{ia} au inceput sa ofere produse care sa asiste programatorii in sarcinile lor.
-  La momentul actual exista mai multe solutii competitive: Codex de la OpenAI, Gemini CLI de la Google sau Claude Code de la Anthropic. Toate acestea sunt solutii
+  La momentul actual exista mai multe solutii competitive: \href{https://github.com/openai/codex}{Codex} de la OpenAI, \href{https://github.com/google-gemini/gemini-cli}{Gemini \ac{cli}} de la Google sau \href{https://docs.anthropic.com/en/docs/claude-code/overview}{Claude Code} de la Anthropic. Toate acestea sunt solutii
   proprietare care sunt facute sa ruleze cu modelele proprii si pentru care utilizatorul trebuie sa plateasca. Exista si solutii open-source precum OpenCode, Kiro
   sau OpenClaw cu care detinatorii de modele se lupta pentru a domina piata, desi lupta nu este stransa din cauza monopolului solutiilor proprietare.
 
@@ -813,17 +838,17 @@
         & DeepSeek R1 & \$0.55/input MTok, \$2.19/output MTok & Model specializat in rationament si gandire adanca pentru probleme complexe, 128k fereastra de context, cache hit: \$0.14/input MTok \\
         \hline
 
-        \textbf{Meta (\href{https://www.llama.com/docs/model-cards-and-prompt-formats/llama4/}{link})} & Llama 4 & Open Source & Performante similare cu GPT4-o sau Gemini 2.0 Flash, dar open-source. Fereastra de context 10M/1M in functie de model.\\
+        \textbf{Meta (\href{https://www.llama.com/docs/model-cards-and-prompt-formats/llama4/}{link})} & Llama 4 & Open Source & Performante similare cu \ac{gpt}-4o sau Gemini 2.0 Flash, dar open-source. Fereastra de context 10M/1M in functie de model.\\
         \hline
 
-        \textbf{Qwen/Alibaba (\href{https://huggingface.co/Qwen}{link})} & Qwen 3 & Open Source & Familie de modele open-source (Apache 2.0) cu arhitectura hibrida MoE, gandire adaptiva activabila, performante frontier la programare si rationament. Disponibil in variante de 0.6B pana la 235B parametri \\
+        \textbf{Qwen/Alibaba (\href{https://huggingface.co/Qwen}{link})} & Qwen 3 & Open Source & Familie de modele open-source (Apache 2.0) cu arhitectura hibrida \ac{moe}, gandire adaptiva activabila, performante frontier la programare si rationament. Disponibil in variante de 0.6B pana la 235B parametri \\
         \hline
-        & Qwen 3.6 Plus & \$0.325/input MTok, \$1.95/output MTok & Varianta API proprietara (Alibaba Cloud), arhitectura hibrida MoE cu atentie liniara, gandire adaptiva, 1M fereastra de context, 64k tokens max. la iesire \\
+        & Qwen 3.6 Plus & \$0.325/input MTok, \$1.95/output MTok & Varianta \ac{api} proprietara (Alibaba Cloud), arhitectura hibrida \ac{moe} cu atentie liniara, gandire adaptiva, 1M fereastra de context, 64k tokens max. la iesire \\
         \hline
 
         \textbf{Mistral AI (\href{https://docs.mistral.ai/getting-started/models/models_overview/}{link})} & Mistral Large 3 & \$0.50/input MTok, \$1.50/output MTok & Cel mai capabil model Mistral, open-weight, multimodal, performante de nivel frontier. 262k fereastra de context \\
         \hline
-        & Mixtral 8x22B & Open Source & Model Mixture-of-Experts open-source (Apache 2.0), 8 experti de 22B parametri fiecare, disponibil pentru rulare locala sau prin API. 66k fereastra de context \\
+        & Mixtral 8x22B & Open Source & Model Mixture-of-Experts open-source (Apache 2.0), 8 experti de 22B parametri fiecare, disponibil pentru rulare locala sau prin \ac{api}. 66k fereastra de context \\
         \hline
 
 
@@ -893,7 +918,7 @@
 
   \section{Limitari ale arhitecturilor agentice}
 
-  Desi entuziasmul pentru bula \ac{ia} atinge cote maxime, inca este mult loc de imbunatarie, iar aceste platforme de asistenti de programare au inca
+  Desi entuziasmul pentru bula \ac{ia} atinge cote maxime, inca este mult loc de imbunatatire, iar aceste platforme de asistenti de programare au inca
   multe defecte pe care trebuie sa le depaseasca.
 
   In primul rand, \textbf{bariera principala in avansarea acestor asistenti este fereastra de context}. Aceasta fereastra reprezinta cata informatie poate sa tina minte agentul.
@@ -913,7 +938,7 @@
   \end{figure}
 
   In al doilea rand, modelele curente par sa genereze date de iesire mai detaliate decat este necesar, preferand cantitatea peste calitate. De multe ori in
-  sarcini de tipul "PR Review", agentii se grabesc sa relateze multe probleme simple sau de formatare si rateaza probleme importante de logica.
+  sarcini de tipul \ac{pr} Review, agentii se grabesc sa relateze multe probleme simple sau de formatare si rateaza probleme importante de logica.
 
   In al treilea rand, similar cu punctul anterior, agentii nu au o buna intelegere legata de cand ar trebui sa opreasca investigatiile sau sa incerce alte solutii si raman
   blocati in bucle infinite de a incerca aceleasi lucruri si a esua.
@@ -930,8 +955,8 @@
   Pentru partea de framework agentic, ofertele sunt numeroase si variate. Fiecare dintre optiunile de mai jos are avantaje si dezavantaje
   care trebuiesc cantarite in contextul aplicatiei noastre.
 
-  In materie de limbaj de programare, \textbf{Python} a fost alegerea evidenta deoarece este aproape folosit in totalitate in astfel de aplicatii, devenind un standard in industrie. Ecosistemul este de asemenea foarte matur si
-  exista o sumedenie de biblioteci pentru a ne ajuta in impelmentare. De asemenea inca un atu este portabilitatea cu care vine, Python putand fi instalat cu usurinta pe orice sistem de operare cu o simpla comanda.
+  In materie de limbaj de programare, \href{https://www.python.org}{\textbf{Python}} a fost alegerea evidenta deoarece este aproape folosit in totalitate in astfel de aplicatii, devenind un standard in industrie. Ecosistemul este de asemenea foarte matur si
+  exista o sumedenie de biblioteci pentru a ne ajuta in implementare. De asemenea inca un atu este portabilitatea cu care vine, Python putand fi instalat cu usurinta pe orice sistem de operare cu o simpla comanda.
 
   Am pornit de la ideea ca trebuie sa avem nevoie de un framework gandit pentru utilizat de unelte cu suport pentru mai multe modele, care sa suporte mai multe
   ramuri de executie, sa incorporeze managementul starii si al memoriei si sa poata construi un workflow robust si consistent. Pentru asta, am adunat o colectie de
@@ -946,19 +971,19 @@
   \vspace{2mm}
     \begin{tabularx}{\textwidth}{@{} >{\RaggedRight}X >{\RaggedRight}X >{\RaggedRight}X >{\RaggedRight}X >{\RaggedRight}X >{\RaggedRight}X @{}}
       \toprule
-      \textbf{Criteriu} & \textbf{LangChain} & \textbf{LangGraph} & \textbf{Google Gen AI / Vertex} & \textbf{LiteLLM} & \textbf{OpenAI SDK} \\
+      \textbf{Criteriu} & \textbf{\href{https://www.langchain.com}{LangChain}} & \textbf{\href{https://www.langchain.com/langgraph}{LangGraph}} & \textbf{\href{https://cloud.google.com/vertex-ai}{Google Gen AI / Vertex}} & \textbf{\href{https://www.litellm.ai}{LiteLLM}} & \textbf{\href{https://github.com/openai/openai-python}{OpenAI SDK}} \\
       \midrule
       \textbf{Rol Principal} & Orchestrator general de \ac{llm}-uri și integrari. & Framework pentru agenți stateful și fluxuri ciclice. & Platformă enterprise integrată în Google Cloud. & Proxy sau router universal pentru 100+ \ac{llm}-uri. & Client oficial pentru modelele OpenAI. \\
 
-      \textbf{Nivel Abstr.} & Înalt (multe componente gata de utilizat). & Mediu/Înalt (control fin asupra grafurilor). & Înalt (Managed Services în Vertex AI). & Jos (strat de traducere API). & Jos/Mediu (interacțiune directă). \\
+      \textbf{Nivel Abstr.} & Înalt (multe componente gata de utilizat). & Mediu/Înalt (control fin asupra grafurilor). & Înalt (Managed Services în Vertex AI). & Jos (strat de traducere \ac{api}). & Jos/Mediu (interacțiune directă). \\
 
-      \textbf{Capabilități Agentice} & Limitate (predominant fluxuri liniare). & \textbf{Excelent} (bucle, feedback și multi-agent). & Bun (suport nativ pentru tool-uri). & N/A (doar rutare de mesaje). & Depinde de utilizator (manual sau Assistants API). \\
+      \textbf{Capabilități Agentice} & Limitate (predominant fluxuri liniare). & \textbf{Excelent} (bucle, feedback și multi-agent). & Bun (suport nativ pentru tool-uri). & N/A (doar rutare de mesaje). & Depinde de utilizator (manual sau Assistants \ac{api}). \\
 
       \textbf{Suport Multi-Model} & Da (agnostic). & Da (prin ecosistemul LangChain). & Optimizat pentru Gemini. & \textbf{Absolut} (scopul principal). & Nu (doar OpenAI). \\
 
-      \textbf{Management Stare} & Încorporat (Memory buffers). & Superior (persistență și „time travel”). & Gestionat de platformă. & N/A (stateless). & Threads (doar în Assistants API). \\
+      \textbf{Management Stare} & Încorporat (Memory buffers). & Superior (persistență și „time travel”). & Gestionat de platformă. & N/A (stateless). & Threads (doar în Assistants \ac{api}). \\
 
-      \textbf{Învățare} & Medie (ecosistem foarte mare). & Abruptă (necesită logica grafurilor). & Ușoară (UI intuitiv în Cloud). & Ușoară (identic cu OpenAI SDK). & Foarte Ușoară, documentat \\
+      \textbf{Învățare} & Medie (ecosistem foarte mare). & Abruptă (necesită logica grafurilor). & Ușoară (\ac{gui} intuitiv în Cloud). & Ușoară (identic cu OpenAI \ac{sdk}). & Foarte Ușoară, documentat \\
       \bottomrule
     \end{tabularx}
   \end{table}
@@ -967,8 +992,8 @@
  
   Un alt element central este mecanismul de \textit{checkpointing}: starea grafului este serializata dupa fiecare pas si poate fi reluata, inspectata sau derulata inapoi (\textit{time travel}). Acest lucru ofera doua proprietati importante pentru un asistent de dezvoltare software: persistenta conversatiei intre sesiuni si posibilitatea de a introduce puncte de \textit{human-in-the-loop} in care executia este suspendata pana cand utilizatorul confirma o actiune (de exemplu, aplicarea unei modificari de cod sau rularea unei comenzi). 
  
-  In final am ales sa folosesc \textbf{LangGraph} datorita controlului mare pe care il ofera asupra desfasurarii workflow-ului agentic si a integrarii cu LangFuse
-  \footnote{Unealta de observabilitate open-source pentru agenti}
+  In final am ales sa folosesc \textbf{LangGraph} datorita controlului mare pe care il ofera asupra desfasurarii workflow-ului agentic si a integrarii cu \href{https://langfuse.com}{Langfuse}
+  \footnote{Unealta de observabilitate open-source pentru agenti, disponibila la \url{https://langfuse.com}}
   dar si pentru compatibilitatea cu logica desfasurarii procesului de asistenta in dezvoltarea software, respectiv
   buclele de scriere de cod, feedback, investigare si imbunatatire, in ciuda complexitatii mai mari pe care o constituie acest framework.
 
@@ -987,30 +1012,30 @@
       \toprule
       \textbf{Bibliotecă} & \textbf{Arhitectură} & \textbf{Avantaje} & \textbf{Dezavantaje} \\
       \midrule
-      \textbf{Textual} &
-      Motor \ac{tui} pe ecran complet folosind buffer-ul alternativ al terminalului. Arbore de widget-uri bazat pe DOM (similar cu HTML) &
-      $\bullet$ Sistem de layout similar cu CSS (grid, dock)\newline
+      \textbf{\href{https://textual.textualize.io}{Textual}} &
+      Motor \ac{tui} pe ecran complet folosind buffer-ul alternativ al terminalului. Arbore de widget-uri bazat pe \ac{dom} (similar cu \ac{html}) &
+      $\bullet$ Sistem de layout similar cu \ac{css} (grid, dock)\newline
       $\bullet$ Formatare de text încorporată nativ\newline
       $\bullet$ Complet asincron și bazat pe evenimente &
       $\bullet$ Folosește un scrollbar fals (nu funcționează scroll-ul nativ)\newline
-      $\bullet$ Supraîncărcarea DOM-ului cauzează lag dacă mesajele vechi nu sunt șterse\newline
+      $\bullet$ Supraîncărcarea \ac{dom}-ului cauzează lag dacă mesajele vechi nu sunt șterse\newline
       $\bullet$ Dificultate la copierea/lipirea nativă a textului \\
       \midrule
-      \textbf{Prompt Toolkit și Rich} &
+      \textbf{\href{https://python-prompt-toolkit.readthedocs.io}{Prompt Toolkit} și \href{https://rich.readthedocs.io}{Rich}} &
       Experiență interactivă folosind buffer-ul principal al terminalului. Afișare prin stdout standard. &
       $\bullet$ Derulare perfectă prin scrollbar-ul nativ al terminalului\newline
       $\bullet$ Zero lag sau probleme de memorie pe măsură ce istoricul crește\newline
       $\bullet$ Selectarea și căutarea nativă a textului funcționează impecabil &
-      $\bullet$ Nu este un motor real de layout UI (doar flux liniar)\newline
+      $\bullet$ Nu este un motor real de layout \ac{gui} (doar flux liniar)\newline
       $\bullet$ Dificil de implementat panouri laterale sau complexe\newline
       $\bullet$ Limitat strict la input ancorat în partea de jos \\
       \midrule
-      \textbf{Urwid} &
-      TUI clasic pe ecran complet folosind buffer-ul alternativ al terminalului. Ierarhie strictă de widget-uri. &
+      \textbf{\href{https://urwid.org}{Urwid}} &
+      \ac{tui} clasic pe ecran complet folosind buffer-ul alternativ al terminalului. Ierarhie strictă de widget-uri. &
       $\bullet$ Extrem de matur, stabil și testat în producție\newline
       $\bullet$ Randare foarte performantă pentru liste mari\newline
       $\bullet$ Gestionare excelentă a input-ului standard din terminal &
-      $\bullet$ API învechit și curbă de învățare mai abruptă\newline
+      $\bullet$ \ac{api} învechit și curbă de învățare mai abruptă\newline
       $\bullet$ Lipsește stilizarea modernă încorporată\newline
       $\bullet$ Sincron implicit (necesită integrare suplimentară) \\
       \bottomrule
@@ -1040,42 +1065,42 @@
   \scriptsize
   \setlength{\tabcolsep}{4pt}
   \renewcommand{\arraystretch}{1.5}
-  \caption{Produse AI ale principalilor furnizori de modele de limbaj}
+  \caption{Produse \ac{ia} ale principalilor furnizori de modele de limbaj}
   \vspace{2mm}
     \begin{tabularx}{\textwidth}{@{} >{\hsize=0.55\hsize\RaggedRight}X >{\hsize=0.75\hsize\RaggedRight}X >{\hsize=1.3\hsize\RaggedRight}X >{\hsize=0.7\hsize\RaggedRight}X >{\hsize=0.7\hsize\RaggedRight}X @{}}
       \toprule
       \textbf{Companie} & \textbf{Produs} & \textbf{Descriere} & \textbf{Audienta} & \textbf{Pret} \\
       \midrule
 
-      \textbf{Anthropic} & Claude (web/app) & Asistent AI conversational pentru analiza, scriere, programare si rationament, cu suport multimodal si artefacte interactive & Utilizatori generali, profesionisti & Freemium (Pro: \$20/luna, Max: \$100--200/luna) \\
+      \textbf{\href{https://www.anthropic.com}{Anthropic}} & \href{https://claude.ai}{Claude} (web/app) & Asistent \ac{ia} conversational pentru analiza, scriere, programare si rationament, cu suport multimodal si artefacte interactive & Utilizatori generali, profesionisti & Freemium (Pro: \$20/luna, Max: \$100--200/luna) \\
       \cmidrule(l){2-5}
-      & Claude Code & Agent de programare agentic care ruleaza in terminal, IDE sau Slack; poate naviga coduri mari, crea PR-uri si rula teste automat & Dezvoltatori software & Inclus in Pro/Max (API: cost per token) \\
+      & \href{https://docs.anthropic.com/en/docs/claude-code/overview}{Claude Code} & Agent de programare agentic care ruleaza in terminal, \ac{ide} sau \href{https://slack.com}{Slack}; poate naviga coduri mari, crea \ac{pr}-uri si rula teste automat & Dezvoltatori software & Inclus in Pro/Max (\ac{api}: cost per token) \\
       \cmidrule(l){2-5}
       & Claude Cowork & Agent agentic de productivitate care lucreaza cu fisiere locale si aplicatii cloud (Slack, Google Drive) pentru a automatiza sarcini recurente & Profesionisti, echipe & Inclus in Pro/Max \\
       \cmidrule(l){2-5}
-      & Claude Design & Instrument de prototipare vizuala integrat in Claude, care genereaza interfete UI interactive si mockup-uri pe baza descrierilor in limbaj natural & Designeri, dezvoltatori & Inclus in Pro/Max \\
+      & Claude Design & Instrument de prototipare vizuala integrat in Claude, care genereaza interfete \ac{gui} interactive si mockup-uri pe baza descrierilor in limbaj natural & Designeri, dezvoltatori & Inclus in Pro/Max \\
 
       \midrule
 
-      \textbf{Google} & Gemini (web/app) & Asistent AI conversational multimodal cu acces la cautare Google, extensii si generare de imagini; disponibil pe web, Android si iOS & Utilizatori generali & Freemium (Advanced: \$19.99/luna in Google One AI Premium) \\
+      \textbf{\href{https://www.google.com}{Google}} & \href{https://gemini.google.com}{Gemini} (web/app) & Asistent \ac{ia} conversational multimodal cu acces la cautare Google, extensii si generare de imagini; disponibil pe web, \href{https://www.android.com}{Android} si \href{https://www.apple.com/ios/}{iOS} & Utilizatori generali & Freemium (Advanced: \$19.99/luna in Google One AI Premium) \\
       \cmidrule(l){2-5}
-      & Gemini CLI & Agent de programare open-source (Apache 2.0) care ruleaza in terminal, cu suport MCP, cautare Google si context de 1M tokeni & Dezvoltatori software & Gratuit (60 req/min, 1000 req/zi cu cont Google) \\
+      & \href{https://github.com/google-gemini/gemini-cli}{Gemini \ac{cli}} & Agent de programare open-source (Apache 2.0) care ruleaza in terminal, cu suport \ac{mcp}, cautare Google si context de 1M tokeni & Dezvoltatori software & Gratuit (60 req/min, 1000 req/zi cu cont Google) \\
       \cmidrule(l){2-5}
-      & NotebookLM & Asistent de cercetare alimentat de Gemini care analizeaza documente incarcate (PDF, site-uri, video-uri) si genereaza rezumate, podcast-uri audio si conexiuni intre surse & Cercetatori, studenti & Gratuit (Plus: \$7.99/luna, Business: contact) \\
+      & \href{https://notebooklm.google.com}{NotebookLM} & Asistent de cercetare alimentat de Gemini care analizeaza documente incarcate (\ac{pdf}, site-uri, video-uri) si genereaza rezumate, podcast-uri audio si conexiuni intre surse & Cercetatori, studenti & Gratuit (Plus: \$7.99/luna, Business: contact) \\
       \cmidrule(l){2-5}
-      & Vertex AI & Platforma enterprise pentru constructia, antrenarea si implementarea de agenti AI si modele ML, cu acces la 200+ modele si instrumente MLOps & Echipe enterprise, ingineri ML & Platit (pay-as-you-go, de la \$0.0001 per operatie) \\
+      & \href{https://cloud.google.com/vertex-ai}{Vertex AI} & Platforma enterprise pentru constructia, antrenarea si implementarea de agenti \ac{ia} si modele \ac{ml}, cu acces la 200+ modele si instrumente \ac{mlops} & Echipe enterprise, ingineri \ac{ml} & Platit (pay-as-you-go, de la \$0.0001 per operatie) \\
       \cmidrule(l){2-5}
-      & Firebase Studio & Mediu de dezvoltare cloud (IDE) cu agenti AI integrati pentru constructia de aplicatii full-stack (backend, frontend, mobil) direct din browser & Dezvoltatori software & Gratuit in previzualizare (3 workspace-uri; se inchide in 2027) \\
+      & \href{https://firebase.google.com/products/studio}{Firebase Studio} & Mediu de dezvoltare cloud (\ac{ide}) cu agenti \ac{ia} integrati pentru constructia de aplicatii full-stack (backend, frontend, mobil) direct din browser & Dezvoltatori software & Gratuit in previzualizare (3 workspace-uri; se inchide in 2027) \\
 
       \midrule
 
-      \textbf{OpenAI} & ChatGPT (web/app) & Asistent AI conversational cu suport multimodal, cautare web, generare de imagini, analiza de date si plugin-uri; disponibil pe web, iOS, Android si desktop & Utilizatori generali, profesionisti & Freemium (Plus: \$20/luna, Pro: \$200/luna) \\
+      \textbf{\href{https://openai.com}{OpenAI}} & \href{https://chatgpt.com}{ChatGPT} (web/app) & Asistent \ac{ia} conversational cu suport multimodal, cautare web, generare de imagini, analiza de date si plugin-uri; disponibil pe web, iOS, Android si desktop & Utilizatori generali, profesionisti & Freemium (Plus: \$20/luna, Pro: \$200/luna) \\
       \cmidrule(l){2-5}
-      & Codex & Agent de inginerie software cloud care executa sarcini de programare in paralel, in sandbox-uri izolate preincarcate cu codul din repository-ul GitHub & Dezvoltatori software, echipe & Inclus in ChatGPT Pro/Business/Enterprise (API: \$1.50/\$6 per MTok) \\
+      & \href{https://github.com/openai/codex}{Codex} & Agent de inginerie software cloud care executa sarcini de programare in paralel, in sandbox-uri izolate preincarcate cu codul din repository-ul \href{https://github.com}{GitHub} & Dezvoltatori software, echipe & Inclus in ChatGPT Pro/Business/Enterprise (\ac{api}: \$1.50/\$6 per MTok) \\
 
       \midrule
 
-      \textbf{Microsoft/ GitHub} & GitHub Copilot & Agent de programare integrat in GitHub si disponibil ca aplicatie CLI, extensie IDE (VS Code, JetBrains) si in github.com; ofera completare de cod, chat, revizuire PR-uri si rezolvare automata de issue-uri & Dezvoltatori software, echipe & Freemium (gratuit pentru repo-uri publice; Pro: \$10/luna, Business: \$19/luna, Enterprise: \$39/luna) \\
+      \textbf{\href{https://www.microsoft.com}{Microsoft}/ GitHub} & \href{https://github.com/features/copilot}{GitHub Copilot} & Agent de programare integrat in GitHub si disponibil ca aplicatie \ac{cli}, extensie \ac{ide} (\href{https://code.visualstudio.com}{VS Code}, \href{https://www.jetbrains.com}{JetBrains}) si in github.com; ofera completare de cod, chat, revizuire \ac{pr}-uri si rezolvare automata de issue-uri & Dezvoltatori software, echipe & Freemium (gratuit pentru repo-uri publice; Pro: \$10/luna, Business: \$19/luna, Enterprise: \$39/luna) \\
 
       \bottomrule
     \end{tabularx}
@@ -1155,7 +1180,7 @@
   Mai mult, aplicatia este optimizata pentru a reduce consumul de tokeni, deci si in cazul folosirii furnizorilor de modele,
   costul va fi unul pe cat se poate de redus, lasand la o parte taxele puse de acestia pe utilizarea modelelor in aplicatii terte.
 
-  \section{Aplicatii concurente}
+  \section{Aplicatii \ac{oss} concurente}
 
   Pe langa aplicatiile furnizorilor exista si cateva aplicatii open source care s-au bucurat de o oarecare adoptie.
 
@@ -1171,73 +1196,73 @@
       \textbf{Aplicatie} & \textbf{Audienta si scop} & \textbf{Puncte forte} & \textbf{Puncte slabe} & \textbf{Functionalitati cheie} \\
       \midrule
 
-      \textbf{OpenClaw} \newline (\href{https://github.com/openclaw/openclaw}{GitHub}) \newline MIT &
-      Utilizatori care doresc un asistent AI personal, always-on, accesibil pe orice canal de comunicare &
+      \textbf{OpenClaw} \newline (\href{https://github.com/openclaw/openclaw}{GitHub}) \newline \ac{mit} &
+      Utilizatori care doresc un asistent \ac{ia} personal, always-on, accesibil pe orice canal de comunicare &
       $\bullet$ Cel mai popular proiect open source din categorie\newline
-      $\bullet$ Suport multi-canal masiv (WhatsApp, Telegram, Slack, Discord, iMessage, Signal etc.)\newline
-      $\bullet$ Sandboxing cu Docker, SSH si OpenShell\newline
-      $\bullet$ Aplicatii native macOS, iOS, Android\newline
+      $\bullet$ Suport multi-canal masiv (\href{https://www.whatsapp.com}{WhatsApp}, \href{https://telegram.org}{Telegram}, \href{https://slack.com}{Slack}, \href{https://discord.com}{Discord}, \href{https://www.apple.com/messages}{iMessage}, \href{https://signal.org}{Signal} etc.)\newline
+      $\bullet$ Sandboxing cu \href{https://www.docker.com}{Docker}, \ac{ssh} si OpenShell\newline
+      $\bullet$ Aplicatii native \href{https://www.apple.com/macos/}{macOS}, iOS, \href{https://www.android.com}{Android}\newline
       $\bullet$ Agnostic fata de furnizor, gateway local-first &
       $\bullet$ Orientat spre asistent personal, nu exclusiv programare\newline
       $\bullet$ Configurare complexa pentru multi-canal\newline
-      $\bullet$ Necesita Node.js 22+ si infrastructura gateway\newline
-      $\bullet$ Nu are integrare directa in IDE &
+      $\bullet$ Necesita \href{https://nodejs.org}{Node.js} 22+ si infrastructura gateway\newline
+      $\bullet$ Nu are integrare directa in \ac{ide} &
       Gateway local, multi-canal, sandboxing, voice wake, live canvas, cron, skills, multi-agent, apps native \\
       \midrule
 
-      \textbf{OpenHands} \newline (\href{https://github.com/OpenHands/OpenHands}{GitHub}) \newline MIT &
+      \textbf{OpenHands} \newline (\href{https://github.com/OpenHands/OpenHands}{GitHub}) \newline \ac{mit} &
       Dezvoltatori si echipe enterprise care necesita un agent autonom complet cu izolare securizata &
-      $\bullet$ Sandboxing in containere Docker -- cel mai robust din lista\newline
-      $\bullet$ GUI web si CLI disponibile\newline
-      $\bullet$ SDK Python pentru constructia de agenti personalizati\newline
-      $\bullet$ Suport Kubernetes si enterprise\newline
-      $\bullet$ Agnostic fata de furnizor (Claude, GPT, Ollama etc.) &
-      $\bullet$ Necesita Docker -- cerinte de resurse ridicate\newline
+      $\bullet$ Sandboxing in containere Docker\newline
+      $\bullet$ \ac{gui} web si \ac{cli} disponibile\newline
+      $\bullet$ \ac{sdk} Python pentru constructia de agenti personalizati\newline
+      $\bullet$ Suport \href{https://kubernetes.io}{Kubernetes} si enterprise\newline
+      $\bullet$ Agnostic fata de furnizor (Claude, \ac{gpt}, \href{https://ollama.com}{Ollama} etc.) &
+      $\bullet$ Necesita Docker\newline
       $\bullet$ Configurare initiala complexa\newline
-      $\bullet$ Nu are integrare directa in IDE\newline
+      $\bullet$ Nu are integrare directa in \ac{ide}\newline
       $\bullet$ Curba de invatare mai abrupta &
-      Sandboxing, SDK, GUI web, CLI, Kubernetes, integrari Slack/Jira/Linear \\
+      Sandboxing, \ac{sdk}, \ac{gui} web, \ac{cli}, Kubernetes, integrari \href{https://slack.com}{Slack}/\href{https://www.atlassian.com/software/jira}{Jira}/\href{https://linear.app}{Linear} \\
       \midrule
 
       \textbf{Cline} \newline (\href{https://github.com/cline/cline}{GitHub}) \newline Apache 2.0 &
-      Dezvoltatori care prefera lucrul direct din IDE cu control granular si automatizari avansate &
-      $\bullet$ Extensie VS Code si plugin JetBrains\newline
-      $\bullet$ SDK Node.js si CLI headless pentru CI/CD\newline
+      Dezvoltatori care prefera lucrul direct din \ac{ide} cu control granular si automatizari avansate &
+      $\bullet$ Extensie \href{https://code.visualstudio.com}{VS Code} si plugin \href{https://www.jetbrains.com}{JetBrains}\newline
+      $\bullet$ \ac{sdk} \href{https://nodejs.org}{Node.js} si \ac{cli} headless pentru \ac{ci}/\ac{cd}\newline
       $\bullet$ Echipe multi-agent si agenti programati\newline
-      $\bullet$ Suport MCP si plugin-uri extensibile\newline
-      $\bullet$ Agnostic fata de furnizor (200+ modele via OpenRouter) &
+      $\bullet$ Suport \ac{mcp} si plugin-uri extensibile\newline
+      $\bullet$ Agnostic fata de furnizor (200+ modele via \href{https://openrouter.ai}{OpenRouter}) &
       $\bullet$ Consum ridicat de tokeni datorita contextului mare\newline
       $\bullet$ Fara sandboxing nativ incorporat\newline
-      $\bullet$ Complexitate ridicata -- multe functionalitati\newline
+      $\bullet$ Complexitate ridicata, multe functionalitati\newline
       $\bullet$ Dependent de ecosistemul VS Code/JetBrains &
-      Extensie IDE, SDK, CLI, multi-agent, MCP, agenti programati, integrari Slack/Discord/Telegram \\
+      Extensie \ac{ide}, \ac{sdk}, \ac{cli}, multi-agent, \ac{mcp}, agenti programati, integrari Slack/Discord/Telegram \\
       \midrule
 
       \textbf{Goose} \newline (\href{https://github.com/aaif-goose/goose}{GitHub}) \newline Apache 2.0 &
-      Utilizatori generali si dezvoltatori care doresc un agent AI nativ, performant si extensibil &
+      Utilizatori generali si dezvoltatori care doresc un agent \ac{ia} nativ, performant si extensibil &
       $\bullet$ Aplicatie nativa desktop (macOS, Linux, Windows)\newline
-      $\bullet$ Construit in Rust -- performanta ridicata\newline
-      $\bullet$ Suport MCP (70+ extensii)\newline
-      $\bullet$ Agent general -- nu doar pentru cod\newline
-      $\bullet$ Agnostic fata de furnizor (15+ furnizori, suport ACP) &
+      $\bullet$ Construit in \href{https://www.rust-lang.org}{Rust} deci are o performanta ridicata\newline
+      $\bullet$ Suport \ac{mcp} (70+ extensii)\newline
+      $\bullet$ Agent general, nu doar pentru cod\newline
+      $\bullet$ Agnostic fata de furnizor (15+ furnizori, suport \ac{acp}) &
       $\bullet$ Mai putin specializat pe programare\newline
       $\bullet$ Ecosistem de extensii mai tanar\newline
-      $\bullet$ Nu are integrare directa in IDE\newline
+      $\bullet$ Nu are integrare directa in \ac{ide}\newline
       $\bullet$ Documentatie in curs de maturizare &
-      App nativa, CLI, API, MCP, ACP, Rust, multi-platform, Linux Foundation \\
+      Aplicatie nativa, \ac{cli}, \ac{api}, \ac{mcp}, \ac{acp}, Rust, multi-platform, Linux Foundation \\
       \midrule
 
       \textbf{Aider} \newline (\href{https://github.com/Aider-AI/aider}{GitHub}) \newline Apache 2.0 &
-      Dezvoltatori individuali care prefera un workflow minimalist din terminal cu integrare Git &
+      Dezvoltatori individuali care prefera un workflow minimalist din terminal cu integrare \href{https://git-scm.com}{Git} &
       $\bullet$ Mapare automata a codului sursa (repo map)\newline
-      $\bullet$ Integrare Git nativa -- commit-uri automate\newline
+      $\bullet$ Integrare Git nativa cu commit-uri automate\newline
       $\bullet$ Suport 100+ limbaje de programare\newline
       $\bullet$ Linting si testare automata\newline
-      $\bullet$ Agnostic fata de furnizor (Claude, GPT, DeepSeek, Ollama) &
+      $\bullet$ Agnostic fata de furnizor (Claude, \ac{gpt}, \href{https://www.deepseek.com}{DeepSeek}, Ollama) &
       $\bullet$ Fara sandboxing\newline
-      $\bullet$ Exclusiv terminal -- fara GUI\newline
+      $\bullet$ Exclusiv terminal, fara \ac{gui}\newline
       $\bullet$ Capabilitati agentice limitate fata de concurenta\newline
-      $\bullet$ Nu are extensie nativa de IDE &
+      $\bullet$ Nu are extensie nativa de \ac{ide} &
       Terminal, Git auto-commit, repo map, voice-to-code, linting, modele locale \\
       \bottomrule
     \end{tabularx}
@@ -1256,8 +1281,8 @@
     \subsection{Cerinte hardware}
 
     Cerintele hardware pentru dezvoltarea si rularea acestei aplicatii sunt minime. In cazul in care folosim modelele din cloud este necesar doar un laptop sau computer ce poate rula Python 3 cu conexiune activa la internet.
-    Deoarece inferenta nu este realizata local, nu este necesar un GPU performant sau o cantitate mare de RAM. Daca se doreste rularea unui model local, cerintele hardware depind de modelul ales, dar cresc exponential necesitand
-    acces la o placa video moderna si o cantitate semnificativa de RAM.
+    Deoarece inferenta nu este realizata local, nu este necesar un \ac{gpu} performant sau o cantitate mare de \ac{ram}. Daca se doreste rularea unui model local, cerintele hardware depind de modelul ales, dar cresc exponential necesitand
+    acces la o placa video moderna si o cantitate semnificativa de \ac{ram}.
 
     \begin{table}[h!]
     \centering
@@ -1268,7 +1293,7 @@
     \vspace{2mm}
       \begin{tabularx}{\textwidth}{@{} >{\RaggedRight}X >{\RaggedRight}X >{\RaggedRight}X >{\RaggedRight}X >{\RaggedRight}X @{}}
         \toprule
-        \textbf{Model} & \textbf{Parametri} & \textbf{GPU Recomandat} & \textbf{VRAM} & \textbf{RAM} \\
+        \textbf{Model} & \textbf{Parametri} & \textbf{\ac{gpu} Recomandat} & \textbf{\ac{vram}} & \textbf{\ac{ram}} \\
         \midrule
         LLaMA 3 & 70B & 2x NVIDIA A100 80GB sau 2x RTX 4090 & 40--160 GB (cuantizat vs FP16) & 64--128 GB \\
         \midrule
@@ -1296,41 +1321,32 @@
   Structura aplicatiei reflecta separarea responsabilitatilor in mai multe directoare specializate.
   Directorul \texttt{src} contine logica agentului: graful LangGraph, uneltele, sistemul de permisiuni, clientul \ac{mcp}, pipeline-ul de compactare,
   sub-agentii, sandbox-ul Docker si tracing-ul. Directorul \texttt{ui} contine interfata cu utilizatorul: bucla principala, comenzile slash,
-  sistemul de skill-uri, gestionarea sesiunilor si preferintelor. Directorul \texttt{web} contine un dashboard analitic Flask care vizualizeaza
-  sesiunile, consumul de tokeni si activitatea uneltelor. Directorul \texttt{eval} contine un runner de evaluari cu metrici precum BLEU, ROUGE
+  sistemul de skill-uri, gestionarea sesiunilor si preferintelor. Directorul \texttt{web} contine un dashboard analitic \href{https://flask.palletsprojects.com}{Flask} care vizualizeaza
+  sesiunile, consumul de tokeni si activitatea uneltelor. Directorul \texttt{eval} contine un runner de evaluari cu metrici precum \ac{bleu}, \ac{rouge}
   si potrivire semantica. Documentatia detaliata per-subsistem se gaseste in \texttt{docs}, iar configurarea implicita in \texttt{config/config.yml}.
 
   \begin{figure}[H]
     \centering
-    {\ttfamily\small
-    \begin{tabular}{@{}l@{\hspace{3em}}l@{}}
-      vibe-cli/                & config/ \\
-      |-- config/              & |-- config.yml \\
-      |-- docs/                & \textbackslash-- eval.yml \\
-      |-- eval/                & \\
-      |-- scripts/             & src/ \\
-      |-- src/                 & |-- main.py \\
-      |-- tests/               & |-- tools.py \\
-      |-- ui/                  & |-- tool\_guards.py \\
-      |-- web/                 & |-- providers.py \\
-      |-- Makefile             & |-- permissions.py \\
-      |-- pyproject.toml       & |-- sandbox.py \\
-      \textbackslash-- ARCHITECTURE.md & |-- mcp\_client.py \\
-                               & |-- artifacts.py \\
-                               & |-- tracing.py \\
-                               & |-- compaction/ \\
-                               & \textbackslash-- subagents/ \\
-                               & \\
-                               & ui/ \\
-                               & |-- app.py \\
-                               & |-- ui.py \\
-                               & |-- commands.py \\
-                               & |-- skills.py \\
-                               & |-- sessions.py \\
-                               & |-- preferences.py \\
-                               & |-- provider\_handler.py \\
-                               & |-- pastes.py \\
-                               & \textbackslash-- updater.py \\
+    {\ttfamily\scriptsize
+    \begin{tabular}{@{}l@{\hspace{2em}}l@{\hspace{2em}}l@{}}
+      vibe-cli/                & src/                  & config/ \\
+      |-- config/              & |-- main.py           & |-- config.yml \\
+      |-- docs/                & |-- tools.py          & \textbackslash-- eval.yml \\
+      |-- eval/                & |-- tool\_guards.py   & \\
+      |-- examples/            & |-- providers.py      & ui/ \\
+      |-- scripts/             & |-- permissions.py    & |-- app.py \\
+      |-- src/                 & |-- sandbox.py        & |-- ui.py \\
+      |-- tests/               & |-- mcp\_client.py    & |-- commands.py \\
+      |-- ui/                  & |-- artifacts.py      & |-- skills.py \\
+      |-- web/                 & |-- attachments.py    & |-- sessions.py \\
+      |-- ARCHITECTURE.md      & |-- capabilities.py   & |-- preferences.py \\
+      |-- FIRST\_START.md      & |-- clipboard.py      & |-- provider\_handler.py \\
+      |-- HEADLESS\_USAGE.md   & |-- log\_context.py   & |-- pastes.py \\
+      |-- Makefile             & |-- logging\_setup.py & |-- paths.py \\
+      |-- pyproject.toml       & |-- multimodal.py     & |-- profile.py \\
+      |-- README.md            & |-- tracing.py        & |-- config\_init.py \\
+      |-- UPDATING.md          & |-- compaction/       & |-- vibe\_md.py \\
+      \textbackslash-- uv.lock & \textbackslash-- subagents/ & \textbackslash-- updater.py \\
     \end{tabular}
     }
     \caption{Structura directoarelor vitale ale proiectului}
@@ -1339,7 +1355,7 @@
 
   \section{Configurare}
 
-  Configurarea aplicatiei se face prin intermediul fisierului \texttt{config.yml} care contine catalogul de furnizori (Ollama, OpenAI, Claude, Bedrock, Gemini),
+  Configurarea aplicatiei se face prin intermediul fisierului \texttt{config.yml} care contine catalogul de furnizori (Ollama, OpenAI, Claude, Amazon \href{https://aws.amazon.com/bedrock/}{Bedrock}, Gemini),
   modelele disponibile pentru fiecare, pipeline-ul de compactare, setarile de tracing, configuratia sandbox-ului sau a subagentilor si a uneltelor.
   Cheile \ac{api} sunt declarate ca variabile de mediu (de exemplu \texttt{\$\{OPENAI\_API\_KEY\}}) si sunt rezolvate la pornire. Daca nici o cheie nu este setata si Ollama nu este accesibil,
   aplicatia solicita interactiv introducerea unei chei la pornire prin comanda \texttt{/model} sau \texttt{/key}.
@@ -1422,6 +1438,7 @@
      fereastra de context cu output-ul acelei unelte.
     \item Alegerea modelului din 5 provideri (Ollama, OpenAI, Claude, Bedrock, Gemini)
      si a efortului de gandire. Furnizorii de modele de limbaj nu sunt limitati si lista poate creste prin extinderea clasei de baza \texttt{BaseProvider}.
+    \item Suport pentru intrari multimodale (imagini, fisiere \ac{pdf}, fisiere text si documente), atasate in prompt prin cale locala sau \ac{url}, atunci cand modelul selectat ofera capabilitati multimodale (vezi tabelul \ref{tab:modele-testate}); pentru modelele exclusiv textuale, atasamentele sunt respinse cu un mesaj explicativ.
     \item Gestionarea sesiunilor cu posibilitatea de a salva, sterge, lista sau continua conversatii anterioare. Fiecare proiect include istoricul propriu al conversatiilor.
     \item Sistemul de permisiuni per-unealta cu liste de always-allow si always-deny persistente
     \item Conectarea cu servere \ac{mcp} prin transport \ac{stdio}, \ac{http} sau \ac{sse}
@@ -1429,7 +1446,7 @@
     \item Sub-agenti specializati extensibili (cativa agenti de baza precum: general, code search, web research, dar pot fi adaugati mai multi sub-agenti prin extinderea clasei \texttt{Subagent}) care ruleaza in paralel cu modele configurabile per-agent. 
     \item Pipeline de compactare a contextului cu mai multe stadii (trunchiere, sumarizare, deduplicare) configurabil.
     \item Sandbox Docker optional pentru executia izolata a comenzilor
-    \item Tracing prin LangFuse Cloud pentru observabilitate
+    \item Tracing prin Langfuse Cloud pentru observabilitate
     \item Dashboard web analitic (Flask) cu vizualizare de metrici, cost si activitate
     \item Auto-completare pentru comenzile slash si actualizare automata a versiunii
   \end{itemize}
@@ -1461,7 +1478,7 @@
     \subsection{Utilizare}
 
     Dupa configurare, utilizatorul interactioneaza cu modelul printr-o sesiune persistenta de chat, salvata automat in evenimente granulare sub directorul corespunzator proiectului curent. Comenzile pot fi rulate in orice moment al conversatiei si au formatul \texttt{/comanda}, cu auto-completare la
-    apasarea tastei Tab. Sunt disponibile si scurtaturi de tastatura precum \texttt{CTRL+L} pentru a goli conversatia si \texttt{CTRL+C} pentru inchiderea aplicatiei cu salvarea automata a sesiunii. Dashboard-ul web analitic poate fi pornit separat prin \texttt{vibe web}, expus implicit pe portul
+    apasarea tastei Tab. Sunt disponibile si scurtaturi de tastatura precum \texttt{CTRL+L} pentru a goli conversatia si \texttt{CTRL+C} pentru inchiderea aplicatiei cu salvarea automata a sesiunii. Pe langa intrarea textuala, utilizatorul poate atasa imagini, fisiere \ac{pdf}, fisiere text sau documente, transmise nativ modelului atunci cand acesta dispune de capabilitati multimodale. Dashboard-ul web analitic poate fi pornit separat prin \texttt{vibe web}, expus implicit pe portul
     5050, si ofera vizualizari pentru consumul de tokeni, costuri, latente, evenimente de compactare si activitatea sub-agentilor.
   
   \begin{table}[H]
@@ -1486,9 +1503,11 @@
       \texttt{/resume} & Continuarea ultimei sesiuni sau a uneia specifice prin ID \\
       \texttt{/compaction} & Inspectarea pipeline-ului de compactare si selectarea modelului \\
       \texttt{/compact} & Fortarea unei compactari imediate a contextului \\
-      \texttt{/tracing} & Configurarea si activarea tracing-ului LangFuse \\
-      \texttt{/score} & Evaluarea ultimului tur in LangFuse (good/bad) \\
-      \texttt{/dataset} & Adaugarea ultimului tur la un dataset LangFuse \\
+      \texttt{/tracing} & Configurarea si activarea tracing-ului Langfuse \\
+      \texttt{/score} & Evaluarea ultimului tur in Langfuse (good/bad) \\
+      \texttt{/attach} & Atasarea datelor multimodale de tip imagini, \ac{pdf} sau fisiere text ca si cale de sistem \\
+      \texttt{/paste} & Atasarea datelor multimodale de tip imagini, \ac{pdf} sau fisiere text din clipboard\\
+      \texttt{/dataset} & Adaugarea ultimului tur la un dataset Langfuse \\
       \texttt{/update} & Actualizarea la ultima versiune din git \\
       \texttt{/exit} & Salvarea conversatiei si inchiderea aplicatiei \\
       \bottomrule
@@ -1545,7 +1564,7 @@
 
     In implementare, s-au folosit multe din standardele industriei:
     \begin{itemize}
-      \item Utilizeaza doua locuri de storcare a memoriei: stocare intr-un folder ascuns a conversatiilor integrale si in memorie pentru istoricul conversatiei compactate (daca este cazul)
+      \item Utilizeaza doua locuri de stocare a memoriei: stocare intr-un folder ascuns a conversatiilor integrale si in memorie pentru istoricul conversatiei compactate (daca este cazul)
       \item Preferinte locale si globale. Pe masura ce utilizatorul foloseste agentul, acesta isi noteaza preferintele acestuia si le ia in considerare in cererile viitoare.
       \item Toate acestea sunt stocate local pentru pastrarea intimitatii utilizatorului
     \end{itemize}
@@ -1568,7 +1587,7 @@
       \item Promptul de sistem - instructiuni pentru comportamentul agentului. Contine printre altele rolul pe care acesta il joaca,
       restrictii comportamentale, exemple de raspunsuri si capabilitati accesibile.
       \item Mesajele utilizatorului - prompt-ul pe care utilizatorul il trimite catre agent.
-      \item Raspunsurile asistentului - raspunsul oferit catre utilizator la cererea acestuia
+      \item Raspunsurile asistentului - raspunsul oferit catre utilizator la cererea acestuia. Intotdeauna contextul declarat (spre ex. 200k tokeni) va avea marimea adevarata $C = C_{\max} - O_{\max}$, unde $C$ este contextul adevarat, $C_{\max}$ contextul declarat, si $O_{\max}$ numarul maxim de tokeni de iesire suportati de model. Din aceasta valoare se scad si alte valori rezervate de sistem, precum spatiul tampon pentru compactare.
       \item Atasamente - documente, imagini, audio si videoclipuri
       \item Skill-uri, sau alte instructiuni - descrierea si titlul tuturor skill-urilor, sau a rutinelor salvate care pot fi
       folosite de catre agent sunt injectate in context pentru ca agentul sa poata alege in cunostiinta de cauza un skill sau rutina din cele disponibile.
@@ -1591,6 +1610,31 @@
       intrebuintarilor, aceasta marime a ferestrei este mai mult decat suficienta, chiar si pentru conversatii mai complexe, in ciuda limitarilor cunoscute precum scaderea performantelor pe date ce se afla in mijlocul ferestrei de context \cite{liuLostMiddleHow2024}. 
 
       In implementarea actuala \textit{nu au fost folosite tehnici \ac{rag}} din cauza complexitatii de implementare, a infrastructurii necesare si a beneficiilor estompate de performantele curente ale modelelor de limbaj.
+
+      \subsubsection{Gestionarea datelor multimodale}
+
+      Data fiind alegerea de abandonare a tehnicii \ac{rag}, in implementare avem nevoie de o modalitate inteligenta de a prelucra datele multimodale pentru prezevarea contextului.
+
+      Prima problema care apare in lucrul cu date multimodale apare din cauza necesitatii pentru suportul unei plaje foarte largi de modele de limbaj. Datorita arhitecturii
+      agnostice de furnizor care permite folosirea oricarui model, avem nevoie sa detectam capabilitatile de prelucrarea a tipurilor de fisiere pentru fiecare model in parte. Din pacate,
+      furnizorii de modele sau creatorii care le includ in Ollama, nu specifica nicaieri consistent in metadatele modelului daca acesta capabilitati pentru lucrul cu anumite tipuri de fisiere.
+
+      Din acest motiv, am avut de ales intre doua solutii de implementare:
+      \begin{itemize}
+        \item Punerea utilizatorului in situatia in care trebuie sa se documenteze si sa declare in configuratie capabilitatile modelului pe care doreste sa il foloseasca
+        \item Incercarea automata de trimitere de date multimodale catre model, iar in cazul in care acesta refuza datele, sa bifam in fisierul de preferinte faptul ca acest model nu suporta
+        respectivul tip de date.
+      \end{itemize}
+
+      Din motive legate de experienta utilizatorului am ales sa continuam cu a doua solutie.
+
+      La finalul deciziei legate de detectarea capabilitatilor, a trebuit sa lucram la gestionarea contextului pentru aceste date. Am ales astfel o abordare hibrida, compusa din doua ramuri pe care agentul
+      poate alege sa le apeleze. In prima faza pentru fisierele de tip text sau \ac{pdf}, agentul poate citi fisierele in format pur textual folosindu-se de uneltele uzuale de citit fisiere, beneficiind de optimizarile acestora, precum
+      folosirea punctuala in zone de interes sau truncherea datelor de iesire. Daca modelul considera ca are nevoie de o vedere completa, pentru fisiere \ac{pdf}, daca acesta suporta formatul ca tip de date pentru intrare, se poate uita direct pe intregul fisier prin
+      mai multe citiri succesive de maxim 20 de pagini (configurabil).
+      Pozele sunt introduse direct in context daca modelul suporta acest tip de date si sunt limitate la o marime de 10MB.
+
+      Compactarea este realizata prin metode ce ruleaza imediat dupa folosirea uneltelor, cum ar fi trunchere, referentiere sau sumarizare, fisierele fiind stocate automat ca artefacte.
 
       \subsubsection{Compactarea}
 
@@ -1644,7 +1688,7 @@
         \end{itemize}
 
       \end{minipage}
-      \caption{Configurarea gardarii executiei uneltelor}
+      \caption{Configurarea pipeline-ului de compactare a contextului}
       \label{fig:compaction-yml}
       \par\vspace{0.3cm}
       {\small \textit{Nota:} Unele strategii de compactare sunt de tipul \textit{eager}, adica ruleaza imediat cum tura se termina, iar altele ruleaza doar la atingerea limitei de context. De asemenea unele strategii nu sunt compatibile una cu cealalta.}
@@ -1732,7 +1776,7 @@
     simplitatii, si a disponibilitatii crescute. Astfel, agentul va scrie aceste bucati de cod si le va executa in terminal pentru a realiza actiuni complexe in doar cateva linii de cod, sporind eficienta cercetarii si a testarii.
     Aceasta utilizare este fructificata de promptul de sistem care instruieste agentul, dar si din procesul de antrenare.
 
-    Antrenarea pentru scrierea, folosirea si executia de cod a devenit o prioritate pentru agenti, modelele de limbaj fiind antrenate explici folosind \ac{rl} sa foloseasca secvente de cod pentru facilitarea rezolvarii problemelor care
+    Antrenarea pentru scrierea, folosirea si executia de cod a devenit o prioritate pentru agenti, modelele de limbaj fiind antrenate explicit folosind \ac{rl} sa foloseasca secvente de cod pentru facilitarea rezolvarii problemelor care
     ar beneficia dupa urma unei astfel de abordari. Aceasta logica este utilizata si pentru testarea de baza a ideilor si explorarea acestora inainte de implementarea propriu zisa, agentul ruland un mic script demonstrativ in terminal pentru
     a dovedi ca principiul pe care se bazeaza idea ce urmeaza a fi implementata este valid.
 
@@ -1847,7 +1891,7 @@
       \item model dedicat per tip, configurabil prin \texttt{/subagents <tip> <provider> <model>}, cu fallback pe modelul principal de chat.
     \end{itemize}
 
-    La executie, fiecare subagent ruleaza o bucla completa de tool-calling \texttt{LangChain} cu acelasi flux de permisiuni si aceleasi \texttt{tool\_guards} deterministe ca parintele (de exemplu \emph{read-before-write}, prin partajarea \texttt{ctx["file\_reads"]}), beneficiaza de compactare locala a mesajelor de tip \texttt{ToolMessage} supradimensionate, de telemetrie \texttt{LangFuse} cuibarita sub span-ul parintelui, de agregarea consumului de token-uri (\emph{input/output/cache\_read/cache\_write}) si de respectarea limitelor \texttt{subagents.max\_depth} si \texttt{subagents.max\_parallel}. In cazul in care modelul iese din bucla fara raport final, este reapelat o singura data pentru a emite raportul.
+    La executie, fiecare subagent ruleaza o bucla completa de tool-calling \texttt{LangChain} cu acelasi flux de permisiuni si aceleasi \texttt{tool\_guards} deterministe ca parintele (de exemplu \emph{read-before-write}, prin partajarea \texttt{ctx["file\_reads"]}), beneficiaza de compactare locala a mesajelor de tip \texttt{ToolMessage} supradimensionate, de telemetrie \texttt{Langfuse} cuibarita sub span-ul parintelui, de agregarea consumului de token-uri (\emph{input/output/cache\_read/cache\_write}) si de respectarea limitelor \texttt{subagents.max\_depth} si \texttt{subagents.max\_parallel}. In cazul in care modelul iese din bucla fara raport final, este reapelat o singura data pentru a emite raportul.
 
     Modelul actual nu suporta definitii declarative bazate pe fisiere Markdown (analog skill-urilor), scoping de servere \ac{mcp} per subagent, streaming intermediar al iesirii subagentului catre orchestrator, si nici politici de \emph{retry}/\emph{replan} dincolo de \texttt{max\_iterations}.
 
@@ -1964,7 +2008,7 @@
         Configuratia permite controlul parametrilor de izolare: imaginea de baza, modul de retea, limitele de memorie si \ac{cpu}, timpul implicit de executie, 
         lista de cai interzise si pragurile (dimensiune maxima, numar maxim de fisiere) ce delimiteaza directoarele considerate ambigue.
       \end{minipage}
-      \caption{Configurarea subagentilor}
+      \caption{Configurarea sandbox-ului Docker pentru executia izolata a comenzilor}
       \label{fig:sandboxing-yml}
     \end{figure}
 
@@ -2012,24 +2056,24 @@
 
   \section{Observabilitate}
 
-  Observabilitatea aplicatiei este oferita pe doua niveluri complementare: tracing extern, prin integrarea cu LangFuse Cloud, si introspectie locala, prin panoul web analitic livrat impreuna cu aplicatia. Ambele componente sunt optionale, dezactivate implicit, si nu transmit date catre alte servicii in afara
+  Observabilitatea aplicatiei este oferita pe doua niveluri complementare: tracing extern, prin integrarea cu Langfuse Cloud, si introspectie locala, prin panoul web analitic livrat impreuna cu aplicatia. Ambele componente sunt optionale, dezactivate implicit, si nu transmit date catre alte servicii in afara
   celor configurate explicit de utilizator.
 
     \subsection{Langfuse}
 
-    Pentru tracing extern, aplicatia integreaza LangFuse Cloud prin intermediul unei interceptari la graful LangGraph al agentului. Activarea functionalitatii se face fie prin editarea fisierului \texttt{config.yml}, fie, prin comanda interactiva \texttt{/tracing setup}, care persista cheile
+    Pentru tracing extern, aplicatia integreaza Langfuse Cloud prin intermediul unei interceptari la graful LangGraph al agentului. Activarea functionalitatii se face fie prin editarea fisierului \texttt{config.yml}, fie, prin comanda interactiva \texttt{/tracing setup}, care persista cheile
     in \texttt{preferences.json}. Rezolvarea credentialelor urmeaza o ordine deterministica de precedenta: preferintele locale au prioritate, urmate de fisierul de configuratie si, in final, de variabilele de mediu \texttt{LANGFUSE\_*}.
 
-    La fiecare invocare a grafului, evenimentele sunt interceptate si publicate catre LangFuse, asincron. Datele incarcate in cloud sunt sub forba unui trace
+    La fiecare invocare a grafului, evenimentele sunt interceptate si publicate catre Langfuse, asincron. Datele incarcate in cloud sunt sub forba unui trace
     \footnote{Un trace este un mesaj de tip \ac{json} care contine date. Este folosit in monitorizarea distribuita si reprezinta 'urma' sau 'dovada' unor actiuni si contine detalii despre acestea. Un trace poate contine mai multe obiecte.}
     principal care contine intregii ture de conversatie, alaturi de span-uri
     \footnote{Un span reprezinta o unitate de observare a unei singure actiuni} 
     ierarhice pentru fiecare apel
-    catre modelul de limbaj, fiecare invocare de unealta si fiecare traversare de nod din graf. Pentru fiecare span sunt inregistrate printre altele: numele modelului, intrarile, iesirile, consumul de tokeni si latenta. Trace-urile sunt etichetate cu identificatorul sesiunii curente (UUIDv7 generat local), un
-    identificator anonim al utilizatorului si tag-uri descriptive (de ex. modul activ, furnizorul si modelul selectat), permitand astfel agregarea per sesiune si filtrarea ulterioara in interfata LangFuse.
+    catre modelul de limbaj, fiecare invocare de unealta si fiecare traversare de nod din graf. Pentru fiecare span sunt inregistrate printre altele: numele modelului, intrarile, iesirile, consumul de tokeni si latenta. Trace-urile sunt etichetate cu identificatorul sesiunii curente (\ac{uuid}v7 generat local), un
+    identificator anonim al utilizatorului si tag-uri descriptive (de ex. modul activ, furnizorul si modelul selectat), permitand astfel agregarea per sesiune si filtrarea ulterioara in interfata Langfuse.
 
     Pe baza identificatorului ultimului trace, doua comenzi suplimentare ofera bucla de feedback necesara evaluarii continue: \texttt{/score} ataseaza scoruri numerice sau calitative ultimei interactiuni, iar \texttt{/dataset} adauga turul curent intr-un set de date persistent, util pentru benchmarking
-    si teste de regresie comportamentala. In combinatie cu mecanismul \emph{\ac{llm}-as-judge} oferit de LangFuse, aceste comenzi formeaza fundamentul unei suite de regresie pentru calitatea raspunsurilor agentului.
+    si teste de regresie comportamentala. In combinatie cu mecanismul \emph{\ac{llm}-as-judge} oferit de Langfuse, aceste comenzi formeaza fundamentul unei suite de regresie pentru calitatea raspunsurilor agentului.
 
     \begin{figure}[H]
       \centering
@@ -2046,7 +2090,7 @@
 
     \textbf{In partea centrala} observam ca ne aflam in meniul \textit{Users}, unde putem vedea toate sesiunile (si trace-urile daca deschidem o sesiune) facute de un utilizator, cu filtre si alte mecanisme de cautare.
 
-    \textbf{In partea dreapta} am deschis trace-ul asociat unei sesiuni si putem observa locul in care LangFuse straluceste. Putem investiga executia conversatiei pas cu pas, investigand graful de executie, fiecare apel de unealta si raspunsul acestora,
+    \textbf{In partea dreapta} am deschis trace-ul asociat unei sesiuni si putem observa locul in care Langfuse straluceste. Putem investiga executia conversatiei pas cu pas, investigand graful de executie, fiecare apel de unealta si raspunsul acestora,
     gandirea efectiva a modelului de limbaj, intregul istoric al conversatiei in format augmentat cat si metrici cu privire la tokens. De asemenea tot aici putem vedea si evaluarile automate pe care le-am configurat, care ne spun daca raspunsurile agentului sunt corect factual sau sunt halucinate.
 
     \subsection{Panou web}
@@ -2060,7 +2104,7 @@
 
     Sincronizarea cu starea actuala a sesiunilor si a log-urilor este realizata prin \ac{sse}, o singura conexiune persistenta fiind multiplexata pentru ambele fluxuri. Detectia modificarilor se face prin compararea metadatelor sistemului de fisiere (cale, timp de modificare, dimensiune) la
     intervale de 1.5 secunde, iar reincarcarile sunt debounce-uite la 250 de milisecunde pentru a evita actualizari redundante. Un panou inferior afiseaza ultimele 1000 de linii din log-ul textual al aplicatiei, cu auto-derulare inteligenta care suspenda fixarea la baza atunci cand utilizatorul
-    consulta inregistrari anterioare. Atunci cand tracing-ul LangFuse este activ, un buton dedicat din bara superioara deschide proiectul corespunzator in interfata externa, fara a expune cheile \ac{api} catre browser.
+    consulta inregistrari anterioare. Atunci cand tracing-ul Langfuse este activ, un buton dedicat din bara superioara deschide proiectul corespunzator in interfata externa, fara a expune cheile \ac{api} catre browser.
 
     \begin{figure}[H]
       \noindent
@@ -2082,22 +2126,685 @@
     si toate costurile sunt explicate, spre deosebire de restul aplicatiilor disponibile pe piata care ascund aceste numere.
 
 \chapter{REZULTATE EXPERIMENTALE}
+
+    Avand in vedere finalizarea implementarii, am condus un set de teste in timpul utilizarii asistentului de programare
+    cu diferite variatii ale configuratiei pentru extragerea unui mod optim de utilizare si strangerea de date legate de mai multe
+    aspecte ale folosirii care influenteaza performantele aplicatiei.
+
+    Dat fiind natura nedeterminista a raspunsurilor modelelor de limbaj, schimbarile de configuratie precum modelul utilizat sau promptul de sistem,
+    cat si uneltele puse la dispozitie si alte aspecte pot avea un impact consistent asupra datelor de iesire si actiunile intreprinse de agent.
+
   \section{Pozitionarea fata de concurenta}
-  \section{Experimente, evaluari si benchmarking}
-  \section{Influenta lungimii prompt-ului}
-  \section{Contextul in mediul agentic}
-  \section{Interactiunea dintre modele, context si unelte}
+
+    La finalul implementarii, rezultatul este comparabil din punct de vedere al
+    capabilitatilor dar si al performantei cu aplicatiile existente pe piata in momentul de fata.
+
+    Calitatile ce diferentiaza abordarea noastra de restul competitiei sunt: integrarea usoara cu modele \ac{oss} ce pot rula local pe masina utilizatorului,
+    scapand de dependenta de un furnizor de modele de limbaj scapand astfel de costurile asociate cu folosirea acestor unelte, transparenta interactiunii cu modelele de limbaj prin
+    panoul web si integrarea cu Langfuse dar si prin optiunile exhaustive de configuratie prin care utilizatorul poate controla majoritatea functionalitatilor vitale.
+
+    Pentru a sustine cantitativ aceasta diferentiere, in tabelul \ref{tab:comparatie_clis} 
+    am rezumat principalele caracteristici ale celor mai populare unelte agentice de programare
+    pentru terminal (\textit{\href{https://docs.anthropic.com/en/docs/claude-code/overview}{Claude Code}} dezvoltata de Anthropic,
+    \textit{\href{https://github.com/openai/codex}{OpenAI Codex \ac{cli}}} dezvoltata de OpenAI
+    si \textit{\href{https://docs.github.com/en/copilot/concepts/agents/about-copilot-cli}{GitHub Copilot \ac{cli}}} dezvoltata de GitHub) in raport cu solutia propusa.
+
+    \begin{table}[H]
+    \centering
+    \scriptsize
+    \setlength{\tabcolsep}{4pt}
+    \renewcommand{\arraystretch}{1.5}
+    \caption{Comparatie intre \texttt{vibe-cli} si principalele unelte agentice de programare pentru terminal disponibile pe piata}
+    \vspace{2mm}
+      \begin{tabularx}{\textwidth}{@{} >{\hsize=0.55\hsize\RaggedRight}X >{\hsize=0.95\hsize\RaggedRight}X >{\hsize=1.25\hsize\RaggedRight}X >{\hsize=1.25\hsize\RaggedRight}X @{}}
+        \toprule
+        \textbf{Aplicatie} & \textbf{Furnizori si model de cost} & \textbf{Puncte forte} & \textbf{Puncte slabe (raportat la solutia propusa)} \\
+        \midrule
+
+        \textbf{Claude Code} \newline (\href{https://docs.anthropic.com/en/docs/claude-code/overview}{Anthropic}) \newline Sursa inchisa, proprietara &
+        Doar modele Anthropic Claude (\ac{aws} Bedrock si Vertex AI doar in editia enterprise). \newline
+        Abonament Pro/Max sau cheie \ac{api} cu plata per-token. &
+        $\bullet$ Maturitate si integrare cu modelele Claude\newline
+        $\bullet$ Extensibilitate prin \ac{mcp}, subagenti, skills, hooks si extensii\newline
+        $\bullet$ Permisiuni granulare si sandboxing pe macOS/Linux/Windows\newline
+        $\bullet$ Suprafete multiple (terminal, VS Code, JetBrains, web) &
+        $\bullet$ Cod sursa inchis, dependenta totala de un singur furnizor\newline
+        $\bullet$ Fara suport documentat pentru modele \ac{oss} locale\newline
+        $\bullet$ Cost obligatoriu (abonament sau per-token), fara regim gratuit\newline
+        $\bullet$ Fara panou web propriu pentru transparenta; doar consola Anthropic de facturare si comanda pentru context in aplicatie.\newline
+        $\bullet$ Tracing nativ minim (suport partial \href{https://opentelemetry.io}{OpenTelemetry}) \\
+        \midrule
+
+        \textbf{OpenAI Codex \ac{cli}} \newline (\href{https://github.com/openai/codex}{GitHub}) \newline Licenta Apache-2.0 &
+        Doar modele OpenAI. \newline
+        Inclus in plan ChatGPT Plus/Pro/Business sau cheie \ac{api} cu plata per-token. &
+        $\bullet$ Singura solutie comerciala cu cod sursa complet deschis (Apache-2.0)\newline
+        $\bullet$ Implementare in Rust, performanta ridicata si executabil unic\newline
+        $\bullet$ Suport pentru \ac{mcp}, subagenti, skills, reguli, interceptari si sandboxing\newline
+        $\bullet$ Autentificare directa cu un cont ChatGPT existent &
+        $\bullet$ \textit{Furnizor unic}: doar modele OpenAI, fara rutare alternativa documentata\newline
+        $\bullet$ Fara suport pentru modele \ac{oss} locale (Ollama, llama.cpp)\newline
+        $\bullet$ Cost obligatoriu (abonament ChatGPT sau cheie \ac{api})\newline
+        $\bullet$ Documentatie minima privind transparenta utilizarii (tokeni, cost, istoric)\newline
+        $\bullet$ Fara integrare cu Langfuse sau alt backend de tracing \\
+        \midrule
+
+        \textbf{GitHub Copilot \ac{cli}} \newline (\href{https://docs.github.com/en/copilot/concepts/agents/about-copilot-cli}{GitHub Docs}) \newline Sursa inchisa, proprietara &
+        Modele gazduite de GitHub (Claude, \ac{gpt}); rutare optionala catre endpoint-uri OpenAI-compatibile (Ollama, vLLM, \href{https://azure.microsoft.com/en-us/products/ai-services/openai-service}{Azure OpenAI}, Anthropic) prin variabile de mediu. \newline
+        Abonament Copilot Pro/Business/Enterprise + credite consumate per interactiune. &
+        $\bullet$ Singura solutie comerciala cu rutare explicita catre Ollama si endpoint-uri locale\newline
+        $\bullet$ Configurabilitate avansata: agenti per utilizator/repo/organizatie, \ac{mcp}, skills, hooks, memorie persistenta\newline
+        $\bullet$ Integrare nativa cu workflow-urile GitHub (\ac{pr}-uri, issue-uri, context de repo)\newline
+        $\bullet$ Comenzi de inspectie a sesiunii (\texttt{/usage}, \texttt{/context}, \texttt{/compact}) &
+        $\bullet$ Cod sursa inchis, abonament Copilot obligatoriu\newline
+        $\bullet$ Pret opac (credite consumate per interactiune, fara mapare publica la cost)\newline
+        $\bullet$ Status de previzualizare publica\newline
+        $\bullet$ Fara panou web sau interfata grafica; analiza disponibila numai prin comenzi in terminal\newline
+        $\bullet$ Fara integrare cu Langfuse sau \href{https://opentelemetry.io}{OpenTelemetry} \\
+        \midrule
+
+        \textbf{\texttt{vibe-cli}} \newline (\href{https://github.com/Moshulika/vibe-cli}{GitHub}) \newline Licenta \textbf{\ac{mit}} &
+        \textbf{OpenAI, Anthropic, Google Gemini si Ollama}, comutabile pe loc prin \texttt{/model}. \newline
+        Aplicatie gratuita; cost zero pentru rulare locala cu Ollama, sau exclusiv tariful furnizorului ales in regim cloud. &
+        $\bullet$ Suport nativ multi-provider, inclusiv \textbf{modele \ac{oss} locale prin Ollama}, fara cheie \ac{api}\newline
+        $\bullet$ \textbf{Panou web Flask local}, read-only, cu metrici per sesiune (tokeni pe categorii, evolutia contextului, cost estimat, latenta uneltelor cu $p_{50}$/$p_{95}$, debit, compactari, reconstructia turului)
+        si \textbf{Integrare nativa Langfuse} prin callback-uri LangChain, cu \textit{tagging} per subagent si evaluari automate\newline
+        $\bullet$ Suport multimodal (imagini, \ac{pdf}, fisiere text si documente), conditionat de capabilitatile modelului selectat\newline
+        $\bullet$ Subagenti tipizati paraleli (\texttt{general}, \texttt{code\_search}, \texttt{web\_research}) cu model selectabil per tip\newline
+        $\bullet$ \textbf{Configuratie \ac{yaml} exhaustiva}: provideri, \ac{mcp}, subagenti, skills, \textit{tool guards} deterministe, permisiuni \textit{allow}/\textit{deny}, sandboxing Docker, compactare si tracing &
+        $\bullet$ Maturitate redusa fata de produsele furnizorilor mari, ecosistem in dezvoltare\newline
+        $\bullet$ Fara extensie nativa de \ac{ide} (utilizare exclusiv din terminal)\newline
+        $\bullet$ Suport oficial limitat la macOS si Linux (fara instalare nativa pe Windows)\newline
+        $\bullet$ Curba de invatare mai abrupta pentru configurarea avansata din \texttt{config.yml} \\
+
+        \bottomrule
+      \end{tabularx}
+      \label{tab:comparatie_clis}
+    \end{table}
+
+    In tabelul \ref{tab:comparatie_clis}, se observa mai multe diferente, 
+    in special independenta fata de un furnizor unic de modele, integrarea cu modele locale 
+    \ac{oss}, panoul web propriu si tracing-ul nativ cu Langfuse, pozitioneaza solutia 
+    propusa intr-un punct distinct fata de concurenta, oferind in acelasi timp un set 
+    comparabil de capabilitati agentice (subagenti, \ac{mcp}, sandboxing, configurabilitate 
+    avansata).
+
+    In continuare, in tabelul \ref{tab:comparatie_oss} prezentam o comparatie cu cei mai relevanti asistenti de programare \ac{oss} din ecosistem (\textit{OpenHands}, \textit{Cline} si \textit{Aider}), care impart cu solutia propusa avantajul codului sursa deschis si al independentei fata de un furnizor unic de modele. Mentionam ca \textit{OpenClaw}, desi este cel mai popular proiect \ac{oss} din tabelul \ref{tab:asistenti_opensource}, nu a fost inclus in aceasta comparatie deoarece este pozitionat ca asistent personal multi-canal (mesagerie, voce, automatizari), nu ca asistent dedicat dezvoltarii software.
+
+    \begin{table}[H]
+    \centering
+    \scriptsize
+    \setlength{\tabcolsep}{4pt}
+    \renewcommand{\arraystretch}{1.5}
+    \caption{Comparatie intre \texttt{vibe-cli} si principalii asistenti de programare \ac{oss} din ecosistem}
+    \vspace{2mm}
+      \begin{tabularx}{\textwidth}{@{} >{\hsize=0.55\hsize\RaggedRight}X >{\hsize=0.95\hsize\RaggedRight}X >{\hsize=1.25\hsize\RaggedRight}X >{\hsize=1.25\hsize\RaggedRight}X @{}}
+        \toprule
+        \textbf{Aplicatie} & \textbf{Furnizori si model de cost} & \textbf{Puncte forte} & \textbf{Puncte slabe (raportat la solutia propusa)} \\
+        \midrule
+
+        \textbf{OpenHands} \newline (\href{https://github.com/OpenHands/OpenHands}{GitHub}) \newline \ac{mit} &
+        Agnostic fata de furnizor (Claude, \ac{gpt}, Ollama si altele). \newline
+        Aplicatie gratuita; cost limitat la tariful furnizorului ales. &
+        $\bullet$ Sandboxing robust in containere Docker\newline
+        $\bullet$ Interfata grafica web si \texttt{cli} disponibile in paralel\newline
+        $\bullet$ \ac{sdk} Python pentru construirea de agenti personalizati\newline
+        $\bullet$ Suport Kubernetes si scenarii enterprise\newline
+        $\bullet$ Integrari Slack, Jira, Linear &
+        $\bullet$ Cerinte de resurse ridicate, Docker obligatoriu pentru fluxul principal\newline
+        $\bullet$ Configurare initiala complexa, curba de invatare abrupta\newline
+        $\bullet$ Fara integrare nativa Langfuse pentru tracing si evaluari automate\newline
+        $\bullet$ Fara panou de transparenta cost si tokeni la nivel de sesiune\newline
+        $\bullet$ Fara suport explicit pentru subagenti tipizati cu model dedicat per tip \\
+        \midrule
+
+        \textbf{Cline} \newline (\href{https://github.com/cline/cline}{GitHub}) \newline Apache 2.0 &
+        Agnostic, cu rutare prin \href{https://openrouter.ai}{OpenRouter} (200+ modele: Anthropic, OpenAI, Ollama). \newline
+        Aplicatie gratuita; cost limitat la tariful modelului ales. &
+        $\bullet$ Extensie nativa pentru VS Code si plugin JetBrains\newline
+        $\bullet$ \ac{sdk} Node.js si \texttt{cli} headless pentru \ac{ci}/\ac{cd}\newline
+        $\bullet$ Echipe multi-agent si agenti programati\newline
+        $\bullet$ Suport \ac{mcp} si plugin-uri extensibile\newline
+        $\bullet$ Acces la peste 200 de modele prin OpenRouter &
+        $\bullet$ Consum ridicat de tokeni datorita contextului mare incarcat permanent\newline
+        $\bullet$ Fara sandboxing nativ incorporat\newline
+        $\bullet$ Dependent de ecosistemul VS Code/JetBrains, fara aplicatie standalone\newline
+        $\bullet$ Fara panou web propriu de transparenta tokeni si cost\newline
+        $\bullet$ Fara integrare Langfuse sau alt backend de tracing \\
+        \midrule
+
+        \textbf{Aider} \newline (\href{https://github.com/Aider-AI/aider}{GitHub}) \newline Apache 2.0 &
+        Agnostic (Claude, \ac{gpt}, \href{https://www.deepseek.com}{DeepSeek}, Ollama). \newline
+        Aplicatie gratuita; cost limitat la tariful modelului ales. &
+        $\bullet$ Mapare automata a codului sursa (\textit{repo map}) pentru context relevant\newline
+        $\bullet$ Integrare Git nativa cu commit-uri automate per modificare\newline
+        $\bullet$ Suport pentru peste 100 de limbaje de programare\newline
+        $\bullet$ Linting si testare automata cu reincercare la esec\newline
+        $\bullet$ Suport explicit pentru modele locale &
+        $\bullet$ Fara sandboxing\newline
+        $\bullet$ Capabilitati agentice limitate, fara subagenti tipizati paraleli\newline
+        $\bullet$ Fara suport \ac{mcp} pentru extinderea uneltelor\newline
+        $\bullet$ Fara panou web propriu de transparenta\newline
+        $\bullet$ Fara integrare Langfuse pentru tracing si evaluari automate \\
+
+        \bottomrule
+      \end{tabularx}
+      \label{tab:comparatie_oss}
+    \end{table}
+
+    Pentru a sintetiza pozitionarea \texttt{vibe-cli} fata de intregul ansamblu al concurentei 
+    (atat unelte comerciale cat si \ac{oss}), in continuare listam succint functionalitatile pe care solutia propusa 
+    le preia de la celelalte aplicatii (demonstrand caracterul de inlocuitor complet) si, simetric, 
+    functionalitatile prezente la concurenta dar neacoperite direct in implementarea curenta, clasificate in trei categorii: 
+    functionalitati in afara scopului proiectului, functionalitati care exista indirect prin mecanisme deja prezente 
+    si functionalitati genuin absente.
+
+    \newpage
+
+    \paragraph{Functionalitati prezente in concordanta cu aplicatiile concurente proprietare si \ac{oss}:}
+
+    \begin{multicols}{2}
+      \begin{enumerate}
+        \item Suport multi-provider
+        \item Modele \ac{oss} locale prin Ollama
+        \item Suport \ac{mcp}
+        \item Subagenti specializati paraleli
+        \item Skills
+        \item Interceptari per tura si \textit{tool guards} deterministe
+        \item Permisiuni \textit{allow}/\textit{deny} per unealta
+        \item Sandboxing optional in container Docker
+        \item Comenzi cu autocompletare
+        \item Sesiuni persistente cu \textit{save}/\textit{resume}
+        \item Compactare automata a istoricului conversatiei
+        \item Cautare web integrata
+        \item Citire, scriere si editare de fisiere
+        \item Executie de comenzi shell
+        \item Persistarea preferintelor utilizatorului
+        \item Intrari multimodale (imagini, \ac{pdf}, fisiere text si documente) cand modelul selectat le suporta
+      \end{enumerate}
+    \end{multicols}
+
+    \paragraph{Functionalitati absente fata de aplicatiile concurente:}
+
+    \begin{enumerate}
+      \item \textbf{In afara scopului proiectului:}
+
+      \begin{multicols}{2}
+        \begin{enumerate}
+          \item Aplicatie nativa desktop sau mobila sau extensii \ac{ide}
+          \item Control prin vorbire
+          \item Suport multi-canal (Slack, Discord, WhatsApp)
+          \item Artefacte interactive
+          \item Sandbox in cloud si executie la distanta
+          \item Suport Kubernetes si orchestrare enterprise
+          \item Magazin propriu de extensii
+        \end{enumerate}
+      \end{multicols}
+
+    \item \textbf{Existente indirect, prin mecanisme deja prezente:}
+
+      \begin{enumerate}
+        \item Extensia pentru mediile de dezvoltare este acoperita prin terminalul integrat al oricarui \ac{ide} sau sistem de operare
+        \item Integrariea cu GitHub pentru \ac{pr}-uri sau GitHub Issues este realizata prin servere \ac{mcp} sau invocarea utilitarului \texttt{gh}
+        \item Rutare prin agregatoare externe de tip OpenRouter este usor extensibila prin editarea \texttt{PROVIDER\_REGISTRY} din codul sursa.
+        \item Nu exista un \ac{sdk} extern pentru terti, dar modulele Python pot fi importate direct.
+        \item Suport pentru operatiuni de commit Git per modificare nu este suportat nativ dar este realizabil prin skills si prin executie de comenzi shell
+        \item Maparea codului sursa de tip \textit{repo map} e acoperita partial de subagentul \texttt{code\_search}
+      \end{enumerate}
+
+    \item \textbf{Absente:}
+
+      \begin{multicols}{2}
+        \begin{enumerate}
+          \item Instalare nativa pe Windows
+          \item Executie de actiuni la intervale predefinite sau la momente declarate de timp
+        \end{enumerate}
+      \end{multicols}
+
+  \end{enumerate}
+
+    Asadar, prin acoperirea functionalitatilor centrale ale concurentei la care se adauga panoul web local, integrarea Langfuse, subagentii tipizati si \textit{tool guards}-urile deterministe, \texttt{vibe-cli} se pozitioneaza ca un inlocuitor functional complet pentru sarcinile uzuale de programare asistata din terminal, in timp ce diferentele in raport cu concurenta tin in principal de suprafetele de utilizare (extensii \ac{ide}, aplicatii desktop, canale de mesagerie) si de maturitatea ecosistemului din jurul aplicatiei.
+
+  \section{Influenta lungimii si a exactitatii prompt-ului asupra performantei. De ce un prompt prea exact nu garanteaza rezultate mai bune}
+
+    Unul dintre experimentele rulate a fost evaluarea performantelor agentului in sarcini de \ac{pr} review pe 6 proiecte open-source cu doua tipuri de prompt de sistem:
+
+    \begin{enumerate}
+      \item Un prompt sumar, de tipul \texttt{"Review these PRs, output your findings in this format"}. Promptul complet este disponibil \textbf{\href{https://gist.github.com/Moshulika/b3f1d85fa269bae8c06b216d8e2e8776}{aici}}
+      \item Un prompt detaliat, de aproximativ 300 de linii care incearca sa maximizeze gasirea tuturor problemelor si indeamna agentul sa isi dea silinta sa gaseasca doar probleme reale si sa evite
+      problemele triviale. Promptul complet este disponibil \textbf{\href{https://gist.github.com/Moshulika/6f2859da2291ec38544f6deaa209613a}{aici}}
+    \end{enumerate}
+
+    Experimentul s-a desfasurat in urmatoarele condititii:
+    \begin{itemize}
+      \item Baza de date pe care o folosim contine 50 de review-uri umane considerate ideale. Dorim sa testam daca agentul nostru reuseste sa gaseasca toate problemele pe care le-au gasit inginerii umani in aceste proiecte.
+      \item Baza de date contine o lista cu fiecare review uman, linia la care acesta a adaugat comentariul dar si intregul proiect de la momentul producerii review-ului pentru context.
+      \item A fost folosita o arhitectura ce porneste mai multe procese paralele ce ruleaza agentul cu acces complet la unelte si subagenti, pentru a procesa mai repede cele 50 de review-uri.
+      \item La finalul procesului de review, un alt model de limbaj mai mic se uita la review-urile umane si la cele generate de agent si verifica daca acestea relateaza aceleasi probleme.
+      \item Derivam scorurile de precizie, recunoastere si F1 din aceste metrici.
+      \item Modelele folosite au fost Claude Opus 4.7 pentru review-ul efectiv si Claude Haiku 4.5 pentru agentul judecator si deduplicare.
+    \end{itemize}
+
+    Pentru a cuantifica performanta agentului, fiecare comentariu produs in raport cu setul de referinta uman este clasificat in una dintre urmatoarele categorii:
+    \begin{itemize}
+      \item \textbf{\ac{tp}}: o problema semnalata de agent care corespunde unei probleme identificate si in review-ul uman de referinta.
+      \item \textbf{\ac{fp}}: o problema semnalata de agent careia nu i se asociaza nicio observatie din review-ul uman (zgomot sau alerta gresita).
+      \item \textbf{\ac{fn}}: o problema prezenta in review-ul uman pe care agentul nu a reusit sa o identifice (omisiune).
+      \item \textbf{\ac{tn}}: o linie de cod pentru care nici agentul, nici recenzentul uman nu au formulat o observatie; in contextul \ac{pr} review-ului acest numar este dominant si dificil de definit riguros, motiv pentru care nu intervine in metricile raportate.
+    \end{itemize}
+
+    Pornind de la aceste categorii, definim \textit{precizia} ca fractiunea de alerte corecte din totalul alertelor emise de agent, \textit{recunoasterea} (engl. \textit{recall}) ca fractiunea de probleme reale efectiv detectate, iar scorul $F_1$ ca media armonica a celor doua, oferind o singura valoare scalara ce penalizeaza dezechilibrul intre precizie si recunoastere:
+    \begin{equation}
+      \begin{gathered}
+        \mathrm{Precizie} = \frac{\mathit{TP}}{\mathit{TP} + \mathit{FP}}, \\
+        \mathrm{Recunoastere} = \frac{\mathit{TP}}{\mathit{TP} + \mathit{FN}}, \\
+        F_1 = 2 \cdot \frac{\mathrm{Precizie} \cdot \mathrm{Recunoastere}}{\mathrm{Precizie} + \mathrm{Recunoastere}} = \frac{2\,\mathit{TP}}{2\,\mathit{TP} + \mathit{FP} + \mathit{FN}},
+      \end{gathered}
+      \label{eq:precision-recall-f1}
+    \end{equation}
+    unde $\mathrm{Precizie}, \mathrm{Recunoastere}, F_1 \in [0, 1]$, iar valori apropiate de $1$ corespund unei performante superioare. Un agent care raporteaza foarte putine probleme poate atinge o precizie ridicata cu o recunoastere scazuta, in timp ce un agent care raporteaza agresiv obtine recunoastere mare in detrimentul preciziei; scorul $F_1$ surprinde acest compromis intr-o singura metrica.
+
+    Problemele noi sunt probleme pe care modelul judecator le-a considerat ca fiind valide in ciuda faptului ca nu se regaseau prin review-urile umane.
+
+    Rezultatele experimentului pot fi regasite in tabelele \ref{tab:detailed} si \ref{tab:trivial}.
+
+    \begin{table}[H]
+      \centering
+      \scriptsize
+      \setlength{\tabcolsep}{6pt}
+      \renewcommand{\arraystretch}{1.3}
+
+      \begin{subtable}[t]{\linewidth}
+        \centering
+        \begin{tabular}{@{}llrrrrr@{}}
+          \toprule
+          \textbf{Prompt} & \textbf{Proiect} & \textbf{Precizie} & \textbf{Recunoastere} & \textbf{F1} & \textbf{Probleme noi} & \textbf{\ac{pr}}s \\
+          \midrule
+          Detaliat & cal.com            & 64.3\%  & 80.6\%  & 71.5\%  & 11 & 10 \\
+          Detaliat & discourse-graphite & 71.1\%  & 75.0\%  & 73.0\%  & 11 & 10 \\
+          Detaliat & grafana            & 72.7\%  & 68.2\%  & 70.4\%  &  9 & 10 \\
+          Detaliat & keycloak           & 73.3\%  & 63.6\%  & 68.1\%  &  8 &  9 \\
+          Detaliat & keycloak-greptile  & 100.0\% & 100.0\% & 100.0\% &  0 &  1 \\
+          Detaliat & sentry             & 81.2\%  & 52.6\%  & 63.9\%  &  3 &  6 \\
+          Detaliat & sentry-greptile    & 37.0\%  & 75.0\%  & 49.6\%  &  1 &  4 \\
+          \midrule
+          Detaliat & \textbf{TOTAL}     & \textbf{66.5\%} & \textbf{70.6\%} & \textbf{68.5\%} & \textbf{43} & \textbf{50} \\
+          \bottomrule
+        \end{tabular}
+        \caption{Metrici per proiect}
+        \label{tab:detailed-repo}
+      \end{subtable}
+
+      \vspace{4mm}
+
+      \begin{subtable}[t]{\linewidth}
+        \centering
+        \begin{tabular}{@{}lrrrrrrr@{}}
+          \toprule
+          \textbf{Severitate} & \textbf{Precizie} & \textbf{Recunoastere} & \textbf{F1} & \textbf{TP} & \textbf{FP} & \textbf{FN} & \textbf{Probleme noi} \\
+          \midrule
+          critical & 58.8\% & 88.9\% & 70.8\% &  8 &  7 &  1 &  2 \\
+          high     & 75.7\% & 80.5\% & 78.0\% & 33 & 18 &  8 & 23 \\
+          medium   & 59.5\% & 72.3\% & 65.3\% & 34 & 34 & 13 & 16 \\
+          low      & 67.6\% & 53.8\% & 60.0\% & 21 & 11 & 18 &  2 \\
+          \bottomrule
+        \end{tabular}
+        \caption{Metrici pe nivele de severitate}
+        \label{tab:detailed-severity}
+      \end{subtable}
+
+      \vspace{2mm}
+      \caption{Rezultatele pentru prompt-ul detaliat: metrici per proiect si pe nivele de severitate}
+      \label{tab:detailed}
+    \end{table}
+
+    \begin{table}[H]
+      \centering
+      \scriptsize
+      \setlength{\tabcolsep}{6pt}
+      \renewcommand{\arraystretch}{1.3}
+
+      \begin{subtable}[t]{\linewidth}
+        \centering
+        \begin{tabular}{@{}llrrrrr@{}}
+          \toprule
+          \textbf{Prompt} & \textbf{Proiect} & \textbf{Precizie} & \textbf{Recunoastere} & \textbf{F1} & \textbf{Probleme noi} & \textbf{PRs} \\
+          \midrule
+          Simplu & cal.com            & 18.2\% & 83.9\%  & 30.0\% & 1 & 10 \\
+          Simplu & discourse-graphite & 24.4\% & 100.0\% & 39.2\% & 2 & 10 \\
+          Simplu & grafana            & 16.2\% & 90.0\%  & 27.5\% & 0 &  9 \\
+          Simplu & keycloak           & 25.8\% & 95.5\%  & 40.7\% & 2 &  9 \\
+          Simplu & keycloak-greptile  & 33.3\% & 100.0\% & 50.0\% & 0 &  1 \\
+          Simplu & sentry             & 27.8\% & 73.7\%  & 40.3\% & 1 &  6 \\
+          Simplu & sentry-greptile    & 15.1\% & 83.3\%  & 25.5\% & 1 &  4 \\
+          \midrule
+          Simplu & \textbf{TOTAL}     & \textbf{20.9\%} & \textbf{88.8\%} & \textbf{33.8\%} & \textbf{7} & \textbf{49} \\
+          \bottomrule
+        \end{tabular}
+        \caption{Metrici per proiect}
+        \label{tab:trivial-repo}
+      \end{subtable}
+
+      \vspace{4mm}
+
+      \begin{subtable}[t]{\linewidth}
+        \centering
+        \begin{tabular}{@{}lrrrrrrr@{}}
+          \toprule
+          \textbf{Severitate} & \textbf{Precizie} & \textbf{Recunoastere} & \textbf{F1} & \textbf{TP} & \textbf{FP} & \textbf{FN} & \textbf{Probleme noi} \\
+          \midrule
+          critical & 17.3\% & 100.0\% & 29.5\% &  9 &  43 & 0 & 0 \\
+          high     & 25.0\% & 95.0\%  & 39.6\% & 38 & 120 & 2 & 2 \\
+          medium   & 22.6\% & 89.4\%  & 36.1\% & 42 & 161 & 5 & 5 \\
+          low      & 16.3\% & 78.9\%  & 27.0\% & 30 & 154 & 8 & 0 \\
+          \bottomrule
+        \end{tabular}
+        \caption{Metrici pe nivele de severitate}
+        \label{tab:trivial-severity}
+      \end{subtable}
+
+      \vspace{2mm}
+      \caption{Rezultatele pentru prompt-ul simplu: metrici per proiect si pe nivele de severitate}
+      \label{tab:trivial}
+    \end{table}
+
+    Analizand datele din tabelele \ref{tab:detailed} si \ref{tab:trivial}, putem observa un rezultat neasteptat. Avand in vedere tehnica "Chain of Thought" \cite{weiChainofThoughtPromptingElicits2022},
+    ne-am fi asteptat ca un agent caruia i se spune pas cu pas cum trebuie sa opereze sa aiba performante mai bune decat unul care este lasat liber.
+
+    Totusi, uitandu-ne mai atent la datele de tip "False Positive", putem intui care este cauza acestor rezultate. Din cauza restrictiilor impuse de prompt, 
+    modelul este reticent in a spune sau cerceta probleme din afara ariei pe care o acopera prompt-ul pe sistem. Acesta incearca sa maximizeze precizia si scorul F1, astfel
+    face review-uri despre care este sigur ca sunt corecte, avand astfel un scor F1 mare si o precizie buna, dar o recunoastere mai mica decat prompt-ul simplu. Numeric, acest tip de prompt
+    a produs in total 70 de rezultate fals pozitive.
+
+    Pe de alta parte, folosind prompt-ul simplu, agentul a fost lasat sa scrie orice problema, verificata sau nu. Acesta a scris orice pseudo-probleme (reala sau nu) care ar fi putut fi posibila. Astfel, semnaland mai multe probleme
+    (fictive sau nu) a reusit sa acopere o suprafara mai mare de probleme, iar probabilitatea ca o problema reala sa se afle prin cele sugerate creste. Acest lucru este clar uitandu-ne la sectiunea de "False Positives" unde, in loc de 70 de 
+    review-uri ca si in cazul prompt-ului detaliat, aici avem in total 478 de comentarii marcate ca fals pozitive.
+
+    Acest studiu reflecta o problema dominanta in lumea \ac{ia}: alegerea intre precizie si recunoastere. Cum realizam un agent care are o recunoastere perfecta si identifica corect toate
+    instantele ce trebuiesc recunoscute fara a returna rezultate ireale. In domenii sensibile precum domeniul medical sau militar, acest subiect este foarte dezbatut, deoarece in general
+    daca incercam sa marim recunoasterea, precizia va scadea. O alternativa este folosirea scorului F1, dar nici aceasta metoda nu este perfecta. 
+
+    In experimentul de fata, se ridica aceeasi problema: preferam un agent care gaseste toate problemele critice dintr-un sistem, dar acest detaliu este ascuns printr-o sumedenie de 
+    raportari de severitate mica sau false, ajungand sa fie ignorat de ingineri? Sau ne bazam ca inginerul este judecatorul final si ca agentul este doar o unealta, in final tot inginerul ajungand sa 
+    faca un review complet, bazandu-se cat mai putin pe \ac{ia} din cauza ca poate rata probleme majore?
+
+    Raspunsul este cel mai probabil, undeva la mijloc. Proiectantul sistemului agentic trebuie sa gaseasca un echilibru bun intre precizie si recunoastere astfel incat produsul sa aibe
+    sens.
+
+  \section{Contextul in mediul agentic si compactare. Consecintele metodelor de compactare}
+
+  Compactarea este un procedeu necesar, dupa cum am mentionat si in capitolele anterioare. Dar, in practica, acesta nu este un procedeu perfect si are 
+  un numar de consecinte, in functie de metoda, sau setul de metode de compactare alese. Din utilizarea solutiei agentice dezvoltate cu mai multe combinatii de metode de compactare,
+  am extras un set de repercusiuni ale folosirii acestor metode, pe categorii, dar si un set de metode recomandat pentru performante optime in raport cu
+  integritatea informatiilor din fereastra de context.
+
+  Cea mai utila clasificare in functie de momentul in care ruleaza compactarea (imediat dupa apelul uneltelor sau cand depaseste o limita), ci pe natura pierderii pe care o introduc in context. Stadiile care taie literal blocuri din
+  rezultatele uneltelor (\texttt{tool\_truncate} si \texttt{ref\_substitute}) pierd date intregi, dar lasa o urma vizibila in conversatie: un marker de trunchiere sau o referinta \texttt{@artifact:<sha>}.
+  Stadiile care parafrazeaza prin \ac{llm} (\texttt{tool\_summarize} pe rezultatele individuale ale uneltelor, \texttt{bulk} cu strategie \texttt{summarize} sau \texttt{hybrid} pe intregul istoric)
+  pastreaza intinderea conversatiei, dar pierd nuante fara nicio urma vizibila pentru agent. Toate trei stadiile care rescriu rezultatele uneltelor (\texttt{tool\_truncate}, \texttt{tool\_summarize},
+  \texttt{ref\_substitute}) opereaza asupra aceluiasi slot proiectat si sunt declarate mutual exclusive in pipeline-ul \texttt{vibe-cli}; oricare configuratie valida contine cel mult unul dintre ele.
+
+  \subsection{Stadii care taie date din context}
+
+    Spre exemplu, \texttt{tool\_truncate} pastreaza un cap si o coada peste \texttt{max\_tool\_tokens} (implicit \(800 + 400\) la prag de \(2000\)) si externalizeaza restul in artefacte externe.
+    \texttt{ref\_substitute} merge mai departe: lasa doar un extras de \texttt{excerpt\_tokens} si o referinta. In ambele cazuri, in sesiunile testate, agentul ajunge in scurt timp sa
+    \textbf{reapeleze unealta cu argumente mai inguste} (\texttt{grep} dupa un identificator, \texttt{read\_file} pe un interval mai mic) pentru a recupera fragmentul disparut, in loc sa cheme \texttt{fetch\_artifact}.
+    Costul real al acestor stadii nu este, deci, pierderea de informatie care este recuperabila, ci tura suplimentara pe care agentul o consuma cautandu-o, vizibila in cresterea numarului
+    de apeluri de unealta per sarcina.
+
+  \subsection{Stadii care parafrazeaza date din context}
+
+    In contrast, \texttt{tool\_summarize} este, in cazul de succes, strict superior trunchierii pure: ruleaza in doua faze (o trunchiere sincrona, apoi o sumarizare \ac{llm} asincrona care inlocuieste forma
+    trunchiata cand termina), iar in caz de esec ramane la forma trunchiata. \texttt{bulk} face acelasi tip de transformare la nivelul intregului istoric.
+    Diferenta fata de stadiile care taie este ca \textbf{pierderea nu lasa urma}: rezultatul are aceeasi forma textuala, dar afirmatii cantitative (numere de linii, nume de fisiere, identificatori) pot
+    disparea silentios. Efectul practic observat este pierderea de \textit{recall}: agentul nu mai cere date pe care nu le mai are, pentru ca rezumatul ii spune ca le-a vazut deja.
+    Cand modelul de compactare este unul mai mic decat cel principal (configurabil via \texttt{preferences.compaction\_model}), acelasi mecanism produce ocazional afirmatii incorecte in rezumat,
+    care apoi se propaga ca premisa in turele urmatoare.
+
+  \subsection{Stadii auxiliare}
+
+    Restul stadiilor opereaza cu alte principii si pot insoti orice combinatie de mai sus. \texttt{format\_compress} reformateaza \ac{json}-ul fara apel \ac{llm} si fara pierdere semantica: in practica
+    nu am observat efecte negative si poate fi tinut activat neconditionat. \texttt{dedupe} elimina apeluri identice si rezultate similare peste un prag (implicit \(0{,}92\)); pragurile sub \(0{,}90\)
+    au sters in sesiunile noastre rezultate de teste cu output similar dar semnificatie diferita, ceea ce a mascat regresii reale. \texttt{importance\_prune} este robust cu setarile implicite:
+    pierderea evenimentelor \texttt{assistant\_thinking} reduce vizibil contextul fara consecinte observabile, iar pastrarea doar a ultimului \texttt{tool\_result} per tura functioneaza pentru ca
+    rezultatele intermediare sunt subsumate de cel final.
+
+  \subsection{Secventa de stadii de compactare recomandata}
+
+    Configuratia care a oferit cel mai bun compromis intre reamintire si ocupare a ferestrei de context, in experimentele rulate, are urmatoarea forma:
+
+    \begin{enumerate}
+      \item \texttt{format\_compress} activat aduce castig de spatiu garantat, pierdere zero;
+      \item \texttt{tool\_summarize} ca singur reprezentant al grupei mutual exclusive de rescriere a rezultatelor uneltelor (\texttt{tool\_truncate} ramane fallback-ul sau sincron, deci este implicit prezent);
+      \item \texttt{dedupe} cu pragul implicit \(0{,}92\), pozitionat dupa \texttt{format\_compress} pentru ca normalizarea formatarii creste rata de detectie;
+      \item \texttt{importance\_prune} cu configurarea implicita;
+      \item \texttt{bulk} cu strategia \texttt{hybrid} si \texttt{min\_turns\_kept} \(=4\), suficient pentru a acoperi o iteratie completa cerere-investigare-raspuns.
+    \end{enumerate}
+
+    Pentru sarcini scurte de tip intrebare si raspuns un pipeline complet dezactivat este perfect functional. Pentru sarcini cu citiri exhaustive de cod, inlocuirea
+    \texttt{tool\_summarize} cu \texttt{ref\_substitute} reduce semnificativ ocuparea, cu conditia ca promptul de sistem sa instruiasca explicit agentul cand sa apeleze \texttt{fetch\_artifact}.
+    In modul \texttt{tool\_persistence: true}, in care intregul istoric al uneltelor traieste intre turne, prezenta a cel putin unui stadiu ce ruleaza imediat devine obligatorie: in lipsa lui, fereastra se poate umple
+    intr-un numar relativ mic de ture cu volum normal de unelte, inainte ca pragul \texttt{threshold} sa apuce sa declanseze \texttt{bulk}.
+
+  \section{Interactiunea dintre modele, context si unelte. Modele optime pentru sarcini de programare}
+
+  Nu toate modelele au capabilitati similare cand vine vorba despre sarcini de dezvoltare software. Pe langa necesitatea capabilitatilor de gandire rationala adanca, acestea trebuie
+  sa fie antrenate pentru a apela functii in mod eficient si pentru a respecta dogme de programare precum \ac{sdd} sau \ac{tdd}.
+
+  Pentru a cuantiza exact cat de importanta este alegerea unui tip de model pentru sarcini de dezvoltare software, am incercat rularea programului cu mai multe
+  tipuri de modele, cu capabilitati diferite si marime (ca numar de parametrii) diferita.
+
+  Modelele folosite, impreuna cu caracteristicile lor relevante, sunt prezentate in tabelul \ref{tab:modele-testate}. Selectia acopera atat
+  modele accesate prin \ac{api} (familiile Claude si Gemini), cat si modele open-weight rulate local prin \texttt{ollama}, intr-o
+  plaja larga de dimensiuni (de la 1.5 miliarde la 32 miliarde de parametrii) si specializari (uz general, rationament, generare de cod).
+
+  \begin{table}[H]
+    \centering
+    \scriptsize
+    \setlength{\tabcolsep}{6pt}
+    \renewcommand{\arraystretch}{1.3}
+    \begin{tabular}{@{}llrrc@{}}
+      \toprule
+      \textbf{Model} & \textbf{Tip} & \textbf{Parametrii} & \textbf{Marime pe disc} & \textbf{Multimodal} \\
+      \midrule
+      Claude Opus 4.7        & \ac{llm} rationament       & nepublicat & nepublicat      & da \\
+      Claude Sonnet 4.6      & \ac{llm} uz general        & nepublicat & nepublicat      & da \\
+      Claude Haiku 4.5       & \ac{llm} compact, uz general         & nepublicat & nepublicat      & da \\
+      Gemini 2.5 Flash       & \ac{llm} uz general        & nepublicat & nepublicat      & da \\
+      \midrule
+      deepseek-r1:32b        & \ac{llm}, rationament                & 32\,B      & 19\,GB  & nu \\
+      gemma4:26b             & \ac{llm}, uz general                 & 26\,B      & 17\,GB  & da \\
+      phi4:14b               & \ac{llm}, uz general                 & 14\,B      & 9.1\,GB & nu \\
+      llama3.2:3b            & \ac{slm}, uz general                 & 3\,B       & 2.0\,GB & nu \\
+      devstral-small-2       & \ac{llm}, generare cod               & 24\,B & 15\,GB  & nu \\
+      qwen3-coder:30b        & \ac{llm}, generare cod               & 30\,B      & 18\,GB  & nu \\
+      qwen2.5-coder:7b       & \ac{llm}, generare cod               & 7\,B       & 4.7\,GB & nu \\
+      qwen2.5-coder:1.5b     & \ac{slm}, generare cod               & 1.5\,B     & 986\,MB & nu \\
+      \bottomrule
+    \end{tabular}
+    \caption{Modelele testate: tip, numar de parametrii, marime pe disc si suport multimodal.}
+    \label{tab:modele-testate}
+  \end{table}
+
+  Pentru rezultate comparabile, toate modelele au avut de realizat aceleasi operatii. Testul a constat din 6 sarcini
+  de intensitate diferita, executate pe un proiect real. Fiecare etapa a avut propriul mod de recompensare: de la metrici de similaritate, la \ac{llm}-as-judge, la teste ascunse. Toate
+  acestea testeaza fie exactitatea cu care agentul a relatat faptele, uneltele sau skill-urile pe care le-a apelat si daca in final operatiunea trece testul. Aceste metrici sunt fie procentaje, binare (admis sau respins)
+  sau un scor in functie de cat de mult a fost efectuata rezolvarea si logica cu care modelul a gandit.
+
+  Configuratia testului impreuna cu sarcinile pe care agentii le-au avut de rezolvat pot fi consultate \href{https://gist.github.com/Moshulika/7c5aecdc01c3e7756c1b5584f39613cd}{aici}
+
+  \subsection{Rezultate}
+
+  Rezultatele agregate ale rularilor sunt prezentate in tabelul \ref{tab:leaderboard}, sortate dupa scorul mediu obtinut pe ansamblul cazurilor de test.
+
+  \begin{table}[H]
+    \centering
+    \scriptsize
+    \setlength{\tabcolsep}{6pt}
+    \renewcommand{\arraystretch}{1.3}
+    \begin{tabular}{@{}cllrrlrr@{}}
+      \toprule
+      \textbf{\#} & \textbf{Furnizor} & \textbf{Model} & \textbf{Param. (Mld.)} & \textbf{Scor} & \textbf{Durata} & \textbf{Cost (USD)} & \textbf{Tokeni totali} \\
+      \midrule
+      1  & anthropic & claude-opus-4-7          & ---  & 0.9062 & 7\,min\,27\,s  & 13.40 & 803\,585 \\
+      2  & anthropic & claude-sonnet-4-6        & ---  & 0.8743 & 10\,min\,4\,s  & 0.06  & 17\,606  \\
+      3  & anthropic & claude-haiku-4-5         & ---  & 0.8081 & 7\,min\,0\,s   & 0.02  & 17\,361  \\
+      4  & gemini    & gemini-2.5-flash         & ---  & 0.7871 & 3\,min\,6\,s   & 0.16  & 400\,841 \\
+      5  & ollama    & devstral-small-2     & 24   & 0.7051 & 14\,min\,22\,s & 0.00  & 14\,620  \\
+      6  & ollama    & gemma4               & 26   & 0.6803 & 9\,min\,49\,s  & 0.00  & 6\,241   \\
+      7  & gemini    & gemini-2.5-pro           & ---  & 0.6431 & 4\,min\,14\,s  & 0.67  & 435\,404 \\
+      8  & ollama    & qwen3-coder          & 30   & 0.6256 & 4\,min\,33\,s  & 0.00  & 13\,926  \\
+      9  & ollama    & gemma4                & 8    & 0.3803 & 3\,min\,26\,s  & 0.00  & 6\,852   \\
+      10 & ollama    & qwen3.5             & 9.7  & 0.2963 & 7\,min\,28\,s  & 0.00  & 15\,031  \\
+      11 & ollama    & deepseek-r1          & 32   & 0.0747 & 4\,min\,15\,s  & 0.00  & 1\,484   \\
+      12 & ollama    & llama3.2:           & 3    & 0.0590 & 35\,s          & 0.00  & 5\,380   \\
+      13 & ollama    & qwen2.5-coder         & 7    & 0.0442 & 32\,s          & 0.00  & 834      \\
+      14 & ollama    & qwen2.5-coder       & 1.5  & 0.0298 & 21\,s          & 0.00  & 828      \\
+      15 & ollama    & phi4                & 14   & 0.0000 & Eroare         & 0.00  & ---      \\
+      16 & gemini    & gemini-2.0-flash         & ---  & 0.0000 & Eroare         & 0.00  & ---      \\
+      \bottomrule
+    \end{tabular}
+    \caption{Clasamentul modelelor dupa scor mediu, durata totala de rulare si cost. Modelele rulate local prin \texttt{ollama} au cost zero. Modelele proprietare nu au datele referitoare la marimea modelului publice}
+    \label{tab:leaderboard}
+  \end{table}
+
+  \subsubsection{Analiza rezultatelor}
+  
+  Interpretand rezultatele obtinute putem face mai multe observatii:
+  \begin{enumerate}
+    \item Numarul de parametrii nu este intotdeauna direct proportional cu capabilitatile. O buna parte din capacitatea de rezolvare a problemelor in
+    dezvoltarea software este extrasa din specializarea modelelor pe sarcini de acest tip. De aceea modelele care au fost pregatite pentru asa ceva au performante mai bune
+    in ciuda numarului de parametrii. Un viitor experiment ar fi incercarea modelelor de la Anthropic care aici au dominat tabela pe alte domenii de activitate.
+    \item Putem vedea influenta capabilitatilor de gandire adanca asupra numarului de tokeni folositi (si automat a costului). Prin tehnica Chain of Thoughot \cite{weiChainofThoughtPromptingElicits2022} aceste modele
+    reusesc sa isi formeze o logica superioara care ajuta la rezolvarea problemelor complexe. Dar, acest procedeu vine cu un cost. Iar in cazul Opus 4.7, acest cost este mare. Pentru 6 sarcini
+    de programare acesta a reusit sa produca prin gandire si cercetarea fisierelor 800.000 de tokeni, in valoare de aproximativ 13 dolari. Un cost enorm comparat cu celelalte modele, chiar si de la Anthropic.
+    \item Modelele prea mici fie nu suporta apelarea de unelte din cauza depasirii ferestrei de context, fie nu sunt antrenate pentru asa ceva si pur si simplu intorc o eroare. Gemini 2.0 Flash si Phi4 pur si simplu intorc erori
+    care denota incompatibilitatea cu sarcini agentice. Restul modelelor cu scoruri sub 10\%, pur si simplu au halucinat rezolvarea problemei si nu au apelat nici o unealta cu adevarat. Unele dintre ele, chiar daca ar fi reusit sa apeleze uneltele, nu ar fi putut sa duca o conversatie prea complexa
+    din cauza ferestrei mici de context.
+    \item Modelele locale necesita hardware performant pentru a rezolva probleme reale. Desi rezultatele sunt bune si comparabile cu cele ale modelelor de top, la o fractiune din numarul de parametrii,
+    timpul de executie inca creaza o experienta a utilizatorului neoptima pe sisteme neperformante.
+    \item Variante ale modelelor antrenate special pentru sarcini de dezvoltare software arata o diferenta semnificativa in performante, precum Qwen3.5 si Qwen3-Coder.
+  \end{enumerate}
+
+  Anomalii in rezultate:
+  \begin{enumerate}
+    \item Modele care detin in teorie capabilitati de gandire (Sonnet, Deepseek R1) nu au exercitat in timpul testului aceste capabilitati la potentialul maxim, ceea ce sugereaza
+    setari implicite de efort ale modelului reduse.
+    \item Modelul Haiku a avut o performanta surprinzatoare avand in vedere ca acesta este considerat cel mai slab din flota Anthropic. Acest lucru se datoreaza in mare
+    discrepantei de concurenta din cadrul testului. Nu am avut acces la modele de aceeasi generatie OpenAI sau Gemini cu care sa putem face o comparatie corecta, iar experimentul
+    urmarea in principal relatia dintre cost si performanta.
+    \item Modele cu mai putini parametrii au avut un scor mult mai mic decat modele cu numar mai mic de parametrii. Spre exemplu Deepseek R1 nu a fost antrenat pentru apelarea uneltelor si desi
+    acesta stia teoretic cum ar rezolva problema, nu a apelat nici o unealta. Pe scurt, pur si simplu a fabricat o naratiune, o poveste despre cum ar rezolva el problema, iar la final
+    a declarat-o rezolvata.
+  \end{enumerate}
+
+  Recomandari extrase din acest experiment:
+  \begin{enumerate}
+    \item Pentru rularea modelelor locale, este necesar un hardware bun. Timpul de inferenta poate fi mai crescut decat la modelele furnizorilor, sau mai mic pentru unele modele.
+    \item Costul modelelor creste odata cu capabilitatilor de gandire si exponential cu marimea contextului.
+    \item In general, modelele prea mici (mai mici de 20 de miliarde de parametrii) nu reusesc sa se descurce in sarcini de programare. Pot raspunde la intrebari punctuale, dar nu pot lucra intr-un mediu agentic. Risc mare de halucinatii.
+    \item Modelele neantrenate pe sarcini agentice (apel de unelte, gandire) nu au performante in mediul agentic pentru dezvoltarea software. Risc mare de halucinatii.
+    \item Modelele mai mici ale furnizorilor de modele de limbaj sunt mai avantajoase din punct de vedere al raportului calitate-pret.
+    \item Gandirea creste si ea timpul de inferenta. O comparatie buna ar fi intre Devstral Small 2 si Gemma4:26b. Desi Devstral este un model mai mic, din numarul de tokeni utilizati putem deduce
+    ca a avut o gandire mai adanca ce a dus la timpul ridicat. In acelasi timp, Gemma a avut rezultate similare cu un timp mai scazut de inferenta (desi Gemma are si o arhitectura diferita, mai performanta)
+    \item Modele open-source recomandate: Gemma4 pentru echilibrul dintre scor si performanta, Devstral pentru scor, cu dezavantajul timpului mare de inferenta si Qwen3-Coder pentru timpul foarte scurt de inferenta si scor bun.
+    \item Din punctul de vedere al modelelor proprietare, Sonnet si Haiku au avut performante foarte bine, dar si Gemini 2.5 Flash a surprins cu performantele sale (avand in vedere ca nu mai este de ultima generatie
+    in familia Gemini)
+  \end{enumerate}
+
+  \subsubsection{Modelele open-source: evaluarea valorii si a potentialului de utilizare}
+
+  La finalul analizei rezultatelor, putem sumariza performanta modelelor open-source intr-un singur cuvant: surprinzatoare si intr-un sens negativ, dar si intr-unul pozitiv.
+  
+  A fost neasteptat ca 6 din cele 16 modele sa aiba scor aproximativ 0 in cadrul experimentului, dar nu improbabil. Era de asteptat ca modelele sub 10 miliarde de parametrii sa intampine probleme, motiv
+  pentru care le-am si ales. Dar cele intre 10 si 20 de miliarde, dar si Deepseek R1 au surprins prin neajunsurile lor.
+
+  Pe de alta parte am fost foarte placut impresionat de rezultatele Devstral Small 2, Qwen3-Coder si Gemma 4. Acestea au un potential imens, mai ales cele doua din urma care ofera un timp de inferenta foarte bun. Gemma4 este interesant si deoarece are o arhitectura speciala de tipul Mixtral Of Experts.
+
+  In final, consider ca folosirea modelelor open-source locale pentru sarcini de dezvoltare software (considerand detinerea unui sistem performant) este motivata de costurile inexistente, controlul asupra datelor, timpul scurt de inferenta dar si performantele bune (care pe masura ce se dezvolta vor creste).
+
+\chapter{DEZVOLTARI VIITOARE}
+
+  Finalizand analiza post-implementare, impreuna cu experimentele rulate, putem extrage un set de potentiale
+  imbunatatiri pe care le putem aduce aplicatiei in viitor.
+
+  \section{Automatizari, integrari cu alte programe}
+
+  O zona potentiala de dezvoltare este suportul pentru rularea de sarcini agentice la un interval de timp, sau la un moment in timp predefinit. Astfel de implementari sunt deja regasite
+  in unelte precum Claude Code, prin comanda \texttt{/loop}. Aceasta functionalitate permite rularea unui prompt automat la un moment determinat. Un exemplu bun pentru aceasta utilizare in domeniul
+  dezvoltarii software ar fi un prompt de tipul:
+
+  \begin{quote}
+    \texttt{Realizeaza un rezumat al celor mai importante issue-uri sau \ac{pr}-uri aparute in ultimele 24 de ore pe GitHub, si analizeaza canalele de Slack, Discord, Teams la care ai acces. Fa-mi un rezumat complet cu ceea ce gasesti.}
+  \end{quote}
+
+  Acest prompt ar fi foarte util pentru ingineri pentru a fi la curent cu starea proiectelor la care lucreaza si la deciziile ce se intampla cat timp alti colegi lucreaza in alte fusuri orare.
+
+  \section{Integrarea cu mediile de dezvoltare}
+
+  Desi interfata de tip \ac{cli} este foarte versatila, compatibilitatea cu mediile de dezvoltare aduce o granularitate mai mare asupra interactiunii cu agentul.
+  Acesta poate sugera schimbari restranse (linie cu linie), pe care utilizatorul le poate accepta sau rejecta individual.
+
+  \section{Suport nativ pentru Windows}
+
+  Sistemul de operare Windows nu este la fel de prietenos pentru dezvoltatorii software precum macOS sau Linux din cauza
+  terminalului (si a comenzilor) diferite si a structurii fisierelor, motiv pentru care implementarea initiala are suport doar pentru
+  cele doua sisteme de operare listate anterior.
+
+  Acestea fiind spuse, o buna aditie viitoare ar fi suportul nativ pentru Windows, in ciuda diferentelor dintre sistemele de operare, pentru a deschide calea catre o noua audienta de utilizatori.
+
+  \section{Construirea unui graf de cunostinte pentru optimizarea intelegerii proiectelor}
+
+  O metoda inovativa care are potentialul de a imbunatati contextul unui agent din punctul de vedere al fabricarii legaturilor intre componentele unui proiect, dar
+  mai ales din punctul de vedere al numarului de tokeni de intrare si al reducerii apelului de unelte este aceea de a construi grafuri ale legaturilor intre diverse parti
+  ale proiectului.
+
+  Una dintre solutiile pentru implementarea acestei facilitati este utilizarea \href{https://graphify.net}{Graphify}. Acest program construieste grafurile necesare intelegerii proiectului si foloseste
+  modele de limbaj pentru a detalia grafurile din punct de vedere semantic. Acest lucru reducere numarul de apeluri la unelte pentru citirea fisierelor, imbunatatind astfel utilizarea contextului
+  si sporind cunoasterea amanuntita a proiectul pe care se lucreaza.
+
+  Integrarea este una simpla, graful se construieste o data (si ulterior automat daca apar schimbari in cod) iar aplicatiile agentice precum Claude Code, pot folosi integrarea oficiala sau pot folosi un server \ac{mcp} pentru a interactiona cu acesta.
+
+  \section{Suport pentru metode de compactare avansate si \ac{sdk} pentru agenti}
+
+  In final, o alta potentiala aditie viitoare ar fi cea legata de tehnicile avansate de compactare bazate pe similaritatea semantica a frazelor ce urmeaza a fi sters din cauza
+  criteriilor de similaritate sau din cauza categorisirii ca fiind neimportante. Aceste tehnici pot preveni stergerea acestora daca sunt considerate informatii vitale.
+
+  O ultima schimbare care ar usura munca potentialilor contributori la dezvoltarea programului ar fi dezvoltarea unui \ac{sdk} prin care acestia 
+  ar putea apela cu usurinta metodele programului aducand astfel un plus de valoare.
 
 \chapter{CONCLUZII}
 
-\chapter{DEZVOLTARI VIITOARE}
-  \section{Automatizari, integrari cu alte programe}
+  In cadrul acestei lucrari am reusit sa atingem obiectivele pe care ni le-am impus la inceput. Am dezvoltat o aplicatie competitiva, ce isi propune sa rivalizeze cu solutiile existente pe piata prin
+  costurile reduse de operare, impuse doar de utilizarea unor modele proprietare. De asemenea, pe langa echivalarea capabilitatilor aplicatilor din industrie si costurile reduse, am reusit sa aducem transparenta in utilizarea
+  modelelor de limbaj pentru utilizatori ce doresc sa studieze cum functioneaza acestea in realitate in domeniul dezvoltarii software in vederea optimizarii si imbunatatirii sistemelor agentice sau modului in care folosim astfel de aplicatii si sa 
+  extragem un set de recomandari in vederea utilizarii aplicatiilor agentice in scopul dezvoltarii software in urma experimentelor pe care le-am condus.
+
+  In vederea implementarii, lucrarea a presupus inainte de toate o planificare exhaustiva, care a inceput cu motivarea deciziei de a alege aceasta tema, cercetarea lucrarilor de specialitate din domeniu si un studiu al pietei si al capabilitatilor necesare pentru a fi un produs util si competitiv. Motivarea a fost una simpla: 
+  arhitecturile agentice devin din ce in ce mai prezente in viata noastra de zi cu zi, investitiile confirma faptul ca aceasta abordare are un suport puternic, iar domeniul dezvoltarii software este cel care poate beneficia cel mai mult
+  de pe urma ajutorului pe care aceste platforme il pot oferi. Din punctul de vedere al cercetarilor lucrarilor din domeniu, nici acest lucru nu a reprezentat un impediment datorita valului de studii si dezvoltari in aceasta zona care creste de pe o zi pe alta.
+  In final, pentru studiul pietei am reusit sa sondez majoritatea solutiilor deja existente, folosindu-le in sarcinile de zi cu zi, pentru zone pe care acestea nu le ating. In ciuda diversitatii si a capabilitatilor avansate, tuturor acestora le lipsea cu desavarsire compatibilitatea
+  cu o plaja larga de modele, transparenta si observabilitatea, dar si optiunea da a configura si personaliza in profunzime sistemul.
+
+  Trecand la partea practica a lucrarii, am intampinat un numar de obstacole. Desi planul era facut, am invatat ca rareori acesta ramane neschimbat pe parcursul implementarii. De la decizia de a schimba
+  framework-ul pentru interfata cu utilizatorul, pana la alegerea deciziilor de implementarea in partea de date de intrare multimodale, am observat ca procesul de dezvoltare software este unul dinamic,
+  care se adapteaza continuu pe masura ce produsul se maturizeaza.
+
+  Finalizand primul prototip al aplicatiei, am continuat procesul de dezvoltare prin imbunatatiri aduse sistemului. De la lucruri mici, cum ar fi imbunatatiri de performanta la incarcarea si testarea modelelor, pana la
+  implementarea datelor de intrare multimodale care a fost ultima schimbare majora.
+
+  Dupa mai multe runde de imbunatatiri, am constatat concretizarea proiectului intr-un produs consistent. Au urmat apoi partea de gandire a procesului de instalare si finisare a proiectul dar si scrierea de documentatie.
+
+  In final, avand un rezultat finisat, studiul utilizarii acestuia putea incepe pentru a putea trage concluzii cu privire la eficacitatea acestuia in contextul actual.
+
+  Cu datele din aceste studii, am reusit sa formulez o serie de recomandari pentru utilizarea eficienta a aplicatiilor agentice in domeniul dezvoltarii software.
+
+  Insumand toate acestea, in final, prin solutia prezentata am demonstrat valoarea arhitecturilor agentice in domeniul dezvoltarii software, care prompt sa schimbe complet
+  peisajul acestui domeniu.
 
 % Bibliografie -----------------
 
 \bibliographystyle{unsrt}
 \bibliography{licenta_v4}
-
-% ------------------------------
 
 \end{document}
