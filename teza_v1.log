@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.4.20)  9 JUN 2026 14:50
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.4.20)  9 JUN 2026 21:10
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -572,24 +572,24 @@ File: lstlang1.sty 2025/11/14 1.11b listings language file
 ) (./teza_v1.aux)
 \openout1 = `teza_v1.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 142.
-LaTeX Font Info:    ... okay on input line 142.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 142.
-LaTeX Font Info:    ... okay on input line 142.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 142.
-LaTeX Font Info:    ... okay on input line 142.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 142.
-LaTeX Font Info:    ... okay on input line 142.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 142.
-LaTeX Font Info:    ... okay on input line 142.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 142.
-LaTeX Font Info:    ... okay on input line 142.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 142.
-LaTeX Font Info:    ... okay on input line 142.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 142.
-LaTeX Font Info:    ... okay on input line 142.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 142.
-LaTeX Font Info:    ... okay on input line 142.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 154.
+LaTeX Font Info:    ... okay on input line 154.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 154.
+LaTeX Font Info:    ... okay on input line 154.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 154.
+LaTeX Font Info:    ... okay on input line 154.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 154.
+LaTeX Font Info:    ... okay on input line 154.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 154.
+LaTeX Font Info:    ... okay on input line 154.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 154.
+LaTeX Font Info:    ... okay on input line 154.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 154.
+LaTeX Font Info:    ... okay on input line 154.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 154.
+LaTeX Font Info:    ... okay on input line 154.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 154.
+LaTeX Font Info:    ... okay on input line 154.
  (/usr/local/texlive/2026/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count415
@@ -610,20 +610,20 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
 \c@lstlisting=\count421
-Package hyperref Info: Link coloring ON on input line 142.
+Package hyperref Info: Link coloring ON on input line 154.
  (./teza_v1.out) (./teza_v1.out)
 \@outlinefile=\write3
 \openout3 = `teza_v1.out'.
 
-Package translations Info: no dictionary file `translations-basic-dictionary-romanian.trsl' found. on input line 142.
+Package translations Info: no dictionary file `translations-basic-dictionary-romanian.trsl' found. on input line 154.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 242.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 254.
  (/usr/local/texlive/2026/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 242.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 254.
  (/usr/local/texlive/2026/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
@@ -631,17 +631,17 @@ Title
 [1
 
 {/usr/local/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}] [2]
-Underfull \hbox (badness 1264) in paragraph at lines 242--242
+Underfull \hbox (badness 1264) in paragraph at lines 254--254
 []\T1/cmr/m/n/12 Universitatea Na[]ional  de []tiin[]  []i Teh-no-lo-gie PO-LI-TEH-NICA
  []
 
 [3{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}] [4] [5]
-Underfull \hbox (badness 10000) in paragraph at lines 242--242
+Underfull \hbox (badness 10000) in paragraph at lines 254--254
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 242--242
+Underfull \hbox (badness 10000) in paragraph at lines 254--254
 
  []
 
@@ -651,13 +651,23 @@ Underfull \hbox (badness 10000) in paragraph at lines 242--242
 \tf@toc=\write4
 \openout4 = `teza_v1.toc'.
 
- [1] (./teza_v1.lof [2
+ [1] (./teza_v1.lof
+Overfull \hbox (9.67857pt too wide) in paragraph at lines 25--25
+ [][] []\T1/cmr/m/n/12 Modele tind s  aib  o acurate[]e foarte slaba con-tra în-tre-b -ri-lor ce vi-zeaz  informa[]ii 
+ []
+
+[2
 
 ])
 \tf@lof=\write5
 \openout5 = `teza_v1.lof'.
 
- [3] (./teza_v1.lot)
+ [3] (./teza_v1.lot
+Overfull \hbox (10.07423pt too wide) in paragraph at lines 3--3
+ [][] []\T1/cmr/m/n/12 Compara[]ia câ-torva din mo-de-lele exis-tente []i a capabilit []ile aces-tora în compara[]ie 
+ []
+
+)
 \tf@lot=\write6
 \openout6 = `teza_v1.lot'.
 
@@ -674,52 +684,443 @@ LISTA DE ACRONIME
 
 ] [7]
 Capitolul 1.
-<figuri/perceptron.png, id=661, 648.4225pt x 607.26875pt>
+<figuri/perceptron.png, id=663, 648.4225pt x 607.26875pt>
 File: figuri/perceptron.png Graphic file (type png)
 <use figuri/perceptron.png>
-Package pdftex.def Info: figuri/perceptron.png  used on input line 360.
+Package pdftex.def Info: figuri/perceptron.png  used on input line 372.
 (pdftex.def)             Requested size: 193.47577pt x 181.19981pt.
 [8
 
 ]
-<figuri/convolutie.png, id=684, 803.0pt x 401.5pt>
+<figuri/convolutie.png, id=686, 803.0pt x 401.5pt>
 File: figuri/convolutie.png Graphic file (type png)
 <use figuri/convolutie.png>
-Package pdftex.def Info: figuri/convolutie.png  used on input line 382.
+Package pdftex.def Info: figuri/convolutie.png  used on input line 394.
 (pdftex.def)             Requested size: 386.95894pt x 193.4836pt.
  [9 <./figuri/perceptron.png> <./figuri/convolutie.png (PNG copy)>]
-<figuri/rnn.png, id=697, 1003.75pt x 501.875pt>
+Overfull \hbox (16.64493pt too wide) in paragraph at lines 405--409
+\T1/cmr/m/n/12 ne-u-ro-nale re-cu-rente (Re-cur-rent Ne-u-ral Ne-twork (RNN)[]), ar-hi-tec-turi ca-pa-bile s  p s-treze informa[]ia
+ []
+
+<figuri/rnn.png, id=699, 1003.75pt x 501.875pt>
 File: figuri/rnn.png Graphic file (type png)
 <use figuri/rnn.png>
-Package pdftex.def Info: figuri/rnn.png  used on input line 416.
+Package pdftex.def Info: figuri/rnn.png  used on input line 428.
 (pdftex.def)             Requested size: 232.17241pt x 116.0874pt.
-<figuri/lstm.png, id=698, 803.0pt x 627.34375pt>
+<figuri/lstm.png, id=700, 803.0pt x 627.34375pt>
 File: figuri/lstm.png Graphic file (type png)
 <use figuri/lstm.png>
-Package pdftex.def Info: figuri/lstm.png  used on input line 423.
+Package pdftex.def Info: figuri/lstm.png  used on input line 435.
 (pdftex.def)             Requested size: 232.17241pt x 181.3794pt.
- [10 <./figuri/rnn.png (PNG copy)> <./figuri/lstm.png (PNG copy)>] [11]
-<figuri/transformer.png, id=718, 712.6625pt x 988.69376pt>
+[10 <./figuri/rnn.png (PNG copy)> <./figuri/lstm.png (PNG copy)>] [11]
+<figuri/transformer.png, id=720, 712.6625pt x 988.69376pt>
 File: figuri/transformer.png Graphic file (type png)
 <use figuri/transformer.png>
-Package pdftex.def Info: figuri/transformer.png  used on input line 481.
+Package pdftex.def Info: figuri/transformer.png  used on input line 493.
 (pdftex.def)             Requested size: 193.47577pt x 268.41425pt.
  [12 <./figuri/transformer.png (PNG copy)>]
-<figuri/evolutie_ai.png, id=731, 850.67813pt x 337.26pt>
+<figuri/evolutie_ai.png, id=733, 850.67813pt x 337.26pt>
 File: figuri/evolutie_ai.png Graphic file (type png)
 <use figuri/evolutie_ai.png>
-Package pdftex.def Info: figuri/evolutie_ai.png  used on input line 520.
+Package pdftex.def Info: figuri/evolutie_ai.png  used on input line 532.
 (pdftex.def)             Requested size: 386.95894pt x 153.41237pt.
-<figuri/evolutie_open_ai.png, id=735, 867.99281pt x 221.32687pt>
+<figuri/evolutie_open_ai.png, id=737, 867.99281pt x 221.32687pt>
 File: figuri/evolutie_open_ai.png Graphic file (type png)
 <use figuri/evolutie_open_ai.png>
-Package pdftex.def Info: figuri/evolutie_open_ai.png  used on input line 532.
+Package pdftex.def Info: figuri/evolutie_open_ai.png  used on input line 544.
 (pdftex.def)             Requested size: 386.95894pt x 98.6708pt.
  [13 <./figuri/evolutie_ai.png> <./figuri/evolutie_open_ai.png>]
-<figuri/longformer1.png, id=753, 357.335pt x 153.57375pt>
+<figuri/longformer1.png, id=755, 357.335pt x 153.57375pt>
 File: figuri/longformer1.png Graphic file (type png)
 <use figuri/longformer1.png>
-Package pdftex.def Info: figuri/longformer1.png  used on input line 548.
+Package pdftex.def Info: figuri/longformer1.png  used on input line 560.
 (pdftex.def)             Requested size: 386.95894pt x 166.31412pt.
-<figuri/longformer2.png, id=757, 961.5925pt x 229.85875pt>
-Fi
+<figuri/longformer2.png, id=759, 961.5925pt x 229.85875pt>
+File: figuri/longformer2.png Graphic file (type png)
+<use figuri/longformer2.png>
+Package pdftex.def Info: figuri/longformer2.png  used on input line 569.
+(pdftex.def)             Requested size: 386.95894pt x 92.49953pt.
+<figuri/roformer.png, id=765, 727.71875pt x 405.515pt>
+File: figuri/roformer.png Graphic file (type png)
+<use figuri/roformer.png>
+Package pdftex.def Info: figuri/roformer.png  used on input line 582.
+(pdftex.def)             Requested size: 386.95894pt x 215.6335pt.
+ [14 <./figuri/longformer1.png> <./figuri/longformer2.png>]
+<figuri/lora.png, id=784, 270.00874pt x 233.87375pt>
+File: figuri/lora.png Graphic file (type png)
+<use figuri/lora.png>
+Package pdftex.def Info: figuri/lora.png  used on input line 600.
+(pdftex.def)             Requested size: 193.47577pt x 167.58601pt.
+ [15 <./figuri/roformer.png> <./figuri/lora.png>]
+<figuri/embarr1.png, id=805, 991.705pt x 431.6125pt>
+File: figuri/embarr1.png Graphic file (type png)
+<use figuri/embarr1.png>
+Package pdftex.def Info: figuri/embarr1.png  used on input line 627.
+(pdftex.def)             Requested size: 386.95894pt x 168.4138pt.
+<figuri/embarr3.png, id=809, 981.6675pt x 436.63126pt>
+File: figuri/embarr3.png Graphic file (type png)
+<use figuri/embarr3.png>
+Package pdftex.def Info: figuri/embarr3.png  used on input line 634.
+(pdftex.def)             Requested size: 386.95894pt x 172.11101pt.
+ [16 <./figuri/embarr1.png>]
+<figuri/qlora.png, id=829, 850.17625pt x 387.4475pt>
+File: figuri/qlora.png Graphic file (type png)
+<use figuri/qlora.png>
+Package pdftex.def Info: figuri/qlora.png  used on input line 650.
+(pdftex.def)             Requested size: 386.95894pt x 176.348pt.
+ [17 <./figuri/embarr3.png> <./figuri/qlora.png>]
+<figuri/ouyang.png, id=847, 529.98pt x 316.18124pt>
+File: figuri/ouyang.png Graphic file (type png)
+<use figuri/ouyang.png>
+Package pdftex.def Info: figuri/ouyang.png  used on input line 665.
+(pdftex.def)             Requested size: 386.95894pt x 230.85863pt.
+ [18 <./figuri/ouyang.png>]
+<figuri/cot.png, id=867, 863.225pt x 412.54124pt>
+File: figuri/cot.png Graphic file (type png)
+<use figuri/cot.png>
+Package pdftex.def Info: figuri/cot.png  used on input line 692.
+(pdftex.def)             Requested size: 386.95894pt x 184.93053pt.
+<figuri/tot.png, id=871, 465.74pt x 231.86626pt>
+File: figuri/tot.png Graphic file (type png)
+<use figuri/tot.png>
+Package pdftex.def Info: figuri/tot.png  used on input line 699.
+(pdftex.def)             Requested size: 386.95894pt x 192.65059pt.
+ [19 <./figuri/cot.png> <./figuri/tot.png>]
+<figuri/react.png, id=887, 666.49pt x 551.05875pt>
+File: figuri/react.png Graphic file (type png)
+<use figuri/react.png>
+Package pdftex.def Info: figuri/react.png  used on input line 740.
+(pdftex.def)             Requested size: 386.95894pt x 319.94221pt.
+<figuri/react2.png, id=891, 647.41875pt x 129.48375pt>
+File: figuri/react2.png Graphic file (type png)
+<use figuri/react2.png>
+Package pdftex.def Info: figuri/react2.png  used on input line 747.
+(pdftex.def)             Requested size: 386.95894pt x 77.39249pt.
+ [20 <./figuri/react.png> <./figuri/react2.png>]
+<figuri/rewoo.png, id=915, 795.97375pt x 585.18625pt>
+File: figuri/rewoo.png Graphic file (type png)
+<use figuri/rewoo.png>
+Package pdftex.def Info: figuri/rewoo.png  used on input line 759.
+(pdftex.def)             Requested size: 386.95894pt x 284.48468pt.
+<figuri/rewoo2.png, id=919, 372.39125pt x 269.005pt>
+File: figuri/rewoo2.png Graphic file (type png)
+<use figuri/rewoo2.png>
+Package pdftex.def Info: figuri/rewoo2.png  used on input line 766.
+(pdftex.def)             Requested size: 290.22105pt x 209.65475pt.
+<figuri/rewoo3.png, id=923, 851.18pt x 405.515pt>
+File: figuri/rewoo3.png Graphic file (type png)
+<use figuri/rewoo3.png>
+Package pdftex.def Info: figuri/rewoo3.png  used on input line 774.
+(pdftex.def)             Requested size: 386.95894pt x 184.3549pt.
+ [21 <./figuri/rewoo.png> <./figuri/rewoo2.png>]
+<figuri/lost_middle.png, id=937, 495.8525pt x 452.69125pt>
+File: figuri/lost_middle.png Graphic file (type png)
+<use figuri/lost_middle.png>
+Package pdftex.def Info: figuri/lost_middle.png  used on input line 794.
+(pdftex.def)             Requested size: 193.47577pt x 176.63176pt.
+ [22 <./figuri/rewoo3.png>]
+<figuri/lost_middle2.png, id=947, 981.6675pt x 394.47375pt>
+File: figuri/lost_middle2.png Graphic file (type png)
+<use figuri/lost_middle2.png>
+Package pdftex.def Info: figuri/lost_middle2.png  used on input line 801.
+(pdftex.def)             Requested size: 386.95894pt x 155.4934pt.
+<figuri/michelangelo.png, id=952, 869.2475pt x 486.81876pt>
+File: figuri/michelangelo.png Graphic file (type png)
+<use figuri/michelangelo.png>
+Package pdftex.def Info: figuri/michelangelo.png  used on input line 813.
+(pdftex.def)             Requested size: 386.95894pt x 216.71909pt.
+ [23 <./figuri/lost_middle.png> <./figuri/lost_middle2.png>]
+
+Package hyperref Warning: Difference (2) between bookmark levels is greater 
+(hyperref)                than one, level fixed on input line 823.
+
+
+Underfull \hbox (badness 10000) in alignment at lines 886--886
+[][][][] 
+ []
+
+
+LaTeX Warning: Float too large for page by 4.00552pt on input line 891.
+
+[24 <./figuri/michelangelo.png>] [25]
+<figuri/swe_performanta.png, id=1008, 1754.555pt x 962.59625pt>
+File: figuri/swe_performanta.png Graphic file (type png)
+<use figuri/swe_performanta.png>
+Package pdftex.def Info: figuri/swe_performanta.png  used on input line 909.
+(pdftex.def)             Requested size: 386.95894pt x 212.2859pt.
+<figuri/swe_cost.png, id=1012, 1754.555pt x 962.59625pt>
+File: figuri/swe_cost.png Graphic file (type png)
+<use figuri/swe_cost.png>
+Package pdftex.def Info: figuri/swe_cost.png  used on input line 926.
+(pdftex.def)             Requested size: 386.95894pt x 212.2859pt.
+ [26 <./figuri/swe_performanta.png>] [27 <./figuri/swe_cost.png>]
+<figuri/context.png, id=1028, 998.73125pt x 561.09625pt>
+File: figuri/context.png Graphic file (type png)
+<use figuri/context.png>
+Package pdftex.def Info: figuri/context.png  used on input line 964.
+(pdftex.def)             Requested size: 386.95894pt x 217.39687pt.
+ [28 <./figuri/context.png>] [29] [30]
+Capitolul 2.
+
+Overfull \hbox (12.62129pt too wide) in paragraph at lines 1132--1132
+\T1/cmr/m/n/8 Pro/Business/Enterprise 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[31
+
+]
+<figuri/context-claude.png, id=1167, 533.995pt x 218.8175pt>
+File: figuri/context-claude.png Graphic file (type png)
+<use figuri/context-claude.png>
+Package pdftex.def Info: figuri/context-claude.png  used on input line 1174.
+(pdftex.def)             Requested size: 232.17241pt x 95.13809pt.
+<figuri/context-claude2.png, id=1169, 1008.76875pt x 213.79875pt>
+File: figuri/context-claude2.png Graphic file (type png)
+<use figuri/context-claude2.png>
+Package pdftex.def Info: figuri/context-claude2.png  used on input line 1181.
+(pdftex.def)             Requested size: 232.17241pt x 49.20529pt.
+
+Overfull \hbox (22.59259pt too wide) in paragraph at lines 1294--1294
+\T1/cmr/m/n/8 Slack/Discord/Telegram|  
+ []
+
+
+Underfull \hbox (badness 10000) in alignment at lines 1294--1294
+[][][][][] 
+ []
+
+[32 <./figuri/context-claude.png> <./figuri/context-claude2.png>] [33] [34]
+Capitolul 3.
+[35
+
+] [36]
+<figuri/ui_4.jpeg, id=1311, 1606.0pt x 834.11626pt>
+File: figuri/ui_4.jpeg Graphic file (type jpg)
+<use figuri/ui_4.jpeg>
+Package pdftex.def Info: figuri/ui_4.jpeg  used on input line 1404.
+(pdftex.def)             Requested size: 232.17241pt x 120.58102pt.
+<figuri/ui_2.jpeg, id=1313, 1606.0pt x 763.85374pt>
+File: figuri/ui_2.jpeg Graphic file (type jpg)
+<use figuri/ui_2.jpeg>
+Package pdftex.def Info: figuri/ui_2.jpeg  used on input line 1411.
+(pdftex.def)             Requested size: 232.17241pt x 110.42377pt.
+<figuri/ui_3.jpeg, id=1315, 1606.0pt x 869.2475pt>
+File: figuri/ui_3.jpeg Graphic file (type jpg)
+<use figuri/ui_3.jpeg>
+Package pdftex.def Info: figuri/ui_3.jpeg  used on input line 1426.
+(pdftex.def)             Requested size: 232.17241pt x 125.65964pt.
+<figuri/ui_1.jpeg, id=1317, 1606.0pt x 819.06pt>
+File: figuri/ui_1.jpeg Graphic file (type jpg)
+<use figuri/ui_1.jpeg>
+Package pdftex.def Info: figuri/ui_1.jpeg  used on input line 1433.
+(pdftex.def)             Requested size: 232.17241pt x 118.40446pt.
+LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <12> not available
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 1446.
+ [37 <./figuri/ui_4.jpeg> <./figuri/ui_2.jpeg> <./figuri/ui_3.jpeg> <./figuri/ui_1.jpeg>] [38]
+Overfull \hbox (3.20927pt too wide) in paragraph at lines 1489--1491
+\T1/cmr/m/n/12 Pen-tru dezvol-tare, dup  clo-na-rea pro-iec-tu-lui, co-manda \T1/cmtt/m/n/12 make dev-setup \T1/cmr/m/n/12 in-sta-leaz  dependen[]ele
+ []
+
+
+Overfull \hbox (1.37918pt too wide) in paragraph at lines 1500--1503
+\T1/cmr/m/n/12 men-zile pot fi ru-late în orice mo-ment al conversa[]iei []i au for-ma-tul \T1/cmtt/m/n/12 /comanda\T1/cmr/m/n/12 , cu auto-completare
+ []
+
+[39] [40]
+Overfull \hbox (13.355pt too wide) in paragraph at lines 1558--1560
+\T1/cmr/m/n/12 Memoria este fo-lo-sita pen-tru a ex-trage informa[]ii []i preferin[]e pe ter-men lung. Câ-teva întrebuin[] ri
+ []
+
+[41]
+<figuri/context-window3.png, id=1355, 840.13875pt x 608.2725pt>
+File: figuri/context-window3.png Graphic file (type png)
+<use figuri/context-window3.png>
+Package pdftex.def Info: figuri/context-window3.png  used on input line 1596.
+(pdftex.def)             Requested size: 290.22105pt x 210.1234pt.
+ [42 <./figuri/context-window3.png>] [43]
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 1689.
+ (./cod/compaction.yml
+LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <8> not available
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 2.
+)
+Underfull \hbox (badness 1454) in paragraph at lines 1693--1696
+\T1/cmr/m/n/12 va-loa-rea \T1/cmtt/m/n/12 threshold \T1/cmr/m/n/12 sau dup  fi-e-care interac[]iune.
+ []
+
+
+Underfull \hbox (badness 1675) in paragraph at lines 1698--1699
+[]\T1/cmtt/m/n/12 tool_truncate \T1/cmr/m/n/12 poate fi con-fi-gu-rat pen-tru a
+ []
+
+[44] [45] [46] (/usr/local/texlive/2026/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2025/11/14 1.11b listings language file
+) (./cod/tool.py) [47] [48] (./cod/toolexec.yml) [49] (./cod/skill.txt) [50] (./cod/subagent.py)
+Overfull \hbox (13.30983pt too wide) in paragraph at lines 1854--1857
+[]\T1/cmr/m/n/12 La mo-men-tul ac-tual \T1/cmr/m/it/12 nici un pro-dus de pe pia[]  nu per-mite con-fi-gu-ra-rea în de-ta-liu a subagen[]ilor\T1/cmr/m/n/12 .
+ []
+
+[51] (./cod/subagents.yml) [52] (./cod/subagent_def.py) [53] [54] [55]
+Overfull \hbox (5.25052pt too wide) in paragraph at lines 1977--1978
+\T1/cmr/m/n/12 pen-tru aceasta etapa, de-o-a-rece sunt aco-pe-rite de-ter-mi-nist de \T1/cmtt/m/n/12 importance_prune []\T1/cmr/m/n/12 i \T1/cmtt/m/n/12 bulk.hybrid\T1/cmr/m/n/12 ,
+ []
+
+[56] (./cod/sandboxing.yml)
+Overfull \hbox (7.24048pt too wide) in paragraph at lines 2034--2037
+[]\T1/cmr/m/n/12 Containerul este por-nit cu \T1/cmtt/m/n/12 docker run -d --rm\T1/cmr/m/n/12 , având toate capabilit []ile re-trase (\T1/cmtt/m/n/12 --cap-drop
+ []
+
+<figuri/permission.png, id=1672, 1729.46124pt x 406.51875pt>
+File: figuri/permission.png Graphic file (type png)
+<use figuri/permission.png>
+Package pdftex.def Info: figuri/permission.png  used on input line 2055.
+(pdftex.def)             Requested size: 483.69684pt x 113.6942pt.
+[57] [58 <./figuri/permission.png>]
+<figuri/langfuse.png, id=1700, 1716.4125pt x 890.32625pt>
+File: figuri/langfuse.png Graphic file (type png)
+<use figuri/langfuse.png>
+Package pdftex.def Info: figuri/langfuse.png  used on input line 2098.
+(pdftex.def)             Requested size: 483.69684pt x 250.89272pt.
+ [59 <./figuri/langfuse.png>]
+<figuri/vibeweb1.png, id=1711, 1697.34125pt x 684.5575pt>
+File: figuri/vibeweb1.png Graphic file (type png)
+<use figuri/vibeweb1.png>
+Package pdftex.def Info: figuri/vibeweb1.png  used on input line 2130.
+(pdftex.def)             Requested size: 232.17241pt x 93.63339pt.
+<figuri/vibeweb2.png, id=1713, 1700.3525pt x 724.7075pt>
+File: figuri/vibeweb2.png Graphic file (type png)
+<use figuri/vibeweb2.png>
+Package pdftex.def Info: figuri/vibeweb2.png  used on input line 2131.
+(pdftex.def)             Requested size: 232.17241pt x 98.94815pt.
+<figuri/vibeweb3.png, id=1715, 1694.33pt x 701.62125pt>
+File: figuri/vibeweb3.png Graphic file (type png)
+<use figuri/vibeweb3.png>
+Package pdftex.def Info: figuri/vibeweb3.png  used on input line 2132.
+(pdftex.def)             Requested size: 232.17241pt x 96.13866pt.
+<figuri/vibeweb4.png, id=1717, 1700.3525pt x 629.35126pt>
+File: figuri/vibeweb4.png Graphic file (type png)
+<use figuri/vibeweb4.png>
+Package pdftex.def Info: figuri/vibeweb4.png  used on input line 2135.
+(pdftex.def)             Requested size: 232.17241pt x 85.92867pt.
+<figuri/vibeweb5.png, id=1719, 1698.345pt x 812.03375pt>
+File: figuri/vibeweb5.png Graphic file (type png)
+<use figuri/vibeweb5.png>
+Package pdftex.def Info: figuri/vibeweb5.png  used on input line 2136.
+(pdftex.def)             Requested size: 232.17241pt x 111.00757pt.
+<figuri/vibeweb6.png, id=1721, 1691.31876pt x 709.65125pt>
+File: figuri/vibeweb6.png Graphic file (type png)
+<use figuri/vibeweb6.png>
+Package pdftex.def Info: figuri/vibeweb6.png  used on input line 2137.
+(pdftex.def)             Requested size: 232.17241pt x 97.4122pt.
+ [60] [61 <./figuri/vibeweb1.png> <./figuri/vibeweb2.png> <./figuri/vibeweb3.png> <./figuri/vibeweb4.png> <./figuri/vibeweb5.png> <./figuri/vibeweb6.png>]
+Capitolul 4.
+
+Overfull \hbox (21.27037pt too wide) in paragraph at lines 2152--2154
+[]\T1/cmr/m/n/12 Data fi-ind na-tura ne-de-ter-mi-nist  a r s-pun-su-ri-lor mo-de-le-lor de lim-baj, schim-b -rile de configura[]ie
+ []
+
+[62
+
+] [63] [64]
+
+Package hyperref Warning: Difference (2) between bookmark levels is greater 
+(hyperref)                than one, level fixed on input line 2322.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2336--2337
+[]\T1/cmr/m/n/12 Compactare auto-mata a is-to-ri-cu-lui
+ []
+
+
+Underfull \hbox (badness 5388) in paragraph at lines 2356--2357
+[]\T1/cmr/m/n/12 Sandbox în cloud []i execu[]ie la
+ []
+
+
+Overfull \hbox (5.88399pt too wide) in paragraph at lines 2370--2371
+[]\T1/cmr/m/n/12 Maparea co-du-lui sursa de tip \T1/cmr/m/it/12 repo map \T1/cmr/m/n/12 e aco-pe-rita par[]ial de su-ba-gen-tul \T1/cmtt/m/n/12 code_search\T1/cmr/m/n/12 . 
+ []
+
+[65]
+Overfull \hbox (7.0388pt too wide) in paragraph at lines 2386--2386
+[]\T1/cmr/bx/n/14.4 Influenta lun-gi-mii []i a exactit []ii prompt-ului asu-pra performan[]ei.
+ []
+
+
+Overfull \hbox (25.52875pt too wide) in paragraph at lines 2391--2392
+[]\T1/cmr/m/n/12 Un prompt su-mar, de ti-pul \T1/cmtt/m/n/12 "Review these PRs, output your findings in this format"\T1/cmr/m/n/12 .
+ []
+
+[66] [67]
+Overfull \hbox (9.08871pt too wide) in paragraph at lines 2541--2544
+[]\T1/cmr/m/n/12 Acest stu-diu re-flecta o pro-blem  do-mi-nanta în lu-mea IA[]: ale-ge-rea în-tre pre-ci-zie []i recunoa[]tere.
+ []
+
+[68]
+Overfull \hbox (23.10931pt too wide) in paragraph at lines 2584--2589
+\T1/cmr/m/n/12 Restul sta-di-i-lor ope-reaz  cu alte prin-ci-pii []i pot înso[]i orice combina[]ie de mai sus. \T1/cmtt/m/n/12 format_compress
+ []
+
+[69] [70] [71] [72] [73]
+Capitolul 5.
+
+Overfull \hbox (31.89099pt too wide) in paragraph at lines 2758--2759
+[]\T1/cmtt/m/n/12 Realizeaz  un rezumat al celor mai importante issue-uri sau PR[]-uri ap rute
+ []
+
+
+Overfull \hbox (31.89099pt too wide) in paragraph at lines 2758--2759
+\T1/cmtt/m/n/12 în ultimele 24 de ore pe GitHub, []i analizeaz  canalele de Slack, Discord,
+ []
+
+
+Overfull \hbox (1.02353pt too wide) in paragraph at lines 2758--2759
+\T1/cmtt/m/n/12 Teams la care ai acces. Fa-mi un rezumat complet cu ceea ce g se[]ti. 
+ []
+
+[74
+
+]
+Overfull \hbox (14.01202pt too wide) in paragraph at lines 2793--2795
+[]\T1/cmr/m/n/12 Din punc-tul de ve-dere al securit []ii, con-tai-ne-rele Do-c-ker nu sunt im-pe-ne-tra-bile. O îmbun t []ire
+ []
+
+[75]
+Capitolul 6.
+
+Overfull \hbox (6.71681pt too wide) in paragraph at lines 2816--2818
+[]\T1/cmr/m/n/12 Finalizând pri-mul pro-to-tip al aplica[]iei, am con-ti-nuat pro-ce-sul de dezvol-tare prin îmbun t []iri
+ []
+
+(./teza_v1.bbl [76
+
+]
+BIBLIOGRAFIE
+[77
+
+] [78]) [79] (./teza_v1.aux)
+ ***********
+LaTeX2e <2025-11-01>
+L3 programming layer <2026-01-19>
+ ***********
+Package rerunfilecheck Info: File `teza_v1.out' has not changed.
+(rerunfilecheck)             Checksum: 023FA5B3AB4DCC6E4DA2E021CCAEFB8E;17316.
+ ) 
+Here is how much of TeX's memory you used:
+ 26368 strings out of 467525
+ 597263 string characters out of 5418982
+ 1482587 words of memory out of 5000000
+ 54407 multiletter control sequences out of 15000+600000
+ 687048 words of font info for 207 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 75i,16n,79p,1494b,1525s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfbx0500.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfbx0600.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfbx0700.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfbx0800.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfit0800.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfrm0500.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfrm0600.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfti0600.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfti0700.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfti0800.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfti1440.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sftt0800.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb>
+Output written on teza_v1.pdf (87 pages, 9590087 bytes).
+PDF statistics:
+ 2232 PDF objects out of 2487 (max. 8388607)
+ 1700 compressed objects within 17 object streams
+ 587 named destinations out of 1000 (max. 500000)
+ 1094 words of extra memory for PDF output out of 10000 (max. 10000000)
+

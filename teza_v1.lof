@@ -1,0 +1,49 @@
+\acswitchoff 
+\babel@toc {romanian}{}\relax 
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Modelul unui perceptron (\href {https://jretamales.github.io/2019-01-29-embeddings_101}{sursa})}}{9}{figure.caption.8}%
+\contentsline {figure}{\numberline {1.2}{\ignorespaces Convoluția cu un nucleu a unei imagini (\href {https://www.geeksforgeeks.org/deep-learning/kernels-filters-in-convolutional-neural-network/}{sursa})}}{9}{figure.caption.9}%
+\contentsline {figure}{\numberline {1.3}{\ignorespaces \ac {rnn} și \ac {lstm} comparate (\href {https://www.geeksforgeeks.org/deep-learning/types-of-neural-networks/}{sursa})}}{10}{figure.caption.10}%
+\contentsline {figure}{\numberline {1.4}{\ignorespaces Arhitectura transformer \cite {vaswaniAttentionAllYou2017}}}{12}{figure.caption.11}%
+\contentsline {figure}{\numberline {1.5}{\ignorespaces Evoluția recenta a modelelor mari de limbaj \cite {zhaoSurveyLargeLanguage2026}}}{13}{figure.caption.12}%
+\contentsline {figure}{\numberline {1.6}{\ignorespaces Evoluția modelelor \ac {gpt} \cite {zhaoSurveyLargeLanguage2026}}}{13}{figure.caption.13}%
+\contentsline {figure}{\numberline {1.7}{\ignorespaces Performanta tipurilor de arhitecturi de tipul "Longformer" \cite {beltagy_longformer_2020-1}. În timp ce mecanismul tipic de atenție utilizează memorie exponențial, arhitectura Longformer folosește memorie liniar odată cu creșterea contextului}}{14}{figure.caption.14}%
+\contentsline {figure}{\numberline {1.8}{\ignorespaces Diferite configurații de atenție folosite în arhitectura Longformer în comparație cu mecanismul obișnuit de atenție \cite {beltagy_longformer_2020-1}}}{14}{figure.caption.15}%
+\contentsline {figure}{\numberline {1.9}{\ignorespaces Principiul de baza pentru \ac {rope} \cite {su_roformer_2023-1}}}{15}{figure.caption.16}%
+\contentsline {figure}{\numberline {1.10}{\ignorespaces Fine-tuning-ul se realizează doar pe A și B \cite {huLoRALowRankAdaptation2021}}}{15}{figure.caption.17}%
+\contentsline {figure}{\numberline {1.11}{\ignorespaces Rezultatele procesului de Simple Self Distillation \cite {zhang_embarrassingly_2026-2}}}{16}{figure.caption.18}%
+\contentsline {figure}{\numberline {1.12}{\ignorespaces Îmbunătățiri în sarcini de programare ale modelelor după ce au fost supuse procesului de Simple Self Distillation\cite {zhang_embarrassingly_2026-2}}}{17}{figure.caption.19}%
+\contentsline {figure}{\numberline {1.13}{\ignorespaces Comparația procedeelor de fine-tuning: fine-tuning clasic vs LoRA vs QLoRA \cite {dettmersQLoRAEfficientFinetuning2023}}}{17}{figure.caption.20}%
+\contentsline {figure}{\numberline {1.14}{\ignorespaces Ilustrarea procedeului de \ac {rl} \cite {ouyangTrainingLanguageModels2022}}}{18}{figure.caption.21}%
+\contentsline {figure}{\numberline {1.15}{\ignorespaces Exemple de \ac {cot} \cite {weiChainofThoughtPromptingElicits2022}}}{19}{figure.caption.22}%
+\contentsline {figure}{\numberline {1.16}{\ignorespaces Diferența între procedee de gândire \cite {yaoTreeThoughtsDeliberate2023}}}{19}{figure.caption.23}%
+\contentsline {figure}{\numberline {1.17}{\ignorespaces Tipar simplificat al buclei ReAct.}}{20}{figure.caption.24}%
+\contentsline {figure}{\numberline {1.18}{\ignorespaces Paradigma ReAct \cite {yaoReActSynergizingReasoning2022}}}{20}{figure.caption.25}%
+\contentsline {figure}{\numberline {1.19}{\ignorespaces Îmbunătățirile pe care le aduce ReAct \cite {yaoReActSynergizingReasoning2022}}}{20}{figure.caption.26}%
+\contentsline {figure}{\numberline {1.20}{\ignorespaces Ideea din spatele ReWOO \cite {xuReWOODecouplingReasoning2023}}}{21}{figure.caption.27}%
+\contentsline {figure}{\numberline {1.21}{\ignorespaces Comparația de performanță între paradigme pentru îmbunătățirea gândirii din punctul de vedere al acurateții vs. numărul de tokeni consumați \cite {xuReWOODecouplingReasoning2023}}}{21}{figure.caption.28}%
+\contentsline {figure}{\numberline {1.22}{\ignorespaces Îmbunătățirea adusa de ReWOO este delegarea mai multor libertăți către worker ce poate apela mai multe unelte pana să producă un răspuns. P = Plan, E = Evidence, A = Answer, O = Observation, A = Act, T = Thought \cite {xuReWOODecouplingReasoning2023}}}{22}{figure.caption.29}%
+\contentsline {figure}{\numberline {1.23}{\ignorespaces Modele tind să aibă o acuratețe foarte slaba contra întrebărilor ce vizează informații care se afla la mijlocul ferestrei curente de context \cite {liuLostMiddleHow2024}}}{23}{figure.caption.30}%
+\contentsline {figure}{\numberline {1.24}{\ignorespaces Vizualizarea problemei și al rezultatului dorit la întrebare. De multe ori, modelele întâmpina dificultăți în accesarea acestor informații ascunse în mijlocul ferestrei de context \cite {liuLostMiddleHow2024}}}{23}{figure.caption.31}%
+\contentsline {figure}{\numberline {1.25}{\ignorespaces În majoritatea modelelor se observa o scădere a performanțelor după 32K tokeni pe sarcini de gândire complexa \cite {vodrahalli_michelangelo_2024}}}{24}{figure.caption.32}%
+\contentsline {figure}{\numberline {1.26}{\ignorespaces Clasamentul modelelor în SWE-Bench Pro \cite {dengSWEBenchProCan2025} la momentul actual în funcție de performanța rezolvării sarcinilor complexe în limba engleza}}{26}{figure.caption.34}%
+\contentsline {figure}{\numberline {1.27}{\ignorespaces Clasamentul modelelor în SWE-Bench Pro \cite {dengSWEBenchProCan2025} la momentul actual în funcție de cost}}{27}{figure.caption.35}%
+\contentsline {figure}{\numberline {1.28}{\ignorespaces Reprezentarea ferestrei de context într-o conversație uzuala (\href {https://platform.claude.com/docs/en/build-with-claude/context-windows}{sursa})}}{28}{figure.caption.36}%
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Reprezentarea ferestrei de context într-o conversație în Claude Code}}{32}{figure.caption.40}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Reprezentarea utilizării în Claude (varianta web) (\href {https://claude.ai/settings/usage}{sursa})}}{32}{figure.caption.40}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Structura directoarelor vitale ale proiectului}}{36}{figure.caption.43}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Prima versiune a interfeței, realizata cu ajutorul librăriei Textual}}{37}{figure.caption.44}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Continuarea conversației cu prima versiune a interfeței, realizata cu ajutorul librăriei Textual}}{37}{figure.caption.44}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces A doua versiune a interfeței, realizata fără librăria Textual}}{37}{figure.caption.45}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Continuarea conversației cu a doua versiune a interfeței, realizata fără librăria Textual}}{37}{figure.caption.45}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Împărțirea ferestrei de context (\href {https://www.letta.com/blog/guide-to-context-engineering}{sursa})}}{42}{figure.caption.47}%
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Configurarea pipeline-ului de compactare a contextului}}{46}{figure.caption.48}%
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Implementarea unei funcții pe care agentul o folosește pentru a lista directoirile și fișierele la o anumita cale pe sistem}}{48}{figure.caption.49}%
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Configurarea gardării execuției uneltelor}}{49}{figure.caption.50}%
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Implementarea unei capabilitati de \ac {pr} review}}{50}{figure.caption.51}%
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Implementarea unei funcții pe care agentul o folosește pentru a porni un subagent}}{51}{figure.caption.52}%
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Configurarea subagenților}}{52}{figure.caption.53}%
+\contentsline {figure}{\numberline {3.13}{\ignorespaces Înregistrarea unui nou subagent}}{53}{figure.caption.54}%
+\contentsline {figure}{\numberline {3.14}{\ignorespaces Configurarea sandbox-ului Docker pentru execuția izolata a comenzilor}}{57}{figure.caption.55}%
+\contentsline {figure}{\numberline {3.15}{\ignorespaces Cererea de aprobare a permisiunii de a scrie un fișier}}{58}{figure.caption.56}%
+\contentsline {figure}{\numberline {3.16}{\ignorespaces Interfața Langfuse}}{59}{figure.caption.57}%
+\contentsline {figure}{\numberline {3.17}{\ignorespaces Imagini cu interfața web a aplicației}}{61}{figure.caption.58}%
