@@ -4,12 +4,9 @@ The top-level auxiliary file: teza_v1.aux
 The style file: unsrt.bst
 Database file #1: licenta_v4.bib
 Warning--empty year in vaswaniAttentionAllYou2017
-Warning--empty journal in dettmersQLoRAEfficientFinetuning2023
-Warning--empty year in dettmersQLoRAEfficientFinetuning2023
 Warning--empty year in ouyangTrainingLanguageModels2022
 Warning--empty journal in weiChainofThoughtPromptingElicits2022
 Warning--empty year in weiChainofThoughtPromptingElicits2022
-Warning--empty year in yaoTreeThoughtsDeliberate2023
 Warning--empty booktitle in yaoReActSynergizingReasoning2022
 Warning--empty year in yaoReActSynergizingReasoning2022
 Warning--empty journal in liuLostMiddleHow2024
@@ -20,53 +17,56 @@ Warning--empty journal in lecunGradientbasedLearningApplied1998
 Warning--empty year in lecunGradientbasedLearningApplied1998
 Warning--empty journal in hochreiterLongShortTermMemory1997
 Warning--empty year in hochreiterLongShortTermMemory1997
+Warning--empty journal in dettmersQLoRAEfficientFinetuning2023
+Warning--empty year in dettmersQLoRAEfficientFinetuning2023
 Warning--empty booktitle in heHARDTESTGENHighQualityRL2025
 Warning--empty year in heHARDTESTGENHighQualityRL2025
 Warning--empty booktitle in khattabDSPyCompilingDeclarative2023
 Warning--empty year in khattabDSPyCompilingDeclarative2023
+Warning--empty year in yaoTreeThoughtsDeliberate2023
 Warning--empty year in wangPlanandSolvePromptingImproving2023
 Warning--empty year in lewisRetrievalAugmentedGenerationKnowledgeIntensive2020
 Warning--empty year in hackettBypassingLLMGuardrails2025
 Warning--empty year in rebedeaNeMoGuardrailsToolkit2023
-You've used 34 entries,
+You've used 101 entries,
             1791 wiz_defined-function locations,
-            624 strings with 15468 characters,
-and the built_in function-call counts, 11133 in all, are:
-= -- 600
-> -- 1207
+            900 strings with 24056 characters,
+and the built_in function-call counts, 20381 in all, are:
+= -- 1471
+> -- 1475
 < -- 10
-+ -- 412
-- -- 378
-* -- 985
-:= -- 1905
-add.period$ -- 90
-call.type$ -- 34
-change.case$ -- 34
++ -- 546
+- -- 445
+* -- 1052
+:= -- 3381
+add.period$ -- 358
+call.type$ -- 101
+change.case$ -- 101
 chr.to.int$ -- 0
-cite$ -- 59
-duplicate$ -- 326
-empty$ -- 810
-format.name$ -- 378
-if$ -- 2284
+cite$ -- 126
+duplicate$ -- 661
+empty$ -- 2016
+format.name$ -- 445
+if$ -- 4495
 int.to.chr$ -- 0
-int.to.str$ -- 34
+int.to.str$ -- 101
 missing$ -- 16
-newline$ -- 154
-num.names$ -- 40
-pop$ -- 191
+newline$ -- 556
+num.names$ -- 107
+pop$ -- 593
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 256
+skip$ -- 389
 stack$ -- 0
 substring$ -- 401
-swap$ -- 105
+swap$ -- 172
 text.length$ -- 10
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 25
-while$ -- 65
-width$ -- 36
-write$ -- 287
+while$ -- 132
+width$ -- 104
+write$ -- 1091
 (There were 25 warnings)

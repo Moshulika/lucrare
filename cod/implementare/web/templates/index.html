@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>VIBE analytics</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0%25' stop-color='%23a06bff'/><stop offset='100%25' stop-color='%23ff5fc6'/></linearGradient></defs><path fill='url(%23g)' d='M5 13h2v7H5zm4-6h2v13H9zm4 9h2v4h-2zm4-5h2v9h-2z'/><circle cx='6' cy='10' r='1.6' fill='url(%23g)'/><circle cx='10' cy='4' r='1.6' fill='url(%23g)'/><circle cx='14' cy='13' r='1.6' fill='url(%23g)'/><circle cx='18' cy='8' r='1.6' fill='url(%23g)'/></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Outfit:wght@200;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/glass.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.js"></script>
+</head>
+<body>
+    <div class="bg-orbs"></div>
+
+    <header class="topbar glass">
+        <div class="brand">
+            <span class="logo-dot"></span>
+            <h1><span class="vibe-name">VIBE</span> <span class="vibe-tag">analytics</span></h1>
+            <span id="live" class="live-pill" title="Live updates: connecting…">
+                <span class="live-dot"></span><span class="live-label">live</span>
+            </span>
+            <a id="tracing-btn" class="trace-btn hidden" target="_blank" rel="noopener">
+                <span class="trace-icon">↗</span><span id="tracing-label">LangFuse</span>
+            </a>
+        </div>
+        <div class="sysinfo" id="sysinfo">
+            <span class="muted">loading…</span>
+        </div>
+    </header>
+
+    <main class="stack">
+        <!-- Row 1: pickers -->
+        <section class="row-2">
+            <div class="glass card picker">
+                <div class="picker-head">
+                    <h2>Projects <span id="projects-count" class="muted"></span></h2>
+                    <div class="pager" id="projects-pager"></div>
+                </div>
+                <ul id="projects" class="list scroll"></ul>
+            </div>
+            <div class="glass card picker">
+                <div class="picker-head">
+                    <h2>Sessions <span id="sessions-count" class="muted"></span></h2>
+                    <div class="pager" id="sessions-pager"></div>
+                </div>
+                <ul id="sessions" class="list scroll"></ul>
+            </div>
+        </section>
+
+        <!-- Empty state / detail -->
+        <div id="empty" class="glass card empty">
+            <p>Select a project, then a session to load metrics.</p>
+        </div>
+
+        <div id="content" class="hidden flow">
+            <section class="glass card">
+                <h3>Session overview</h3>
+                <div class="hdr-grid" id="header-grid"></div>
+            </section>
+
+            <section class="row-2">
+                <div class="glass card chart-card">
+                    <h3>Token shares</h3>
+                    <div class="chart-wrap"><canvas id="chart-shares"></canvas></div>
+                </div>
+                <div class="glass card chart-card">
+                    <h3>Tokens by kind</h3>
+                    <div class="chart-wrap"><canvas id="chart-by-kind"></canvas></div>
+                </div>
+            </section>
+
+            <section class="glass card chart-card">
+                <div class="picker-head">
+                    <h3>Context window <span id="cw-summary" class="muted"></span></h3>
+                </div>
+                <div class="cw-layout">
+                    <div class="chart-wrap cw-pie"><canvas id="chart-context-window"></canvas></div>
+                    <ul id="cw-legend" class="cw-legend"></ul>
+                </div>
+            </section>
+
+            <section class="glass card chart-card">
+                <h3>Context size over events</h3>
+                <div class="chart-wrap chart-wide"><canvas id="chart-context"></canvas></div>
+            </section>
+
+            <section class="row-2">
+                <div class="glass card chart-card">
+                    <h3>Tokens per turn</h3>
+                    <div class="chart-wrap"><canvas id="chart-turns"></canvas></div>
+                </div>
+                <div class="glass card chart-card">
+                    <h3>Tool call frequency</h3>
+                    <div class="chart-wrap"><canvas id="chart-tools"></canvas></div>
+                </div>
+            </section>
+
+            <section class="row-2">
+                <div class="glass card chart-card">
+                    <h3>Tool latency (p50 / p95 ms)</h3>
+                    <div class="chart-wrap"><canvas id="chart-tool-latency"></canvas></div>
+                </div>
+                <div class="glass card chart-card">
+                    <h3>Inference latency &amp; throughput</h3>
+                    <div class="chart-wrap"><canvas id="chart-inference"></canvas></div>
+                </div>
+            </section>
+
+            <section class="row-2">
+                <div class="glass card chart-card">
+                    <h3>Cost per LLM call</h3>
+                    <div class="chart-wrap"><canvas id="chart-cost"></canvas></div>
+                </div>
+                <div class="glass card chart-card">
+                    <h3>Tool sources</h3>
+                    <div class="chart-wrap"><canvas id="chart-tool-sources"></canvas></div>
+                </div>
+            </section>
+
+            <section class="row-2">
+                <div class="glass card">
+                    <h3>Cost</h3>
+                    <div id="cost-block"></div>
+                </div>
+                <div class="glass card">
+                    <h3>Compaction</h3>
+                    <div id="compaction-block"></div>
+                </div>
+            </section>
+
+            <section class="glass card">
+                <h3>Model params</h3>
+                <div id="params-block"></div>
+            </section>
+
+            <section class="glass card">
+                <div class="picker-head">
+                    <h3>Tools used <span id="tools-count" class="muted"></span></h3>
+                    <div class="pager" id="tools-pager"></div>
+                </div>
+                <div id="tools-list"></div>
+            </section>
+
+            <section class="glass card" id="subagents-card" style="display:none">
+                <div class="picker-head">
+                    <h3>Subagents <span id="subagents-count" class="muted"></span></h3>
+                    <div class="pager" id="subagents-pager"></div>
+                </div>
+                <!-- Aggregated per-type rollup (compact summary) -->
+                <div id="subagents-summary"></div>
+                <!-- Per-invocation list, each row opens a detail modal -->
+                <div id="subagents-list" style="margin-top:8px"></div>
+                <!-- Footer: tokens saved by delegating to subagents -->
+                <div id="subagents-footer" style="display:none"></div>
+            </section>
+
+            <section class="glass card">
+                <div class="picker-head">
+                    <h3>Turn anatomy <span id="turns-count" class="muted"></span></h3>
+                    <div class="pager" id="turns-pager"></div>
+                </div>
+                <div id="turns-table"></div>
+            </section>
+        </div>
+        <!-- Always-visible logs panel (after empty/content) -->
+        <section class="glass card" id="logs-card">
+            <div class="picker-head">
+                <h3>
+                    Logs
+                    <span id="logs-status" class="logs-pill">latest</span>
+                    <span id="logs-name" class="muted"></span>
+                </h3>
+                <div class="logs-controls">
+                    <label class="muted small">
+                        <input type="checkbox" id="logs-autoscroll" checked> auto-scroll
+                    </label>
+                    <button id="logs-refresh" class="pager-btn">↻</button>
+                </div>
+            </div>
+            <pre id="logs-pre" class="logs-pre"></pre>
+            <div id="logs-foot" class="muted small" style="margin-top:8px"></div>
+        </section>
+    </main>
+
+    <!-- Modal -->
+    <div id="modal" class="modal hidden" aria-hidden="true">
+        <div class="modal-backdrop"></div>
+        <div class="modal-panel glass" role="dialog" aria-modal="true">
+            <div class="modal-head">
+                <h3 id="modal-title"></h3>
+                <button id="modal-close" class="modal-close" aria-label="Close">×</button>
+            </div>
+            <div id="modal-body" class="modal-body"></div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/charts.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

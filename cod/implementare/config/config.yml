@@ -1,0 +1,153 @@
+providers:
+  ollama:
+    base_url: ${OLLAMA_URL}
+    models:
+      - qwen3.5
+      - gemma4
+      - deepseek-r1:32b
+      - gemma4:26b
+      - phi4:14b
+      - llama3.2:3b
+      - devstral-small-2
+      - qwen3-coder:30b
+      - qwen2.5-coder:7b
+      - qwen2.5-coder:1.5b
+    temperature: 0.6
+  openai:
+    api_key: ${OPENAI_API_KEY}
+    models:
+      - gpt-4.1
+      - gpt-5.5
+      - gpt-5.4
+    temperature: 0
+  claude:
+    api_key: ${ANTHROPIC_API_KEY}
+    models:
+      - claude-opus-4-7
+      - claude-sonnet-4-6
+      - claude-haiku-4-5-20251001
+    temperature: 0
+  bedrock:
+    api_key: ${BEDROCK_API_KEY}
+    region: us-west-2
+    models:
+      - us.anthropic.claude-sonnet-4-6
+      - us.anthropic.claude-opus-4-7
+      - us.anthropic.claude-haiku-4-5-20251001-v1:0
+    temperature: 0
+  gemini:
+    api_key: ${GOOGLE_API_KEY}
+    models:
+      - gemini-2.5-flash
+      - gemini-2.5-pro
+      - gemini-2.0-flash
+    temperature: 0
+multimodal:
+  pdf:
+    small_threshold_pages: 15  
+    render_dpi: 144           
+    max_pages_per_call: 20     
+  enforce_session_model: true
+  trigger:
+    threshold: 0.80
+    min_turns_kept: 4
+  pipeline:
+    - tool_truncate:
+        enabled: false
+        max_tool_tokens: 2000
+        head_tail: [800, 400]
+   
+    - tool_summarize:
+        enabled: false
+        max_tool_tokens: 2000
+        head_tail: [800, 400]
+        timeout_s: 30
+        max_summary_tokens: 500
+
+        model: null
+    - format_compress:
+        enabled: false
+
+        per_tool: {}
+
+    - ref_substitute:
+        enabled: false
+        min_ref_tokens: 1500
+        excerpt_tokens: 200
+    - dedupe:
+        enabled: false
+        similarity: 0.92
+        backend: string 
+    - importance_prune:
+        enabled: false
+        keep_kinds: [human, system_prompt, assistant_text, tool_result_last]
+        drop_kinds: [assistant_thinking]
+    - bulk:
+        enabled: false
+        strategy: hybrid  # trim | summarize | hybrid
+        summarize:
+          model: ${COMPACTION_MODEL}
+          max_summary_tokens: 1500
+  storage:
+    backup: true
+    keep_backups: 3  
+    artifacts: true   
+sandboxing:
+  enabled: false
+  image: python:3.13-slim
+  network: bridge        
+  memory: 2g
+  cpus: 2
+  timeout_default: 30 
+  blocked_paths:
+    - "~/"
+  ambiguous_max_mb: 500
+  ambiguous_max_files: 10000
+ui:
+  pastes:
+    threshold: 200
+    max_per_turn: 5
+skills:
+  max_active: 10
+vibe_md:
+  enabled: true
+  max_bytes_per_file: 8192
+mcp:
+  max_active: 10
+logging:
+  enabled: true
+  level: INFO
+  dir: ~/.vibe-cli/logs
+  text_max_bytes: 5242880      
+  text_backups: 10
+  jsonl_retention_days: 30     
+tool_guards:
+  enabled: true                  
+  read_before_write:
+    enabled: true
+    check_freshness: true
+subagents:
+  enabled: true
+  default_timeout_s: 120
+  max_timeout_s: 600
+  max_depth: 2               
+  max_parallel: 3              
+  child_context:
+    max_tool_tokens: 4000     
+    head_tail: [800, 400]    
+  types:
+    general:
+      max_iterations: 25
+      default_timeout_s: 180
+    code_search:
+      max_iterations: 15
+      default_timeout_s: 90
+    web_research:
+      max_iterations: 18
+      default_timeout_s: 120
+tracing:
+  enabled: true
+  project: vibe-code                          
+  public_key: ${LANGFUSE_PUBLIC_KEY}          
+  secret_key: ${LANGFUSE_SECRET_KEY}         
+  host: ${LANGFUSE_HOST}                    

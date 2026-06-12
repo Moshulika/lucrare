@@ -1,15 +1,15 @@
 \acswitchoff 
 \babel@toc {romanian}{}\relax 
-\contentsline {table}{\numberline {1.1}{\ignorespaces Comparația câtorva din modelele existente și a capabilitățile acestora în comparație cu prețul de utilizare}}{25}{table.caption.33}%
-\contentsline {table}{\numberline {1.2}{\ignorespaces Comparația framework-urilor pentru intrebuintări agentice}}{29}{table.caption.37}%
-\contentsline {table}{\numberline {1.3}{\ignorespaces Comparație biblioteci pentru interfața cu utilizatorul}}{30}{table.caption.38}%
-\contentsline {table}{\numberline {2.2}{\ignorespaces Top 6 asistenți open source după numărul de "stele" pe GitHub}}{33}{table.caption.41}%
-\contentsline {table}{\numberline {2.1}{\ignorespaces Produse \ac {ia} ale principalilor furnizori de modele de limbaj}}{34}{table.caption.39}%
-\contentsline {table}{\numberline {3.1}{\ignorespaces Hardware recomandat pentru modele open-source}}{35}{table.caption.42}%
-\contentsline {table}{\numberline {3.2}{\ignorespaces Comenzi disponibile în interfață}}{40}{table.caption.46}%
-\contentsline {table}{\numberline {4.1}{\ignorespaces Comparație între soluția dezvoltata și principalele unelte agentice de programare pentru terminal disponibile pe piață}}{63}{table.caption.59}%
-\contentsline {table}{\numberline {4.2}{\ignorespaces Comparație între soluția propusa și principalii asistenți de programare \ac {oss} din ecosistem}}{64}{table.caption.60}%
-\contentsline {table}{\numberline {4.3}{\ignorespaces Rezultatele pentru prompt-ul detaliat: metrici per proiect și pe nivele de severitate}}{67}{table.caption.61}%
-\contentsline {table}{\numberline {4.4}{\ignorespaces Rezultatele pentru prompt-ul simplu: metrici per proiect și pe nivele de severitate}}{68}{table.caption.62}%
-\contentsline {table}{\numberline {4.5}{\ignorespaces Modelele testate: tip, număr de parametrii, mărime pe disc și suport multi-modal.}}{71}{table.caption.63}%
-\contentsline {table}{\numberline {4.6}{\ignorespaces Clasamentul modelelor după scor mediu, durata totala de rulare și cost. Modelele rulate local prin \texttt {ollama} au cost zero. Modelele proprietare nu au datele referitoare la mărimea modelului publice}}{71}{table.caption.64}%
+\contentsline {table}{\numberline {1.1}{\ignorespaces Comparația câtorva din modelele existente și a capabilitățile acestora în comparație cu prețul de utilizare}}{24}{table.caption.24}%
+\contentsline {table}{\numberline {1.2}{\ignorespaces Comparația cadrelor de lucru pentru intrebuintări agentice}}{27}{table.caption.28}%
+\contentsline {table}{\numberline {1.3}{\ignorespaces Comparație biblioteci pentru interfața cu utilizatorul}}{28}{table.caption.29}%
+\contentsline {table}{\numberline {1.4}{\ignorespaces Produse \ac {ia} ale principalilor furnizori de modele de limbaj}}{29}{table.caption.30}%
+\contentsline {table}{\numberline {1.5}{\ignorespaces Top 6 asistenți open source după numărul de "stele" pe GitHub}}{30}{table.caption.31}%
+\contentsline {table}{\numberline {2.1}{\ignorespaces Hardware recomandat pentru modele open-source}}{34}{table.caption.33}%
+\contentsline {table}{\numberline {2.2}{\ignorespaces Comenzi disponibile în interfață}}{40}{table.caption.40}%
+\contentsline {table}{\numberline {3.1}{\ignorespaces Comparație între soluția dezvoltata și principalele unelte agentice de programare pentru terminal disponibile pe piață}}{59}{table.caption.56}%
+\contentsline {table}{\numberline {3.2}{\ignorespaces Comparație între soluția propusa și principalii asistenți de programare \ac {oss} din ecosistem}}{60}{table.caption.57}%
+\contentsline {table}{\numberline {3.3}{\ignorespaces Rezultatele pentru prompt-ul detaliat: metrici per proiect și pe nivele de severitate}}{63}{table.caption.58}%
+\contentsline {table}{\numberline {3.4}{\ignorespaces Rezultatele pentru prompt-ul simplu: metrici per proiect și pe nivele de severitate}}{64}{table.caption.59}%
+\contentsline {table}{\numberline {3.5}{\ignorespaces Modelele testate: tip, număr de parametrii, mărime pe disc și suport multi-modal.}}{67}{table.caption.61}%
+\contentsline {table}{\numberline {3.6}{\ignorespaces Clasamentul modelelor după scor mediu, durata totala de rulare și cost. Modelele rulate local prin \texttt {ollama} au cost zero. Modelele proprietare nu au datele referitoare la mărimea modelului publice}}{68}{table.caption.62}%

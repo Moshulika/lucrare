@@ -378,7 +378,7 @@ Absolvent: {\@author}
 \let\enddescriptionlist=\endlist
 
 \newcommand\beforepreface{%
-        \pagenumbering{roman}
+        \pagenumbering{arabic}
         \pagestyle{empty}
         \titlep
         \thispagestyle{empty}\mbox{}\newpage
@@ -386,8 +386,7 @@ Absolvent: {\@author}
         \thispagestyle{empty}\mbox{}\newpage
         \declaratiep
         \tableofcontents
-        \c@page2 % set page counter so that next is 2
-        \pagestyle{plain}
+        \pagestyle{empty}
         \ifabstract{%
                 \typeout{Abstract}
                 \addcontentsline{toc}{unnumberedsection}{Abstract}
