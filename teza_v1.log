@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.4.20)  12 JUN 2026 23:24
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.4.20)  21 JUN 2026 14:30
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -507,6 +507,201 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \WF@box=\box107
 \WF@everypar=\toks30
 Package: wrapfig 2003/01/31  v 3.6
+) (/usr/local/texlive/2026/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty (/usr/local/texlive/2026/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty (/usr/local/texlive/2026/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty (/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
+\pgfutil@everybye=\toks31
+\pgfutil@tempdima=\dimen265
+\pgfutil@tempdimb=\dimen266
+) (/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+\pgfutil@abb=\box108
+) (/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex (/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/pgf.revision.tex)
+Package: pgfrcs 2025-08-29 v3.1.11a (3.1.11a)
+))
+Package: pgf 2025-08-29 v3.1.11a (3.1.11a)
+ (/usr/local/texlive/2026/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty (/usr/local/texlive/2026/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty (/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+Package: pgfsys 2025-08-29 v3.1.11a (3.1.11a)
+ (/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks32
+\pgfkeys@temptoks=\toks33
+ (/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/utilities/pgfkeyslibraryfiltered.code.tex
+\pgfkeys@tmptoks=\toks34
+))
+\pgf@x=\dimen267
+\pgf@y=\dimen268
+\pgf@xa=\dimen269
+\pgf@ya=\dimen270
+\pgf@xb=\dimen271
+\pgf@yb=\dimen272
+\pgf@xc=\dimen273
+\pgf@yc=\dimen274
+\pgf@xd=\dimen275
+\pgf@yd=\dimen276
+\w@pgf@writea=\write3
+\r@pgf@reada=\read3
+\c@pgf@counta=\count352
+\c@pgf@countb=\count353
+\c@pgf@countc=\count354
+\c@pgf@countd=\count355
+\t@pgf@toka=\toks35
+\t@pgf@tokb=\toks36
+\t@pgf@tokc=\toks37
+\pgf@sys@id@count=\count356
+ (/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
+File: pgf.cfg 2025-08-29 v3.1.11a (3.1.11a)
+)
+Driver file for pgf: pgfsys-pdftex.def
+ (/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.def
+File: pgfsys-pdftex.def 2025-08-29 v3.1.11a (3.1.11a)
+ (/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.def
+File: pgfsys-common-pdf.def 2025-08-29 v3.1.11a (3.1.11a)
+))) (/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
+File: pgfsyssoftpath.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgfsyssoftpath@smallbuffer@items=\count357
+\pgfsyssoftpath@bigbuffer@items=\count358
+) (/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
+File: pgfsysprotocol.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)) (/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+Package: pgfcore 2025-08-29 v3.1.11a (3.1.11a)
+ (/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex (/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex) (/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
+\pgfmath@dimen=\dimen277
+\pgfmath@count=\count359
+\pgfmath@box=\box109
+\pgfmath@toks=\toks38
+\pgfmath@stack@operand=\toks39
+\pgfmath@stack@operation=\toks40
+) (/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex) (/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex) (/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonometric.code.tex) (/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.code.tex) (/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison.code.tex) (/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.tex) (/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code.tex) (/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex) (/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithmetics.code.tex) (/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex) (/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count360
+)) (/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfint.code.tex) (/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
+File: pgfcorepoints.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@picminx=\dimen278
+\pgf@picmaxx=\dimen279
+\pgf@picminy=\dimen280
+\pgf@picmaxy=\dimen281
+\pgf@pathminx=\dimen282
+\pgf@pathmaxx=\dimen283
+\pgf@pathminy=\dimen284
+\pgf@pathmaxy=\dimen285
+\pgf@xx=\dimen286
+\pgf@xy=\dimen287
+\pgf@yx=\dimen288
+\pgf@yy=\dimen289
+\pgf@zx=\dimen290
+\pgf@zy=\dimen291
+) (/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.code.tex
+File: pgfcorepathconstruct.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@path@lastx=\dimen292
+\pgf@path@lasty=\dimen293
+) (/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code.tex
+File: pgfcorepathusage.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@shorten@end@additional=\dimen294
+\pgf@shorten@start@additional=\dimen295
+) (/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
+File: pgfcorescopes.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgfpic=\box110
+\pgf@hbox=\box111
+\pgf@layerbox@main=\box112
+\pgf@picture@serial@count=\count361
+) (/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex
+File: pgfcoregraphicstate.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgflinewidth=\dimen296
+) (/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformations.code.tex
+File: pgfcoretransformations.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@pt@x=\dimen297
+\pgf@pt@y=\dimen298
+\pgf@pt@temp=\dimen299
+) (/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
+File: pgfcorequick.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+) (/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.tex
+File: pgfcoreobjects.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+) (/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathprocessing.code.tex
+File: pgfcorepathprocessing.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+) (/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex
+File: pgfcorearrows.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgfarrowsep=\dimen300
+) (/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
+File: pgfcoreshade.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@max=\dimen301
+\pgf@sys@shading@range@num=\count362
+\pgf@shadingcount=\count363
+) (/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
+File: pgfcoreimage.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+) (/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex
+File: pgfcoreexternal.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgfexternal@startupbox=\box113
+) (/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex
+File: pgfcorelayers.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+) (/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.code.tex
+File: pgfcoretransparency.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+) (/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.code.tex
+File: pgfcorepatterns.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+) (/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.tex
+File: pgfcorerdf.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+))) (/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
+File: pgfmoduleshapes.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgfnodeparttextbox=\box114
+) (/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
+File: pgfmoduleplot.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+) (/usr/local/texlive/2026/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty
+Package: pgfcomp-version-0-65 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@nodesepstart=\dimen302
+\pgf@nodesepend=\dimen303
+) (/usr/local/texlive/2026/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18.sty
+Package: pgfcomp-version-1-18 2025-08-29 v3.1.11a (3.1.11a)
+)) (/usr/local/texlive/2026/texmf-dist/tex/latex/pgf/utilities/pgffor.sty (/usr/local/texlive/2026/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty (/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)) (/usr/local/texlive/2026/texmf-dist/tex/latex/pgf/math/pgfmath.sty (/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)) (/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+Package: pgffor 2025-08-29 v3.1.11a (3.1.11a)
+\pgffor@iter=\dimen304
+\pgffor@skip=\dimen305
+\pgffor@stack=\toks41
+\pgffor@toks=\toks42
+)) (/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
+Package: tikz 2025-08-29 v3.1.11a (3.1.11a)
+ (/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex
+File: pgflibraryplothandlers.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@plot@mark@count=\count364
+\pgfplotmarksize=\dimen306
+)
+\tikz@lastx=\dimen307
+\tikz@lasty=\dimen308
+\tikz@lastxsaved=\dimen309
+\tikz@lastysaved=\dimen310
+\tikz@lastmovetox=\dimen311
+\tikz@lastmovetoy=\dimen312
+\tikzleveldistance=\dimen313
+\tikzsiblingdistance=\dimen314
+\tikz@figbox=\box115
+\tikz@figbox@bg=\box116
+\tikz@tempbox=\box117
+\tikz@tempbox@bg=\box118
+\tikztreelevel=\count365
+\tikznumberofchildren=\count366
+\tikznumberofcurrentchild=\count367
+\tikz@fig@count=\count368
+ (/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
+File: pgfmodulematrix.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgfmatrixcurrentrow=\count369
+\pgfmatrixcurrentcolumn=\count370
+\pgf@matrix@numberofcolumns=\count371
+)
+\tikz@expandcount=\count372
+ (/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex
+File: tikzlibrarytopaths.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+))) (/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarycalc.code.tex
+File: tikzlibrarycalc.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+) (/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryshapes.geometric.code.tex
+File: tikzlibraryshapes.geometric.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+ (/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.geometric.code.tex
+File: pgflibraryshapes.geometric.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)) (/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarybackgrounds.code.tex
+File: tikzlibrarybackgrounds.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@layerbox@background=\box119
+\pgf@layerboxsaved@background=\box120
+) (/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.meta.code.tex
+File: pgflibraryarrows.meta.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgfarrowinset=\dimen315
+\pgfarrowlength=\dimen316
+\pgfarrowwidth=\dimen317
+\pgfarrowlinewidth=\dimen318
+) (/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypositioning.code.tex
+File: tikzlibrarypositioning.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 ) (/usr/local/texlive/2026/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 Package: fancyhdr 2025/02/07 v5.2 Extensive control of page headers and footers
 \f@nch@headwidth=\skip75
@@ -523,68 +718,68 @@ Package: fancyhdr 2025/02/07 v5.2 Extensive control of page headers and footers
 \f@nch@widthL=\skip86
 \f@nch@widthC=\skip87
 \f@nch@widthR=\skip88
-\@temptokenb=\toks31
+\@temptokenb=\toks43
 )
-\c@g@acro@llm@int=\count352
-\c@g@acro@slm@int=\count353
-\c@g@acro@ia@int=\count354
-\c@g@acro@rag@int=\count355
-\c@g@acro@api@int=\count356
-\c@g@acro@ci@int=\count357
-\c@g@acro@cd@int=\count358
-\c@g@acro@e2e@int=\count359
-\c@g@acro@tui@int=\count360
-\c@g@acro@oos@int=\count361
-\c@g@acro@mcp@int=\count362
-\c@g@acro@lstm@int=\count363
-\c@g@acro@rnn@int=\count364
-\c@g@acro@cnn@int=\count365
-\c@g@acro@btt@int=\count366
-\c@g@acro@sdd@int=\count367
-\c@g@acro@tdd@int=\count368
-\c@g@acro@oss@int=\count369
-\c@g@acro@nlp@int=\count370
-\c@g@acro@gpu@int=\count371
-\c@g@acro@rl@int=\count372
-\c@g@acro@kv@int=\count373
-\c@g@acro@cot@int=\count374
-\c@g@acro@tot@int=\count375
-\c@g@acro@json@int=\count376
-\c@g@acro@html@int=\count377
-\c@g@acro@sha@int=\count378
-\c@g@acro@pr@int=\count379
-\c@g@acro@yaml@int=\count380
-\c@g@acro@url@int=\count381
-\c@g@acro@http@int=\count382
-\c@g@acro@sse@int=\count383
-\c@g@acro@stdio@int=\count384
-\c@g@acro@stdout@int=\count385
-\c@g@acro@posix@int=\count386
-\c@g@acro@aml@int=\count387
-\c@g@acro@cpu@int=\count388
-\c@g@acro@sdk@int=\count389
-\c@g@acro@ide@int=\count390
-\c@g@acro@aws@int=\count391
-\c@g@acro@cli@int=\count392
-\c@g@acro@gui@int=\count393
-\c@g@acro@css@int=\count394
-\c@g@acro@dom@int=\count395
-\c@g@acro@ml@int=\count396
-\c@g@acro@pdf@int=\count397
-\c@g@acro@ram@int=\count398
-\c@g@acro@vram@int=\count399
-\c@g@acro@ssh@int=\count400
-\c@g@acro@gpt@int=\count401
-\c@g@acro@acp@int=\count402
-\c@g@acro@bleu@int=\count403
-\c@g@acro@rouge@int=\count404
-\c@g@acro@moe@int=\count405
-\c@g@acro@mlops@int=\count406
-\c@g@acro@uuid@int=\count407
-\c@g@acro@tp@int=\count408
-\c@g@acro@fp@int=\count409
-\c@g@acro@fn@int=\count410
-\c@g@acro@tn@int=\count411
+\c@g@acro@llm@int=\count373
+\c@g@acro@slm@int=\count374
+\c@g@acro@ia@int=\count375
+\c@g@acro@rag@int=\count376
+\c@g@acro@api@int=\count377
+\c@g@acro@ci@int=\count378
+\c@g@acro@cd@int=\count379
+\c@g@acro@e2e@int=\count380
+\c@g@acro@tui@int=\count381
+\c@g@acro@oos@int=\count382
+\c@g@acro@mcp@int=\count383
+\c@g@acro@lstm@int=\count384
+\c@g@acro@rnn@int=\count385
+\c@g@acro@cnn@int=\count386
+\c@g@acro@btt@int=\count387
+\c@g@acro@sdd@int=\count388
+\c@g@acro@tdd@int=\count389
+\c@g@acro@oss@int=\count390
+\c@g@acro@nlp@int=\count391
+\c@g@acro@gpu@int=\count392
+\c@g@acro@rl@int=\count393
+\c@g@acro@kv@int=\count394
+\c@g@acro@cot@int=\count395
+\c@g@acro@tot@int=\count396
+\c@g@acro@json@int=\count397
+\c@g@acro@html@int=\count398
+\c@g@acro@sha@int=\count399
+\c@g@acro@pr@int=\count400
+\c@g@acro@yaml@int=\count401
+\c@g@acro@url@int=\count402
+\c@g@acro@http@int=\count403
+\c@g@acro@sse@int=\count404
+\c@g@acro@stdio@int=\count405
+\c@g@acro@stdout@int=\count406
+\c@g@acro@posix@int=\count407
+\c@g@acro@aml@int=\count408
+\c@g@acro@cpu@int=\count409
+\c@g@acro@sdk@int=\count410
+\c@g@acro@ide@int=\count411
+\c@g@acro@aws@int=\count412
+\c@g@acro@cli@int=\count413
+\c@g@acro@gui@int=\count414
+\c@g@acro@css@int=\count415
+\c@g@acro@dom@int=\count416
+\c@g@acro@ml@int=\count417
+\c@g@acro@pdf@int=\count418
+\c@g@acro@ram@int=\count419
+\c@g@acro@vram@int=\count420
+\c@g@acro@ssh@int=\count421
+\c@g@acro@gpt@int=\count422
+\c@g@acro@acp@int=\count423
+\c@g@acro@bleu@int=\count424
+\c@g@acro@rouge@int=\count425
+\c@g@acro@moe@int=\count426
+\c@g@acro@mlops@int=\count427
+\c@g@acro@uuid@int=\count428
+\c@g@acro@tp@int=\count429
+\c@g@acro@fp@int=\count430
+\c@g@acro@fn@int=\count431
+\c@g@acro@tn@int=\count432
  (/usr/local/texlive/2026/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2025/11/14 1.11b listings language file
 ) (/usr/local/texlive/2026/texmf-dist/tex/latex/listings/lstlang1.sty
@@ -592,59 +787,59 @@ File: lstlang1.sty 2025/11/14 1.11b listings language file
 ) (./teza_v1.aux)
 \openout1 = `teza_v1.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 162.
-LaTeX Font Info:    ... okay on input line 162.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 162.
-LaTeX Font Info:    ... okay on input line 162.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 162.
-LaTeX Font Info:    ... okay on input line 162.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 162.
-LaTeX Font Info:    ... okay on input line 162.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 162.
-LaTeX Font Info:    ... okay on input line 162.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 162.
-LaTeX Font Info:    ... okay on input line 162.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 162.
-LaTeX Font Info:    ... okay on input line 162.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 162.
-LaTeX Font Info:    ... okay on input line 162.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 162.
-LaTeX Font Info:    ... okay on input line 162.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 167.
+LaTeX Font Info:    ... okay on input line 167.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 167.
+LaTeX Font Info:    ... okay on input line 167.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 167.
+LaTeX Font Info:    ... okay on input line 167.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 167.
+LaTeX Font Info:    ... okay on input line 167.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 167.
+LaTeX Font Info:    ... okay on input line 167.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 167.
+LaTeX Font Info:    ... okay on input line 167.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 167.
+LaTeX Font Info:    ... okay on input line 167.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 167.
+LaTeX Font Info:    ... okay on input line 167.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 167.
+LaTeX Font Info:    ... okay on input line 167.
  (/usr/local/texlive/2026/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count412
-\scratchdimen=\dimen265
-\scratchbox=\box108
-\nofMPsegments=\count413
-\nofMParguments=\count414
-\everyMPshowfont=\toks32
-\MPscratchCnt=\count415
-\MPscratchDim=\dimen266
-\MPnumerator=\count416
-\makeMPintoPDFobject=\count417
-\everyMPtoPDFconversion=\toks33
+\scratchcounter=\count433
+\scratchdimen=\dimen319
+\scratchbox=\box121
+\nofMPsegments=\count434
+\nofMParguments=\count435
+\everyMPshowfont=\toks44
+\MPscratchCnt=\count436
+\MPscratchDim=\dimen320
+\MPnumerator=\count437
+\makeMPintoPDFobject=\count438
+\everyMPtoPDFconversion=\toks45
 ) (/usr/local/texlive/2026/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
  (/usr/local/texlive/2026/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-\c@lstlisting=\count418
-Package hyperref Info: Link coloring ON on input line 162.
+\c@lstlisting=\count439
+Package hyperref Info: Link coloring ON on input line 167.
  (./teza_v1.out) (./teza_v1.out)
-\@outlinefile=\write3
-\openout3 = `teza_v1.out'.
+\@outlinefile=\write4
+\openout4 = `teza_v1.out'.
 
-Package translations Info: no dictionary file `translations-basic-dictionary-romanian.trsl' found. on input line 162.
+Package translations Info: no dictionary file `translations-basic-dictionary-romanian.trsl' found. on input line 167.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: wrapfig package is loaded.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 262.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 267.
  (/usr/local/texlive/2026/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 262.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 267.
  (/usr/local/texlive/2026/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
@@ -652,55 +847,50 @@ Title
 [1
 
 {/usr/local/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}] [2]
-Underfull \hbox (badness 1264) in paragraph at lines 262--262
+Underfull \hbox (badness 1264) in paragraph at lines 267--267
 []\T1/cmr/m/n/12 Universitatea Na[]ional  de []tiin[]  []i Teh-no-lo-gie PO-LI-TEH-NICA
  []
 
 [3{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}] [4] [5]
-Underfull \hbox (badness 10000) in paragraph at lines 262--262
+Underfull \hbox (badness 10000) in paragraph at lines 267--267
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 262--262
+Underfull \hbox (badness 10000) in paragraph at lines 267--267
 
  []
 
 [6] (./teza_v1.toc
-Overfull \hbox (6.68062pt too wide) in paragraph at lines 33--33
- [][] []\T1/cmr/m/n/12 Cercetarea teh-ni-ci-lor de uti-li-zare op-time pen-tru ar-hi-tec-turi lo-cale in dezvol- 
+Overfull \hbox (7.33322pt too wide) in paragraph at lines 33--33
+ [][] []\T1/cmr/m/n/12 Cercetarea teh-ni-ci-lor de uti-li-zare op-tim  pen-tru ar-hi-tec-turi lo-cale în dezvol- 
  []
 
 [7
 
 ] [8])
-\tf@toc=\write4
-\openout4 = `teza_v1.toc'.
+\tf@toc=\write5
+\openout5 = `teza_v1.toc'.
 
  [9] (./teza_v1.lof
-Overfull \hbox (29.25708pt too wide) in paragraph at lines 5--5
- [][] []\T1/cmr/m/n/12 Performanta ar-hi-tec-tu-rii Lon-g-for-mer: în timp ce aten[]ia stan-dard sca-leaz  exponen[]ial, 
- []
-
-
-Overfull \hbox (9.67857pt too wide) in paragraph at lines 14--14
- [][] []\T1/cmr/m/n/12 Modele tind s  aib  o acurate[]e foarte slaba con-tra în-tre-b -ri-lor ce vi-zeaz  informa[]ii 
+Overfull \hbox (29.58339pt too wide) in paragraph at lines 5--5
+ [][] []\T1/cmr/m/n/12 Performan[]a ar-hi-tec-tu-rii Lon-g-for-mer: în timp ce aten[]ia stan-dard sca-leaz  exponen[]ial, 
  []
 
 [10
 
 ])
-\tf@lof=\write5
-\openout5 = `teza_v1.lof'.
+\tf@lof=\write6
+\openout6 = `teza_v1.lof'.
 
  [11] (./teza_v1.lot
-Overfull \hbox (10.07423pt too wide) in paragraph at lines 3--3
- [][] []\T1/cmr/m/n/12 Compara[]ia câ-torva din mo-de-lele exis-tente []i a capabilit []ile aces-tora în compara[]ie 
+Overfull \hbox (15.29517pt too wide) in paragraph at lines 3--3
+ [][] []\T1/cmr/m/n/12 Compara[]ia câ-torva din mo-de-lele exis-tente []i a capabilit []ilor aces-tora în compara[]ie 
  []
 
 )
-\tf@lot=\write6
-\openout6 = `teza_v1.lot'.
+\tf@lot=\write7
+\openout7 = `teza_v1.lot'.
 
  [12
 
@@ -710,12 +900,12 @@ Package hyperref Warning: bookmark level for unknown unnumberedsection defaults 
 
 LISTA DE ACRONIME
 
-Underfull \hbox (badness 10000) in paragraph at lines 271--271
+Underfull \hbox (badness 10000) in paragraph at lines 276--276
 []\T1/cmr/m/n/8 Convolutional Ne-u-ral Ne-twork (Re[]ea Ne-u-ro-nal 
  []
 
 
-Underfull \hbox (badness 7925) in paragraph at lines 271--271
+Underfull \hbox (badness 7925) in paragraph at lines 276--276
 []\T1/cmr/m/n/8 Spec-Driven De-ve-lo-p-ment (Dezvol-tare Ghi-dat  de
  []
 
@@ -723,189 +913,181 @@ Underfull \hbox (badness 7925) in paragraph at lines 271--271
 
 ] [14
 
-]
-Overfull \hbox (53.4412pt too wide) in paragraph at lines 317--318
-[]\T1/cmr/m/n/12 dezvoltarea in-cre-men-tala a aplica[]iei \T1/cmtt/m/n/12 vibe-cli \T1/cmr/m/n/12 în Py-thon fo-lo-sind Lan-gGraph, prompt_toolkit/Rich
- []
-
-[15] [16]
+] [15] [16]
 Capitolul 1.
-<figuri/transformer.png, id=726, 712.6625pt x 988.69376pt>
+<figuri/transformer.png, id=731, 712.6625pt x 988.69376pt>
 File: figuri/transformer.png Graphic file (type png)
 <use figuri/transformer.png>
-Package pdftex.def Info: figuri/transformer.png  used on input line 377.
+Package pdftex.def Info: figuri/transformer.png  used on input line 382.
 (pdftex.def)             Requested size: 203.15178pt x 281.82591pt.
 
-Underfull \hbox (badness 1028) in paragraph at lines 382--383
+Underfull \hbox (badness 1028) in paragraph at lines 387--388
 [][]\T1/cmr/bx/n/12 Punctul de co-ti-tur  \T1/cmr/m/n/12 a fost re-pre-zen-tat de
  []
 
 
-Underfull \hbox (badness 5161) in paragraph at lines 382--383
+Underfull \hbox (badness 5161) in paragraph at lines 387--388
 \T1/cmr/m/n/12 ar-hi-tec-tura \T1/cmr/m/it/12 trans-for-mer \T1/cmr/m/n/12 [[]] (Fi-gura [][]1.1[][]), care
  []
 
 
-Underfull \hbox (badness 1661) in paragraph at lines 382--383
-\T1/cmr/m/n/12 înlocuie[]te pro-ce-sa-rea secven[]iala cu me-ca-nis-mul
+Underfull \hbox (badness 1661) in paragraph at lines 387--388
+\T1/cmr/m/n/12 înlocuie[]te pro-ce-sa-rea secven[]ial  cu me-ca-nis-mul
  []
 
 [17
 
  <./figuri/transformer.png (PNG copy)>]
-<figuri/evolutie_ai.png, id=748, 850.67813pt x 337.26pt>
+<figuri/evolutie_ai.png, id=754, 850.67813pt x 337.26pt>
 File: figuri/evolutie_ai.png Graphic file (type png)
 <use figuri/evolutie_ai.png>
-Package pdftex.def Info: figuri/evolutie_ai.png  used on input line 392.
-(pdftex.def)             Requested size: 386.95894pt x 153.41237pt.
-<figuri/longformer1.png, id=756, 357.335pt x 153.57375pt>
+Package pdftex.def Info: figuri/evolutie_ai.png  used on input line 397.
+(pdftex.def)             Requested size: 362.77263pt x 143.82506pt.
+<figuri/longformer1.png, id=762, 357.335pt x 153.57375pt>
 File: figuri/longformer1.png Graphic file (type png)
 <use figuri/longformer1.png>
-Package pdftex.def Info: figuri/longformer1.png  used on input line 401.
-(pdftex.def)             Requested size: 386.95894pt x 166.31412pt.
-<figuri/longformer2.png, id=760, 961.5925pt x 229.85875pt>
+Package pdftex.def Info: figuri/longformer1.png  used on input line 406.
+(pdftex.def)             Requested size: 362.77263pt x 155.91904pt.
+<figuri/longformer2.png, id=766, 961.5925pt x 229.85875pt>
 File: figuri/longformer2.png Graphic file (type png)
 <use figuri/longformer2.png>
-Package pdftex.def Info: figuri/longformer2.png  used on input line 408.
+Package pdftex.def Info: figuri/longformer2.png  used on input line 413.
 (pdftex.def)             Requested size: 386.95894pt x 92.49953pt.
  [18 <./figuri/evolutie_ai.png> <./figuri/longformer1.png> <./figuri/longformer2.png>]
-<figuri/lora.png, id=778, 270.00874pt x 233.87375pt>
+<figuri/lora.png, id=784, 270.00874pt x 233.87375pt>
 File: figuri/lora.png Graphic file (type png)
 <use figuri/lora.png>
-Package pdftex.def Info: figuri/lora.png  used on input line 419.
+Package pdftex.def Info: figuri/lora.png  used on input line 424.
 (pdftex.def)             Requested size: 145.11052pt x 125.69397pt.
-<figuri/embarr1.png, id=784, 991.705pt x 431.6125pt>
+<figuri/embarr1.png, id=790, 991.705pt x 431.6125pt>
 File: figuri/embarr1.png Graphic file (type png)
 <use figuri/embarr1.png>
-Package pdftex.def Info: figuri/embarr1.png  used on input line 428.
+Package pdftex.def Info: figuri/embarr1.png  used on input line 433.
 (pdftex.def)             Requested size: 386.95894pt x 168.4138pt.
 
-Overfull \hbox (1.78178pt too wide) in paragraph at lines 435--436
-\T1/cmr/m/n/12 (RL)[]: mo-de-lul este re-com-pen-sat pen-tru ie[]iri care ma-ni-festa gân-dire ex-pli-cita (Chain-of-Thought
+Overfull \hbox (1.78178pt too wide) in paragraph at lines 440--441
+\T1/cmr/m/n/12 (RL)[]: mo-de-lul este re-com-pen-sat pen-tru ie[]iri care ma-ni-fest  gân-dire ex-pli-cit  (Chain-of-Thought
  []
 
-<figuri/ouyang.png, id=792, 529.98pt x 316.18124pt>
+
+Overfull \hbox (3.69894pt too wide) in paragraph at lines 440--441
+\T1/cmr/m/n/12 (CoT)[] [[]]), iar r s-pun-su-rile gre[]ite sau ne-fun-damen-tate sunt pe-na-li-zate. [[]] dis-cut  importan[]a
+ []
+
+<figuri/ouyang.png, id=798, 529.98pt x 316.18124pt>
 File: figuri/ouyang.png Graphic file (type png)
 <use figuri/ouyang.png>
-Package pdftex.def Info: figuri/ouyang.png  used on input line 439.
+Package pdftex.def Info: figuri/ouyang.png  used on input line 444.
 (pdftex.def)             Requested size: 386.95894pt x 230.85863pt.
 [19 <./figuri/lora.png> <./figuri/embarr1.png>]
-<figuri/cot.png, id=817, 863.225pt x 412.54124pt>
+<figuri/cot.png, id=823, 863.225pt x 412.54124pt>
 File: figuri/cot.png Graphic file (type png)
 <use figuri/cot.png>
-Package pdftex.def Info: figuri/cot.png  used on input line 452.
+Package pdftex.def Info: figuri/cot.png  used on input line 457.
 (pdftex.def)             Requested size: 386.95894pt x 184.93053pt.
  [20 <./figuri/ouyang.png> <./figuri/cot.png>]
-<figuri/react.png, id=834, 666.49pt x 551.05875pt>
+<figuri/react.png, id=840, 666.49pt x 551.05875pt>
 File: figuri/react.png Graphic file (type png)
 <use figuri/react.png>
-Package pdftex.def Info: figuri/react.png  used on input line 461.
+Package pdftex.def Info: figuri/react.png  used on input line 468.
 (pdftex.def)             Requested size: 386.95894pt x 319.94221pt.
-<figuri/react2.png, id=838, 647.41875pt x 129.48375pt>
+<figuri/react2.png, id=844, 647.41875pt x 129.48375pt>
 File: figuri/react2.png Graphic file (type png)
 <use figuri/react2.png>
-Package pdftex.def Info: figuri/react2.png  used on input line 468.
+Package pdftex.def Info: figuri/react2.png  used on input line 475.
 (pdftex.def)             Requested size: 386.95894pt x 77.39249pt.
-<figuri/rewoo3.png, id=843, 851.18pt x 405.515pt>
+<figuri/rewoo3.png, id=849, 851.18pt x 405.515pt>
 File: figuri/rewoo3.png Graphic file (type png)
 <use figuri/rewoo3.png>
-Package pdftex.def Info: figuri/rewoo3.png  used on input line 477.
+Package pdftex.def Info: figuri/rewoo3.png  used on input line 484.
 (pdftex.def)             Requested size: 386.95894pt x 184.3549pt.
  [21 <./figuri/react.png> <./figuri/react2.png>]
-<figuri/lost_middle.png, id=859, 495.8525pt x 452.69125pt>
+<figuri/lost_middle.png, id=865, 495.8525pt x 452.69125pt>
 File: figuri/lost_middle.png Graphic file (type png)
 <use figuri/lost_middle.png>
-Package pdftex.def Info: figuri/lost_middle.png  used on input line 486.
+Package pdftex.def Info: figuri/lost_middle.png  used on input line 493.
 (pdftex.def)             Requested size: 290.22105pt x 264.95801pt.
-<figuri/lost_middle2.png, id=863, 981.6675pt x 394.47375pt>
+<figuri/lost_middle2.png, id=869, 981.6675pt x 394.47375pt>
 File: figuri/lost_middle2.png Graphic file (type png)
 <use figuri/lost_middle2.png>
-Package pdftex.def Info: figuri/lost_middle2.png  used on input line 493.
+Package pdftex.def Info: figuri/lost_middle2.png  used on input line 500.
 (pdftex.def)             Requested size: 386.95894pt x 155.4934pt.
  [22 <./figuri/rewoo3.png> <./figuri/lost_middle.png>]
-Underfull \hbox (badness 10000) in alignment at lines 556--556
+Underfull \hbox (badness 10000) in alignment at lines 563--563
 [][][][] 
  []
 
-<figuri/swe_performanta.png, id=902, 1754.555pt x 962.59625pt>
+<figuri/swe_performanta.png, id=910, 1754.555pt x 962.59625pt>
 File: figuri/swe_performanta.png Graphic file (type png)
 <use figuri/swe_performanta.png>
-Package pdftex.def Info: figuri/swe_performanta.png  used on input line 570.
+Package pdftex.def Info: figuri/swe_performanta.png  used on input line 577.
 (pdftex.def)             Requested size: 290.22105pt x 159.2181pt.
 [23 <./figuri/lost_middle2.png>] [24]
-<figuri/swe_cost.png, id=930, 1754.555pt x 962.59625pt>
+<figuri/swe_cost.png, id=940, 1754.555pt x 962.59625pt>
 File: figuri/swe_cost.png Graphic file (type png)
 <use figuri/swe_cost.png>
-Package pdftex.def Info: figuri/swe_cost.png  used on input line 581.
+Package pdftex.def Info: figuri/swe_cost.png  used on input line 588.
 (pdftex.def)             Requested size: 290.22105pt x 159.2181pt.
  [25 <./figuri/swe_performanta.png> <./figuri/swe_cost.png>]
-<figuri/context.png, id=943, 998.73125pt x 561.09625pt>
+<figuri/context.png, id=953, 998.73125pt x 561.09625pt>
 File: figuri/context.png Graphic file (type png)
 <use figuri/context.png>
-Package pdftex.def Info: figuri/context.png  used on input line 599.
+Package pdftex.def Info: figuri/context.png  used on input line 606.
 (pdftex.def)             Requested size: 386.95894pt x 217.39687pt.
 
-Overfull \hbox (4.38434pt too wide) in paragraph at lines 632--632
-[]|\T1/cmr/bx/n/10.95 LangChain [[]]|  
- []
-
-
-Overfull \hbox (6.82924pt too wide) in paragraph at lines 632--632
-[]|\T1/cmr/bx/n/10.95 LangGraph [[]]|  
- []
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[26 <./figuri/context.png>]
-Overfull \hbox (2.59723pt too wide) in paragraph at lines 681--681
-[]|\T1/cmr/bx/n/10.95 Textual [[]]|  
- []
-
-[27]
-Overfull \hbox (12.62129pt too wide) in paragraph at lines 738--738
+Overfull \hbox (12.62129pt too wide) in paragraph at lines 664--664
 \T1/cmr/m/n/8 Pro/Business/Enterprise 
  []
 
 
-Overfull \hbox (2.15787pt too wide) in paragraph at lines 738--738
+Overfull \hbox (2.15787pt too wide) in paragraph at lines 664--664
 []|\T1/cmr/bx/n/8 Microsoft [[]]/ 
  []
 
-[28] [29]
-Overfull \hbox (2.23784pt too wide) in paragraph at lines 827--827
+[26 <./figuri/context.png>] [27]
+Overfull \hbox (2.23784pt too wide) in paragraph at lines 754--754
 \T1/cmr/m/n/8 Slack [[]]/Jira [[]]|  
  []
 
 
-Overfull \hbox (22.59259pt too wide) in paragraph at lines 827--827
+Overfull \hbox (22.59259pt too wide) in paragraph at lines 754--754
 \T1/cmr/m/n/8 Slack/Discord/Telegram|  
  []
 
 
-Underfull \hbox (badness 10000) in alignment at lines 827--827
+Underfull \hbox (badness 10000) in alignment at lines 754--754
 [][][][][] 
  []
 
-[30]
-<figuri/context-claude.png, id=1200, 533.995pt x 218.8175pt>
+[28]
+<figuri/context-claude.png, id=1164, 533.995pt x 218.8175pt>
 File: figuri/context-claude.png Graphic file (type png)
 <use figuri/context-claude.png>
-Package pdftex.def Info: figuri/context-claude.png  used on input line 843.
+Package pdftex.def Info: figuri/context-claude.png  used on input line 773.
 (pdftex.def)             Requested size: 232.17241pt x 95.13809pt.
-<figuri/context-claude2.png, id=1202, 1008.76875pt x 213.79875pt>
+<figuri/context-claude2.png, id=1166, 1008.76875pt x 213.79875pt>
 File: figuri/context-claude2.png Graphic file (type png)
 <use figuri/context-claude2.png>
-Package pdftex.def Info: figuri/context-claude2.png  used on input line 850.
+Package pdftex.def Info: figuri/context-claude2.png  used on input line 780.
 (pdftex.def)             Requested size: 232.17241pt x 49.20529pt.
-
-Overfull \hbox (21.39505pt too wide) in paragraph at lines 860--861
-\T1/cmr/m/n/12 Confiden[]ialitatea da-te-lor este to-tala (excep[]ie: mo-de-lele fur-ni-zo-ri-lor sau Lan-gfuse cloud, op[]ionale).
+ [29 <./figuri/context-claude.png> <./figuri/context-claude2.png>]
+Overfull \hbox (4.38434pt too wide) in paragraph at lines 835--835
+[]|\T1/cmr/bx/n/10.95 LangChain [[]]|  
  []
 
-[31 <./figuri/context-claude.png> <./figuri/context-claude2.png>] [32]
-Overfull \hbox (6.29587pt too wide) in paragraph at lines 944--946
-[]\T1/cmr/m/n/12 interac[]iunea din-tre sta-di-ile pro-ce-su-lui de com-pac-tare, ob-ser-vând efec-tele asu-pra integrit []ii
+
+Overfull \hbox (6.82924pt too wide) in paragraph at lines 835--835
+[]|\T1/cmr/bx/n/10.95 LangGraph [[]]|  
+ []
+
+[30]
+Overfull \hbox (2.59723pt too wide) in paragraph at lines 888--888
+[]|\T1/cmr/bx/n/10.95 Textual [[]]|  
+ []
+
+[31] [32]
+Overfull \hbox (7.27063pt too wide) in paragraph at lines 944--946
+[]\T1/cmr/m/n/12 Interac[]iunea din-tre sta-di-ile pro-ce-su-lui de com-pac-tare, ob-ser-vând efec-tele asu-pra integrit []ii
  []
 
 [33]
@@ -913,56 +1095,58 @@ Capitolul 2.
 [34
 
 ]
-
-LaTeX Warning: Hyper reference `anexe:cod' on page 35 undefined on input line 1011.
-
-<figuri/vibecli_arhitectura.png, id=1243, 701.62125pt x 673.51625pt>
+<figuri/vibecli_arhitectura.png, id=1254, 701.62125pt x 673.51625pt>
 File: figuri/vibecli_arhitectura.png Graphic file (type png)
 <use figuri/vibecli_arhitectura.png>
-Package pdftex.def Info: figuri/vibecli_arhitectura.png  used on input line 1018.
+Package pdftex.def Info: figuri/vibecli_arhitectura.png  used on input line 1016.
 (pdftex.def)             Requested size: 459.51051pt x 441.11012pt.
-[35 <./figuri/vibecli_arhitectura.png>]
-<figuri/ui_4.jpeg, id=1252, 1606.0pt x 834.11626pt>
+ [35 <./figuri/vibecli_arhitectura.png>]
+<figuri/ui_4.jpeg, id=1263, 1606.0pt x 834.11626pt>
 File: figuri/ui_4.jpeg Graphic file (type jpg)
 <use figuri/ui_4.jpeg>
-Package pdftex.def Info: figuri/ui_4.jpeg  used on input line 1074.
+Package pdftex.def Info: figuri/ui_4.jpeg  used on input line 1072.
 (pdftex.def)             Requested size: 232.17241pt x 120.58102pt.
-<figuri/ui_2.jpeg, id=1254, 1606.0pt x 763.85374pt>
+<figuri/ui_2.jpeg, id=1265, 1606.0pt x 763.85374pt>
 File: figuri/ui_2.jpeg Graphic file (type jpg)
 <use figuri/ui_2.jpeg>
-Package pdftex.def Info: figuri/ui_2.jpeg  used on input line 1081.
+Package pdftex.def Info: figuri/ui_2.jpeg  used on input line 1079.
 (pdftex.def)             Requested size: 232.17241pt x 110.42377pt.
  [36]
-<figuri/ui_3.jpeg, id=1262, 1606.0pt x 869.2475pt>
+<figuri/ui_3.jpeg, id=1273, 1606.0pt x 869.2475pt>
 File: figuri/ui_3.jpeg Graphic file (type jpg)
 <use figuri/ui_3.jpeg>
-Package pdftex.def Info: figuri/ui_3.jpeg  used on input line 1093.
+Package pdftex.def Info: figuri/ui_3.jpeg  used on input line 1091.
 (pdftex.def)             Requested size: 232.17241pt x 125.65964pt.
-<figuri/ui_1.jpeg, id=1264, 1606.0pt x 819.06pt>
+<figuri/ui_1.jpeg, id=1275, 1606.0pt x 819.06pt>
 File: figuri/ui_1.jpeg Graphic file (type jpg)
 <use figuri/ui_1.jpeg>
-Package pdftex.def Info: figuri/ui_1.jpeg  used on input line 1100.
+Package pdftex.def Info: figuri/ui_1.jpeg  used on input line 1098.
 (pdftex.def)             Requested size: 232.17241pt x 118.40446pt.
 LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <12> not available
-(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 1111.
-<figuri/vibecli_poem.png, id=1266, 1727.45375pt x 475.7775pt>
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 1109.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1113--1114
+[]\T1/cmr/bx/n/12 Auto-completare \T1/cmr/m/n/12 pen-tru co-men-zile
+ []
+
+<figuri/vibecli_poem.png, id=1277, 1727.45375pt x 475.7775pt>
 File: figuri/vibecli_poem.png Graphic file (type png)
 <use figuri/vibecli_poem.png>
-Package pdftex.def Info: figuri/vibecli_poem.png  used on input line 1121.
+Package pdftex.def Info: figuri/vibecli_poem.png  used on input line 1119.
 (pdftex.def)             Requested size: 483.69684pt x 133.21678pt.
- [37 <./figuri/ui_4.jpeg> <./figuri/ui_2.jpeg> <./figuri/ui_3.jpeg> <./figuri/ui_1.jpeg>]
-<figuri/vibecli_create_file.png, id=1277, 396.98312pt x 381.425pt>
+[37 <./figuri/ui_4.jpeg> <./figuri/ui_2.jpeg> <./figuri/ui_3.jpeg> <./figuri/ui_1.jpeg>]
+<figuri/vibecli_create_file.png, id=1289, 396.98312pt x 381.425pt>
 File: figuri/vibecli_create_file.png Graphic file (type png)
 <use figuri/vibecli_create_file.png>
-Package pdftex.def Info: figuri/vibecli_create_file.png  used on input line 1130.
+Package pdftex.def Info: figuri/vibecli_create_file.png  used on input line 1128.
 (pdftex.def)             Requested size: 232.17241pt x 223.07742pt.
-<figuri/vibecli_edit_file.png, id=1279, 367.3725pt x 258.9675pt>
+<figuri/vibecli_edit_file.png, id=1291, 367.3725pt x 258.9675pt>
 File: figuri/vibecli_edit_file.png Graphic file (type png)
 <use figuri/vibecli_edit_file.png>
-Package pdftex.def Info: figuri/vibecli_edit_file.png  used on input line 1137.
+Package pdftex.def Info: figuri/vibecli_edit_file.png  used on input line 1135.
 (pdftex.def)             Requested size: 232.17241pt x 163.66406pt.
  [38 <./figuri/vibecli_poem.png> <./figuri/vibecli_create_file.png (PNG copy)> <./figuri/vibecli_edit_file.png (PNG copy)>]
-Underfull \hbox (badness 10000) in paragraph at lines 1160--1161
+Underfull \hbox (badness 10000) in paragraph at lines 1158--1159
 []\T1/cmr/m/n/12 Sandbox Do-c-ker op[]ional pen-tru
  []
 
@@ -977,229 +1161,228 @@ Overfull \hbox (3.93414pt too wide) in paragraph at lines 1236--1240
  []
 
 [40]
-<figuri/context-window3.png, id=1306, 840.13875pt x 608.2725pt>
+<figuri/context-window3.png, id=1317, 840.13875pt x 608.2725pt>
 File: figuri/context-window3.png Graphic file (type png)
 <use figuri/context-window3.png>
 Package pdftex.def Info: figuri/context-window3.png  used on input line 1259.
-(pdftex.def)             Requested size: 290.22105pt x 210.1234pt.
+(pdftex.def)             Requested size: 386.95894pt x 280.16144pt.
  [41] [42 <./figuri/context-window3.png>]
-<figuri/vibecli_multimodal.png, id=1324, 1243.64626pt x 720.6925pt>
+<figuri/vibecli_multimodal.png, id=1335, 1243.64626pt x 720.6925pt>
 File: figuri/vibecli_multimodal.png Graphic file (type png)
 <use figuri/vibecli_multimodal.png>
 Package pdftex.def Info: figuri/vibecli_multimodal.png  used on input line 1321.
-(pdftex.def)             Requested size: 435.32419pt x 252.26814pt.
+(pdftex.def)             Requested size: 483.69684pt x 280.29916pt.
  [43]
-<figuri/vibecli_context_threshold.png, id=1334, 773.89125pt x 377.41pt>
+<figuri/vibecli_context_threshold.png, id=1345, 773.89125pt x 377.41pt>
 File: figuri/vibecli_context_threshold.png Graphic file (type png)
 <use figuri/vibecli_context_threshold.png>
 Package pdftex.def Info: figuri/vibecli_context_threshold.png  used on input line 1337.
 (pdftex.def)             Requested size: 386.95894pt x 188.71028pt.
- [44 <./figuri/vibecli_multimodal.png> <./figuri/vibecli_context_threshold.png>]
-<figuri/vibecli_context_eager.png, id=1347, 634.37pt x 272.01625pt>
+ [44 <./figuri/vibecli_multimodal.png>]
+<figuri/vibecli_context_eager.png, id=1356, 634.37pt x 272.01625pt>
 File: figuri/vibecli_context_eager.png Graphic file (type png)
 <use figuri/vibecli_context_eager.png>
 Package pdftex.def Info: figuri/vibecli_context_eager.png  used on input line 1346.
 (pdftex.def)             Requested size: 435.32419pt x 186.67035pt.
- [45 <./figuri/vibecli_context_eager.png (PNG copy)>] (/usr/local/texlive/2026/texmf-dist/tex/latex/listings/lstlang1.sty
+ [45 <./figuri/vibecli_context_threshold.png> <./figuri/vibecli_context_eager.png (PNG copy)>] (/usr/local/texlive/2026/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2025/11/14 1.11b listings language file
 )
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 1371.
  (./cod/tool.py) [46]
-<figuri/vibecli_tools.png, id=1402, 804.00375pt x 462.72874pt>
+<figuri/vibecli_tools.png, id=1413, 804.00375pt x 462.72874pt>
 File: figuri/vibecli_tools.png Graphic file (type png)
 <use figuri/vibecli_tools.png>
-Package pdftex.def Info: figuri/vibecli_tools.png  used on input line 1410.
+Package pdftex.def Info: figuri/vibecli_tools.png  used on input line 1411.
 (pdftex.def)             Requested size: 459.51051pt x 264.45712pt.
- [47 <./figuri/vibecli_tools.png>] (./cod/skill.txt) [48]
-Overfull \hbox (12.78041pt too wide) in paragraph at lines 1463--1464
-\T1/cmr/m/n/12 Echipa de agen[]i con-st  dintr-un orches-tra-tor cu con-text in-te-gral []i mai mul[]i subagen[]i specializa[]i
- []
-
-<figuri/vibecli_subagents.png, id=1419, 774.895pt x 353.32pt>
+ [47] [48 <./figuri/vibecli_tools.png>] (./cod/skill.txt)
+<figuri/vibecli_subagents.png, id=1430, 774.895pt x 353.32pt>
 File: figuri/vibecli_subagents.png Graphic file (type png)
 <use figuri/vibecli_subagents.png>
-Package pdftex.def Info: figuri/vibecli_subagents.png  used on input line 1467.
-(pdftex.def)             Requested size: 386.95894pt x 176.43852pt.
-(./cod/subagent.py) [49 <./figuri/vibecli_subagents.png>] [50] (./cod/subagent_def.py)
-Overfull \hbox (13.14424pt too wide) in paragraph at lines 1507--1508
-\T1/cmtt/m/n/12 default_timeout_s \T1/cmr/m/n/12 (su-pras-crise din \T1/cmtt/m/n/12 config.yml\T1/cmr/m/n/12 ), []i mo-del de-di-cat con-fi-gu-ra-bil prin \T1/cmtt/m/n/12 /subagents\T1/cmr/m/n/12 . 
- []
-
-
-Overfull \hbox (5.89606pt too wide) in paragraph at lines 1509--1510
-\T1/cmr/m/n/12 Lan-gfuse în span-ul p -rin-te-lui, agre-ga-rea to-ke-ni-lor []i res-pect  li-mi-tele \T1/cmtt/m/n/12 max_depth\T1/cmr/m/n/12 /\T1/cmtt/m/n/12 max_parallel\T1/cmr/m/n/12 ;
- []
-
-[51]
-Overfull \hbox (0.54176pt too wide) in paragraph at lines 1531--1532
-\T1/cmr/m/n/12 Încredin[]area con-tro-lu-lui unui agent cu ac-ces la co-menzi pe-ri-cu-loase ne-ce-sita m -suri de siguran[] 
+Package pdftex.def Info: figuri/vibecli_subagents.png  used on input line 1465.
+(pdftex.def)             Requested size: 483.69684pt x 220.5495pt.
+ [49] (./cod/subagent.py) [50 <./figuri/vibecli_subagents.png>]
+<figuri/vibecli_mcp.png, id=1507, 613.29124pt x 229.85875pt>
+File: figuri/vibecli_mcp.png Graphic file (type png)
+<use figuri/vibecli_mcp.png>
+Package pdftex.def Info: figuri/vibecli_mcp.png  used on input line 1499.
+(pdftex.def)             Requested size: 483.69684pt x 181.28828pt.
+ (./cod/subagent_def.py) [51 <./figuri/vibecli_mcp.png>]
+Overfull \hbox (8.02754pt too wide) in paragraph at lines 1514--1515
+\T1/cmtt/m/n/12 role_prompt \T1/cmr/m/n/12 (frag-ment de rol cu ac-ces la con-tex-tul p -rin-te-lui), \T1/cmtt/m/n/12 allowed_tools\T1/cmr/m/n/12 /\T1/cmtt/m/n/12 excluded_tools
  []
 
 [52]
-Overfull \hbox (10.718pt too wide) in paragraph at lines 1549--1550
-\T1/cmr/m/n/12 dusa). Când sandbox-ul e ac-tiv, este ex-pus  unealta []i \T1/cmtt/m/n/12 run_command_host \T1/cmr/m/n/12 ca me-toda condi[]ionata
+Overfull \hbox (0.54176pt too wide) in paragraph at lines 1538--1539
+\T1/cmr/m/n/12 Încredin[]area con-tro-lu-lui unui agent cu ac-ces la co-menzi pe-ri-cu-loase ne-ce-sit  m -suri de siguran[] 
  []
 
-<figuri/permission.png, id=1547, 1729.46124pt x 406.51875pt>
+
+Overfull \hbox (0.73761pt too wide) in paragraph at lines 1542--1543
+[]\T1/cmr/m/it/12 Utilizarea gre[]it  a unel-te-lor\T1/cmr/m/n/12 , prin ha-lu-ci-na-rea ar-gu-men-te-lor sau com-pu-ne-rea unor secven[]e
+ []
+
+[53]
+<figuri/permission.png, id=1569, 1729.46124pt x 406.51875pt>
 File: figuri/permission.png Graphic file (type png)
 <use figuri/permission.png>
-Package pdftex.def Info: figuri/permission.png  used on input line 1557.
+Package pdftex.def Info: figuri/permission.png  used on input line 1564.
 (pdftex.def)             Requested size: 483.69684pt x 113.6942pt.
-[53 <./figuri/permission.png>]
-<figuri/langfuse.png, id=1560, 1716.4125pt x 890.32625pt>
+ [54 <./figuri/permission.png>]
+<figuri/langfuse.png, id=1579, 1716.4125pt x 890.32625pt>
 File: figuri/langfuse.png Graphic file (type png)
 <use figuri/langfuse.png>
-Package pdftex.def Info: figuri/langfuse.png  used on input line 1583.
+Package pdftex.def Info: figuri/langfuse.png  used on input line 1590.
 (pdftex.def)             Requested size: 483.69684pt x 250.89272pt.
- [54] [55 <./figuri/langfuse.png>]
-<figuri/vibeweb1.png, id=1579, 1697.34125pt x 684.5575pt>
+ [55 <./figuri/langfuse.png>]
+<figuri/vibecli_context_2.png, id=1594, 1357.07pt x 318.18875pt>
+File: figuri/vibecli_context_2.png Graphic file (type png)
+<use figuri/vibecli_context_2.png>
+Package pdftex.def Info: figuri/vibecli_context_2.png  used on input line 1610.
+(pdftex.def)             Requested size: 435.32419pt x 102.06523pt.
+<figuri/vibecli_subagent_saves.png, id=1596, 1358.07375pt x 338.26375pt>
+File: figuri/vibecli_subagent_saves.png Graphic file (type png)
+<use figuri/vibecli_subagent_saves.png>
+Package pdftex.def Info: figuri/vibecli_subagent_saves.png  used on input line 1617.
+(pdftex.def)             Requested size: 435.32419pt x 108.42725pt.
+<figuri/vibeweb1.png, id=1598, 1697.34125pt x 684.5575pt>
 File: figuri/vibeweb1.png Graphic file (type png)
 <use figuri/vibeweb1.png>
-Package pdftex.def Info: figuri/vibeweb1.png  used on input line 1603.
+Package pdftex.def Info: figuri/vibeweb1.png  used on input line 1625.
 (pdftex.def)             Requested size: 232.17241pt x 93.63339pt.
-<figuri/vibeweb2.png, id=1581, 1700.3525pt x 724.7075pt>
+<figuri/vibeweb2.png, id=1600, 1700.3525pt x 724.7075pt>
 File: figuri/vibeweb2.png Graphic file (type png)
 <use figuri/vibeweb2.png>
-Package pdftex.def Info: figuri/vibeweb2.png  used on input line 1604.
+Package pdftex.def Info: figuri/vibeweb2.png  used on input line 1626.
 (pdftex.def)             Requested size: 232.17241pt x 98.94815pt.
-<figuri/vibeweb3.png, id=1583, 1694.33pt x 701.62125pt>
+<figuri/vibeweb3.png, id=1602, 1694.33pt x 701.62125pt>
 File: figuri/vibeweb3.png Graphic file (type png)
 <use figuri/vibeweb3.png>
-Package pdftex.def Info: figuri/vibeweb3.png  used on input line 1605.
+Package pdftex.def Info: figuri/vibeweb3.png  used on input line 1627.
 (pdftex.def)             Requested size: 232.17241pt x 96.13866pt.
-<figuri/vibeweb4.png, id=1585, 1700.3525pt x 629.35126pt>
+<figuri/vibeweb4.png, id=1604, 1700.3525pt x 629.35126pt>
 File: figuri/vibeweb4.png Graphic file (type png)
 <use figuri/vibeweb4.png>
-Package pdftex.def Info: figuri/vibeweb4.png  used on input line 1608.
+Package pdftex.def Info: figuri/vibeweb4.png  used on input line 1630.
 (pdftex.def)             Requested size: 232.17241pt x 85.92867pt.
-<figuri/vibeweb5.png, id=1587, 1698.345pt x 812.03375pt>
+<figuri/vibeweb5.png, id=1606, 1698.345pt x 812.03375pt>
 File: figuri/vibeweb5.png Graphic file (type png)
 <use figuri/vibeweb5.png>
-Package pdftex.def Info: figuri/vibeweb5.png  used on input line 1609.
+Package pdftex.def Info: figuri/vibeweb5.png  used on input line 1631.
 (pdftex.def)             Requested size: 232.17241pt x 111.00757pt.
-<figuri/vibeweb6.png, id=1589, 1691.31876pt x 709.65125pt>
+<figuri/vibeweb6.png, id=1608, 1691.31876pt x 709.65125pt>
 File: figuri/vibeweb6.png Graphic file (type png)
 <use figuri/vibeweb6.png>
-Package pdftex.def Info: figuri/vibeweb6.png  used on input line 1610.
+Package pdftex.def Info: figuri/vibeweb6.png  used on input line 1632.
 (pdftex.def)             Requested size: 232.17241pt x 97.4122pt.
-<figuri/vibeweb_tool.png, id=1591, 912.40875pt x 521.95pt>
+ [56 <./figuri/vibecli_context_2.png> <./figuri/vibecli_subagent_saves.png>]
+<figuri/vibeweb_tool.png, id=1618, 912.40875pt x 521.95pt>
 File: figuri/vibeweb_tool.png Graphic file (type png)
 <use figuri/vibeweb_tool.png>
-Package pdftex.def Info: figuri/vibeweb_tool.png  used on input line 1619.
+Package pdftex.def Info: figuri/vibeweb_tool.png  used on input line 1641.
 (pdftex.def)             Requested size: 232.17241pt x 132.81274pt.
-<figuri/vibeweb_turn.png, id=1593, 921.4425pt x 814.04124pt>
+<figuri/vibeweb_turn.png, id=1620, 921.4425pt x 814.04124pt>
 File: figuri/vibeweb_turn.png Graphic file (type png)
 <use figuri/vibeweb_turn.png>
-Package pdftex.def Info: figuri/vibeweb_turn.png  used on input line 1622.
+Package pdftex.def Info: figuri/vibeweb_turn.png  used on input line 1644.
 (pdftex.def)             Requested size: 232.17241pt x 205.09973pt.
-<figuri/vibeweb_context.png, id=1595, 1388.18625pt x 344.28625pt>
-File: figuri/vibeweb_context.png Graphic file (type png)
-<use figuri/vibeweb_context.png>
-Package pdftex.def Info: figuri/vibeweb_context.png  used on input line 1631.
-(pdftex.def)             Requested size: 232.17241pt x 57.57701pt.
-<figuri/vibeweb_cost.png, id=1597, 689.57625pt x 274.02374pt>
+<figuri/vibecli_subagent.png, id=1622, 884.30376pt x 826.08624pt>
+File: figuri/vibecli_subagent.png Graphic file (type png)
+<use figuri/vibecli_subagent.png>
+Package pdftex.def Info: figuri/vibecli_subagent.png  used on input line 1652.
+(pdftex.def)             Requested size: 386.95894pt x 361.48747pt.
+ [57 <./figuri/vibeweb1.png> <./figuri/vibeweb2.png> <./figuri/vibeweb3.png> <./figuri/vibeweb4.png> <./figuri/vibeweb5.png> <./figuri/vibeweb6.png> <./figuri/vibeweb_tool.png> <./figuri/vibeweb_turn.png>]
+<figuri/vibeweb_cost.png, id=1645, 689.57625pt x 274.02374pt>
 File: figuri/vibeweb_cost.png Graphic file (type png)
 <use figuri/vibeweb_cost.png>
-Package pdftex.def Info: figuri/vibeweb_cost.png  used on input line 1634.
+Package pdftex.def Info: figuri/vibeweb_cost.png  used on input line 1660.
 (pdftex.def)             Requested size: 232.17241pt x 92.2595pt.
- [56 <./figuri/vibeweb1.png> <./figuri/vibeweb2.png> <./figuri/vibeweb3.png> <./figuri/vibeweb4.png> <./figuri/vibeweb5.png> <./figuri/vibeweb6.png> <./figuri/vibeweb_tool.png> <./figuri/vibeweb_turn.png>] [57 <./figuri/vibeweb_context.png> <./figuri/vibeweb_cost.png>]
+<figuri/vibecli_compact.png, id=1647, 664.4825pt x 273.02pt>
+File: figuri/vibecli_compact.png Graphic file (type png)
+<use figuri/vibecli_compact.png>
+Package pdftex.def Info: figuri/vibecli_compact.png  used on input line 1663.
+(pdftex.def)             Requested size: 232.17241pt x 95.39178pt.
+ [58 <./figuri/vibecli_subagent.png> <./figuri/vibeweb_cost.png> <./figuri/vibecli_compact.png>]
 Capitolul 3.
 
-Overfull \hbox (21.27037pt too wide) in paragraph at lines 1649--1651
-[]\T1/cmr/m/n/12 Data fi-ind na-tura ne-de-ter-mi-nist  a r s-pun-su-ri-lor mo-de-le-lor de lim-baj, schim-b -rile de configura[]ie
+Overfull \hbox (21.27037pt too wide) in paragraph at lines 1678--1680
+[]\T1/cmr/m/n/12 Dat  fi-ind na-tura ne-de-ter-mi-nist  a r s-pun-su-ri-lor mo-de-le-lor de lim-baj, schim-b -rile de configura[]ie
  []
 
-[58
+[59
 
-] [59] [60]
-Underfull \hbox (badness 10000) in paragraph at lines 1831--1832
+] [60]
+Underfull \hbox (badness 10000) in paragraph at lines 1934--1935
 []\T1/cmr/m/n/12 Compactare auto-mat  a is-to-ri-cu-lui
  []
 
-
-Overfull \hbox (5.88399pt too wide) in paragraph at lines 1852--1853
-[]\T1/cmr/m/n/12 Maparea co-du-lui sursa de tip \T1/cmr/m/it/12 repo map \T1/cmr/m/n/12 e aco-pe-rita par[]ial de su-ba-gen-tul \T1/cmtt/m/n/12 code_search\T1/cmr/m/n/12 . 
- []
-
-
-Underfull \hbox (badness 5388) in paragraph at lines 1863--1864
+[61]
+Underfull \hbox (badness 5388) in paragraph at lines 1966--1967
 []\T1/cmr/m/n/12 Sandbox în cloud []i execu[]ie la
  []
 
 
-Overfull \hbox (7.0388pt too wide) in paragraph at lines 1882--1882
-[]\T1/cmr/bx/n/14.4 Influenta lun-gi-mii []i a exactit []ii prompt-ului asu-pra performan[]ei.
+Overfull \hbox (23.6717pt too wide) in paragraph at lines 1985--1985
+[]\T1/cmr/bx/n/14.4 Influen[]a lun-gi-mii []i a exactit []ii instruc[]iunilor asu-pra performan[]ei.
  []
 
-[61]
-Overfull \hbox (25.52875pt too wide) in paragraph at lines 1887--1888
+
+Overfull \hbox (25.52875pt too wide) in paragraph at lines 1990--1991
 []\T1/cmr/m/n/12 Un prompt su-mar, de ti-pul \T1/cmtt/m/n/12 "Review these PRs, output your findings in this format"\T1/cmr/m/n/12 .
  []
 
-[62] [63]
-Overfull \hbox (9.08871pt too wide) in paragraph at lines 2037--2040
-[]\T1/cmr/m/n/12 Acest stu-diu re-flecta o pro-blem  do-mi-nanta în lu-mea IA[]: ale-ge-rea în-tre pre-ci-zie []i recunoa[]tere.
+[62] [63] [64]
+Overfull \hbox (9.08871pt too wide) in paragraph at lines 2140--2143
+[]\T1/cmr/m/n/12 Acest stu-diu re-flect  o pro-blem  do-mi-nant  în lu-mea IA[]: ale-ge-rea în-tre pre-ci-zie []i recunoa[]tere.
  []
 
-<figuri/chart_overall_metrics.pdf, id=1751, 423.7337pt x 293.61758pt>
+<figuri/chart_overall_metrics.pdf, id=1782, 423.7337pt x 293.61758pt>
 File: figuri/chart_overall_metrics.pdf Graphic file (type pdf)
 <use figuri/chart_overall_metrics.pdf>
-Package pdftex.def Info: figuri/chart_overall_metrics.pdf  used on input line 2045.
+Package pdftex.def Info: figuri/chart_overall_metrics.pdf  used on input line 2148.
 (pdftex.def)             Requested size: 222.50378pt x 154.18289pt.
-<figuri/chart_precision_recall_scatter.pdf, id=1752, 478.258pt x 350.77142pt>
+<figuri/chart_precision_recall_scatter.pdf, id=1783, 478.258pt x 350.77142pt>
 File: figuri/chart_precision_recall_scatter.pdf Graphic file (type pdf)
 <use figuri/chart_precision_recall_scatter.pdf>
-Package pdftex.def Info: figuri/chart_precision_recall_scatter.pdf  used on input line 2052.
+Package pdftex.def Info: figuri/chart_precision_recall_scatter.pdf  used on input line 2155.
 (pdftex.def)             Requested size: 251.52441pt x 184.4789pt.
-[64] [65 <./figuri/chart_overall_metrics.pdf> <./figuri/chart_precision_recall_scatter.pdf>]
-Overfull \hbox (23.10931pt too wide) in paragraph at lines 2105--2110
-\T1/cmr/m/n/12 Restul sta-di-i-lor ope-reaz  cu alte prin-ci-pii []i pot înso[]i orice combina[]ie de mai sus. \T1/cmtt/m/n/12 format_compress
- []
-
-[66] [67]
-<figuri/chart_eval_params.pdf, id=1862, 630.88365pt x 424.64838pt>
+[65 <./figuri/chart_overall_metrics.pdf> <./figuri/chart_precision_recall_scatter.pdf>] [66] [67] [68]
+<figuri/chart_eval_params.pdf, id=1893, 630.88365pt x 424.64838pt>
 File: figuri/chart_eval_params.pdf Graphic file (type pdf)
 <use figuri/chart_eval_params.pdf>
-Package pdftex.def Info: figuri/chart_eval_params.pdf  used on input line 2220.
+Package pdftex.def Info: figuri/chart_eval_params.pdf  used on input line 2323.
 (pdftex.def)             Requested size: 290.22105pt x 195.34709pt.
- [68]
-<figuri/chart_eval_cost.pdf, id=1871, 639.2528pt x 424.64838pt>
+ [69 <./figuri/chart_eval_params.pdf>]
+<figuri/chart_eval_cost.pdf, id=1983, 639.2528pt x 424.64838pt>
 File: figuri/chart_eval_cost.pdf Graphic file (type pdf)
 <use figuri/chart_eval_cost.pdf>
-Package pdftex.def Info: figuri/chart_eval_cost.pdf  used on input line 2249.
+Package pdftex.def Info: figuri/chart_eval_cost.pdf  used on input line 2352.
 (pdftex.def)             Requested size: 232.17241pt x 154.22752pt.
-<figuri/chart_eval_speed.pdf, id=1872, 632.92833pt x 424.69353pt>
+<figuri/chart_eval_speed.pdf, id=1984, 632.92833pt x 424.69353pt>
 File: figuri/chart_eval_speed.pdf Graphic file (type pdf)
 <use figuri/chart_eval_speed.pdf>
-Package pdftex.def Info: figuri/chart_eval_speed.pdf  used on input line 2256.
+Package pdftex.def Info: figuri/chart_eval_speed.pdf  used on input line 2359.
 (pdftex.def)             Requested size: 232.17241pt x 155.78624pt.
- [69 <./figuri/chart_eval_params.pdf>]
-<figuri/chart_eval_score_per_dollar.pdf, id=1961, 567.70615pt x 316.28853pt>
-File: figuri/chart_eval_score_per_dollar.pdf Graphic file (type pdf)
-<use figuri/chart_eval_score_per_dollar.pdf>
-Package pdftex.def Info: figuri/chart_eval_score_per_dollar.pdf  used on input line 2270.
-(pdftex.def)             Requested size: 362.77263pt x 202.11508pt.
- [70 <./figuri/chart_eval_cost.pdf> <./figuri/chart_eval_speed.pdf> <./figuri/chart_eval_score_per_dollar.pdf>] [71]
+ [70 <./figuri/chart_eval_cost.pdf> <./figuri/chart_eval_speed.pdf>] [71]
 Capitolul 4.
 
-Overfull \hbox (19.544pt too wide) in paragraph at lines 2314--2315
+Overfull \hbox (19.544pt too wide) in paragraph at lines 2410--2411
 []\T1/cmtt/m/n/12 Realizeaz  un rezumat al celor mai importante tichete sau PR[]-uri ap rute
  []
 
 
-Overfull \hbox (31.89099pt too wide) in paragraph at lines 2314--2315
+Overfull \hbox (31.89099pt too wide) in paragraph at lines 2410--2411
 \T1/cmtt/m/n/12 în ultimele 24 de ore pe GitHub, []i analizeaz  canalele de Slack, Discord,
  []
 
 
-Overfull \hbox (1.02353pt too wide) in paragraph at lines 2314--2315
+Overfull \hbox (1.02353pt too wide) in paragraph at lines 2410--2411
 \T1/cmtt/m/n/12 Teams la care ai acces. Fa-mi un rezumat complet cu ceea ce g se[]ti. 
  []
 
 [72
 
 ]
-Overfull \hbox (14.01202pt too wide) in paragraph at lines 2350--2352
+Overfull \hbox (14.01202pt too wide) in paragraph at lines 2445--2447
 []\T1/cmr/m/n/12 Din punc-tul de ve-dere al securit []ii, con-tai-ne-rele Do-c-ker nu sunt im-pe-ne-tra-bile. O îmbun t []ire
  []
 
@@ -1216,14 +1399,14 @@ Underfull \hbox (badness 8151) in paragraph at lines 95--99
 
 [75
 
-] [76]
-Underfull \hbox (badness 6758) in paragraph at lines 284--288
+] [76] [77]
+Underfull \hbox (badness 6758) in paragraph at lines 458--462
 []\T1/cmr/m/n/10 Jonathan Slen-ders.  Py-thon prompt to-o-l-kit do-cu-men-ta-tion.  dis-po-ni-bil la: [][]$\T1/cmtt/m/n/10 https : / /
  []
 
-[77] [78]) [79]
+[78]) [79]
 LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 2444.
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 2549.
  (./cod/implementare/config/config.yml
 LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <6> not available
 (Font)              Font shape `T1/cmtt/m/n' tried instead on input line 50.
@@ -1234,26 +1417,22 @@ LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <6> not available
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
-
-
-LaTeX Warning: There were undefined references.
-
 Package rerunfilecheck Info: File `teza_v1.out' has not changed.
-(rerunfilecheck)             Checksum: A6A0F8386D61B78DA8ACF0EF1CB4BB22;20357.
+(rerunfilecheck)             Checksum: 4C7A5C3E7E7E5055270453C79361D086;22627.
  ) 
 Here is how much of TeX's memory you used:
- 26890 strings out of 467525
- 606648 string characters out of 5418982
- 2327509 words of memory out of 5000000
- 54808 multiletter control sequences out of 15000+600000
+ 38020 strings out of 467525
+ 855718 string characters out of 5418982
+ 2547701 words of memory out of 5000000
+ 65710 multiletter control sequences out of 15000+600000
  687495 words of font info for 207 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,16n,79p,1391b,1525s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfbx0500.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfbx0600.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfbx0700.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfbx0800.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfit0800.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfrm0500.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfrm0600.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfti0600.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfti0700.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfti0800.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfti1440.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sftt0800.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sftt1440.pfb>
-Output written on teza_v1.pdf (80 pages, 9500256 bytes).
+ 88i,16n,94p,1403b,1525s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfbx0500.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfbx0600.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfbx0700.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfbx0800.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfit0800.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfrm0500.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfrm0600.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfti0600.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfti0700.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfti0800.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfti1440.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sftt0800.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sftt1440.pfb>
+Output written on teza_v1.pdf (80 pages, 10085086 bytes).
 PDF statistics:
- 2835 PDF objects out of 2984 (max. 8388607)
- 2011 compressed objects within 21 object streams
- 705 named destinations out of 1000 (max. 500000)
- 1251 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2786 PDF objects out of 2984 (max. 8388607)
+ 2007 compressed objects within 21 object streams
+ 710 named destinations out of 1000 (max. 500000)
+ 1302 words of extra memory for PDF output out of 10000 (max. 10000000)
 

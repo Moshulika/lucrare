@@ -28,45 +28,45 @@ Warning--empty year in wangPlanandSolvePromptingImproving2023
 Warning--empty year in lewisRetrievalAugmentedGenerationKnowledgeIntensive2020
 Warning--empty year in hackettBypassingLLMGuardrails2025
 Warning--empty year in rebedeaNeMoGuardrailsToolkit2023
-You've used 101 entries,
+You've used 102 entries,
             1791 wiz_defined-function locations,
-            900 strings with 24056 characters,
-and the built_in function-call counts, 20381 in all, are:
-= -- 1471
-> -- 1475
+            904 strings with 24108 characters,
+and the built_in function-call counts, 20519 in all, are:
+= -- 1484
+> -- 1479
 < -- 10
-+ -- 546
-- -- 445
-* -- 1052
-:= -- 3381
-add.period$ -- 358
-call.type$ -- 101
-change.case$ -- 101
++ -- 548
+- -- 446
+* -- 1053
+:= -- 3403
+add.period$ -- 362
+call.type$ -- 102
+change.case$ -- 102
 chr.to.int$ -- 0
-cite$ -- 126
-duplicate$ -- 661
-empty$ -- 2016
-format.name$ -- 445
-if$ -- 4495
+cite$ -- 127
+duplicate$ -- 666
+empty$ -- 2034
+format.name$ -- 446
+if$ -- 4528
 int.to.chr$ -- 0
-int.to.str$ -- 101
+int.to.str$ -- 102
 missing$ -- 16
-newline$ -- 556
-num.names$ -- 107
-pop$ -- 593
+newline$ -- 562
+num.names$ -- 108
+pop$ -- 599
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 389
+skip$ -- 391
 stack$ -- 0
 substring$ -- 401
-swap$ -- 172
+swap$ -- 173
 text.length$ -- 10
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 25
-while$ -- 132
-width$ -- 104
-write$ -- 1091
+while$ -- 133
+width$ -- 105
+write$ -- 1103
 (There were 25 warnings)

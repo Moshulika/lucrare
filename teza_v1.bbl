@@ -97,24 +97,6 @@ Letta.
 \newblock disponibil la: \url{https://www.letta.com/blog/guide-to-context-engineering}, 2026.
 \newblock accesat la data: 30.05.2026.
 
-\bibitem{web_google}
-Google.
-\newblock Google.
-\newblock disponibil la: \url{https://www.google.com}, 2026.
-\newblock accesat la data: 10.04.2026.
-
-\bibitem{web_anthropic}
-Anthropic.
-\newblock Anthropic.
-\newblock disponibil la: \url{https://www.anthropic.com}, 2026.
-\newblock accesat la data: 19.05.2026.
-
-\bibitem{web_openai}
-OpenAI.
-\newblock Openai.
-\newblock disponibil la: \url{https://openai.com}, 2026.
-\newblock accesat la data: 19.05.2026.
-
 \bibitem{rosenblattPerceptronProbabilisticModel1958}
 F.~Rosenblatt.
 \newblock The perceptron: A probabilistic model for information storage and organization in the brain.
@@ -128,6 +110,12 @@ Y.~Lecun, L.~Bottou, Y.~Bengio, and P.~Haffner.
 Sepp Hochreiter and Jürgen Schmidhuber.
 \newblock Long short-term memory.
 \newblock 9:1735--1780.
+
+\bibitem{web_openai}
+OpenAI.
+\newblock Openai.
+\newblock disponibil la: \url{https://openai.com}, 2026.
+\newblock accesat la data: 19.05.2026.
 
 \bibitem{brownLanguageModelsAre2020a}
 Tom~B. Brown, Benjamin Mann, Nick Ryder, Melanie Subbiah, Jared Kaplan, Prafulla Dhariwal, Arvind Neelakantan, Pranav Shyam, Girish Sastry, Amanda Askell, Sandhini Agarwal, Ariel Herbert-Voss, Gretchen Krueger, Tom Henighan, Rewon Child, Aditya Ramesh, Daniel~M. Ziegler, Jeffrey Wu, Clemens Winter, Christopher Hesse, Mark Chen, Eric Sigler, Mateusz Litwin, Scott Gray, Benjamin Chess, Jack Clark, Christopher Berner, Sam {McCandlish}, Alec Radford, Ilya Sutskever, and Dario Amodei.
@@ -208,6 +196,18 @@ Anthropic.
 \newblock disponibil la: \url{https://docs.anthropic.com/en/docs/claude-code/overview}, 2026.
 \newblock accesat la data: 04.04.2026.
 
+\bibitem{web_cursor}
+Anysphere Inc.
+\newblock Cursor: The ai code editor.
+\newblock disponibil la: \url{https://cursor.com}, 2026.
+\newblock accesat la data: 18.06.2026.
+
+\bibitem{web_kiro}
+Amazon~Web Services.
+\newblock Kiro: The ai ide for prototype to production.
+\newblock disponibil la: \url{https://kiro.dev}, 2026.
+\newblock accesat la data: 18.06.2026.
+
 \bibitem{api_anthropic_models}
 Anthropic.
 \newblock Anthropic api: Models overview.
@@ -244,59 +244,11 @@ Mistral AI.
 \newblock disponibil la: \url{https://docs.mistral.ai/getting-started/models/models_overview/}, 2026.
 \newblock accesat la data: 28.04.2026.
 
-\bibitem{web_python}
-Python~Software Foundation.
-\newblock Python programming language official website.
-\newblock disponibil la: \url{https://www.python.org}, 2026.
-\newblock accesat la data: 12.05.2026.
-
-\bibitem{web_vertex_ai}
-Google Cloud.
-\newblock Vertex ai: Build, deploy, and scale ml models.
-\newblock disponibil la: \url{https://cloud.google.com/vertex-ai}, 2026.
-\newblock accesat la data: 09.06.2026.
-
-\bibitem{web_litellm}
-BerriAI.
-\newblock Litellm: Call all llm apis using the openai format.
-\newblock disponibil la: \url{https://www.litellm.ai}, 2026.
+\bibitem{web_anthropic}
+Anthropic.
+\newblock Anthropic.
+\newblock disponibil la: \url{https://www.anthropic.com}, 2026.
 \newblock accesat la data: 19.05.2026.
-
-\bibitem{gh_openai_python}
-OpenAI.
-\newblock Openai python sdk, github.
-\newblock disponibil la: \url{https://github.com/openai/openai-python}, 2026.
-\newblock accesat la data: 14.05.2026.
-
-\bibitem{web_langfuse}
-Langfuse.
-\newblock Langfuse: Open-source llm engineering platform.
-\newblock disponibil la: \url{https://langfuse.com}, 2026.
-\newblock accesat la data: 04.05.2026.
-
-\bibitem{api_textual}
-Textualize.
-\newblock Textual: Tui framework for python documentation.
-\newblock disponibil la: \url{https://textual.textualize.io}, 2026.
-\newblock accesat la data: 11.04.2026.
-
-\bibitem{api_prompt_toolkit}
-Jonathan Slenders.
-\newblock Python prompt toolkit documentation.
-\newblock disponibil la: \url{https://python-prompt-toolkit.readthedocs.io}, 2026.
-\newblock accesat la data: 25.04.2026.
-
-\bibitem{api_rich}
-Will McGugan.
-\newblock Rich: Python library for rich text and beautiful formatting in the terminal.
-\newblock disponibil la: \url{https://rich.readthedocs.io}, 2026.
-\newblock accesat la data: 09.04.2026.
-
-\bibitem{api_urwid}
-Urwid Project.
-\newblock Urwid: Console user interface library for python.
-\newblock disponibil la: \url{https://urwid.org}, 2026.
-\newblock accesat la data: 30.04.2026.
 
 \bibitem{web_claude_app}
 Anthropic.
@@ -309,6 +261,12 @@ Slack Technologies.
 \newblock Slack: Channel-based messaging platform.
 \newblock disponibil la: \url{https://slack.com}, 2026.
 \newblock accesat la data: 30.04.2026.
+
+\bibitem{web_google}
+Google.
+\newblock Google.
+\newblock disponibil la: \url{https://www.google.com}, 2026.
+\newblock accesat la data: 10.04.2026.
 
 \bibitem{web_gemini_app}
 Google.
@@ -333,6 +291,12 @@ Google.
 \newblock Notebooklm: Ai research assistant.
 \newblock disponibil la: \url{https://notebooklm.google.com}, 2026.
 \newblock accesat la data: 08.06.2026.
+
+\bibitem{web_vertex_ai}
+Google Cloud.
+\newblock Vertex ai: Build, deploy, and scale ml models.
+\newblock disponibil la: \url{https://cloud.google.com/vertex-ai}, 2026.
+\newblock accesat la data: 09.06.2026.
 
 \bibitem{web_firebase_studio}
 Google.
@@ -460,6 +424,54 @@ Git Project.
 \newblock disponibil la: \url{https://git-scm.com}, 2026.
 \newblock accesat la data: 29.04.2026.
 
+\bibitem{web_python}
+Python~Software Foundation.
+\newblock Python programming language official website.
+\newblock disponibil la: \url{https://www.python.org}, 2026.
+\newblock accesat la data: 12.05.2026.
+
+\bibitem{web_litellm}
+BerriAI.
+\newblock Litellm: Call all llm apis using the openai format.
+\newblock disponibil la: \url{https://www.litellm.ai}, 2026.
+\newblock accesat la data: 19.05.2026.
+
+\bibitem{gh_openai_python}
+OpenAI.
+\newblock Openai python sdk, github.
+\newblock disponibil la: \url{https://github.com/openai/openai-python}, 2026.
+\newblock accesat la data: 14.05.2026.
+
+\bibitem{web_langfuse}
+Langfuse.
+\newblock Langfuse: Open-source llm engineering platform.
+\newblock disponibil la: \url{https://langfuse.com}, 2026.
+\newblock accesat la data: 04.05.2026.
+
+\bibitem{api_textual}
+Textualize.
+\newblock Textual: Tui framework for python documentation.
+\newblock disponibil la: \url{https://textual.textualize.io}, 2026.
+\newblock accesat la data: 11.04.2026.
+
+\bibitem{api_prompt_toolkit}
+Jonathan Slenders.
+\newblock Python prompt toolkit documentation.
+\newblock disponibil la: \url{https://python-prompt-toolkit.readthedocs.io}, 2026.
+\newblock accesat la data: 25.04.2026.
+
+\bibitem{api_rich}
+Will McGugan.
+\newblock Rich: Python library for rich text and beautiful formatting in the terminal.
+\newblock disponibil la: \url{https://rich.readthedocs.io}, 2026.
+\newblock accesat la data: 09.04.2026.
+
+\bibitem{api_urwid}
+Urwid Project.
+\newblock Urwid: Console user interface library for python.
+\newblock disponibil la: \url{https://urwid.org}, 2026.
+\newblock accesat la data: 30.04.2026.
+
 \bibitem{api_bedrock}
 Amazon~Web Services.
 \newblock Amazon bedrock: The easiest way to build and scale generative ai applications.
@@ -493,29 +505,23 @@ Traian Rebedea, Razvan Dinu, Makesh~Narsimhan Sreedhar, Christopher Parisien, an
 Yue Liu, Hongcheng Gao, Shengfang Zhai, Yufei He, Jun Xia, Zhengyu Hu, Yulin Chen, Xihong Yang, Jiaheng Zhang, Stan~Z. Li, Hui Xiong, and Bryan Hooi.
 \newblock {GuardReasoner}: Towards reasoning-based {LLM} safeguards.
 
-\bibitem{api_copilot_cli}
-GitHub Inc.
-\newblock About copilot cli documentation.
-\newblock disponibil la: \url{https://docs.github.com/en/copilot/concepts/agents/about-copilot-cli}, 2026.
-\newblock accesat la data: 12.04.2026.
-
 \bibitem{web_opentelemetry}
 Cloud Native~Computing Foundation.
 \newblock Opentelemetry: High-quality, ubiquitous, and portable telemetry.
 \newblock disponibil la: \url{https://opentelemetry.io}, 2026.
 \newblock accesat la data: 10.06.2026.
 
+\bibitem{api_copilot_cli}
+GitHub Inc.
+\newblock About copilot cli documentation.
+\newblock disponibil la: \url{https://docs.github.com/en/copilot/concepts/agents/about-copilot-cli}, 2026.
+\newblock accesat la data: 12.04.2026.
+
 \bibitem{api_azure_openai}
 Microsoft.
 \newblock Azure openai service documentation.
 \newblock disponibil la: \url{https://azure.microsoft.com/en-us/products/ai-services/openai-service}, 2026.
 \newblock accesat la data: 02.05.2026.
-
-\bibitem{gh_vibecli}
-Eduard-Daniel Nănescu.
-\newblock Vibe-cli: Coding assistant proposed in this thesis, github.
-\newblock disponibil la: \url{https://github.com/Moshulika/vibe-cli}, 2026.
-\newblock accesat la data: 01.04.2026.
 
 \bibitem{web_openrouter}
 OpenRouter.

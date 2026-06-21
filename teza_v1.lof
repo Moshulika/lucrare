@@ -2,44 +2,48 @@
 \babel@toc {romanian}{}\relax 
 \contentsline {figure}{\numberline {1.1}{\ignorespaces Arhitectura transformer \cite {vaswaniAttentionAllYou2017}}}{17}{figure.caption.11}%
 \contentsline {figure}{\numberline {1.2}{\ignorespaces Evoluția recentă a modelelor mari de limbaj \cite {zhaoSurveyLargeLanguage2026}}}{18}{figure.caption.12}%
-\contentsline {figure}{\numberline {1.3}{\ignorespaces Performanta arhitecturii Longformer: în timp ce atenția standard scalează exponențial, Longformer scalează liniar cu lungimea contextului \cite {beltagy_longformer_2020-1}}}{18}{figure.caption.13}%
+\contentsline {figure}{\numberline {1.3}{\ignorespaces Performanța arhitecturii Longformer: în timp ce atenția standard scalează exponențial, Longformer scalează liniar cu lungimea contextului \cite {beltagy_longformer_2020-1}}}{18}{figure.caption.13}%
 \contentsline {figure}{\numberline {1.4}{\ignorespaces Diferite configurații de atenție folosite în arhitectura Longformer în comparație cu mecanismul obișnuit de atenție \cite {beltagy_longformer_2020-1}}}{18}{figure.caption.14}%
 \contentsline {figure}{\numberline {1.5}{\ignorespaces Fine-tuning-ul se realizează doar pe A și B \cite {huLoRALowRankAdaptation2021}}}{19}{figure.caption.15}%
 \contentsline {figure}{\numberline {1.6}{\ignorespaces Rezultatele procesului de Simple Self Distillation \cite {zhang_embarrassingly_2026-2}}}{19}{figure.caption.16}%
 \contentsline {figure}{\numberline {1.7}{\ignorespaces Ilustrarea procedeului de \ac {rl} \cite {ouyangTrainingLanguageModels2022}}}{20}{figure.caption.17}%
-\contentsline {figure}{\numberline {1.8}{\ignorespaces Exemple de \ac {cot} \cite {weiChainofThoughtPromptingElicits2022}}}{20}{figure.caption.18}%
+\contentsline {figure}{\numberline {1.8}{\ignorespaces Exemplu de \ac {cot} \cite {weiChainofThoughtPromptingElicits2022}}}{20}{figure.caption.18}%
 \contentsline {figure}{\numberline {1.9}{\ignorespaces Paradigma ReAct \cite {yaoReActSynergizingReasoning2022}}}{21}{figure.caption.19}%
 \contentsline {figure}{\numberline {1.10}{\ignorespaces Îmbunătățirile pe care le aduce ReAct \cite {yaoReActSynergizingReasoning2022}}}{21}{figure.caption.20}%
-\contentsline {figure}{\numberline {1.11}{\ignorespaces Îmbunătățirea adusa de ReWOO: worker-ul are mai multă libertate, putând apela mai multe unelte până să producă un răspuns. P = Plan, E = Evidence, A = Answer, O = Observation, A = Act, T = Thought \cite {xuReWOODecouplingReasoning2023}}}{22}{figure.caption.21}%
-\contentsline {figure}{\numberline {1.12}{\ignorespaces Modele tind să aibă o acuratețe foarte slaba contra întrebărilor ce vizează informații care se afla la mijlocul ferestrei curente de context \cite {liuLostMiddleHow2024}}}{22}{figure.caption.22}%
-\contentsline {figure}{\numberline {1.13}{\ignorespaces Vizualizarea problemei și al rezultatului dorit la întrebare. De multe ori, modelele întâmpina dificultăți în accesarea acestor informații ascunse în mijlocul ferestrei de context \cite {liuLostMiddleHow2024}}}{23}{figure.caption.23}%
-\contentsline {figure}{\numberline {1.14}{\ignorespaces Clasamentul modelelor în SWE-Bench Pro \cite {dengSWEBenchProCan2025} la momentul actual în funcție de performanța rezolvării sarcinilor complexe în limba engleza}}{25}{figure.caption.25}%
-\contentsline {figure}{\numberline {1.15}{\ignorespaces Clasamentul modelelor în SWE-Bench Pro \cite {dengSWEBenchProCan2025} la momentul actual dupa de cost}}{25}{figure.caption.26}%
-\contentsline {figure}{\numberline {1.16}{\ignorespaces Reprezentarea ferestrei de context într-o conversație uzuala (Sursa: \cite {fig_claude_context})}}{26}{figure.caption.27}%
-\contentsline {figure}{\numberline {1.17}{\ignorespaces Reprezentarea ferestrei de context într-o conversație în Claude Code}}{31}{figure.caption.32}%
-\contentsline {figure}{\numberline {1.18}{\ignorespaces Reprezentarea utilizării în Claude (varianta web) (Sursa: \cite {fig_claude_usage})}}{31}{figure.caption.32}%
+\contentsline {figure}{\numberline {1.11}{\ignorespaces Îmbunătățirea adusă de ReWOO: agentul are mai multă libertate, putând apela mai multe unelte până să producă un răspuns. P = Plan, E = Evidence, A = Answer, O = Observation, A = Act, T = Thought \cite {xuReWOODecouplingReasoning2023}}}{22}{figure.caption.21}%
+\contentsline {figure}{\numberline {1.12}{\ignorespaces Modelele tind să aibă o acuratețe foarte slabă contra întrebărilor ce vizează informații care se află la mijlocul ferestrei curente de context \cite {liuLostMiddleHow2024}}}{22}{figure.caption.22}%
+\contentsline {figure}{\numberline {1.13}{\ignorespaces Vizualizarea problemei și al rezultatului dorit la întrebare. De multe ori, modelele întâmpină dificultăți în accesarea acestor informații ascunse în mijlocul ferestrei de context \cite {liuLostMiddleHow2024}}}{23}{figure.caption.23}%
+\contentsline {figure}{\numberline {1.14}{\ignorespaces Clasamentul modelelor în SWE-Bench Pro \cite {dengSWEBenchProCan2025} la momentul actual în funcție de performanța rezolvării sarcinilor complexe în limba engleză.}}{25}{figure.caption.25}%
+\contentsline {figure}{\numberline {1.15}{\ignorespaces Clasamentul modelelor în SWE-Bench Pro \cite {dengSWEBenchProCan2025} la momentul actual după cost.}}{25}{figure.caption.26}%
+\contentsline {figure}{\numberline {1.16}{\ignorespaces Reprezentarea ferestrei de context într-o conversație uzuală (Sursa: \cite {fig_claude_context})}}{26}{figure.caption.27}%
+\contentsline {figure}{\numberline {1.17}{\ignorespaces Reprezentarea ferestrei de context într-o conversație în Claude Code}}{29}{figure.caption.30}%
+\contentsline {figure}{\numberline {1.18}{\ignorespaces Reprezentarea utilizării în Claude (varianta web) (Sursa: \cite {fig_claude_usage})}}{29}{figure.caption.30}%
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Arhitectura modulară a aplicației \texttt {vibe-cli}}}{35}{figure.caption.34}%
 \contentsline {figure}{\numberline {2.2}{\ignorespaces Structura directoarelor vitale ale proiectului}}{36}{figure.caption.35}%
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Prima versiune a interfeței, realizata cu ajutorul bibliotecii Textual}}{37}{figure.caption.36}%
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Continuarea conversației cu prima versiune a interfeței, realizata cu ajutorul bibliotecii Textual}}{37}{figure.caption.36}%
-\contentsline {figure}{\numberline {2.5}{\ignorespaces A doua versiune a interfeței, realizata fără biblioteca Textual}}{37}{figure.caption.37}%
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Continuarea conversației cu a doua versiune a interfeței, realizata fără biblioteca Textual}}{37}{figure.caption.37}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Prima versiune a interfeței, realizată cu ajutorul bibliotecii Textual}}{37}{figure.caption.36}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Continuarea conversației cu prima versiune a interfeței, realizată cu ajutorul bibliotecii Textual}}{37}{figure.caption.36}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces A doua versiune a interfeței, realizată fără biblioteca Textual}}{37}{figure.caption.37}%
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Continuarea conversației cu a doua versiune a interfeței, realizată fără biblioteca Textual}}{37}{figure.caption.37}%
 \contentsline {figure}{\numberline {2.7}{\ignorespaces Exemplu de conversație in interfața vibe-cli}}{38}{figure.caption.38}%
 \contentsline {figure}{\numberline {2.9}{\ignorespaces Împărțirea ferestrei de context (Sursa: \cite {fig_letta_context})}}{42}{figure.caption.41}%
 \contentsline {figure}{\numberline {2.10}{\ignorespaces Fluxul de prelucrare a datelor multi-modale în \texttt {vibe-cli}}}{44}{figure.caption.42}%
-\contentsline {figure}{\numberline {2.11}{\ignorespaces Schema componentelor care alcătuiesc fereastra de context si compactarea la prag}}{44}{figure.caption.43}%
-\contentsline {figure}{\numberline {2.12}{\ignorespaces Compactarea dupa apelul uneltei}}{45}{figure.caption.44}%
-\contentsline {figure}{\numberline {2.13}{\ignorespaces Implementarea unei funcții pe care agentul o folosește pentru a lista directoriile și fișierele la o anumita cale pe sistem}}{46}{figure.caption.45}%
-\contentsline {figure}{\numberline {2.14}{\ignorespaces Suita de unelte expuse agentului în \texttt {vibe-cli} și relațiile dintre acestea}}{47}{figure.caption.46}%
-\contentsline {figure}{\numberline {2.15}{\ignorespaces Implementarea unei capabilitati de revizuire de \ac {pr}}}{49}{figure.caption.47}%
-\contentsline {figure}{\numberline {2.16}{\ignorespaces Arhitectura orchestrator-subagenți din \texttt {vibe-cli}}}{49}{figure.caption.48}%
+\contentsline {figure}{\numberline {2.11}{\ignorespaces Schema componentelor care alcătuiesc fereastra de context si compactarea la prag}}{45}{figure.caption.43}%
+\contentsline {figure}{\numberline {2.12}{\ignorespaces Compactarea după apelul uneltei}}{45}{figure.caption.44}%
+\contentsline {figure}{\numberline {2.13}{\ignorespaces Implementarea unei funcții pe care agentul o folosește pentru a lista directoriile și fișierele la o anumită cale pe sistem}}{46}{figure.caption.45}%
+\contentsline {figure}{\numberline {2.14}{\ignorespaces Suita de unelte expuse agentului în \texttt {vibe-cli} și relațiile dintre acestea}}{48}{figure.caption.46}%
+\contentsline {figure}{\numberline {2.15}{\ignorespaces Implementarea unei capabilitați de revizuire de \ac {pr}}}{49}{figure.caption.47}%
+\contentsline {figure}{\numberline {2.16}{\ignorespaces Arhitectura orchestrator-subagenți din \texttt {vibe-cli}}}{50}{figure.caption.48}%
 \contentsline {figure}{\numberline {2.17}{\ignorespaces Implementarea unei funcții pe care agentul o folosește pentru a porni un subagent}}{50}{figure.caption.49}%
-\contentsline {figure}{\numberline {2.18}{\ignorespaces Înregistrarea unui nou subagent}}{51}{figure.caption.50}%
-\contentsline {figure}{\numberline {2.19}{\ignorespaces Cererea de aprobare a permisiunii de a scrie un fișier}}{53}{figure.caption.51}%
-\contentsline {figure}{\numberline {2.20}{\ignorespaces Interfața Langfuse}}{55}{figure.caption.52}%
-\contentsline {figure}{\numberline {2.21}{\ignorespaces Imagini cu interfața web a aplicației}}{56}{figure.caption.53}%
-\contentsline {figure}{\numberline {2.22}{\ignorespaces Detalii ale panoului web: apelarea uneltelor, și reconstrucția interactiunilor}}{56}{figure.caption.54}%
-\contentsline {figure}{\numberline {2.23}{\ignorespaces Detalii ale panoului web: evoluția contextului si costul estimat}}{57}{figure.caption.55}%
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Comparație vizuală între prompt-ul detaliat și cel simplu}}{65}{figure.caption.60}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Număr de parametri ai modelelor locale}}{69}{figure.caption.63}%
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Eficiența cost-calitate: scorul mediu obținut per dolar cheltuit (scară logaritmică). Modelele locale Ollama nu sunt incluse deoarece au cost zero.}}{70}{figure.caption.65}%
+\contentsline {figure}{\numberline {2.18}{\ignorespaces Meniul de adăugare a serverelor \ac {mcp}}}{51}{figure.caption.50}%
+\contentsline {figure}{\numberline {2.19}{\ignorespaces Înregistrarea unui nou subagent}}{52}{figure.caption.51}%
+\contentsline {figure}{\numberline {2.20}{\ignorespaces Cererea de aprobare a permisiunii de a scrie un fișier}}{54}{figure.caption.52}%
+\contentsline {figure}{\numberline {2.21}{\ignorespaces Interfața Langfuse}}{55}{figure.caption.53}%
+\contentsline {figure}{\numberline {2.22}{\ignorespaces Distribuția contextului}}{56}{figure.caption.54}%
+\contentsline {figure}{\numberline {2.23}{\ignorespaces Optimizarea adusă ferestrei de context a agentului principal de către subagenți}}{56}{figure.caption.55}%
+\contentsline {figure}{\numberline {2.24}{\ignorespaces Imagini cu interfața web a aplicației}}{57}{figure.caption.56}%
+\contentsline {figure}{\numberline {2.25}{\ignorespaces Detalii ale panoului web: apelarea uneltelor și reconstrucția interacțiunilor}}{57}{figure.caption.57}%
+\contentsline {figure}{\numberline {2.26}{\ignorespaces Interacțiunea dintre subagenți și agentul principal}}{58}{figure.caption.58}%
+\contentsline {figure}{\numberline {2.27}{\ignorespaces Detalii ale panoului web: distribuția costului și detaliile procesului de compactare}}{58}{figure.caption.59}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Poziționarea \texttt {vibe-cli} față de concurență.}}{59}{figure.caption.60}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Comparație vizuală între prompt-ul detaliat și cel simplu}}{65}{figure.caption.65}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Corelația între numărul de parametri ai modelelor locale și scor}}{69}{figure.caption.68}%
