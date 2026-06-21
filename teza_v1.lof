@@ -15,23 +15,23 @@
 \contentsline {figure}{\numberline {1.13}{\ignorespaces Vizualizarea problemei și al rezultatului dorit la întrebare. De multe ori, modelele întâmpină dificultăți în accesarea acestor informații ascunse în mijlocul ferestrei de context \cite {liuLostMiddleHow2024}}}{23}{figure.caption.23}%
 \contentsline {figure}{\numberline {1.14}{\ignorespaces Clasamentul modelelor în SWE-Bench Pro \cite {dengSWEBenchProCan2025} la momentul actual în funcție de performanța rezolvării sarcinilor complexe în limba engleză.}}{25}{figure.caption.25}%
 \contentsline {figure}{\numberline {1.15}{\ignorespaces Clasamentul modelelor în SWE-Bench Pro \cite {dengSWEBenchProCan2025} la momentul actual după cost.}}{25}{figure.caption.26}%
-\contentsline {figure}{\numberline {1.16}{\ignorespaces Reprezentarea ferestrei de context într-o conversație uzuală (Sursa: \cite {fig_claude_context})}}{26}{figure.caption.27}%
+\contentsline {figure}{\numberline {1.16}{\ignorespaces Reprezentarea ferestrei de context într-o conversație uzuală (Sursă: \cite {fig_claude_context})}}{26}{figure.caption.27}%
 \contentsline {figure}{\numberline {1.17}{\ignorespaces Reprezentarea ferestrei de context într-o conversație în Claude Code}}{29}{figure.caption.30}%
-\contentsline {figure}{\numberline {1.18}{\ignorespaces Reprezentarea utilizării în Claude (varianta web) (Sursa: \cite {fig_claude_usage})}}{29}{figure.caption.30}%
+\contentsline {figure}{\numberline {1.18}{\ignorespaces Reprezentarea utilizării în Claude (varianta web) (Sursă: \cite {fig_claude_usage})}}{29}{figure.caption.30}%
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Arhitectura modulară a aplicației \texttt {vibe-cli}}}{35}{figure.caption.34}%
 \contentsline {figure}{\numberline {2.2}{\ignorespaces Structura directoarelor vitale ale proiectului}}{36}{figure.caption.35}%
 \contentsline {figure}{\numberline {2.3}{\ignorespaces Prima versiune a interfeței, realizată cu ajutorul bibliotecii Textual}}{37}{figure.caption.36}%
 \contentsline {figure}{\numberline {2.4}{\ignorespaces Continuarea conversației cu prima versiune a interfeței, realizată cu ajutorul bibliotecii Textual}}{37}{figure.caption.36}%
 \contentsline {figure}{\numberline {2.5}{\ignorespaces A doua versiune a interfeței, realizată fără biblioteca Textual}}{37}{figure.caption.37}%
 \contentsline {figure}{\numberline {2.6}{\ignorespaces Continuarea conversației cu a doua versiune a interfeței, realizată fără biblioteca Textual}}{37}{figure.caption.37}%
-\contentsline {figure}{\numberline {2.7}{\ignorespaces Exemplu de conversație in interfața vibe-cli}}{38}{figure.caption.38}%
-\contentsline {figure}{\numberline {2.9}{\ignorespaces Împărțirea ferestrei de context (Sursa: \cite {fig_letta_context})}}{42}{figure.caption.41}%
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Exemplu de conversație în interfața vibe-cli}}{38}{figure.caption.38}%
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Împărțirea ferestrei de context (Sursă: \cite {fig_letta_context})}}{42}{figure.caption.41}%
 \contentsline {figure}{\numberline {2.10}{\ignorespaces Fluxul de prelucrare a datelor multi-modale în \texttt {vibe-cli}}}{44}{figure.caption.42}%
-\contentsline {figure}{\numberline {2.11}{\ignorespaces Schema componentelor care alcătuiesc fereastra de context si compactarea la prag}}{45}{figure.caption.43}%
+\contentsline {figure}{\numberline {2.11}{\ignorespaces Schema componentelor care alcătuiesc fereastra de context și compactarea la prag}}{45}{figure.caption.43}%
 \contentsline {figure}{\numberline {2.12}{\ignorespaces Compactarea după apelul uneltei}}{45}{figure.caption.44}%
 \contentsline {figure}{\numberline {2.13}{\ignorespaces Implementarea unei funcții pe care agentul o folosește pentru a lista directoriile și fișierele la o anumită cale pe sistem}}{46}{figure.caption.45}%
 \contentsline {figure}{\numberline {2.14}{\ignorespaces Suita de unelte expuse agentului în \texttt {vibe-cli} și relațiile dintre acestea}}{48}{figure.caption.46}%
-\contentsline {figure}{\numberline {2.15}{\ignorespaces Implementarea unei capabilitați de revizuire de \ac {pr}}}{49}{figure.caption.47}%
+\contentsline {figure}{\numberline {2.15}{\ignorespaces Implementarea unei capabilități de revizuire de \ac {pr}}}{49}{figure.caption.47}%
 \contentsline {figure}{\numberline {2.16}{\ignorespaces Arhitectura orchestrator-subagenți din \texttt {vibe-cli}}}{50}{figure.caption.48}%
 \contentsline {figure}{\numberline {2.17}{\ignorespaces Implementarea unei funcții pe care agentul o folosește pentru a porni un subagent}}{50}{figure.caption.49}%
 \contentsline {figure}{\numberline {2.18}{\ignorespaces Meniul de adăugare a serverelor \ac {mcp}}}{51}{figure.caption.50}%

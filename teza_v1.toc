@@ -12,18 +12,18 @@
 \contentsline {chapter}{\numberline {1}CONTEXT, POZIȚIONARE ȘI DECIZII ARHITECTURALE}{17}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Evoluția către modelele mari de limbaj (\ac {llm})}{17}{section.1.1}%
 \contentsline {section}{\numberline {1.2}Maturizarea modelelor mari de limbaj și cercetări actuale}{18}{section.1.2}%
-\contentsline {section}{\numberline {1.3}Soluții agentice pentru industria dezvoltării software}{20}{section.1.3}%
-\contentsline {subsection}{\numberline {1.3.1}Analiză preliminară a peisajului actual în domeniul \ac {ia} concentrată pe aplicații de dezvoltare software}{23}{subsection.1.3.1}%
-\contentsline {section}{\numberline {1.4}Cerințe pentru o soluție agentică în dezvoltarea software}{25}{section.1.4}%
-\contentsline {section}{\numberline {1.5}Limitări ale arhitecturilor agentice}{26}{section.1.5}%
-\contentsline {section}{\numberline {1.6}Plasarea în industrie}{26}{section.1.6}%
+\contentsline {section}{\numberline {1.3}Fundamentele arhitecturilor agentice și cercetări actuale}{20}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Analiză preliminară a peisajului actual în domeniul \ac {ia} concentrată pe aplicații de dezvoltare software}{23}{section.1.4}%
+\contentsline {section}{\numberline {1.5}Limitări ale arhitecturilor agentice}{25}{section.1.5}%
+\contentsline {section}{\numberline {1.6}Plasarea în industrie și oportunități}{26}{section.1.6}%
 \contentsline {subsection}{\numberline {1.6.1}Analiza soluțiilor proprietare}{26}{subsection.1.6.1}%
 \contentsline {subsection}{\numberline {1.6.2}Analiza soluțiilor open-source}{28}{subsection.1.6.2}%
-\contentsline {subsection}{\numberline {1.6.3}Nevoia de personalizare}{29}{subsection.1.6.3}%
-\contentsline {subsection}{\numberline {1.6.4}Lipsa de observabilitate}{29}{subsection.1.6.4}%
-\contentsline {subsection}{\numberline {1.6.5}Securitate și confidențialitate}{29}{subsection.1.6.5}%
-\contentsline {subsection}{\numberline {1.6.6}Costul de utilizare}{29}{subsection.1.6.6}%
-\contentsline {section}{\numberline {1.7}Analiză proprie a necesităților și decizii arhitecturale}{29}{section.1.7}%
+\contentsline {subsection}{\numberline {1.6.3}Cerințe pentru o soluție agentică în dezvoltarea software}{29}{subsection.1.6.3}%
+\contentsline {subsection}{\numberline {1.6.4}Nevoia de personalizare}{29}{subsection.1.6.4}%
+\contentsline {subsection}{\numberline {1.6.5}Lipsa de observabilitate}{29}{subsection.1.6.5}%
+\contentsline {subsection}{\numberline {1.6.6}Securitate și confidențialitate}{29}{subsection.1.6.6}%
+\contentsline {subsection}{\numberline {1.6.7}Costul de utilizare}{30}{subsection.1.6.7}%
+\contentsline {section}{\numberline {1.7}Analiză proprie a necesităților și decizii arhitecturale}{30}{section.1.7}%
 \contentsline {subsection}{\numberline {1.7.1}Adoptarea unei arhitecturi modulare}{30}{subsection.1.7.1}%
 \contentsline {subsection}{\numberline {1.7.2}Alegerea limbajului de programare și a cadrului de lucru agentic}{30}{subsection.1.7.2}%
 \contentsline {subsection}{\numberline {1.7.3}Adoptarea motorului pentru interfața cu utilizatorul}{31}{subsection.1.7.3}%
@@ -37,7 +37,7 @@
 \contentsline {section}{\numberline {2.2}Structura aplicației}{34}{section.2.2}%
 \contentsline {section}{\numberline {2.3}Prezentarea procesului de configurare}{36}{section.2.3}%
 \contentsline {section}{\numberline {2.4}Interfața cu utilizatorul}{36}{section.2.4}%
-\contentsline {section}{\numberline {2.5}Functionalitați de nivel înalt}{38}{section.2.5}%
+\contentsline {section}{\numberline {2.5}Funcționalități de nivel înalt}{38}{section.2.5}%
 \contentsline {section}{\numberline {2.6}Instalare și utilizare}{39}{section.2.6}%
 \contentsline {subsection}{\numberline {2.6.1}Cerințe preliminare}{39}{subsection.2.6.1}%
 \contentsline {subsection}{\numberline {2.6.2}Instrucțiuni de instalare}{39}{subsection.2.6.2}%
@@ -66,10 +66,10 @@
 \contentsline {subsection}{\numberline {2.10.2}Permisiuni pentru aprobarea umană a acțiunilor}{54}{subsection.2.10.2}%
 \contentsline {subsection}{\numberline {2.10.3}Filtre, gestionarea intențiilor periculoase și cereri în afara scopului (\ac {oos})}{54}{subsection.2.10.3}%
 \contentsline {section}{\numberline {2.11}Observabilitatea}{54}{section.2.11}%
-\contentsline {subsection}{\numberline {2.11.1}Tracing prin Langfuse}{55}{subsection.2.11.1}%
+\contentsline {subsection}{\numberline {2.11.1}Urmărirea execuției prin Langfuse}{55}{subsection.2.11.1}%
 \contentsline {subsection}{\numberline {2.11.2}Panoul web proprietar}{56}{subsection.2.11.2}%
-\contentsline {chapter}{\numberline {3}REZULTATE EXPERIMENTALE}{59}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Poziționarea față de concurență}{59}{section.3.1}%
+\contentsline {chapter}{\numberline {3}EVALUAREA SOLUȚIEI ȘI REZULTATE EXPERIMENTALE}{59}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Poziționarea finală față de concurență}{59}{section.3.1}%
 \contentsline {subsection}{\numberline {3.1.1}Funcționalități prezente în concordanță cu aplicațiile concurente proprietare și \ac {oss}}{61}{subsection.3.1.1}%
 \contentsline {subsection}{\numberline {3.1.2}Funcționalități absente față de aplicațiile concurente}{62}{subsection.3.1.2}%
 \contentsline {section}{\numberline {3.2}Influența lungimii și a exactității instrucțiunilor asupra performanței. De ce un prompt prea exact nu garantează rezultate mai bune.}{62}{section.3.2}%
@@ -78,7 +78,7 @@
 \contentsline {subsection}{\numberline {3.3.2}Metode care parafrazează contextul}{66}{subsection.3.3.2}%
 \contentsline {subsection}{\numberline {3.3.3}Metode auxiliare}{67}{subsection.3.3.3}%
 \contentsline {subsection}{\numberline {3.3.4}Secvență recomandată de metode de compactare }{67}{subsection.3.3.4}%
-\contentsline {section}{\numberline {3.4}Interacțiunea dintre modele, context și unelte. Modele optime pentru sarcini de programare}{67}{section.3.4}%
+\contentsline {section}{\numberline {3.4}Modele optime pentru sarcini de programare. Influența datelor de antrenare și a mărimii modelului.}{67}{section.3.4}%
 \contentsline {subsection}{\numberline {3.4.1}Rezultate}{68}{subsection.3.4.1}%
 \contentsline {subsection}{\numberline {3.4.2}Analiza rezultatelor}{69}{subsection.3.4.2}%
 \contentsline {subsection}{\numberline {3.4.3}Modelele open-source: evaluarea valorii și a potențialului de utilizare}{71}{subsection.3.4.3}%

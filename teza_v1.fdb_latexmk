@@ -1,14 +1,14 @@
 # Fdb version 4
-["bibtex teza_v1"] 1782041426.32951 "teza_v1.aux" "teza_v1.bbl" "teza_v1" 1782041434.73183 0
+["bibtex teza_v1"] 1782051723.15042 "teza_v1.aux" "teza_v1.bbl" "teza_v1" 1782051731.32784 0
   "./licenta_v4.bib" 1781814991.73902 339100 458411112742917a1e96784f243ca635 ""
   "/usr/local/texlive/2026/texmf-dist/bibtex/bst/base/unsrt.bst" 1292289607 18030 1376b4b231b50c66211e47e42eda2875 ""
-  "teza_v1.aux" 1782041434.38065 56280 4f364f7b6719dc5e1746f89a27acc961 "pdflatex"
+  "teza_v1.aux" 1782051730.98544 56935 cc247f71c43386565929da5f9625985c "pdflatex"
   (generated)
   "teza_v1.bbl"
   "teza_v1.blg"
   (rewritten before read)
-["pdflatex"] 1782041426.68728 "/Users/enanescu/stuff/lucrare/teza_v1.tex" "teza_v1.pdf" "teza_v1" 1782041434.73201 0
-  "/Users/enanescu/stuff/lucrare/teza_v1.tex" 1782041417.47995 197401 2d1fcaaec8899f11dd0b7bd7ec9df707 ""
+["pdflatex"] 1782051723.24463 "/Users/enanescu/stuff/lucrare/teza_v1.tex" "teza_v1.pdf" "teza_v1" 1782051731.32801 0
+  "/Users/enanescu/stuff/lucrare/teza_v1.tex" 1782051703.51349 198889 113cb860f1da2123551193c25713d0c6 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1136849721 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -327,13 +327,13 @@
   "figuri/vibeweb_tool.png" 1781294180.67671 375262 3615c27feaf96d7d3635e838d979dff9 ""
   "figuri/vibeweb_turn.png" 1781294180.66367 560746 5e4fb3b94cda44de1b02f453afc95af4 ""
   "teza-upb.cls" 1781283275.78174 17426 c9e319cf0742827d25589efa9b2bcdd1 ""
-  "teza_v1.aux" 1782041434.38065 56280 4f364f7b6719dc5e1746f89a27acc961 "pdflatex"
-  "teza_v1.bbl" 1782041426.68393 24601 b2a5c9ea1f8ba8c10319ea9c54d803ca "bibtex teza_v1"
-  "teza_v1.lof" 1782041434.41821 7852 1d4eab435d498f56ec4dabbae0d9ee63 "pdflatex"
-  "teza_v1.lot" 1782041434.41824 2233 0088ad42288f78627b7957f75f731cb9 "pdflatex"
-  "teza_v1.out" 1782041434.41776 22627 4c7a5c3e7e7e5055270453c79361d086 "pdflatex"
-  "teza_v1.tex" 1782041417.47995 197401 2d1fcaaec8899f11dd0b7bd7ec9df707 ""
-  "teza_v1.toc" 1782041434.41816 9319 4056b38ceb02859f6d774f26649189f5 "pdflatex"
+  "teza_v1.aux" 1782051730.98544 56935 cc247f71c43386565929da5f9625985c "pdflatex"
+  "teza_v1.bbl" 1782051723.24116 24601 b2a5c9ea1f8ba8c10319ea9c54d803ca "bibtex teza_v1"
+  "teza_v1.lof" 1782051731.02304 7858 645c7175a1ebb79574e90ba8db5f0d69 "pdflatex"
+  "teza_v1.lot" 1782051731.02308 2365 d78edbb0c2b1f08574eb9e83a75d0f48 "pdflatex"
+  "teza_v1.out" 1782051731.02261 23027 7741dd5a449e821c715c07f061fdffb2 "pdflatex"
+  "teza_v1.tex" 1782051703.51349 198889 113cb860f1da2123551193c25713d0c6 ""
+  "teza_v1.toc" 1782051731.023 9398 a0a3c581ca83aa0a66d14ea9d711ef8e "pdflatex"
   (generated)
   "teza_v1.aux"
   "teza_v1.lof"
