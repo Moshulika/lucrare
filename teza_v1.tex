@@ -505,72 +505,78 @@
 
   Cadrul de lucru Michelangelo \cite{vodrahalli_michelangelo_2024} extinde testele clasice de căutare în date numeroase, testând abilitatea modelului de a sintetiza informații dispersate, și confirmă un spațiu semnificativ de îmbunătățire chiar și pentru ultimele generații. Pentru eficiența cache-ului \ac{kv}, LycheeCluster \cite{liLycheeClusterEfficientLongContext2026} fragmentează contextul pe baza delimitatorilor și construiește un index ierarhic ce transformă căutarea în cache într-un proces logaritmic, obținând o accelerare \textbf{de până la 3.6 ori}.
 
-  \section{Analiză preliminară a peisajului actual în domeniul \ac{ia} concentrată pe aplicații de dezvoltare software}
+  \section{Limitări ale arhitecturilor agentice}
+
+  Bariera principală în avansarea acestor arhitecturi și a aplicațiilor care se bazează pe ele este \textbf{fereastra de context}. Pentru sisteme cu numeroase linii de cod sau proiecte distribuite în mai multe servicii, contextul limitează masiv capabilitățile agenților. Deși există tehnici de optimizare (compresie, rezumare, fișiere de cunoștințe, rularea de cod pentru acțiuni repetitive), acestea nu sunt suficiente: multe funcționalități care fac un agent performant, precum uneltele, consumă rapid contextul. De asemenea, în general, aceste tehnici de optimizare sunt impuse de producător, fără posibilitatea de configurare. Acest lucru limitează performanțele aplicațiilor din pricina faptului că o configuratie unică nu poate fi optimă pentru toate scenariile de utilizare.
+
+  \begin{figure}[H]
+    \centering
+    \includegraphics*[width=0.8\columnwidth]{figuri/context.png}
+    \caption{Reprezentarea ferestrei de context într-o conversație uzuală (Sursă: \cite{fig_claude_context})}
+    \label{fig:context_window}
+  \end{figure}
+
+  În plus, modelele curente tind să genereze date de ieșire mai detaliate decât este necesar (cantitate peste calitate), iar în sarcini de revizuire de \ac{pr} se grăbesc să relateze multe probleme simple sau de formatare, ratând probleme importante de logică. De asemenea, agenții nu au o bună înțelegere legată de când ar trebui să oprească investigațiile, rămânând adesea blocați în bucle infinite.
+
+
+  \section{Analiză preliminară a peisajului actual în domeniul inteligenței artificiale concentrată pe aplicații de dezvoltare software}
 
   Industria dezvoltării software are probabil una din cele mai profitabile întrebuințări ale acestor arhitecturi agentice, datorită volumului masiv de muncă existent
   în domeniu, așa că nu a durat mult până ce marii furnizori de pe piața modelelor de limbaj au început să ofere produse care să asiste programatorii în sarcinile lor.
   La momentul actual există mai multe soluții competitive: Codex~\cite{gh_codex} de la OpenAI, Gemini \ac{cli}~\cite{gh_gemini_cli} de la Google, Claude Code~\cite{api_claude_code} de la Anthropic, Cursor~\cite{web_cursor} de la Anysphere sau Kiro~\cite{web_kiro} de la Amazon. Toate acestea sunt soluții
-  proprietare care sunt făcute să ruleze cu modelele proprii și pentru care utilizatorul trebuie să plătească. Există și soluții open-source precum OpenHands, Cline
+  proprietare care sunt făcute să ruleze cu o gamă restrânsă de modele și pentru care utilizatorul trebuie să plătească. Există și soluții open-source precum OpenHands, Cline
   sau Aider cu care deținătorii de modele se luptă pentru a domina piața, deși lupta nu este strânsă din cauza monopolului soluțiilor proprietare.
  
-  \begin{table}[htbp]
+  \begin{table}[H]
     \centering
     \scriptsize
-    \begin{tabularx}{\textwidth}{|>{\hsize=0.6\hsize\RaggedRight}X|>{\hsize=1.0\hsize\RaggedRight}X|>{\hsize=0.8\hsize\RaggedRight}X|>{\hsize=1.6\hsize\RaggedRight}X|}
+    \begin{tabularx}{\textwidth}{|>{\hsize=0.45\hsize\RaggedRight}X|>{\hsize=0.50\hsize\RaggedRight}X|>{\hsize=1.25\hsize\RaggedRight}X|>{\hsize=1.8\hsize\RaggedRight}X|}
       \hline
         \textbf{Companie} & \textbf{Model} & \textbf{Preț [\$/MTok]} & \textbf{Capabilități} \\
         \hline
 
-        \textbf{Anthropic \cite{api_anthropic_models}} & Claude Opus 4.8 & \$5/input MTok, \$25/output MTok & Cel mai capabil model disponibil, multi-modal, îmbunătățire semnificativă pentru programare agentică față de 4.6 și 4.7, gândire adaptivă, 1M fereastră de context, 128k tokeni max. la ieșire \\
+        \textbf{Anthropic \cite{api_anthropic_models}} & Claude Opus 4.8 & \$5/input MTok, \$25/output MTok & Cel mai capabil model disponibil, multi-modal, îmbunătățire semnificativă pentru programare agentică față de 4.6 și 4.7, gândire adaptivă, 1MTok context, 128kTok la ieșire \\
         \hline
-        & Claude Sonnet 4.6 & \$3/input MTok, \$15/output MTok & Mai rapid, compromite niște inteligență pentru performanță, gândire adaptivă, 1M fereastră de context, 64k tokeni max. la ieșire \\
+        & Claude Sonnet 4.6 & \$3/input MTok, \$15/output MTok & Mai rapid, compromite niște inteligență pentru performanță, gândire adaptivă, 1MTok context, 64k tokeni max. la ieșire \\
         \hline
-        & Claude Haiku 4.5 & \$1/input MTok, \$5/output MTok & Cel mai rapid, fără gândire adaptivă, 200k fereastră de context, 64k tokeni max. la ieșire \\
-        \hline
-
-        \textbf{OpenAI \cite{api_openai_models}} & gpt-5.5 & \$5/input MTok, \$30/output MTok & Nouă clasă de inteligență pentru programare și muncă profesională, raționament profund cu niveluri multiple de efort (low/medium/high/xhigh), suport multi-modal, 1M fereastră de context și 128k tokeni max. la ieșire \\
-        \hline
-        & gpt-5.4-mini & \$0.75/input MTok, \$4.5/output MTok & Model mai mic, rapid dar puternic pentru programare și subagenți. 400k fereastră de context și 128k tokeni max. la ieșire \\
-        \hline
-        & gpt-5.4-nano & \$0.20/input MTok, \$1.25/output MTok & Model mic și foarte rapid pentru sarcini ușoare în volum mare. 200k fereastră de context și 128k tokeni max. la ieșire \\
+        & Claude Haiku 4.5 & \$1/input MTok, \$5/output MTok & Cel mai rapid, fără gândire adaptivă, 200kTok context, 64k tokeni max. la ieșire \\
         \hline
 
-        \textbf{Google \cite{api_gemini_models}} & Gemini 3.1 Pro & \$2/input MTok, \$12/output MTok < 200k tokeni, \$4/input MTok, \$18/output MTok >= 200k tokeni & Model pentru sarcini complexe ce necesită cunoștințe dezvoltate. Fereastră de context 1M in / 64k out \\
+        \textbf{OpenAI \cite{api_openai_models}} & gpt-5.5 & \$5/input MTok, \$30/output MTok & Nouă clasă de inteligență pentru programare și muncă profesională, raționament profund cu niveluri multiple de efort, suport multi-modal, 1MTok context și 128kTok la ieșire \\
         \hline
-        & Gemini 3.1 Flash & \$0.5/input MTok, \$3/output MTok & Inteligență comparabilă cu modelul Pro la o viteză mai mare. Fereastră de context 1M in / 64k out \\
+        & gpt-5.4-mini & \$0.75/input MTok, \$4.5/output MTok & Model mai mic, rapid dar puternic pentru programare și subagenți. 400kTok context și 128k tokeni max. la ieșire \\
         \hline
-        & Gemini 3.1 Flash-Lite & \$0.25/input MTok, \$1.5/output MTok & Model construit pentru costuri reduse și volum mare de sarcini. Fereastră de context 1M in / 64k out \\
+        & gpt-5.4-nano & \$0.20/input MTok, \$1.25/output MTok & Model mic și foarte rapid pentru sarcini ușoare în volum mare. 200kTok context și 128k tokeni max. la ieșire \\
+        \hline
+
+        \textbf{Google \cite{api_gemini_models}} & Gemini 3.1 Pro & \$2/in MTok, \$12/out MTok < 200k tokeni, \$4/in MTok, \$18/out MTok >= 200k tokeni & Model pentru sarcini complexe ce necesită cunoștințe dezvoltate. 1MTok context in, 64k out \\
+        \hline
+        & Gemini 3.1 Flash & \$0.5/input MTok, \$3/output MTok & Inteligență comparabilă cu modelul Pro la o viteză mai mare. Context 1M in, 64k out \\
+        \hline
+        & Gemini 3.1 Flash-Lite & \$0.25/input MTok, \$1.5/output MTok & Model construit pentru costuri reduse și volum mare de sarcini. Context 1M in, 64k out \\
         \hline
         & Gemma 4 & Open Source & Familie de modele open-source pentru rulare locală, cost redus și personalizare \\
         \hline
 
-        \textbf{DeepSeek \cite{api_deepseek_pricing}} & DeepSeek V4 & \$0.30/input MTok, \$0.50/output MTok & Model general de ultimă generație, suportă moduri cu și fără gândire adâncă, 1M fereastră de context, cache hit: \$0.03/input MTok \\
-        \hline
-        & DeepSeek R1 & \$0.55/input MTok, \$2.19/output MTok & Model specializat în raționament și gândire adâncă pentru probleme complexe, 128k fereastră de context, cache hit: \$0.14/input MTok \\
+        \textbf{DeepSeek \cite{api_deepseek_pricing}} & DeepSeek R1 & \$0.55/input MTok, \$2.19/output MTok & Model specializat în raționament și gândire adâncă pentru probleme complexe, 128kTok context, cache hit: \$0.14/input MTok \\
         \hline
 
-        \textbf{Qwen \cite{api_qwen}} & Qwen 3 & Open Source & Familie de modele open-source (Apache 2.0) cu arhitectură hibridă \ac{moe}, gândire adaptivă activabilă, performanță de vârf la programare și raționament. Disponibil în variante de 0.6B până la 235B parametri \\
-        \hline
-        & Qwen3-Coder & Open Source & Model specializat pe cod din familia Qwen3, optimizat pentru generare și înțelegere de cod, arhitectură \ac{moe}, gândire adaptivă, 1M fereastră de context. \\
+        \textbf{Qwen \cite{api_qwen}} & Qwen3-Coder & Open Source & Model specializat pe cod din familia Qwen3, optimizat pentru generare și înțelegere de cod, arhitectură \ac{moe}, gândire adaptivă, 1MTok context. \\
         \hline
 
-        \textbf{Mistral AI \cite{api_mistral}} & Mixtral 8x22B & Open Source & Model Mixture-of-Experts open-source (Apache 2.0), 8 experți de 22B parametri fiecare, disponibil pentru rulare locală sau prin \ac{api}. 66k fereastră de context \\
+        \textbf{Mistral AI \cite{api_mistral}} & Mixtral 8x22B & Open Source & Model Mixture of Experts open-source european. 66kTok fereastră de context \\
         \hline
         & Devstral Small 2 & \$0.10/input MTok, \$0.30/output MTok & Model open-source (Apache 2.0) specializat pe cod, bazat pe arhitectura Mistral Small 3.1, optimizat pentru agenți de programare și completare de cod. 128k fereastră de context \\
         \hline
-
-
-      \hline
+      
     \end{tabularx}
-    \caption{Comparația câtorva din modelele existente și a capabilităților acestora în comparație cu prețul de utilizare.}
+    \caption{Selecție de modelele și prețul de utilizare în comparație cu capabilitățile.}
     \label{tab:modele_ia}
-    \par\vspace{0.3cm}
-    {\small \textit{Notă:} Toate modelele au și setări pentru diferite nivele de efort pentru gândire (reasoning effort) sau pentru date multi-modale ce pot influența costul dar și rezultatele.}
   \end{table}
 
-  Din tabelul \ref{tab:modele_ia} se poate deduce că utilizarea frecventă sau ineficientă a unui model de ultimă generație poate ajunge să coste o mică avere. Într-o conversație lungă, fiecare pereche răspuns-întrebare din istoric este re-introdusă ca date de intrare pentru următoarea interacțiune, iar fiecare apel către unelte rămâne și el în context, crescând exponențial costul de întreținere a conversației.
+  Din tabelul \ref{tab:modele_ia} se poate deduce că utilizarea frecventă sau ineficientă a unui model de ultimă generație într-una din aplicațiile enumerate mai sus poate ajunge să coste o mică avere. Într-o conversație lungă, fiecare pereche răspuns-întrebare din istoric este re-introdusă ca date de intrare pentru următoarea interacțiune, iar fiecare apel către unelte rămâne și el în context, crescând exponențial costul de întreținere a conversației, lucru des întâlnit în aplicațiile din domeniul dezvoltării software.
 
-  Din punct de vedere al capabilității de rezolvare a sarcinilor reale, clasamentul celor mai bune modele se schimbă frecvent. Utilizând SWE-Bench Pro \cite{dengSWEBenchProCan2025} putem măsura performanța contra unor sarcini complexe (Figura~\ref{fig:swe_performanta}) și raportul între performanță și cost (Figura~\ref{fig:swe_cost}).
+  Din punct de vedere al capabilității de rezolvare a sarcinilor reale, clasamentul celor mai bune modele în sarcini de programare se schimbă frecvent. Utilizând SWE-Bench Pro \cite{dengSWEBenchProCan2025} putem măsura performanța contra unor sarcini complexe (Figura~\ref{fig:swe_performanta}) și raportul între performanță și cost (Figura~\ref{fig:swe_cost}).
 
   \begin{figure}[H]
     \centering
@@ -592,24 +598,11 @@
     \label{fig:swe_cost}
   \end{figure}
 
-  \section{Limitări ale arhitecturilor agentice}
-
-  Bariera principală în avansarea acestor asistenți este \textbf{fereastra de context}. Pentru sisteme cu numeroase linii de cod sau proiecte distribuite în mai multe servicii, contextul limitează masiv capabilitățile agenților. Deși există tehnici de optimizare (compresie, rezumare, fișiere de cunoștințe, rularea de cod pentru acțiuni repetitive), acestea nu sunt suficiente: multe funcționalități care fac un agent performant (uneltele) consumă rapid contextul. Din cei 200.000 de tokeni anunțați spre exemplu, doar ~160.000 sunt cu adevărat disponibili, restul fiind rezervați pentru promptul de sistem, auto-compactare sau ieșire.
-
-  \begin{figure}[htbp]
-    \centering
-    \includegraphics*[width=0.8\columnwidth]{figuri/context.png}
-    \caption{Reprezentarea ferestrei de context într-o conversație uzuală (Sursă: \cite{fig_claude_context})}
-    \label{fig:context_window}
-  \end{figure}
-
-  În plus, modelele curente tind să genereze date de ieșire mai detaliate decât este necesar (cantitate peste calitate), iar în sarcini de revizuire de \ac{pr} se grăbesc să relateze multe probleme simple sau de formatare, ratând probleme importante de logică. De asemenea, agenții nu au o bună înțelegere legată de când ar trebui să oprească investigațiile, rămânând adesea blocați în bucle infinite.
-
-  \section{Plasarea în industrie și oportunități}
+  \section{Plasarea în industrie și oportunități identificate}
 
   Având o imagine clară asupra stadiului actual și a alegerilor arhitecturale, abordăm plasarea proiectului în industrie și deciziile prin care propunem un produs competitiv.
 
-  \subsection{Analiza soluțiilor proprietare}
+  \subsection{Analiza ecosistemelor proprietare}
 
   Momentan, cea mai mare cotă de piață o au furnizorii de modele mari de limbaj precum Anthropic, Google sau OpenAI. Aceștia, pe lângă aplicațiile pentru dezvoltarea software,
   lansează aplicații având ca obiectiv blocarea utilizatorilor în ecosistemul lor, prin unelte ce urmăresc domenii diverse, fenomen observabil în tabelul \ref{tab:produse_ai}.
@@ -617,45 +610,39 @@
   \begin{table}[H]
   \centering
   \scriptsize
-  \setlength{\tabcolsep}{4pt}
-  \renewcommand{\arraystretch}{1.5}
-  \vspace{2mm}
-    \begin{tabularx}{\textwidth}{@{} >{\hsize=0.55\hsize\RaggedRight}X >{\hsize=0.75\hsize\RaggedRight}X >{\hsize=1.3\hsize\RaggedRight}X >{\hsize=0.7\hsize\RaggedRight}X >{\hsize=0.7\hsize\RaggedRight}X @{}}
-      \toprule
+    \begin{tabularx}{\textwidth}{|>{\hsize=0.55\hsize\RaggedRight}X|>{\hsize=0.55\hsize\RaggedRight}X|>{\hsize=1.3\hsize\RaggedRight}X|>{\hsize=0.4\hsize\RaggedRight}X|>{\hsize=1.2\hsize\RaggedRight}X|}
+      \hline
       \textbf{Companie} & \textbf{Produs} & \textbf{Descriere} & \textbf{Audiență} & \textbf{Preț} \\
-      \midrule
+      \hline
 
-      \textbf{Anthropic~\cite{web_anthropic}} & Claude~\cite{web_claude_app} (web/app) & Asistent \ac{ia} conversațional pentru analiză, scriere, programare și raționament, cu suport multi-modal și artefacte interactive & Utilizatori generali, profesioniști & Freemium (Pro: \$20/lună, Max: \$100--200/lună) \\
-      \cmidrule(l){2-5}
-      & Claude Code~\cite{api_claude_code} & Agent de programare agentic care rulează în terminal, \ac{ide} sau Slack~\cite{web_slack}; poate naviga coduri mari, crea \ac{pr}-uri și rula teste automat & Dezvoltatori software & Inclus în Pro/Max (\ac{api}: cost per token) \\
-      \cmidrule(l){2-5}
-      & Claude Cowork & Agent agentic de productivitate care lucrează cu fișiere locale și aplicații cloud (Slack, Google Drive) pentru a automatiza sarcini recurente & Profesioniști, echipe & Inclus în Pro/Max \\
-      \cmidrule(l){2-5}
-      & Claude Design & Instrument de prototipare vizuală integrat în Claude, care generează interfețe \ac{gui} interactive și mockup-uri pe baza descrierilor în limbaj natural & Designeri, dezvoltatori & Inclus în Pro/Max \\
+      \textbf{Anthropic~\cite{web_anthropic}} & Claude~\cite{web_claude_app} (web/app) & Asistent \ac{ia} multi-modal pentru analiză, scriere și programare & Utilizatori generali, profesioniști & Freemium (Pro: \$20/lună, Max: \$100--200/lună) \\
+      \hline
+      & Claude Code~\cite{api_claude_code} & Agent de cod în terminal/\ac{ide}; navighează baze de cod, creează \ac{pr}-uri și rulează teste & Dezvoltatori software & Inclus în Pro/Max (\ac{api}: cost per token) \\
+      \hline
+      & Claude Cowork & Automatizează sarcini recurente în fișiere locale și aplicații cloud (Slack, Drive) & Profesioniști, echipe & Inclus în Pro/Max \\
+      \hline
+      & Claude Design & Generează interfețe \ac{gui} și mockup-uri din descrieri în limbaj natural & Designeri, dezvoltatori & Inclus în Pro/Max \\
+      \hline
 
-      \midrule
+      \textbf{Google~\cite{web_google}} & Gemini~\cite{web_gemini_app} (web/app) & Asistent \ac{ia} multi-modal cu căutare Google și generare de imagini & Utilizatori generali & Freemium (Google AI Pro: \$19.99/lună) \\
+      \hline
+      & Antigravity \ac{cli}~\cite{gh_antigravity_cli} & Agent \ac{tui} în terminal cu subagenti concurenți, suport \ac{mcp}, editare multi-fișier și comenzi slash; optimizat pentru fluxuri keyboard-first și sesiuni SSH & Dezvoltatori software & Freemium (Individual: gratuit cu limite săptămânale de rată; Google AI Pro și Ultra: credite flexibile și limite mai generoase; Enterprise: Google Cloud, per consum) \\
+      \hline
+      & NotebookLM~\cite{web_notebooklm} & Analizează documente încărcate (\ac{pdf}, site-uri, video-uri) și generează rezumate, podcast-uri și conexiuni între surse & Cercetători, studenți & Gratuit (Plus: \$7.99/lună, Business: contact) \\
+      \hline
+      & Vertex AI~\cite{web_vertex_ai} & Platformă enterprise \ac{ml} cu 200+ modele și instrumente \ac{mlops} & Echipe enterprise, ingineri \ac{ml} & Plătit (pay-as-you-go, de la \$0.0001 per operație) \\
+      \hline
+      & Firebase Studio~\cite{web_firebase_studio} & \ac{ide} cloud cu agenți \ac{ia} pentru aplicații full-stack direct din browser & Dezvoltatori software & Gratuit în previzualizare (3 spații de lucru; se închide în 2027) \\
+      \hline
 
-      \textbf{Google~\cite{web_google}} & Gemini~\cite{web_gemini_app} (web/app) & Asistent \ac{ia} conversațional multi-modal cu acces la căutare Google, extensii și generare de imagini; disponibil pe web, Android~\cite{web_android} și iOS~\cite{web_ios} & Utilizatori generali & Freemium (Google AI Pro: \$19.99/lună) \\
-      \cmidrule(l){2-5}
-      & Gemini \ac{cli}~\cite{gh_gemini_cli} & Agent de programare open-source (Apache 2.0) care rulează în terminal, cu suport \ac{mcp}, căutare Google și context de 1M tokeni & Dezvoltatori software & Gratuit cu cont Google (60 req/min, 1.000 req/zi) până în iunie 2026; ulterior necesită cont de facturare Google Cloud \\
-      \cmidrule(l){2-5}
-      & NotebookLM~\cite{web_notebooklm} & Asistent de cercetare alimentat de Gemini care analizează documente încărcate (\ac{pdf}, site-uri, video-uri) și generează rezumate, podcast-uri audio și conexiuni între surse & Cercetători, studenți & Gratuit (Plus: \$7.99/lună, Business: contact) \\
-      \cmidrule(l){2-5}
-      & Vertex AI~\cite{web_vertex_ai} & Platformă enterprise pentru construcția, antrenarea și implementarea de agenți \ac{ia} și modele \ac{ml}, cu acces la 200+ modele și instrumente \ac{mlops} & Echipe enterprise, ingineri \ac{ml} & Plătit (pay-as-you-go, de la \$0.0001 per operație) \\
-      \cmidrule(l){2-5}
-      & Firebase Studio~\cite{web_firebase_studio} & Mediu de dezvoltare cloud (\ac{ide}) cu agenți \ac{ia} integrați pentru construcția de aplicații full-stack (backend, frontend, mobil) direct din browser & Dezvoltatori software & Gratuit în previzualizare (3 spații de lucru; se închide în 2027) \\
+      \textbf{OpenAI~\cite{web_openai}} & ChatGPT~\cite{web_chatgpt} (web/app) & Asistent \ac{ia} multi-modal cu căutare web, generare imagini și analiză date & Utilizatori generali, profesioniști & Freemium (Plus: \$20/lună, Pro: \$200/lună) \\
+      \hline
+      & Codex~\cite{gh_codex} & Agent cloud pentru programare paralelă în medii izolate preîncărcate cu codul din GitHub~\cite{web_github} & Dezvoltatori software, echipe & Inclus în abonamentul ChatGPT \\
+      \hline
 
-      \midrule
+      \textbf{Microsoft~\cite{web_microsoft}/ GitHub} & GitHub Copilot~\cite{web_gh_copilot} & Agent în GitHub/\ac{ide} (VS Code~\cite{web_vscode}, JetBrains~\cite{web_jetbrains}); completare cod, chat, revizuire \ac{pr}-uri și rezolvare tichete & Dezvoltatori software, echipe & Freemium (plan gratuit: 2.000 completări/lună; Pro: \$10/lună, Business: \$19/lună, Pro+: \$39/lună; Enterprise: tarif separat) \\
+      \hline
 
-      \textbf{OpenAI~\cite{web_openai}} & ChatGPT~\cite{web_chatgpt} (web/app) & Asistent \ac{ia} conversațional cu suport multi-modal, căutare web, generare de imagini, analiză de date și extensii; disponibil pe web, iOS, Android și desktop & Utilizatori generali, profesioniști & Freemium (Plus: \$20/lună, Pro: \$200/lună) \\
-      \cmidrule(l){2-5}
-      & Codex~\cite{gh_codex} & Agent de inginerie software cloud care execută sarcini de programare în paralel, în medii izolate de execuție preîncărcate cu codul din repository-ul GitHub~\cite{web_github} & Dezvoltatori software, echipe & Inclus în ChatGPT Pro/Business/Enterprise (\ac{api}: \$1.50/\$6 per MTok) \\
-
-      \midrule
-
-      \textbf{Microsoft~\cite{web_microsoft}/ GitHub} & GitHub Copilot~\cite{web_gh_copilot} & Agent de programare integrat în GitHub și disponibil ca aplicație \ac{cli}, extensie \ac{ide} (VS Code~\cite{web_vscode}, JetBrains~\cite{web_jetbrains}) și în github.com; oferă completare de cod, chat, revizuire \ac{pr}-uri și rezolvare automată de tichete & Dezvoltatori software, echipe & Freemium (plan gratuit: 2.000 completări/lună; Pro: \$10/lună, Business: \$19/lună, Pro+: \$39/lună; Enterprise: tarif separat) \\
-
-      \bottomrule
     \end{tabularx}
   \caption{Ecosistemul de produse cu \ac{ia} al principalilor furnizori de modele de limbaj}
   \label{tab:produse_ai}
@@ -715,7 +702,7 @@
       $\bullet$ Fără sandboxing nativ incorporat\newline
       $\bullet$ Complexitate ridicată, multe funcționalități\newline
       $\bullet$ Dependent de ecosistemul VS Code/JetBrains &
-      Extensie \ac{ide}, \ac{sdk}, \ac{cli}, multi-agent, \ac{mcp}, agenți programați, integrări Slack/Discord/Telegram \\
+      Extensie \ac{ide}, \ac{sdk}, \ac{cli}, multi-agent, \ac{mcp}, agenți programați, integrări Slack/Discord \\
       \midrule
 
       \textbf{Goose} \newline (GitHub~\cite{gh_goose}) \newline Licență Apache 2.0 &
@@ -889,6 +876,8 @@
   \end{table} 
 
   Inițial am ales librăria Textual datorită sistemului său puternic de amplasare a componentelor, dar am abandonat ideea în timpul implementării din cauza problemelor cu derularea conversației, copierea și lipirea de text și cu elementele animate în favoarea opțiunii cu "Prompt Toolkit" și "Rich".
+
+  \newpage
 
   \subsection{Tehnici proprii de gestionare a contextului și a apelurilor la unelte}
  
@@ -2428,6 +2417,8 @@ curl -fsSL https://raw.githubusercontent.com/Moshulika/vibe-cli/main/scripts/ins
   cele două sisteme de operare listate anterior.
 
   Acestea fiind spuse, o bună completare viitoare ar fi suportul nativ pentru Windows, în ciuda diferențelor dintre sistemele de operare pentru a deschide calea către o nouă audiență de utilizatori.
+
+  \newpage
 
   \section{Construirea unui graf de cunoștințe pentru optimizarea înțelegerii proiectelor}
 

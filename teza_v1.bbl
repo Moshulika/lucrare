@@ -75,15 +75,15 @@ Nelson~F. Liu, Kevin Lin, John Hewitt, Ashwin Paranjape, Michele Bevilacqua, Fab
 \newblock Lost in the middle: How language models use long contexts.
 \newblock 12:157--173.
 
-\bibitem{dengSWEBenchProCan2025}
-Xiang Deng, Jeff Da, Edwin Pan, Yannis~Yiming He, Charles Ide, Kanak Garg, Niklas Lauffer, Andrew Park, Nitin Pasari, Chetan Rane, Karmini Sampath, Maya Krishnan, Srivatsa Kundurthy, Sean Hendryx, Zifan Wang, Vijay Bharadwaj, Jeff Holm, Raja Aluri, Chen Bo~Calvin Zhang, Noah Jacobson, Bing Liu, and Brad Kenstler.
-\newblock {SWE}-bench pro: Can {AI} agents solve long-horizon software engineering tasks?
-
 \bibitem{fig_claude_context}
 Anthropic.
 \newblock Build with claude: Context windows.
 \newblock disponibil la: \url{https://platform.claude.com/docs/en/build-with-claude/context-windows}, 2026.
 \newblock accesat la data: 17.05.2026.
+
+\bibitem{dengSWEBenchProCan2025}
+Xiang Deng, Jeff Da, Edwin Pan, Yannis~Yiming He, Charles Ide, Kanak Garg, Niklas Lauffer, Andrew Park, Nitin Pasari, Chetan Rane, Karmini Sampath, Maya Krishnan, Srivatsa Kundurthy, Sean Hendryx, Zifan Wang, Vijay Bharadwaj, Jeff Holm, Raja Aluri, Chen Bo~Calvin Zhang, Noah Jacobson, Bing Liu, and Brad Kenstler.
+\newblock {SWE}-bench pro: Can {AI} agents solve long-horizon software engineering tasks?
 
 \bibitem{fig_claude_usage}
 Anthropic.
@@ -256,12 +256,6 @@ Anthropic.
 \newblock disponibil la: \url{https://claude.ai}, 2026.
 \newblock accesat la data: 18.04.2026.
 
-\bibitem{web_slack}
-Slack Technologies.
-\newblock Slack: Channel-based messaging platform.
-\newblock disponibil la: \url{https://slack.com}, 2026.
-\newblock accesat la data: 30.04.2026.
-
 \bibitem{web_google}
 Google.
 \newblock Google.
@@ -274,17 +268,11 @@ Google.
 \newblock disponibil la: \url{https://gemini.google.com}, 2026.
 \newblock accesat la data: 04.04.2026.
 
-\bibitem{web_android}
+\bibitem{gh_antigravity_cli}
 Google.
-\newblock Android operating system.
-\newblock disponibil la: \url{https://www.android.com}, 2026.
-\newblock accesat la data: 13.04.2026.
-
-\bibitem{web_ios}
-Apple Inc.
-\newblock ios operating system.
-\newblock disponibil la: \url{https://www.apple.com/ios/}, 2026.
-\newblock accesat la data: 06.05.2026.
+\newblock Antigravity cli: Terminal-first surface for antigravity agents, github.
+\newblock disponibil la: \url{https://github.com/google-antigravity/antigravity-cli}, 2026.
+\newblock accesat la data: 21.06.2026.
 
 \bibitem{web_notebooklm}
 Google.
@@ -352,6 +340,12 @@ Telegram FZ-LLC.
 \newblock disponibil la: \url{https://telegram.org}, 2026.
 \newblock accesat la data: 08.05.2026.
 
+\bibitem{web_slack}
+Slack Technologies.
+\newblock Slack: Channel-based messaging platform.
+\newblock disponibil la: \url{https://slack.com}, 2026.
+\newblock accesat la data: 30.04.2026.
+
 \bibitem{web_discord}
 Discord Inc.
 \newblock Discord: Group chat platform.
@@ -369,6 +363,12 @@ Apple Inc.
 \newblock macos operating system.
 \newblock disponibil la: \url{https://www.apple.com/macos/}, 2026.
 \newblock accesat la data: 29.05.2026.
+
+\bibitem{web_android}
+Google.
+\newblock Android operating system.
+\newblock disponibil la: \url{https://www.android.com}, 2026.
+\newblock accesat la data: 13.04.2026.
 
 \bibitem{gh_openhands}
 OpenHands Contributors.

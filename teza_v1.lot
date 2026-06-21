@@ -1,15 +1,15 @@
 \acswitchoff 
 \babel@toc {romanian}{}\relax 
-\contentsline {table}{\numberline {1.1}{\ignorespaces Comparația câtorva din modelele existente și a capabilităților acestora în comparație cu prețul de utilizare.}}{24}{table.caption.24}%
-\contentsline {table}{\numberline {1.2}{\ignorespaces Ecosistemul de produse cu \ac {ia} al principalilor furnizori de modele de limbaj}}{27}{table.caption.28}%
-\contentsline {table}{\numberline {1.3}{\ignorespaces Top 5 asistenți open-source după numărul de "stele" pe GitHub}}{28}{table.caption.29}%
-\contentsline {table}{\numberline {1.4}{\ignorespaces Comparația cadrelor de lucru pentru întrebuințări agentice}}{30}{table.caption.31}%
-\contentsline {table}{\numberline {1.5}{\ignorespaces Comparația bibliotecilor pentru interfața cu utilizatorul}}{31}{table.caption.32}%
-\contentsline {table}{\numberline {2.1}{\ignorespaces Hardware recomandat pentru modele open-source. $^{\dagger }$Mistral 7B v0.1 (2023) a fost depășit; modelele actuale recomandate sunt Mistral Nemo 12B sau Mistral Small 3.1/4.}}{34}{table.caption.33}%
-\contentsline {table}{\numberline {2.2}{\ignorespaces Comenzi disponibile în interfață}}{40}{table.caption.40}%
-\contentsline {table}{\numberline {3.1}{\ignorespaces Comparație între soluția dezvoltată și principalele unelte agentice de programare pentru terminal disponibile pe piață}}{60}{table.caption.61}%
-\contentsline {table}{\numberline {3.2}{\ignorespaces Comparație între soluția propusă și principalii asistenți de programare \ac {oss} din ecosistem}}{61}{table.caption.62}%
-\contentsline {table}{\numberline {3.3}{\ignorespaces Rezultatele pentru prompt-ul detaliat: metrici per proiect și pe nivele de severitate}}{64}{table.caption.63}%
-\contentsline {table}{\numberline {3.4}{\ignorespaces Rezultatele pentru prompt-ul simplu: metrici per proiect și pe nivele de severitate}}{64}{table.caption.64}%
-\contentsline {table}{\numberline {3.5}{\ignorespaces Modelele testate: tip, număr de parametri, mărime pe disc și suport multi-modal.}}{68}{table.caption.66}%
-\contentsline {table}{\numberline {3.6}{\ignorespaces Clasamentul modelelor după scor mediu, durata totală de rulare și cost. Modelele rulate local prin \texttt {ollama} au cost zero. Modelele proprietare nu au date publice referitoare la mărimea modelului.}}{68}{table.caption.67}%
+\contentsline {table}{\numberline {1.1}{\ignorespaces Selecție de modelele și prețul de utilizare în comparație cu capabilitățile.}}{24}{table.caption.25}%
+\contentsline {table}{\numberline {1.2}{\ignorespaces Ecosistemul de produse cu \ac {ia} al principalilor furnizori de modele de limbaj}}{26}{table.caption.28}%
+\contentsline {table}{\numberline {1.3}{\ignorespaces Top 5 asistenți open-source după numărul de "stele" pe GitHub}}{27}{table.caption.29}%
+\contentsline {table}{\numberline {1.4}{\ignorespaces Comparația cadrelor de lucru pentru întrebuințări agentice}}{29}{table.caption.31}%
+\contentsline {table}{\numberline {1.5}{\ignorespaces Comparația bibliotecilor pentru interfața cu utilizatorul}}{30}{table.caption.32}%
+\contentsline {table}{\numberline {2.1}{\ignorespaces Hardware recomandat pentru modele open-source. $^{\dagger }$Mistral 7B v0.1 (2023) a fost depășit; modelele actuale recomandate sunt Mistral Nemo 12B sau Mistral Small 3.1/4.}}{33}{table.caption.33}%
+\contentsline {table}{\numberline {2.2}{\ignorespaces Comenzi disponibile în interfață}}{39}{table.caption.40}%
+\contentsline {table}{\numberline {3.1}{\ignorespaces Comparație între soluția dezvoltată și principalele unelte agentice de programare pentru terminal disponibile pe piață}}{59}{table.caption.61}%
+\contentsline {table}{\numberline {3.2}{\ignorespaces Comparație între soluția propusă și principalii asistenți de programare \ac {oss} din ecosistem}}{60}{table.caption.62}%
+\contentsline {table}{\numberline {3.3}{\ignorespaces Rezultatele pentru prompt-ul detaliat: metrici per proiect și pe nivele de severitate}}{63}{table.caption.63}%
+\contentsline {table}{\numberline {3.4}{\ignorespaces Rezultatele pentru prompt-ul simplu: metrici per proiect și pe nivele de severitate}}{63}{table.caption.64}%
+\contentsline {table}{\numberline {3.5}{\ignorespaces Modelele testate: tip, număr de parametri, mărime pe disc și suport multi-modal.}}{67}{table.caption.66}%
+\contentsline {table}{\numberline {3.6}{\ignorespaces Clasamentul modelelor după scor mediu, durata totală de rulare și cost. Modelele rulate local prin \texttt {ollama} au cost zero. Modelele proprietare nu au date publice referitoare la mărimea modelului.}}{67}{table.caption.67}%
