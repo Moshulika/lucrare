@@ -15,7 +15,7 @@
 \contentsline {figure}{\numberline {1.13}{\ignorespaces Vizualizarea problemei și al rezultatului dorit la întrebare. De multe ori, modelele întâmpină dificultăți în accesarea acestor informații ascunse în mijlocul ferestrei de context \cite {liuLostMiddleHow2024}}}{23}{figure.caption.23}%
 \contentsline {figure}{\numberline {1.14}{\ignorespaces Reprezentarea ferestrei de context într-o conversație uzuală (Sursă: \cite {fig_claude_context})}}{23}{figure.caption.24}%
 \contentsline {figure}{\numberline {1.15}{\ignorespaces Clasamentul modelelor în SWE-Bench Pro \cite {dengSWEBenchProCan2025} la momentul actual în funcție de performanța rezolvării sarcinilor complexe în limba engleză.}}{25}{figure.caption.26}%
-\contentsline {figure}{\numberline {1.16}{\ignorespaces Clasamentul modelelor în SWE-Bench Pro \cite {dengSWEBenchProCan2025} la momentul actual după cost.}}{25}{figure.caption.27}%
+\contentsline {figure}{\numberline {1.16}{\ignorespaces Clasamentul după cost al modelelor în SWE-Bench Pro \cite {dengSWEBenchProCan2025} la momentul actual.}}{25}{figure.caption.27}%
 \contentsline {figure}{\numberline {1.17}{\ignorespaces Reprezentarea ferestrei de context într-o conversație în Claude Code}}{28}{figure.caption.30}%
 \contentsline {figure}{\numberline {1.18}{\ignorespaces Reprezentarea utilizării în Claude (varianta web) (Sursă: \cite {fig_claude_usage})}}{28}{figure.caption.30}%
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Arhitectura modulară a aplicației \texttt {vibe-cli}}}{34}{figure.caption.34}%

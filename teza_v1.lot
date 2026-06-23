@@ -1,11 +1,11 @@
 \acswitchoff 
 \babel@toc {romanian}{}\relax 
-\contentsline {table}{\numberline {1.1}{\ignorespaces Selecție de modelele și prețul de utilizare în comparație cu capabilitățile.}}{24}{table.caption.25}%
+\contentsline {table}{\numberline {1.1}{\ignorespaces Selecție de modele și prețul de utilizare în comparație cu capabilitățile.}}{24}{table.caption.25}%
 \contentsline {table}{\numberline {1.2}{\ignorespaces Ecosistemul de produse cu \ac {ia} al principalilor furnizori de modele de limbaj}}{26}{table.caption.28}%
 \contentsline {table}{\numberline {1.3}{\ignorespaces Top 5 asistenți open-source după numărul de "stele" pe GitHub}}{27}{table.caption.29}%
 \contentsline {table}{\numberline {1.4}{\ignorespaces Comparația cadrelor de lucru pentru întrebuințări agentice}}{29}{table.caption.31}%
 \contentsline {table}{\numberline {1.5}{\ignorespaces Comparația bibliotecilor pentru interfața cu utilizatorul}}{30}{table.caption.32}%
-\contentsline {table}{\numberline {2.1}{\ignorespaces Hardware recomandat pentru modele open-source. $^{\dagger }$Mistral 7B v0.1 (2023) a fost depășit; modelele actuale recomandate sunt Mistral Nemo 12B sau Mistral Small 3.1/4.}}{33}{table.caption.33}%
+\contentsline {table}{\numberline {2.1}{\ignorespaces Hardware recomandat pentru modelele open-source evaluate local (Sursa~\cite {web_ollama}).}}{33}{table.caption.33}%
 \contentsline {table}{\numberline {2.2}{\ignorespaces Comenzi disponibile în interfață}}{39}{table.caption.40}%
 \contentsline {table}{\numberline {3.1}{\ignorespaces Comparație între soluția dezvoltată și principalele unelte agentice de programare pentru terminal disponibile pe piață}}{59}{table.caption.61}%
 \contentsline {table}{\numberline {3.2}{\ignorespaces Comparație între soluția propusă și principalii asistenți de programare \ac {oss} din ecosistem}}{60}{table.caption.62}%

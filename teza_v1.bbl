@@ -97,6 +97,12 @@ Letta.
 \newblock disponibil la: \url{https://www.letta.com/blog/guide-to-context-engineering}, 2026.
 \newblock accesat la data: 30.05.2026.
 
+\bibitem{web_ollama}
+Ollama.
+\newblock Ollama: Get up and running with large language models locally.
+\newblock disponibil la: \url{https://ollama.com}, 2026.
+\newblock accesat la data: 16.04.2026.
+
 \bibitem{rosenblattPerceptronProbabilisticModel1958}
 F.~Rosenblatt.
 \newblock The perceptron: A probabilistic model for information storage and organization in the brain.
