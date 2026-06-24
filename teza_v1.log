@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.4.20)  24 JUN 2026 18:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.4.20)  24 JUN 2026 18:54
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1301,4 +1301,165 @@ Package pdftex.def Info: figuri/vibeweb_turn.png  used on input line 1637.
 File: figuri/vibecli_subagent.png Graphic file (type png)
 <use figuri/vibecli_subagent.png>
 Package pdftex.def Info: figuri/vibecli_subagent.png  used on input line 1645.
-(pdftex.
+(pdftex.def)             Requested size: 386.95894pt x 361.48747pt.
+ [55 <./figuri/vibeweb1.png> <./figuri/vibeweb2.png> <./figuri/vibeweb3.png> <./figuri/vibeweb4.png> <./figuri/vibeweb5.png> <./figuri/vibeweb6.png> <./figuri/vibeweb_tool.png> <./figuri/vibeweb_turn.png>]
+<figuri/vibeweb_cost.png, id=1728, 689.57625pt x 274.02374pt>
+File: figuri/vibeweb_cost.png Graphic file (type png)
+<use figuri/vibeweb_cost.png>
+Package pdftex.def Info: figuri/vibeweb_cost.png  used on input line 1653.
+(pdftex.def)             Requested size: 232.17241pt x 92.2595pt.
+<figuri/vibecli_compact.png, id=1730, 664.4825pt x 273.02pt>
+File: figuri/vibecli_compact.png Graphic file (type png)
+<use figuri/vibecli_compact.png>
+Package pdftex.def Info: figuri/vibecli_compact.png  used on input line 1656.
+(pdftex.def)             Requested size: 232.17241pt x 95.39178pt.
+ [56 <./figuri/vibecli_subagent.png> <./figuri/vibeweb_cost.png> <./figuri/vibecli_compact.png>]
+Capitolul 3.
+[57
+
+] [58]
+Underfull \hbox (badness 10000) in paragraph at lines 1927--1928
+[]\T1/cmr/m/n/10.95 Compactare auto-mat  a is-to-ri-cu-lui
+ []
+
+
+Overfull \vbox (2.8168pt too high) has occurred while \output is active []
+
+ [59]
+Underfull \hbox (badness 10000) in paragraph at lines 1957--1958
+[]\T1/cmr/m/n/10.95 Suport multi-canal (Slack, Di-scord,
+ []
+
+
+Overfull \hbox (23.6717pt too wide) in paragraph at lines 1977--1977
+[]\T1/cmr/bx/n/14.4 Influen[]a lun-gi-mii []i a exactit []ii instruc[]iunilor asu-pra performan[]ei.
+ []
+
+[60]
+
+LaTeX Warning: Command \textcommabelow invalid in math mode on input line 2009.
+
+
+LaTeX Warning: Command \textcommabelow invalid in math mode on input line 2010.
+
+
+LaTeX Warning: Command \textcommabelow invalid in math mode on input line 2010.
+
+
+LaTeX Warning: Command \textcommabelow invalid in math mode on input line 2014.
+
+[61] [62]
+<figuri/chart_overall_metrics.pdf, id=1864, 423.7337pt x 293.61758pt>
+File: figuri/chart_overall_metrics.pdf Graphic file (type pdf)
+<use figuri/chart_overall_metrics.pdf>
+Package pdftex.def Info: figuri/chart_overall_metrics.pdf  used on input line 2140.
+(pdftex.def)             Requested size: 222.50378pt x 154.18289pt.
+<figuri/chart_precision_recall_scatter.pdf, id=1865, 478.258pt x 350.77142pt>
+File: figuri/chart_precision_recall_scatter.pdf Graphic file (type pdf)
+<use figuri/chart_precision_recall_scatter.pdf>
+Package pdftex.def Info: figuri/chart_precision_recall_scatter.pdf  used on input line 2147.
+(pdftex.def)             Requested size: 251.52441pt x 184.4789pt.
+ [63 <./figuri/chart_overall_metrics.pdf> <./figuri/chart_precision_recall_scatter.pdf>] [64] [65]
+<figuri/chart_eval_params.pdf, id=1969, 630.88365pt x 424.64838pt>
+File: figuri/chart_eval_params.pdf Graphic file (type pdf)
+<use figuri/chart_eval_params.pdf>
+Package pdftex.def Info: figuri/chart_eval_params.pdf  used on input line 2319.
+(pdftex.def)             Requested size: 290.22105pt x 195.34709pt.
+ [66 <./figuri/chart_eval_params.pdf>] [67]
+<figuri/chart_eval_cost.pdf, id=2067, 639.2528pt x 424.64838pt>
+File: figuri/chart_eval_cost.pdf Graphic file (type pdf)
+<use figuri/chart_eval_cost.pdf>
+Package pdftex.def Info: figuri/chart_eval_cost.pdf  used on input line 2350.
+(pdftex.def)             Requested size: 232.17241pt x 154.22752pt.
+<figuri/chart_eval_speed.pdf, id=2068, 632.92833pt x 424.69353pt>
+File: figuri/chart_eval_speed.pdf Graphic file (type pdf)
+<use figuri/chart_eval_speed.pdf>
+Package pdftex.def Info: figuri/chart_eval_speed.pdf  used on input line 2357.
+(pdftex.def)             Requested size: 232.17241pt x 155.78624pt.
+ [68 <./figuri/chart_eval_cost.pdf> <./figuri/chart_eval_speed.pdf>] [69]
+Capitolul 4.
+
+Overfull \hbox (50.35571pt too wide) in paragraph at lines 2411--2412
+[]\T1/cmtt/m/n/10.95 Realizeaz  un rezumat al celor mai importante tichete sau PR[]-uri ap rute în ultimele
+ []
+
+
+Overfull \hbox (5.08875pt too wide) in paragraph at lines 2411--2412
+\T1/cmtt/m/n/10.95 24 de ore pe GitHub, []i analizeaz  canalele de Slack, Discord, Teams la care
+ []
+
+[70
+
+] [71]
+CONCLUZII
+(./teza_v1.bbl [72
+
+]
+BIBLIOGRAFIE
+
+Underfull \hbox (badness 8151) in paragraph at lines 95--99
+[]\T1/cmr/m/n/10 Letta.  Gu-ide to con-text en-gi-ne-e-ring.  dis-po-ni-bil la: [][]$\T1/cmtt/m/n/10 https : / / www . letta . com / blog /
+ []
+
+[73
+
+] [74] [75]
+Underfull \hbox (badness 6758) in paragraph at lines 464--468
+[]\T1/cmr/m/n/10 Jonathan Slen-ders.  Py-thon prompt to-o-l-kit do-cu-men-ta-tion.  dis-po-ni-bil la: [][]$\T1/cmtt/m/n/10 https : / /
+ []
+
+[76]) (./anexe.tex [77]
+LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <14.4> not available
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 149.
+
+
+LaTeX Font Warning: Font shape `T1/cmr/m/n' in size <4.5> not available
+(Font)              size <5> substituted on input line 153.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/m/n' in size <4.5> not available
+(Font)              size <5> substituted on input line 153.
+
+(./cod/implementare/config/config.yml
+LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <4.5> not available
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 50.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/m/n' in size <4.5> not available
+(Font)              size <5> substituted on input line 50.
+
+
+LaTeX Font Warning: Font shape `T1/cmtt/m/it' in size <4.5> not available
+(Font)              size <5> substituted on input line 87.
+
+) (./cod/implementare/config/agentic_bench.yaml [78
+
+] [79]) (./cod/implementare/src/artifacts.py [80]) (./cod/implementare/src/attachments.py [81] [82]) (./cod/implementare/src/capabilities.py) (./cod/implementare/src/clipboard.py [83]) (./cod/implementare/src/compaction/base.py) (./cod/implementare/src/compaction/stages/bulk.py [84]) (./cod/implementare/src/compaction/stages/ref_substitute.py) (./cod/implementare/src/compaction/stages/tool_truncate.py) [85] (./cod/implementare/src/main.py [86] [87]) (./cod/implementare/src/multimodal.py [88]) (./cod/implementare/src/permissions.py) [89] (./cod/implementare/src/providers.py [90]) (./cod/implementare/src/sandbox.py [91]) (./cod/implementare/src/subagents/base.py [92] [93] [94]) (./cod/implementare/src/subagents/types/web_research.py) (./cod/implementare/src/tool_guards.py [95]) (./cod/implementare/src/tools.py [96] [97] [98]) [99] (./cod/implementare/src/tracing.py) (./cod/implementare/ui/skills.py [100] [101]) (./cod/implementare/ui/vibe_md.py)) [102] (./teza_v1.aux)
+ ***********
+LaTeX2e <2025-11-01>
+L3 programming layer <2026-01-19>
+ ***********
+
+
+LaTeX Font Warning: Size substitutions with differences
+(Font)              up to 0.5pt have occurred.
+
+Package rerunfilecheck Info: File `teza_v1.out' has not changed.
+(rerunfilecheck)             Checksum: 87C0EAC98A2AF3AADEB4DA02FB7F8D1E;27483.
+ ) 
+Here is how much of TeX's memory you used:
+ 44430 strings out of 467525
+ 960141 string characters out of 5418982
+ 4607594 words of memory out of 5000000
+ 67032 multiletter control sequences out of 15000+600000
+ 686681 words of font info for 207 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 88i,16n,94p,1404b,2416s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfbx0500.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfbx0600.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfbx0700.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfbx0800.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfit0800.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfrm0500.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfrm0600.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfti0600.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfti0700.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfti0800.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfti1440.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sftt0800.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sftt1440.pfb>
+Output written on teza_v1.pdf (102 pages, 10402591 bytes).
+PDF statistics:
+ 9004 PDF objects out of 10688 (max. 8388607)
+ 8154 compressed objects within 82 object streams
+ 5728 named destinations out of 6186 (max. 500000)
+ 1462 words of extra memory for PDF output out of 10000 (max. 10000000)
+

@@ -30,6 +30,79 @@ Google.
 \newblock disponibil la: \url{https://google.github.io/adk-docs/}, 2026.
 \newblock accesat la data: 12.04.2026.
 
+\bibitem{vaswaniAttentionAllYou2017}
+Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan~N Gomez, Ł~ukasz Kaiser, and Illia Polosukhin.
+\newblock Attention is all you need.
+\newblock In {\em Advances in Neural Information Processing Systems}, volume~30. Curran Associates, Inc.
+
+\bibitem{zhaoSurveyLargeLanguage2026}
+Wayne~Xin Zhao, Kun Zhou, Junyi Li, Tianyi Tang, Xiaolei Wang, Yupeng Hou, Yingqian Min, Beichen Zhang, Junjie Zhang, Zican Dong, Yifan Du, Chen Yang, Yushuo Chen, Zhipeng Chen, Jinhao Jiang, Ruiyang Ren, Yifan Li, Xinyu Tang, Zikang Liu, Peiyu Liu, Jian-Yun Nie, and Ji-Rong Wen.
+\newblock A survey of large language models.
+
+\bibitem{beltagy_longformer_2020-1}
+Iz~Beltagy, Matthew~E. Peters, and Arman Cohan.
+\newblock Longformer: The long-document transformer.
+
+\bibitem{huLoRALowRankAdaptation2021}
+Edward~J. Hu, Yelong Shen, Phillip Wallis, Zeyuan Allen-Zhu, Yuanzhi Li, Shean Wang, and Weizhu Chen.
+\newblock {LoRA}: Low-rank adaptation of large language models.
+\newblock version: 1.
+
+\bibitem{zhang_embarrassingly_2026-2}
+Ruixiang Zhang, Richard~He Bai, Huangjie Zheng, Navdeep Jaitly, Ronan Collobert, and Yizhe Zhang.
+\newblock Embarrassingly simple self-distillation improves code generation.
+
+\bibitem{ouyangTrainingLanguageModels2022}
+Long Ouyang, Jeffrey Wu, Xu~Jiang, Diogo Almeida, Carroll Wainwright, Pamela Mishkin, Chong Zhang, Sandhini Agarwal, Katarina Slama, Alex Ray, John Schulman, Jacob Hilton, Fraser Kelton, Luke Miller, Maddie Simens, Amanda Askell, Peter Welinder, Paul~F Christiano, Jan Leike, and Ryan Lowe.
+\newblock Training language models to follow instructions with human feedback.
+\newblock In {\em Advances in Neural Information Processing Systems}, volume~35, pages 27730--27744. Curran Associates, Inc.
+
+\bibitem{weiChainofThoughtPromptingElicits2022}
+Jason Wei, Xuezhi Wang, Dale Schuurmans, Maarten Bosma, Brian Ichter, Fei Xia, Ed~Chi, Quoc~V. Le, and Denny Zhou.
+\newblock Chain-of-thought prompting elicits reasoning in large language models.
+\newblock 35:24824--24837.
+
+\bibitem{yaoReActSynergizingReasoning2022}
+Shunyu Yao, Jeffrey Zhao, Dian Yu, Nan Du, Izhak Shafran, Karthik~R. Narasimhan, and Yuan Cao.
+\newblock {ReAct}: Synergizing reasoning and acting in language models.
+
+\bibitem{xuReWOODecouplingReasoning2023}
+Binfeng Xu, Zhiyuan Peng, Bowen Lei, Subhabrata Mukherjee, Yuchen Liu, and Dongkuan Xu.
+\newblock {ReWOO}: Decoupling reasoning from observations for efficient augmented language models.
+
+\bibitem{liuLostMiddleHow2024}
+Nelson~F. Liu, Kevin Lin, John Hewitt, Ashwin Paranjape, Michele Bevilacqua, Fabio Petroni, and Percy Liang.
+\newblock Lost in the middle: How language models use long contexts.
+\newblock 12:157--173.
+
+\bibitem{fig_claude_context}
+Anthropic.
+\newblock Build with claude: Context windows.
+\newblock disponibil la: \url{https://platform.claude.com/docs/en/build-with-claude/context-windows}, 2026.
+\newblock accesat la data: 17.05.2026.
+
+\bibitem{dengSWEBenchProCan2025}
+Xiang Deng, Jeff Da, Edwin Pan, Yannis~Yiming He, Charles Ide, Kanak Garg, Niklas Lauffer, Andrew Park, Nitin Pasari, Chetan Rane, Karmini Sampath, Maya Krishnan, Srivatsa Kundurthy, Sean Hendryx, Zifan Wang, Vijay Bharadwaj, Jeff Holm, Raja Aluri, Chen Bo~Calvin Zhang, Noah Jacobson, Bing Liu, and Brad Kenstler.
+\newblock {SWE}-bench pro: Can {AI} agents solve long-horizon software engineering tasks?
+
+\bibitem{fig_claude_usage}
+Anthropic.
+\newblock Claude.ai settings: Usage dashboard.
+\newblock disponibil la: \url{https://claude.ai/settings/usage}, 2026.
+\newblock accesat la data: 14.04.2026.
+
+\bibitem{fig_letta_context}
+Letta.
+\newblock Guide to context engineering.
+\newblock disponibil la: \url{https://www.letta.com/blog/guide-to-context-engineering}, 2026.
+\newblock accesat la data: 30.05.2026.
+
+\bibitem{web_ollama}
+Ollama.
+\newblock Ollama: Get up and running with large language models locally.
+\newblock disponibil la: \url{https://ollama.com}, 2026.
+\newblock accesat la data: 16.04.2026.
+
 \bibitem{rosenblattPerceptronProbabilisticModel1958}
 F.~Rosenblatt.
 \newblock The perceptron: A probabilistic model for information storage and organization in the brain.
@@ -44,11 +117,6 @@ Sepp Hochreiter and Jürgen Schmidhuber.
 \newblock Long short-term memory.
 \newblock 9:1735--1780.
 
-\bibitem{vaswaniAttentionAllYou2017}
-Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan~N Gomez, Ł~ukasz Kaiser, and Illia Polosukhin.
-\newblock Attention is all you need.
-\newblock In {\em Advances in Neural Information Processing Systems}, volume~30. Curran Associates, Inc.
-
 \bibitem{web_openai}
 OpenAI.
 \newblock Openai.
@@ -58,14 +126,6 @@ OpenAI.
 \bibitem{brownLanguageModelsAre2020a}
 Tom~B. Brown, Benjamin Mann, Nick Ryder, Melanie Subbiah, Jared Kaplan, Prafulla Dhariwal, Arvind Neelakantan, Pranav Shyam, Girish Sastry, Amanda Askell, Sandhini Agarwal, Ariel Herbert-Voss, Gretchen Krueger, Tom Henighan, Rewon Child, Aditya Ramesh, Daniel~M. Ziegler, Jeffrey Wu, Clemens Winter, Christopher Hesse, Mark Chen, Eric Sigler, Mateusz Litwin, Scott Gray, Benjamin Chess, Jack Clark, Christopher Berner, Sam {McCandlish}, Alec Radford, Ilya Sutskever, and Dario Amodei.
 \newblock Language models are few-shot learners.
-
-\bibitem{zhaoSurveyLargeLanguage2026}
-Wayne~Xin Zhao, Kun Zhou, Junyi Li, Tianyi Tang, Xiaolei Wang, Yupeng Hou, Yingqian Min, Beichen Zhang, Junjie Zhang, Zican Dong, Yifan Du, Chen Yang, Yushuo Chen, Zhipeng Chen, Jinhao Jiang, Ruiyang Ren, Yifan Li, Xinyu Tang, Zikang Liu, Peiyu Liu, Jian-Yun Nie, and Ji-Rong Wen.
-\newblock A survey of large language models.
-
-\bibitem{beltagy_longformer_2020-1}
-Iz~Beltagy, Matthew~E. Peters, and Arman Cohan.
-\newblock Longformer: The long-document transformer.
 
 \bibitem{xu_kv_2026}
 Yichun Xu, Navjot~K. Khaira, and Tejinder Singh.
@@ -80,18 +140,9 @@ Weian Mao, Xi~Lin, Wei Huang, Yuxin Xie, Tianfu Fu, Bohan Zhuang, Song Han, and 
 Jianlin Su, Yu~Lu, Shengfeng Pan, Ahmed Murtadha, Bo~Wen, and Yunfeng Liu.
 \newblock {RoFormer}: Enhanced transformer with rotary position embedding.
 
-\bibitem{huLoRALowRankAdaptation2021}
-Edward~J. Hu, Yelong Shen, Phillip Wallis, Zeyuan Allen-Zhu, Yuanzhi Li, Shean Wang, and Weizhu Chen.
-\newblock {LoRA}: Low-rank adaptation of large language models.
-\newblock version: 1.
-
 \bibitem{leviathanFastInferenceTransformers2023}
 Yaniv Leviathan, Matan Kalman, and Yossi Matias.
 \newblock Fast inference from transformers via speculative decoding.
-
-\bibitem{zhang_embarrassingly_2026-2}
-Ruixiang Zhang, Richard~He Bai, Huangjie Zheng, Navdeep Jaitly, Ronan Collobert, and Yizhe Zhang.
-\newblock Embarrassingly simple self-distillation improves code generation.
 
 \bibitem{zandieh_turboquant_2025-2}
 Amir Zandieh, Majid Daliri, Majid Hadian, and Vahab Mirrokni.
@@ -102,19 +153,9 @@ Tim Dettmers, Artidoro Pagnoni, Ari Holtzman, and Luke Zettlemoyer.
 \newblock {QLoRA}: Efficient finetuning of quantized {LLMs}.
 \newblock 36:10088--10115.
 
-\bibitem{weiChainofThoughtPromptingElicits2022}
-Jason Wei, Xuezhi Wang, Dale Schuurmans, Maarten Bosma, Brian Ichter, Fei Xia, Ed~Chi, Quoc~V. Le, and Denny Zhou.
-\newblock Chain-of-thought prompting elicits reasoning in large language models.
-\newblock 35:24824--24837.
-
 \bibitem{heHARDTESTGENHighQualityRL2025}
 Zhongmou He, Yee~Man Choi, Kexun Zhang, Ivan Bercovich, Jiabao Ji, Junting Zhou, Dejia Xu, Aidan Zhang, Yixiao Zeng, and Lei Li.
 \newblock {HARDTESTGEN}: A high-quality {RL} verifier generation pipeline for {LLM} algorithimic coding.
-
-\bibitem{ouyangTrainingLanguageModels2022}
-Long Ouyang, Jeffrey Wu, Xu~Jiang, Diogo Almeida, Carroll Wainwright, Pamela Mishkin, Chong Zhang, Sandhini Agarwal, Katarina Slama, Alex Ray, John Schulman, Jacob Hilton, Fraser Kelton, Luke Miller, Maddie Simens, Amanda Askell, Peter Welinder, Paul~F Christiano, Jan Leike, and Ryan Lowe.
-\newblock Training language models to follow instructions with human feedback.
-\newblock In {\em Advances in Neural Information Processing Systems}, volume~35, pages 27730--27744. Curran Associates, Inc.
 
 \bibitem{schulhoffPromptReportSystematic2025}
 Sander Schulhoff, Michael Ilie, Nishant Balepur, Konstantine Kahadze, Amanda Liu, Chenglei Si, Yinheng Li, Aayush Gupta, {HyoJung} Han, Sevien Schulhoff, Pranav~Sandeep Dulepet, Saurav Vidyadhara, Dayeon Ki, Sweta Agrawal, Chau Pham, Gerson Kroiz, Feileen Li, Hudson Tao, Ashay Srivastava, Hevander~Da Costa, Saloni Gupta, Megan~L. Rogers, Inna Goncearenco, Giuseppe Sarli, Igor Galynker, Denis Peskoff, Marine Carpuat, Jules White, Shyamal Anadkat, Alexander Hoyle, and Philip Resnik.
@@ -134,19 +175,6 @@ Lei Wang, Wanyu Xu, Yihuai Lan, Zhiqiang Hu, Yunshi Lan, Roy Ka-Wei Lee, and Ee-
 \newblock Plan-and-solve prompting: Improving zero-shot chain-of-thought reasoning by large language models.
 \newblock In Anna Rogers, Jordan Boyd-Graber, and Naoaki Okazaki, editors, {\em Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)}, pages 2609--2634. Association for Computational Linguistics.
 
-\bibitem{yaoReActSynergizingReasoning2022}
-Shunyu Yao, Jeffrey Zhao, Dian Yu, Nan Du, Izhak Shafran, Karthik~R. Narasimhan, and Yuan Cao.
-\newblock {ReAct}: Synergizing reasoning and acting in language models.
-
-\bibitem{xuReWOODecouplingReasoning2023}
-Binfeng Xu, Zhiyuan Peng, Bowen Lei, Subhabrata Mukherjee, Yuchen Liu, and Dongkuan Xu.
-\newblock {ReWOO}: Decoupling reasoning from observations for efficient augmented language models.
-
-\bibitem{liuLostMiddleHow2024}
-Nelson~F. Liu, Kevin Lin, John Hewitt, Ashwin Paranjape, Michele Bevilacqua, Fabio Petroni, and Percy Liang.
-\newblock Lost in the middle: How language models use long contexts.
-\newblock 12:157--173.
-
 \bibitem{vodrahalli_michelangelo_2024}
 Kiran Vodrahalli, Santiago Ontanon, Nilesh Tripuraneni, Kelvin Xu, Sanil Jain, Rakesh Shivanna, Jeffrey Hui, Nishanth Dikkala, Mehran Kazemi, Bahare Fatemi, Rohan Anil, Ethan Dyer, Siamak Shakeri, Roopali Vij, Harsh Mehta, Vinay Ramasesh, Quoc Le, Ed~Chi, Yifeng Lu, Orhan Firat, Angeliki Lazaridou, Jean-Baptiste Lespiau, Nithya Attaluri, and Kate Olszewska.
 \newblock Michelangelo: Long context evaluations beyond haystacks via latent structure queries.
@@ -155,12 +183,6 @@ Kiran Vodrahalli, Santiago Ontanon, Nilesh Tripuraneni, Kelvin Xu, Sanil Jain, R
 \bibitem{liLycheeClusterEfficientLongContext2026}
 Dongfang Li, Zixuan Liu, Gang Lin, Baotian Hu, and Min Zhang.
 \newblock {LycheeCluster}: Efficient long-context inference with structure-aware chunking and hierarchical {KV} indexing.
-
-\bibitem{fig_claude_context}
-Anthropic.
-\newblock Build with claude: Context windows.
-\newblock disponibil la: \url{https://platform.claude.com/docs/en/build-with-claude/context-windows}, 2026.
-\newblock accesat la data: 17.05.2026.
 
 \bibitem{gh_codex}
 OpenAI.
@@ -227,10 +249,6 @@ Mistral AI.
 \newblock Mistral ai models overview.
 \newblock disponibil la: \url{https://docs.mistral.ai/getting-started/models/models_overview/}, 2026.
 \newblock accesat la data: 28.04.2026.
-
-\bibitem{dengSWEBenchProCan2025}
-Xiang Deng, Jeff Da, Edwin Pan, Yannis~Yiming He, Charles Ide, Kanak Garg, Niklas Lauffer, Andrew Park, Nitin Pasari, Chetan Rane, Karmini Sampath, Maya Krishnan, Srivatsa Kundurthy, Sean Hendryx, Zifan Wang, Vijay Bharadwaj, Jeff Holm, Raja Aluri, Chen Bo~Calvin Zhang, Noah Jacobson, Bing Liu, and Brad Kenstler.
-\newblock {SWE}-bench pro: Can {AI} agents solve long-horizon software engineering tasks?
 
 \bibitem{web_anthropic}
 Anthropic.
@@ -412,12 +430,6 @@ Git Project.
 \newblock disponibil la: \url{https://git-scm.com}, 2026.
 \newblock accesat la data: 29.04.2026.
 
-\bibitem{fig_claude_usage}
-Anthropic.
-\newblock Claude.ai settings: Usage dashboard.
-\newblock disponibil la: \url{https://claude.ai/settings/usage}, 2026.
-\newblock accesat la data: 14.04.2026.
-
 \bibitem{web_python}
 Python~Software Foundation.
 \newblock Python programming language official website.
@@ -466,23 +478,11 @@ Urwid Project.
 \newblock disponibil la: \url{https://urwid.org}, 2026.
 \newblock accesat la data: 30.04.2026.
 
-\bibitem{web_ollama}
-Ollama.
-\newblock Ollama: Get up and running with large language models locally.
-\newblock disponibil la: \url{https://ollama.com}, 2026.
-\newblock accesat la data: 16.04.2026.
-
 \bibitem{api_bedrock}
 Amazon~Web Services.
 \newblock Amazon bedrock: The easiest way to build and scale generative ai applications.
 \newblock disponibil la: \url{https://aws.amazon.com/bedrock/}, 2026.
 \newblock accesat la data: 06.05.2026.
-
-\bibitem{fig_letta_context}
-Letta.
-\newblock Guide to context engineering.
-\newblock disponibil la: \url{https://www.letta.com/blog/guide-to-context-engineering}, 2026.
-\newblock accesat la data: 30.05.2026.
 
 \bibitem{lewisRetrievalAugmentedGenerationKnowledgeIntensive2020}
 Patrick Lewis, Ethan Perez, Aleksandra Piktus, Fabio Petroni, Vladimir Karpukhin, Naman Goyal, Heinrich Küttler, Mike Lewis, Wen-tau Yih, Tim Rocktäschel, Sebastian Riedel, and Douwe Kiela.

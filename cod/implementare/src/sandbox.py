@@ -17,7 +17,7 @@ _HOME_PERSONAL_SUBDIRS = {
     "Desktop","Documents","Downloads",
     "Movies","Music","Pictures","Library",
 }
-
+ 
 _AMBIGUOUS_MAX_MB = 500
 _AMBIGUOUS_MAX_FILES = 10_000
 
