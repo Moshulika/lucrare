@@ -2,12 +2,12 @@ from __future__ import annotations
 import os
 import shutil
 import subprocess
+import sys
 from dataclasses import dataclass
 from pathlib import Path
 
 PROJECT_MARKERS = (
     ".git","pyproject.toml","package.json",
-    "Cargo.toml","go.mod","Gemfile",
     "requirements.txt","Makefile",".vibe-cli",
 )
 
@@ -21,11 +21,12 @@ _HOME_PERSONAL_SUBDIRS = {
 _AMBIGUOUS_MAX_MB = 500
 _AMBIGUOUS_MAX_FILES = 10_000
 
+
 @dataclass
 class PolicyResult:
     allow: bool
     reason: str
-    silent: bool = True
+    silent: bool = True  
 
 def _is_hard_denied(cwd: Path, home: Path) -> bool:
     if str(cwd) in _HARD_DENY_ABSOLUTE:
@@ -39,6 +40,7 @@ def _is_hard_denied(cwd: Path, home: Path) -> bool:
         return True
     return False
 
+
 def _has_project_marker(cwd: Path) -> bool:
     return any((cwd / m).exists() for m in PROJECT_MARKERS)
 
@@ -46,29 +48,30 @@ def _has_project_marker(cwd: Path) -> bool:
 def _estimate_size(cwd: Path) -> tuple[int, int]:
     mb = 0
     file_count = 0
-    try:
-        r = subprocess.run(
-            ["du", "-sk", str(cwd)],
-            capture_output=True,
-            text=True,
-            timeout=2,
-        )
-        if r.returncode == 0 and r.stdout.strip():
-            kb = int(r.stdout.split()[0])
-            mb = kb // 1024
-    except Exception:
-        pass
-    try:
-        r = subprocess.run(
-            ["find", str(cwd), "-type", "f"],
-            capture_output=True,
-            text=True,
-            timeout=2,
-        )
-        if r.returncode == 0:
-            file_count = r.stdout.count("\n")
-    except Exception:
-        pass
+    if sys.platform != "win32":
+        try:
+            r = subprocess.run(
+                ["du", "-sk", str(cwd)],
+                capture_output=True,
+                text=True,
+                timeout=2,
+            )
+            if r.returncode == 0 and r.stdout.strip():
+                kb = int(r.stdout.split()[0])
+                mb = kb // 1024
+        except Exception:
+            pass
+        try:
+            r = subprocess.run(
+                ["find", str(cwd), "-type", "f"],
+                capture_output=True,
+                text=True,
+                timeout=2,
+            )
+            if r.returncode == 0:
+                file_count = r.stdout.count("\n")
+        except Exception:
+            pass
     return mb, file_count
 
 def cwd_policy(
@@ -76,12 +79,13 @@ def cwd_policy(
     max_mb: int = _AMBIGUOUS_MAX_MB,
     max_files: int = _AMBIGUOUS_MAX_FILES,
 ) -> PolicyResult:
+    
     home = Path.home()
 
     if os.environ.get("VIBE_SANDBOX_FORCE") == "1":
         return PolicyResult(
             allow=True,
-            reason="VIBE_SANDBOX_FORCE=1 - policy bypassed",
+            reason="VIBE_SANDBOX_FORCE=1 — policy bypassed",
             silent=False,
         )
 
@@ -125,6 +129,7 @@ def cwd_policy(
     )
 
 def docker_available() -> tuple[bool, str]:
+    """Return (ok, reason). Never raises."""
     if shutil.which("docker") is None:
         return False, "docker CLI not found in PATH"
     try:
@@ -194,11 +199,10 @@ class Sandbox:
         cmd = [
             "docker","run","-d","--rm","-v",
             f"{workspace.resolve()}:/workspace:rw",
-            "-w","/workspace","--network",
-            str(network),"--memory",memory,
-            "--cpus",cpus,"--cap-drop","ALL",
-            "--user",f"{os.getuid()}:{os.getgid()}",image,
-            "sleep","infinity",
+            "-w","/workspace","--network",str(network),
+            "--memory",memory,"--cpus",cpus,"--cap-drop","ALL",
+            "--user",f"{os.getuid()}:{os.getgid()}" if sys.platform != "win32" else "0:0",
+            image,"sleep","infinity",
         ]
         try:
             r = subprocess.run(cmd, capture_output=True, text=True, timeout=60)
