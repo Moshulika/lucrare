@@ -1,10 +1,6 @@
-"""Web-research subagent — search the web and synthesize."""
-
 from __future__ import annotations
-
 from src.subagents import register
 from src.subagents.base import Subagent
-
 
 @register
 class WebResearchSubagent(Subagent):
@@ -23,13 +19,13 @@ class WebResearchSubagent(Subagent):
             "Your only tool is `web_search`. You cannot read or write the "
             "filesystem, run shell commands, or take any local action.\n\n"
             "Approach:\n"
-            "  - Issue 1–3 focused queries; do not fan out indefinitely.\n"
+            "  - Issue 1-3 focused queries; do not fan out indefinitely.\n"
             "  - Cross-check claims across results when the topic is "
             "    factual or time-sensitive.\n"
-            "  - Be explicit about uncertainty — if the web doesn't agree, "
+            "  - Be explicit about uncertainty - if the web doesn't agree, "
             "    say so.\n\n"
             "Final report format (Markdown):\n"
-            "  - 1–3 paragraph synthesis (or bullets) answering the "
+            "  - 1-3 paragraph synthesis (or bullets) answering the "
             "    orchestrator's request.\n"
             "  - A `Sources` section listing the URLs you actually relied on, "
             "    each with a one-line description."

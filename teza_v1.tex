@@ -191,6 +191,7 @@
 
   \newpage
   \thispagestyle{empty}
+  \small
 
   \noindent
 
@@ -205,42 +206,45 @@
     \textbf{}
   \end{minipage}
 
-  \vspace{1cm}
+  \vspace{0.4cm}
 
   \begin{center}
     \textbf{TEMA PROIECTULUI DE DIPLOMĂ}\\
     a studentului \textbf{\@author, \@grupa}
   \end{center}
 
-  \vspace{0.5cm}
+  \vspace{0.2cm}
 
   \noindent \textbf{1. Titlul temei:} \@title
 
-  \vspace{0.4cm}
+  \vspace{0.2cm}
 
   \noindent \textbf{2. Descrierea temei:}\\
   Contribuția originală a lucrării va consta în dezvoltarea unei arhitecturi software bazată pe Modele Mari de Limbaj (LLMs - Large Language Models), capabilă să asiste utilizatorul în scrierea, depanarea, documentarea și explicarea codului sursă. Aplicațiile vizate sunt eficientizarea procesului de dezvoltare software și automatizarea sarcinilor repetitive întâlnite în programare. Sistemul propus nu vizează antrenarea de la zero a modelelor, ci implementarea unei soluții agentice care utilizează modele pre-antrenate pentru a executa acțiuni complexe. Cercetarea aferentă va include: sinteza bibliografică a realizărilor actuale din domeniu, utilizarea unui mecanism care permite modelului să utilizeze instrumente pentru a interacționa cu mediul virtual, implementarea unor tehnici de inginerie a prompturilor și gestionarea contextului pentru a asigura relevanța răspunsurilor, validarea experimentală a prototipului dezvoltat prin scenarii de utilizare reale utilizând medii de dezvoltare precum PyCharm~\cite{web_pycharm}/VS Code~\cite{web_vscode} și biblioteci specifice precum LangChain~\cite{web_langchain}, LangGraph~\cite{web_langgraph} sau GoogleADK~\cite{api_google_adk}, concluzionarea rezultatelor obținute și a contribuției originale, cât și enunțarea perspectivelor ulterioare de cercetare.
 
-  \vspace{0.4cm}
+  \vspace{0.2cm}
 
   \noindent \textbf{3. Contribuția originală:}\\
   Proiectarea și implementarea arhitecturii agentului, incluzând logica de selecție și utilizare a instrumentelor, gestionarea contextului și dezvoltarea unei interfețe sau integrarea cu interfețe existente care să permită interacțiunea facilă cu asistentul.
 
-  \vspace{0.4cm}
+  \vspace{0.2cm}
 
   \noindent \textbf{4. Resurse și bibliografie:}
   \begin{itemize}
+    \setlength{\itemsep}{0pt}
+    \setlength{\parsep}{0pt}
+    \setlength{\topsep}{2pt}
     \item Vaswani, Ashish, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N. Gomez, Łukasz Kaiser, and Illia Polosukhin. "Attention is all you need." Advances in neural information processing systems 30 (2017).
     \item Yao, Shunyu, Jeffrey Zhao, Dian Yu, Nan Du, Izhak Shafran, Karthik R. Narasimhan, and Yuan Cao. "React: Synergizing reasoning and acting in language models." In The eleventh international conference on learning representations. 2022.
     \item Bozkurt, Aras, and Ramesh C. Sharma. "Generative AI and prompt engineering: The art of whispering to let the genie out of the algorithmic world." Asian Journal of Distance Education 18, no. 2 (2023): i-vii.
     \item Alto, Valentina. Building LLM Powered Applications: Create intelligent apps and agents with large language models. Packt Publishing Ltd, 2024.
     \item Zhu, He, Tianrui Qin, King Zhu, Heyuan Huang, Yeyi Guan, Jinxiang Xia, Yi Yao et al. "Oagents: An empirical study of building effective agents." arXiv preprint arXiv:2506.15741 (2025).
   \end{itemize}
-  \vspace{1.5cm}
+  \vspace{0.2cm}
 
   \noindent \textbf{5. Data înregistrării temei:} 2025-12-11 22:54:00
 
-  \vspace{1.5cm}
+  \vspace{0.2cm}
 
   \noindent
   \begin{tabular*}{\textwidth}{@{}l@{\extracolsep{\fill}}r@{}}
@@ -248,12 +252,11 @@
     \@director & \@author \\
     & \\
     & \\
-    & \\
     \textbf{Director departament,} & \textbf{Decan,} \\
     \@directordepartament & \@decan
   \end{tabular*}
 
-  \vspace{1.5cm}
+  \vspace{0.2cm}
 
   \noindent Cod Validare: \textbf{621d9dfde3}
   \newpage
@@ -1151,12 +1154,12 @@
   \end{multicols}
 
   \section{Instalare și utilizare}
-
+ 
   Această secțiune descrie cerințele sistemului, pașii de instalare, configurarea inițială, precum și modul de utilizare a aplicației.
 
     \subsection{Cerințe preliminare}
 
-    Aplicația necesită Python 3.10 sau o versiune ulterioară și este disponibilă pe sistemele de operare Linux și macOS; instalarea pe Windows nu este suportată. Pentru accesul la modelele de limbaj este necesar fie un server Ollama local pornit prin \texttt{ollama serve},
+    Aplicația necesită Python 3.10 sau o versiune ulterioară și este disponibilă pe sistemele de operare Linux, macOS și cu suport limitat pentru Windows. Pentru accesul la modelele de limbaj este necesar fie un server Ollama local pornit prin \texttt{ollama serve},
     fie cel puțin o cheie \ac{api} validă pentru unul dintre furnizorii cloud. În lipsa oricărei configurații prealabile, aplicația oferă la pornire un flux interactiv pentru selecția furnizorului și introducerea cheii.
 
     \subsection{Instrucțiuni de instalare} 
@@ -1319,8 +1322,8 @@ curl -fsSL https://raw.githubusercontent.com/Moshulika/vibe-cli/main/scripts/ins
       Aceasta este folosită predominant în sistemele agentice, deoarece aici se pot genera cantități mari de date ce epuizează rapid fereastra de context.
 
       La produsele existente în piață, compactarea are loc în mod automat când conversația atinge în jur de 80\% din mărimea maximă a ferestrei de context pentru modelul respectiv (figura \ref{fig:vibecli-context-threshold}).
-      Acest lucru oferă o margine de eroare pentru a evita pornirea procesului de compactare până nu se termină interacțiunea curentă.
-      \footnote{O interacțiune reprezintă întrebarea utilizatorului și toate procesele pe care le execută agentul până la producerea răspunsului final de către modelul de limbaj}
+      Acest lucru oferă o margine de eroare pentru a evita pornirea procesului de compactare până nu se termină interacțiunea curentă
+      \footnote{O interacțiune reprezintă întrebarea utilizatorului și toate procesele pe care le execută agentul până la producerea răspunsului final de către modelul de limbaj}.
 
       \begin{figure}[H]
         \centering
@@ -1963,7 +1966,6 @@ curl -fsSL https://raw.githubusercontent.com/Moshulika/vibe-cli/main/scripts/ins
 
       \begin{multicols}{2}
         \begin{enumerate}
-          \item Instalare nativă pe Windows;
           \item Execuție de acțiuni la intervale predefinite sau la momente declarate de timp.
         \end{enumerate}
       \end{multicols}
@@ -2416,16 +2418,6 @@ curl -fsSL https://raw.githubusercontent.com/Moshulika/vibe-cli/main/scripts/ins
   Deși interfața de tip \ac{cli} este foarte versatilă, compatibilitatea cu mediile de dezvoltare aduce o granularitate mai mare asupra interacțiunii cu agentul.
   Acesta poate sugera schimbări restrânse (linie cu linie), pe care utilizatorul le poate accepta sau respinge individual.
 
-  \section{Suport nativ pentru Windows}
-
-  Sistemul de operare Windows nu este la fel de prietenos pentru dezvoltatorii software precum macOS sau Linux din cauza
-  terminalului, a comenzilor diferite și a structurii sistemului de fișiere, motiv pentru care implementarea inițială are suport doar pentru
-  cele două sisteme de operare listate anterior.
-
-  Acestea fiind spuse, o bună completare viitoare ar fi suportul nativ pentru Windows, în ciuda diferențelor dintre sistemele de operare pentru a deschide calea către o nouă audiență de utilizatori.
-
-  \newpage
-
   \section{Construirea unui graf de cunoștințe pentru optimizarea înțelegerii proiectelor}
 
   O metodă inovativă care are potențialul de a îmbunătăți contextul unui agent din punctul de vedere al fabricării legăturilor între componentele unui proiect, dar
@@ -2487,7 +2479,7 @@ curl -fsSL https://raw.githubusercontent.com/Moshulika/vibe-cli/main/scripts/ins
   este nu doar fezabilă, ci poate ocupa un loc
   distinct în peisajul actual, dominat de produse strâns legate de ecosistemele distribuitorilor
   mari. Direcțiile de evoluție identificate în capitolul \emph{Dezvoltări viitoare} (integrări
-  \ac{ide}, suport Windows, grafuri de cunoștințe, sandboxing avansat, \ac{sdk} pentru terți)
+  \ac{ide}, grafuri de cunoștințe, sandboxing avansat, \ac{sdk} pentru terți)
   pot transforma prototipul actual într-o platformă matură, capabilă să acompanieze evoluția
   rapidă a domeniului.
 
@@ -2507,52 +2499,7 @@ curl -fsSL https://raw.githubusercontent.com/Moshulika/vibe-cli/main/scripts/ins
 
 % Anexe -----------------
 
-% \input{anexe}  
+\input{anexe}
 
-\lstdefinelanguage{YAMLX}{
-  keywords={true,false,null,yes,no},
-  keywordstyle=\color{blue}\bfseries,
-  sensitive=true,
-  comment=[l]{\#},
-  commentstyle=\color{gray}\itshape,
-  stringstyle=\color{red},
-  morestring=[b]',
-  morestring=[b]"
-}
-
-\lstdefinestyle{anexa}{
-    basicstyle=\ttfamily\tiny,
-    breaklines=true,
-    breakatwhitespace=false,
-    columns=fullflexible,
-    keepspaces=true,
-    numbers=left,
-    numberstyle=\tiny\color{codegray},
-    numbersep=3pt,
-    commentstyle=\color{codegreen},
-    keywordstyle=\color{blue}\bfseries,
-    stringstyle=\color{codepurple},
-    showspaces=false,
-    showstringspaces=false,
-    showtabs=false,
-    tabsize=2,
-    frame=none,
-    aboveskip=2pt,
-    belowskip=2pt,
-    inputencoding=utf8,
-    extendedchars=true,
-}
-
-\chapter*{ANEXE}
-\addcontentsline{toc}{chapter}{ANEXE}
-\markboth{ANEXE}{ANEXE}
-
-\section*{Anexa 1: \texttt{config/config.yml}}
-\addcontentsline{toc}{section}{Anexa 1: config/config.yml}
-\label{anexa:config}
-\begin{multicols}{2}
-\lstinputlisting[style=anexa,language=YAMLX]{cod/implementare/config/config.yml}
-\end{multicols}
- 
 \end{document}
  

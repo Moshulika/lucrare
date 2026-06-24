@@ -1,14 +1,4 @@
-"""
-Subagent base class and orchestrator.
-
-Each subagent runs as its own short LangGraph-style tool-calling loop, reusing
-the parent agent's `permissioned_tools_node` so sandboxing / permission
-inheritance is automatic. The child sees only its filtered tool list and its
-own system prompt. The parent only sees the final string result.
-"""
-
 from __future__ import annotations
-
 import asyncio
 import logging
 import time
@@ -16,19 +6,9 @@ from abc import ABC, abstractmethod
 from copy import deepcopy
 from dataclasses import dataclass, field
 from typing import Any
-
 from langchain_core.messages import HumanMessage, SystemMessage, ToolMessage
 
-
-# ---------------------------------------------------------
-# Result envelope
-# ---------------------------------------------------------
 def _extract_text(response) -> str:
-    """Pull the user-facing text out of an AIMessage response.
-
-    Handles both string-content and Anthropic-style list-of-blocks shapes.
-    Returns "" when no text is present (only thinking / tool blocks).
-    """
     content = getattr(response, "content", None)
     if isinstance(content, str):
         return content
@@ -39,7 +19,6 @@ def _extract_text(response) -> str:
         elif isinstance(block, str):
             parts.append(block)
     return "\n".join(p for p in parts if p)
-
 
 @dataclass
 class SubagentResult:
@@ -52,13 +31,6 @@ class SubagentResult:
     usage: dict = field(default_factory=dict)
 
 
-# ---------------------------------------------------------
-# Subagent ABC
-# ---------------------------------------------------------
-# Shared header prepended to every subagent's system prompt. Keeps the
-# orchestrator contract identical across types and any future subagent: act
-# as an advisor that reports back, don't take state-mutating action unless
-# the orchestrator explicitly told you to, ALWAYS end with a written report.
 SUBAGENT_CONTRACT = """\
 You are a subagent spawned by an orchestrator (the parent agent).
 
@@ -74,19 +46,19 @@ You MUST follow these rules; they take precedence over everything below.
    Do NOT write files, edit files, run mutating shell commands, push
    commits, install packages, send network requests with side effects,
    or take any other action that modifies state UNLESS the orchestrator's
-   prompt explicitly told you to. When in doubt, read and report — let
+   prompt explicitly told you to. When in doubt, read and report - let
    the orchestrator be the one to act on your findings.
 
 3. ALWAYS END WITH A FINAL REPORT
    Your last message MUST be a text reply (no tool call) addressed to the
    orchestrator. Lead with the answer or finding. Cite concrete file paths,
    line ranges, commands, or sources where relevant. Keep it concise but
-   complete — the orchestrator only sees this text, not your intermediate
+   complete - the orchestrator only sees this text, not your intermediate
    steps. If you couldn't finish, say so explicitly and report what you
    did find. Never end silently.
 
 4. NO QUESTIONS
-   You cannot ask the orchestrator clarifying questions — there is no
+   You cannot ask the orchestrator clarifying questions - there is no
    reply channel. Use your best judgement and state assumptions in the
    report.
 
@@ -94,43 +66,27 @@ Type-specific guidance follows below.
 ---
 """
 
-
 class Subagent(ABC):
-    """Subclass and set the class-level attributes, override `system_prompt`."""
-
     name: str = "subagent"
     description: str = ""
     default_timeout_s: int = 120
     max_iterations: int = 20
-    # Tool names this subagent can use. None = inherit parent's full set.
     allowed_tools: list[str] | None = None
-    # Tools to drop after intersecting with parent's set (e.g. never spawn).
     excluded_tools: tuple[str, ...] = ("spawn_subagent",)
 
     def __init__(self, config: dict | None = None) -> None:
         self.config = config or {}
 
-    # ---- overridable hooks ----
     @abstractmethod
     def role_prompt(self, prompt: str, parent_ctx: dict) -> str:
-        """Return the *type-specific* portion of the system prompt.
-
-        The full system prompt sent to the LLM is `SUBAGENT_CONTRACT` (the
-        shared orchestrator rules) followed by this role-specific section.
-        Subclasses should focus on what makes their type unique — toolset
-        conventions, output format expectations, scope notes — and trust the
-        shared contract to enforce the global rules.
-        """
+        ...
 
     def system_prompt(self, prompt: str, parent_ctx: dict) -> str:
-        """Final system prompt — contract + role. Not usually overridden."""
         return SUBAGENT_CONTRACT + self.role_prompt(prompt, parent_ctx)
 
     def tool_names(self, parent_ctx: dict) -> list[str] | None:
-        """Optional override — defaults to `allowed_tools`."""
         return self.allowed_tools
 
-    # ---- main entry point ----
     async def run(
         self,
         prompt: str,
@@ -141,7 +97,6 @@ class Subagent(ABC):
         timeout_s: int,
         parent_tool_call_id: str | None = None,
     ) -> SubagentResult:
-        """Drive the child tool-calling loop with a timeout. Returns one result."""
         from src.logging_setup import emit_event, get_logger
 
         log = get_logger("subagent")
@@ -221,19 +176,15 @@ class Subagent(ABC):
         parent_tool_call_id: str | None = None,
     ) -> SubagentResult:
         """Run the child tool-calling loop until the model stops calling tools."""
-        # Imports are local to avoid circulars (src.subagents is imported by tools.py).
         from src.main import get_active_tools, provider_configs
         from src.providers import get_provider
 
-        # Build the model. We deep-copy the provider's config so we can swap in
-        # the override `model` without polluting global state.
         prov_cfg = provider_configs.get(provider) or {}
         cfg_copy = deepcopy(prov_cfg)
         if model:
             cfg_copy["model"] = model
         llm = get_provider(provider).create_model(cfg_copy)
 
-        # Filter parent's active tools.
         parent_tools = get_active_tools()
         allowed = self.tool_names(parent_ctx)
         excluded = set(self.excluded_tools or ())
@@ -247,11 +198,9 @@ class Subagent(ABC):
 
         llm_with_tools = llm.bind_tools(tools) if tools else llm
 
-        # Capture session id for tracing *before* dropping the Session object.
         parent_sess = parent_ctx.get("session")
         session_id_for_tracing = getattr(parent_sess, "id", None)
 
-        # Build the child context — shallow copy + scoped fields.
         child_ctx: dict[str, Any] = dict(parent_ctx)
         child_ctx["status_label"] = "thinking"
         child_ctx["pending_tool_logs"] = {}
@@ -259,15 +208,10 @@ class Subagent(ABC):
         depth = parent_ctx.get("subagent_depth", 0) + 1
         child_ctx["subagent_depth"] = depth
         child_ctx["parent_tool_call_id"] = parent_tool_call_id
-        # The child is not the chat — drop human-only state so it can't leak.
         child_ctx.pop("messages", None)
         child_ctx.pop("session", None)
         child_ctx["provider"] = provider
 
-        # Build a run config that nests the child's LLM + tool runs under the
-        # parent's LangFuse trace. When tracing is off, callbacks is an empty
-        # list which LangChain treats as a no-op. The metadata keys with the
-        # `langfuse_` prefix are the v3 SDK's grouping primitives.
         lf_handler = parent_ctx.get("langfuse_handler")
         callbacks = [lf_handler] if lf_handler is not None else []
         lf_metadata: dict = {
@@ -287,7 +231,6 @@ class Subagent(ABC):
             "metadata": lf_metadata,
             "run_name": f"subagent:{self.name}",
         }
-        # Stash on child_ctx so _invoke_tools can pick it up for tool.ainvoke.
         child_ctx["_run_config"] = child_run_config
 
         messages: list = [
@@ -319,7 +262,7 @@ class Subagent(ABC):
 
             tool_calls = getattr(response, "tool_calls", None) or []
             if not tool_calls:
-                # No tool calls — extract text and return.
+                # No tool calls - extract text and return.
                 final_text = _extract_text(response)
                 break
 
@@ -329,10 +272,6 @@ class Subagent(ABC):
                 tool_calls, tools, child_ctx
             )
             messages.extend(tool_results)
-
-            # Bound the child's working set — truncate oversized tool_result
-            # bodies in place. Mirrors the eager `tool_truncate` stage; see
-            # src/subagents/compaction.py for the trade-off.
             child_cfg = (
                 (parent_ctx.get("subagents_config") or {}).get("child_context") or {}
             )
@@ -348,7 +287,6 @@ class Subagent(ABC):
                     tail_tokens=int(ht[1]),
                 )
         else:
-            # Hit max_iterations.
             return SubagentResult(
                 text=(
                     f"[subagent '{self.name}' stopped after {self.max_iterations} "
@@ -359,12 +297,6 @@ class Subagent(ABC):
                 error="max_iterations",
                 usage=usage_totals,
             )
-
-        # Final-report enforcement: the model exited the loop cleanly (no
-        # tool calls) but produced no text. Most often a small/local model
-        # running out of context or generating only tool blocks. Nudge it
-        # once for the report — cheaper than letting the parent re-do the
-        # work and easier to spot than a silent return.
         if not final_text.strip() and iterations < self.max_iterations:
             iterations += 1
             messages.append(
@@ -373,7 +305,7 @@ class Subagent(ABC):
                         "You ended without writing a final report. As per "
                         "the system instructions, your last message MUST be "
                         "a text reply to the orchestrator. Write that report "
-                        "now — even a one-sentence summary of what you did "
+                        "now - even a one-sentence summary of what you did "
                         "or couldn't do. Do not call any more tools."
                     )
                 )
@@ -391,13 +323,11 @@ class Subagent(ABC):
                 usage_totals["cache_write"] += int(itd.get("cache_creation") or 0)
                 final_text = _extract_text(response)
             except Exception:
-                # Don't let the retry exception mask the real "no text"
-                # state — the diagnostic below covers it.
                 pass
 
         if not final_text.strip():
             final_text = (
-                f"[subagent '{self.name}' ended without a final report — "
+                f"[subagent '{self.name}' ended without a final report - "
                 "ran the requested work but did not summarise its findings. "
                 "Treat any side-effects as unverified.]"
             )
@@ -412,13 +342,6 @@ class Subagent(ABC):
     async def _invoke_tools(
         self, tool_calls: list, tools: list, child_ctx: dict
     ) -> list[ToolMessage]:
-        """Invoke each tool call with the child ctx bound.
-
-        Routes every call through `request_permission` so subagent tool use
-        is gated identically to parent-agent tool use (same `always_allow`,
-        same prompt UI). Emits `tool.start`/`tool.end` events tagged with
-        `subagent_type` for log filterability.
-        """
         from src.logging_setup import emit_event, get_logger, redact
         from src.permissions import request_permission
         from src.tools import reset_tool_ctx, set_tool_ctx
@@ -496,12 +419,7 @@ class Subagent(ABC):
                     )
                 )
                 continue
-
-            # Deterministic preconditions (read-before-write, etc.). Child
-            # shares the parent's ctx, so guard state (file_reads, config)
-            # is consistent across parent and subagent.
             from src.tool_guards import check_preconditions, run_post_hooks
-
             denied = check_preconditions(name, args, child_ctx)
             if denied is not None:
                 guard_name, reason = denied
@@ -525,10 +443,6 @@ class Subagent(ABC):
             token = set_tool_ctx(child_ctx)
             tool_error: Exception | None = None
             child_run_config = child_ctx.get("_run_config")
-            # Full ToolCall envelope so tools with `InjectedToolCallId`
-            # (e.g. spawn_subagent for nested spawns) get their call id.
-            # When invoked this way, tool.ainvoke returns a ToolMessage
-            # instead of the raw value.
             tool_call_envelope = {
                 "name": name,
                 "args": args,
@@ -571,10 +485,6 @@ class Subagent(ABC):
             out.append(ToolMessage(content=result, tool_call_id=call_id, name=name))
         return out
 
-
-# ---------------------------------------------------------
-# Dispatch entry point used by the spawn_subagent tool
-# ---------------------------------------------------------
 async def run_subagent(
     subagent_type: str,
     prompt: str,
@@ -583,7 +493,6 @@ async def run_subagent(
     timeout_s: int | None = None,
     parent_tool_call_id: str | None = None,
 ) -> SubagentResult:
-    """Look up `subagent_type`, resolve its model, run it, return the result."""
     from src.subagents import get as _get_subagent
 
     cls = _get_subagent(subagent_type)
@@ -599,17 +508,14 @@ async def run_subagent(
             error="unknown_type",
         )
 
-    # Build per-type config from the subagents config block (set by ui/app.py).
     type_cfg = (parent_ctx.get("subagents_config") or {}).get("types", {}).get(
         subagent_type, {}
     ) or {}
 
     instance = cls(type_cfg)
 
-    # Resolve model: preferences override → type default → active chat model.
     provider, model = _resolve_subagent_model(subagent_type, parent_ctx, type_cfg)
 
-    # Enforce depth cap.
     max_depth = int((parent_ctx.get("subagents_config") or {}).get("max_depth", 2))
     cur_depth = int(parent_ctx.get("subagent_depth", 0))
     if cur_depth >= max_depth:
@@ -621,7 +527,6 @@ async def run_subagent(
             error="depth_limit",
         )
 
-    # Resolve timeout (bounded by config caps).
     cfg = parent_ctx.get("subagents_config") or {}
     default_to = int(
         type_cfg.get("default_timeout_s")
@@ -647,22 +552,8 @@ async def run_subagent(
 def _resolve_subagent_model(
     subagent_type: str, parent_ctx: dict, type_cfg: dict
 ) -> tuple[str, str]:
-    """Resolve (provider, model) for a subagent.
-
-    Priority:
-      1. preferences.subagent_models[<type>] = {provider, model}  (set via /subagents)
-      2. Active chat model (parent's provider + its selected model)
-
-    Model selection is intentionally NOT a config.yml concern — it depends on
-    which providers a given user has API keys for, which is per-user state.
-    Use `/subagents <type> <provider> <model>` to pin a model per type.
-    `type_cfg` is still consulted for non-model defaults (max_iterations,
-    default_timeout_s).
-    """
     from src.main import provider_configs
     from ui import preferences
-
-    # 1) Preferences override.
     try:
         override = preferences.get_subagent_model(subagent_type)
     except AttributeError:
@@ -675,13 +566,11 @@ def _resolve_subagent_model(
         ):
             return prov, override["model"]
 
-    # 2) Active chat model.
     prov = parent_ctx.get("provider")
     if prov:
         model = provider_configs.get(prov, {}).get("model")
         if model:
             return prov, model
-    # Last resort — pick any configured provider.
     for name, c in provider_configs.items():
         models = (c or {}).get("models") or []
         if models:

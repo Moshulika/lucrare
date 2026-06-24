@@ -35,7 +35,7 @@ def fix(line):
     line, ph = protect_code_regions(line)
 
     # =========================================================
-    # PREPOSITIONS / PARTICLES — always safe (standalone words)
+    # PREPOSITIONS / PARTICLES - always safe (standalone words)
     # =========================================================
     line = re.sub(r'\bcatre\b', 'către', line)
     line = re.sub(r'\bCatre\b', 'Către', line)
@@ -55,7 +55,7 @@ def fix(line):
     line = re.sub(r'\bintotdeauna\b', 'întotdeauna', line)
 
     # =========================================================
-    # FISIER FAMILY — always safe
+    # FISIER FAMILY - always safe
     # =========================================================
     line = re.sub(r'\bfisierele\b', 'fișierele', line)
     line = re.sub(r'\bfisierului\b', 'fișierului', line)
@@ -66,7 +66,7 @@ def fix(line):
     line = re.sub(r'\bFisier\b', 'Fișier', line)
 
     # =========================================================
-    # QUESTION / ANSWER — always safe
+    # QUESTION / ANSWER - always safe
     # =========================================================
     line = re.sub(r'\bintrebare\b', 'întrebare', line)
     line = re.sub(r'\bintrebari\b', 'întrebări', line)
@@ -78,7 +78,7 @@ def fix(line):
     line = re.sub(r'\braspunsului\b', 'răspunsului', line)
 
     # =========================================================
-    # ABSTRACT NOUNS — unambiguous (no verb/definite confusion)
+    # ABSTRACT NOUNS - unambiguous (no verb/definite confusion)
     # =========================================================
     line = re.sub(r'\btransparenta\b', 'transparență', line)
     line = re.sub(r'\bTransparenta\b', 'Transparență', line)
@@ -121,7 +121,7 @@ def fix(line):
     line = re.sub(r'\bconsistentei\b', 'consistenței', line)
 
     # =========================================================
-    # ACTIONS / SOLUTIONS / FUNCTIONS / SECTIONS — always safe
+    # ACTIONS / SOLUTIONS / FUNCTIONS / SECTIONS - always safe
     # =========================================================
     line = re.sub(r'\bactiunile\b', 'acțiunile', line)
     line = re.sub(r'\bactiunilor\b', 'acțiunilor', line)
@@ -159,7 +159,7 @@ def fix(line):
     line = re.sub(r'\bspecificatie\b', 'specificație', line)
 
     # =========================================================
-    # INTERFACE / EXECUTION / CONVERSATION — always safe
+    # INTERFACE / EXECUTION / CONVERSATION - always safe
     # =========================================================
     line = re.sub(r'\binterfetelor\b', 'interfețelor', line)
     line = re.sub(r'\binterfetei\b', 'interfeței', line)
@@ -256,7 +256,7 @@ def fix(line):
     line = re.sub(r'\badaugat\b', 'adăugat', line)
 
     # =========================================================
-    # METRIC / SEMANTIC — as adjectives only (not definite nouns)
+    # METRIC / SEMANTIC - as adjectives only (not definite nouns)
     # "metrica" after a noun = adjective → metrică
     # "semantica" after a noun = adjective → semantică
     # Pattern: preceded by "și", "o", "singură", "o singură", or after noun
@@ -269,29 +269,29 @@ def fix(line):
     line = re.sub(r'\bpartitionare semantica\b', 'partiționare semantică', line)
 
     # =========================================================
-    # VERB FORMS — only truly unambiguous (not valid infinitives)
+    # VERB FORMS - only truly unambiguous (not valid infinitives)
     # Rule: verbs replaced here are those that CANNOT be infinitives
     # or that always appear in 3rd-person indicative context
     # =========================================================
     # "exista" → "există": "a exista" is rare; overwhelmingly 3rd person
     line = re.sub(r'\bExista\b', 'Există', line)
     line = re.sub(r'\bexista\b', 'există', line)
-    # "returneaza" — no ambiguity, specific conjugation
+    # "returneaza" - no ambiguity, specific conjugation
     line = re.sub(r'\breturneaza\b', 'returnează', line)
-    # "creeaza" — same
+    # "creeaza" - same
     line = re.sub(r'\bcreeaza\b', 'creează', line)
-    # "utilizeaza" — specific conjugation form
+    # "utilizeaza" - specific conjugation form
     line = re.sub(r'\butilizeaza\b', 'utilizează', line)
-    # "captureaza" — same
+    # "captureaza" - same
     line = re.sub(r'\bcaptureaza\b', 'capturează', line)
-    # "instruieste" — same
+    # "instruieste" - same
     line = re.sub(r'\binstruieste\b', 'instruiește', line)
-    # "urmeaza" — used as 3rd person (what follows)
+    # "urmeaza" - used as 3rd person (what follows)
     line = re.sub(r'\burmeaza\b', 'urmează', line)
-    # "intampina" — 3rd person
+    # "intampina" - 3rd person
     line = re.sub(r'\bintampina\b', 'întâmpină', line)
     line = re.sub(r'\bîntampina\b', 'întâmpină', line)
-    # Reflexive constructions — verb after "se" is always 3rd person indicative
+    # Reflexive constructions - verb after "se" is always 3rd person indicative
     line = re.sub(r'\bse lupta\b', 'se luptă', line)
     line = re.sub(r'\bse elimina\b', 'se elimină', line)
     line = re.sub(r'\bse afla\b', 'se află', line)
@@ -303,10 +303,10 @@ def fix(line):
     line = re.sub(r'\bse propaga\b', 'se propagă', line)
     # "necesita" after subject: 3rd person (to need)
     line = re.sub(r'\bnecesita\b', 'necesită', line)
-    # "contine" — specific: almost never "a conține" in these contexts
+    # "contine" - specific: almost never "a conține" in these contexts
     line = re.sub(r'\bcontine\b', 'conține', line)
     line = re.sub(r'\bContine\b', 'Conține', line)
-    # 1st person plural — always safe (modal + "ăm" = different from infinitive)
+    # 1st person plural - always safe (modal + "ăm" = different from infinitive)
     line = re.sub(r'\banalizam\b', 'analizăm', line)
     line = re.sub(r'\babordam\b', 'abordăm', line)
     line = re.sub(r'\blistam\b', 'listăm', line)
@@ -320,7 +320,7 @@ def fix(line):
     line = re.sub(r'\basiguram\b', 'asigurăm', line)
 
     # =========================================================
-    # FEMININE ADJECTIVES — safe; Romanian feminine adj always ends in ă
+    # FEMININE ADJECTIVES - safe; Romanian feminine adj always ends in ă
     # (Definite forms of nouns that look the same are listed below
     # as SKIPPED with a comment)
     # =========================================================
@@ -397,7 +397,7 @@ def fix(line):
     line = re.sub(r'\bPlatforma enterprise\b', 'Platformă enterprise', line)
 
     # =========================================================
-    # PAST PARTICIPLES (feminine) — unambiguous: "este/a fost Xată"
+    # PAST PARTICIPLES (feminine) - unambiguous: "este/a fost Xată"
     # =========================================================
     line = re.sub(r'\bfacilitata\b', 'facilitată', line)
     line = re.sub(r'\butilizata\b', 'utilizată', line)
@@ -453,7 +453,7 @@ def fix(line):
     line = re.sub(r'\bcompletata\b', 'completată', line)  # only "completată", not "completa"
 
     # =========================================================
-    # SPECIFIC PHRASES — context verified by agents
+    # SPECIFIC PHRASES - context verified by agents
     # =========================================================
     line = re.sub(r'\bData fiind\b', 'Dată fiind', line)
     line = re.sub(r'\bNota:', 'Notă:', line)
@@ -517,7 +517,7 @@ def fix(line):
     line = re.sub(r'\bputem rezumă\b', 'putem rezuma', line)
 
     # =========================================================
-    # "și" — replace " si " only when surrounded by word chars
+    # "și" - replace " si " only when surrounded by word chars
     # Skip LaTeX command starts like \si
     # =========================================================
     # Replace standalone "si" not part of any word or LaTeX command

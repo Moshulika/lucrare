@@ -17,12 +17,7 @@ from src.providers import get_provider
 from src.tool_guards import check_preconditions, run_post_hooks
 from src.tools import ALL_TOOLS, reset_tool_ctx, set_tool_ctx
 
-
-# ---------------------------------------------------------
-# 0. Load Configuration
-# ---------------------------------------------------------
 def _resolve_env_vars(value):
-    """Replace ${ENV_VAR} placeholders with actual environment variable values."""
     if isinstance(value, str):
         return re.sub(
             r"\$\{(\w+)\}",
@@ -35,14 +30,10 @@ def _resolve_env_vars(value):
         return [_resolve_env_vars(v) for v in value]
     return value
 
-
 _bundled_config_path = Path(__file__).resolve().parent.parent / "config" / "config.yml"
 
-# Seed ~/.vibe-cli/config.yml from the bundled defaults on first run, and on
-# every subsequent run fill in any keys that have since been added upstream.
-# User values, extras, and comments are preserved.
-from ui.config_init import ensure_user_config  # noqa: E402
-from ui.paths import USER_CONFIG_PATH  # noqa: E402
+from ui.config_init import ensure_user_config  
+from ui.paths import USER_CONFIG_PATH  
 
 ensure_user_config(_bundled_config_path, USER_CONFIG_PATH)
 _config_path = USER_CONFIG_PATH
@@ -50,61 +41,34 @@ _config_path = USER_CONFIG_PATH
 with open(_config_path) as f:
     config = _resolve_env_vars(yaml.safe_load(f))
 
-# Provider catalogs live under `providers:` in config.yml. `provider_configs`
-# is exported alongside `config` so callers don't need to reach into the
-# nested dict (and so we can move the storage shape later without a sweep).
 provider_configs: dict[str, dict] = config.setdefault("providers", {})
-
-# Build list of configured providers (entries that have a models list)
 providers: list[str] = [
     k for k, v in provider_configs.items() if isinstance(v, dict) and v.get("models")
 ]
 
-# Set the active model for each provider to the first in its models list
 for _prov in providers:
     if "model" not in provider_configs[_prov]:
         provider_configs[_prov]["model"] = provider_configs[_prov]["models"][0]
 
 
-# ---------------------------------------------------------
-# 1. Define the Graph State
-# ---------------------------------------------------------
 class AgentState(TypedDict):
-    # The `add_messages` reducer tells LangGraph to append new
-    # messages to the list, rather than overwriting it completely.
     messages: Annotated[list, add_messages]
 
 
-# ---------------------------------------------------------
-# 2. Model Factory
-# ---------------------------------------------------------
 def get_model(provider: str):
-    """Dynamically loads the requested model."""
     cfg = provider_configs.get(provider)
     if cfg is None:
         raise ValueError(f"Unsupported model provider: {provider}")
-
     return get_provider(provider).create_model(cfg)
 
-
-# ---------------------------------------------------------
-# 3. Tool registry
-# ---------------------------------------------------------
-# Active tools are recomputed by ui/app.py after MCP servers connect.
-# Stored as a module-level list so the node closures see updates without
-# recompiling the graph.
 _active_tools: list = list(ALL_TOOLS)
-
 
 def get_active_tools() -> list:
     return list(_active_tools)
 
-
 def set_active_tools(tools: list):
-    """Replace the active tool list (built-ins + MCP)."""
     _active_tools.clear()
     _active_tools.extend(tools)
-
 
 def _tool_by_name(name: str):
     for t in _active_tools:
@@ -112,39 +76,17 @@ def _tool_by_name(name: str):
             return t
     return None
 
-
-# ---------------------------------------------------------
-# 4. Define the Nodes
-# ---------------------------------------------------------
 _ATTACHMENT_ERROR_PHRASES = (
-    "image_url",
-    "image input",
-    "image content",
-    "vision",
-    "multimodal",
-    "modality",
-    "media type",
-    "document",
-    "pdf",
-    "image",
-    "does not support",
-    "unsupported content type",
-    "invalid content type",
-    "no image in",
-    "not accept",
+    "image_url","image input","image content",
+    "vision","multimodal","modality",
+    "media type","document","pdf","image",
+    "does not support","unsupported content type",
+    "invalid content type","no image in","not accept",
 )
 
-
 def _classify_attachment_error(exc: BaseException) -> str | None:
-    """Return "image" / "pdf" / "text" if `exc` looks like a provider rejecting
-    an attachment kind; None otherwise.
-
-    Bulletproof in the sense that any unmatched exception falls through to
-    the existing error path — we never swallow real bugs.
-    """
     msg = " ".join(str(arg) for arg in getattr(exc, "args", ())) or str(exc)
     msg_low = msg.lower()
-    # Provider responses sometimes nest the real message in `body` / `response`.
     for attr in ("body", "response", "message"):
         v = getattr(exc, attr, None)
         if v:
@@ -153,24 +95,15 @@ def _classify_attachment_error(exc: BaseException) -> str | None:
     if not any(p in msg_low for p in _ATTACHMENT_ERROR_PHRASES):
         return None
 
-    # Prefer the most specific kind we can identify.
     if "pdf" in msg_low or "document" in msg_low:
         return "pdf"
     if "image" in msg_low or "vision" in msg_low or "image_url" in msg_low:
         return "image"
     if "multimodal" in msg_low or "modality" in msg_low:
-        # Generic — assume image since that's the dominant case.
         return "image"
     return None
 
-
 def _human_message_has_kind(messages: list, kind: str) -> bool:
-    """Did the most recent HumanMessage contain a block of the given kind?
-
-    Used to scope the "we just got rejected" attribution: only record an
-    "image" / "pdf" no-go if the turn that failed actually had attachments
-    of that kind.
-    """
     for msg in reversed(messages):
         if not isinstance(msg, HumanMessage):
             continue
@@ -194,9 +127,7 @@ def _human_message_has_kind(messages: list, kind: str) -> bool:
 
 
 async def chatbot_node(state: AgentState, config: RunnableConfig):
-    """Invoke the LLM with active tools bound."""
     provider = config.get("configurable", {}).get("provider", "openai")
-    # The parameter shadows the module-level `config`; fetch via globals().
     _module_provider_configs = globals().get("provider_configs") or {}
     model_name = _module_provider_configs.get(provider, {}).get("model")
     llm_log = get_logger("llm")
@@ -215,8 +146,6 @@ async def chatbot_node(state: AgentState, config: RunnableConfig):
     try:
         response = await llm_with_tools.ainvoke(state["messages"])
     except Exception as e:
-        # Detect "model rejected the attachment" before we surface the
-        # error — record a capability "no" so we pre-gate next time.
         kind = _classify_attachment_error(e)
         if kind and model_name and _human_message_has_kind(state["messages"], kind):
             try:
@@ -226,10 +155,7 @@ async def chatbot_node(state: AgentState, config: RunnableConfig):
                     provider, model_name, kind, reason=str(e)[:200]
                 )
             except Exception:
-                # Capability recording must never mask the original error.
                 pass
-            # Annotate the exception with a marker the app loop can read
-            # off so it knows to print a friendlier message.
             try:
                 setattr(e, "_vibe_attachment_kind_rejected", kind)
             except Exception:
@@ -267,9 +193,7 @@ async def chatbot_node(state: AgentState, config: RunnableConfig):
     )
     return {"messages": [response]}
 
-
 def _read_text_safe(path: str) -> str | None:
-    """Best-effort text read for diff capture. None on failure."""
     try:
         p = Path(path).expanduser().resolve()
         if not p.exists():
@@ -280,19 +204,10 @@ def _read_text_safe(path: str) -> str | None:
     except Exception:
         return None
 
-
 def _tool_source(name: str) -> str:
     return ("mcp:" + name.split("__", 1)[0]) if "__" in name else "builtin"
 
-
 async def _run_one_tool_call(tc: dict, app_ctx: dict) -> ToolMessage:
-    """Run a single tool call end-to-end: permission, invoke, log, diff capture.
-
-    Sequential path used by `permissioned_tools_node` for ordinary tools.
-    Spawn-subagent calls reuse this helper via the parallel batch path —
-    they share the exact same plumbing (permissions, logging, ctx binding),
-    just dispatched concurrently when multiple are requested in one turn.
-    """
     from ui.ui import label_for_tool, tool_log_line
 
     tool_log = get_logger("tool_call")
@@ -343,9 +258,6 @@ async def _run_one_tool_call(tc: dict, app_ctx: dict) -> ToolMessage:
             name=name,
         )
 
-    # Tool guards: deterministic preconditions enforced by the framework
-    # (e.g. read-before-write). A denial short-circuits the call and the
-    # error string becomes the tool result so the LLM self-corrects.
     denied = check_preconditions(name, args, app_ctx)
     if denied is not None:
         guard_name, reason = denied
@@ -358,8 +270,6 @@ async def _run_one_tool_call(tc: dict, app_ctx: dict) -> ToolMessage:
             guard=guard_name,
             reason_len=len(reason),
         )
-        # Stash for the session-event recorder so the web UI can flag this
-        # tool_result as guard-rejected without parsing the content string.
         app_ctx.setdefault("pending_precondition_denials", {})[call_id] = {
             "guard": guard_name,
             "reason": reason,
@@ -380,10 +290,6 @@ async def _run_one_tool_call(tc: dict, app_ctx: dict) -> ToolMessage:
 
     ctx_token = set_tool_ctx(app_ctx)
     tool_error: Exception | None = None
-    # Pass the full ToolCall envelope rather than just `args` so tools
-    # that declare `InjectedToolCallId` parameters (e.g. spawn_subagent)
-    # receive their call id. With this shape tool.ainvoke returns a
-    # ToolMessage; otherwise it returns the raw value.
     tool_call_envelope = {
         "name": name,
         "args": args,
@@ -414,8 +320,6 @@ async def _run_one_tool_call(tc: dict, app_ctx: dict) -> ToolMessage:
         duration_ms=(time.perf_counter() - _tool_t0) * 1000.0,
     )
 
-    # Post-hooks: track state used by future preconditions (e.g. file SHA).
-    # Only on a clean invocation — tool errors leave guard state untouched.
     if tool_error is None:
         run_post_hooks(name, args, result, app_ctx)
 
@@ -440,18 +344,6 @@ async def _run_one_tool_call(tc: dict, app_ctx: dict) -> ToolMessage:
 
 
 async def permissioned_tools_node(state: AgentState, config: RunnableConfig):
-    """Tool execution with per-call permission checks.
-
-    Reads the runtime ctx from config["configurable"]["app_ctx"]. Ordinary
-    tool calls run sequentially (their side effects often conflict).
-    `spawn_subagent` calls that arrive in the same assistant turn are
-    batched and run in parallel via `asyncio.gather`, bounded by
-    `subagents.max_parallel` (default 3) — the parent's tool loop blocks
-    on the batch, but each child runs independently.
-
-    Output order preserves the order of `tool_calls` in the input message
-    so tool-id pairing remains stable downstream.
-    """
     import asyncio
 
     last = state["messages"][-1]
@@ -461,13 +353,11 @@ async def permissioned_tools_node(state: AgentState, config: RunnableConfig):
     sub_cfg = (app_ctx.get("subagents_config") or {})
     max_parallel = max(1, int(sub_cfg.get("max_parallel", 3)))
 
-    # Index → ToolMessage map; fills in as calls complete.
     results: dict[int, ToolMessage] = {}
     i = 0
     n = len(tool_calls)
     while i < n:
         tc = tool_calls[i]
-        # Greedy run of consecutive spawn_subagent calls becomes a batch.
         if tc["name"] == "spawn_subagent":
             batch_indices: list[int] = []
             while (
@@ -497,11 +387,6 @@ async def permissioned_tools_node(state: AgentState, config: RunnableConfig):
 
     out_messages: list = [results[k] for k in sorted(results)]
 
-    # Drain pending image injections (set by tools like read_pdf_pages
-    # when as_image=True). For every injection, append a synthesized
-    # HumanMessage carrying the rendered image blocks. The next
-    # chatbot call sees them in a user-shaped message, which is the
-    # one provider-portable place to deliver images mid-conversation.
     injections = app_ctx.pop("pending_image_injections", None) or []
     if injections:
         synth_msg = _build_synthetic_image_human_message(injections)
@@ -513,8 +398,6 @@ async def permissioned_tools_node(state: AgentState, config: RunnableConfig):
 
 
 def _build_synthetic_image_human_message(injections: list[dict]):
-    """Combine one or more pending-injection records into a single
-    HumanMessage with a small text preamble + every image block."""
     blocks: list[dict] = []
     summary_parts: list[str] = []
     for inj in injections:
@@ -522,7 +405,7 @@ def _build_synthetic_image_human_message(injections: list[dict]):
         start = inj.get("page_start")
         end = inj.get("page_end")
         if start is not None and end is not None and start != end:
-            summary_parts.append(f"{name} pages {start}–{end}")
+            summary_parts.append(f"{name} pages {start}-{end}")
         elif start is not None:
             summary_parts.append(f"{name} page {start}")
         else:
@@ -535,18 +418,12 @@ def _build_synthetic_image_human_message(injections: list[dict]):
 
 
 def _record_synthetic_human_event(app_ctx: dict, injections: list[dict], msg) -> None:
-    """Append a KIND_HUMAN session event for the synthetic injection so
-    /resume + dashboard can render it as a non-user message."""
     sess = app_ctx.get("session")
     if sess is None:
         return
     try:
-        # Lazy import to avoid a circular dependency on the UI layer.
         from ui.sessions import KIND_HUMAN as _KIND_HUMAN
 
-        # Build a serialisable content list: keep the preamble text and a
-        # compact placeholder per image block referencing the artifact sha
-        # (the actual bytes already live in the artifact store).
         page_refs: list[dict] = []
         for inj in injections:
             for sha in inj.get("page_shas") or []:
@@ -558,8 +435,6 @@ def _record_synthetic_human_event(app_ctx: dict, injections: list[dict], msg) ->
                     }
                 )
         content = list(getattr(msg, "content", []) or [])
-        # Replace base64 image blocks with the lightweight refs so the
-        # session file stays small. Keep the preamble text block as-is.
         compact = [b for b in content if isinstance(b, dict) and b.get("type") == "text"]
         compact.extend(page_refs)
         meta = {
@@ -577,60 +452,21 @@ def _record_synthetic_human_event(app_ctx: dict, injections: list[dict], msg) ->
         }
         sess.append_event(_KIND_HUMAN, compact, meta=meta)
     except Exception:
-        # Recording is best-effort — never fail the turn because of a
-        # session-log hiccup.
         pass
 
-
 def should_continue(state: AgentState):
-    """Route to tools if the last message has tool calls, otherwise end."""
     last_message = state["messages"][-1]
     if hasattr(last_message, "tool_calls") and last_message.tool_calls:
         return "tools"
     return END
 
-
-# ---------------------------------------------------------
-# 5. Build and Compile the Graph
-# ---------------------------------------------------------
 builder = StateGraph(AgentState)
 
 builder.add_node("chatbot", chatbot_node)
 builder.add_node("tools", permissioned_tools_node)
 
-# START -> chatbot -> (tools -> chatbot)* -> END
 builder.add_edge(START, "chatbot")
 builder.add_conditional_edges("chatbot", should_continue, {"tools": "tools", END: END})
 builder.add_edge("tools", "chatbot")
 
 graph = builder.compile()
-
-# ---------------------------------------------------------
-# 6. Execution Example
-# ---------------------------------------------------------
-if __name__ == "__main__":
-    import asyncio
-
-    async def main():
-        from ui.preferences import get_default_provider
-
-        provider = get_default_provider(provider_configs) or providers[0]
-
-        user_input = "Write a one-line Python function to reverse a string."
-        initial_state = {"messages": [HumanMessage(content=user_input)]}
-
-        run_config = {
-            "configurable": {
-                "provider": provider,
-                "app_ctx": {"skip_permissions": True},
-            }
-        }
-
-        print(f"Routing to {run_config['configurable']['provider']}...\n")
-
-        async for event in graph.astream(initial_state, config=run_config):
-            for node_name, node_state in event.items():
-                latest_message = node_state["messages"][-1].content
-                print(f"[{node_name}]: {latest_message}")
-
-    asyncio.run(main())

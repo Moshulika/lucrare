@@ -1,94 +1,114 @@
 \acswitchoff 
 \babel@toc {romanian}{}\relax 
-\contentsline {chapter}{LISTA FIGURILOR}{10}{chapter*.2}%
-\contentsline {chapter}{LISTA TABELELOR}{12}{chapter*.3}%
-\contentsline {unnumberedsection}{LISTA DE ACRONIME}{13}{chapter*.4}%
-\contentsline {chapter}{INTRODUCERE}{14}{chapter*.5}%
-\contentsline {section}{CONTEXT ȘI MOTIVAȚIE}{14}{section*.6}%
-\contentsline {section}{SCOPUL ȘI OBIECTIVELE LUCRĂRII}{14}{section*.7}%
-\contentsline {section}{METODOLOGIE}{15}{section*.8}%
-\contentsline {section}{CONTRIBUȚII PROPRII ȘI REZULTATE}{15}{section*.9}%
-\contentsline {section}{STRUCTURA LUCRĂRII}{16}{section*.10}%
-\contentsline {chapter}{\numberline {1}CONTEXT, POZIȚIONARE ȘI DECIZII ARHITECTURALE}{17}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Evoluția către modelele mari de limbaj (\ac {llm})}{17}{section.1.1}%
-\contentsline {section}{\numberline {1.2}Maturizarea modelelor mari de limbaj și cercetări actuale}{18}{section.1.2}%
-\contentsline {section}{\numberline {1.3}Fundamentele arhitecturilor agentice și cercetări actuale}{20}{section.1.3}%
-\contentsline {section}{\numberline {1.4}Limitări ale arhitecturilor agentice}{23}{section.1.4}%
-\contentsline {section}{\numberline {1.5}Analiză preliminară a peisajului actual în domeniul inteligenței artificiale concentrată pe aplicații de dezvoltare software}{24}{section.1.5}%
-\contentsline {section}{\numberline {1.6}Plasarea în industrie și oportunități identificate}{25}{section.1.6}%
-\contentsline {subsection}{\numberline {1.6.1}Analiza ecosistemelor proprietare}{26}{subsection.1.6.1}%
-\contentsline {subsection}{\numberline {1.6.2}Analiza soluțiilor open-source}{26}{subsection.1.6.2}%
-\contentsline {subsection}{\numberline {1.6.3}Cerințe pentru o soluție agentică în dezvoltarea software}{27}{subsection.1.6.3}%
-\contentsline {subsection}{\numberline {1.6.4}Nevoia de personalizare}{28}{subsection.1.6.4}%
-\contentsline {subsection}{\numberline {1.6.5}Lipsa de observabilitate}{28}{subsection.1.6.5}%
-\contentsline {subsection}{\numberline {1.6.6}Securitate și confidențialitate}{28}{subsection.1.6.6}%
-\contentsline {subsection}{\numberline {1.6.7}Costul de utilizare}{28}{subsection.1.6.7}%
-\contentsline {section}{\numberline {1.7}Analiză proprie a necesităților și decizii arhitecturale}{29}{section.1.7}%
-\contentsline {subsection}{\numberline {1.7.1}Adoptarea unei arhitecturi modulare}{29}{subsection.1.7.1}%
-\contentsline {subsection}{\numberline {1.7.2}Alegerea limbajului de programare și a cadrului de lucru agentic}{29}{subsection.1.7.2}%
-\contentsline {subsection}{\numberline {1.7.3}Adoptarea motorului pentru interfața cu utilizatorul}{30}{subsection.1.7.3}%
-\contentsline {subsection}{\numberline {1.7.4}Tehnici proprii de gestionare a contextului și a apelurilor la unelte}{31}{subsection.1.7.4}%
-\contentsline {subsection}{\numberline {1.7.5}Suportul pentru date multi-modale}{31}{subsection.1.7.5}%
-\contentsline {subsection}{\numberline {1.7.6}Observabilitate în două straturi}{31}{subsection.1.7.6}%
-\contentsline {subsection}{\numberline {1.7.7}Cercetarea tehnicilor de utilizare optimă pentru arhitecturi locale în dezvoltarea software}{32}{subsection.1.7.7}%
-\contentsline {subsection}{\numberline {1.7.8}Sinteza recomandărilor extrase din experimente}{32}{subsection.1.7.8}%
-\contentsline {chapter}{\numberline {2}IMPLEMENTARE}{33}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Mediul de dezvoltare}{33}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Structura aplicației}{33}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Prezentarea procesului de configurare}{35}{section.2.3}%
-\contentsline {section}{\numberline {2.4}Interfața cu utilizatorul}{35}{section.2.4}%
-\contentsline {section}{\numberline {2.5}Funcționalități de nivel înalt}{37}{section.2.5}%
-\contentsline {section}{\numberline {2.6}Instalare și utilizare}{38}{section.2.6}%
-\contentsline {subsection}{\numberline {2.6.1}Cerințe preliminare}{38}{subsection.2.6.1}%
-\contentsline {subsection}{\numberline {2.6.2}Instrucțiuni de instalare}{38}{subsection.2.6.2}%
-\contentsline {subsection}{\numberline {2.6.3}Configurare la prima rulare}{38}{subsection.2.6.3}%
-\contentsline {subsection}{\numberline {2.6.4}Utilizarea aplicației}{39}{subsection.2.6.4}%
-\contentsline {subsection}{\numberline {2.6.5}Modul neinteractiv}{39}{subsection.2.6.5}%
-\contentsline {section}{\numberline {2.7}Gestionarea contextului și a memoriei}{40}{section.2.7}%
-\contentsline {subsection}{\numberline {2.7.1}Memoria și istoricul conversației}{40}{subsection.2.7.1}%
-\contentsline {subsection}{\numberline {2.7.2}Contextul}{40}{subsection.2.7.2}%
-\contentsline {subsection}{\numberline {2.7.3}\ac {rag}}{42}{subsection.2.7.3}%
-\contentsline {subsection}{\numberline {2.7.4}Gestionarea datelor multi-modale}{42}{subsection.2.7.4}%
-\contentsline {subsection}{\numberline {2.7.5}Compactarea}{43}{subsection.2.7.5}%
-\contentsline {subsection}{\numberline {2.7.6}Tehnici pentru eficientizarea ferestrei de context}{45}{subsection.2.7.6}%
-\contentsline {section}{\numberline {2.8}Implementarea componentelor arhitecturilor agentice moderne}{45}{section.2.8}%
-\contentsline {subsection}{\numberline {2.8.1}Uneltele}{45}{subsection.2.8.1}%
-\contentsline {subsection}{\numberline {2.8.2}Modul de planificare}{47}{subsection.2.8.2}%
-\contentsline {subsection}{\numberline {2.8.3}Capabilitățile predefinite}{48}{subsection.2.8.3}%
-\contentsline {subsection}{\numberline {2.8.4}Subagenții}{48}{subsection.2.8.4}%
-\contentsline {section}{\numberline {2.9}Extensibilitatea}{50}{section.2.9}%
-\contentsline {subsection}{\numberline {2.9.1}\ac {mcp} și suplimentarea uneltelor}{50}{subsection.2.9.1}%
-\contentsline {subsection}{\numberline {2.9.2}Extinderea echipei de subagenți}{50}{subsection.2.9.2}%
-\contentsline {subsection}{\numberline {2.9.3}Dezvoltarea capabilităților și personalizare}{51}{subsection.2.9.3}%
-\contentsline {subsection}{\numberline {2.9.4}Extinderea tehnicilor de compactare}{52}{subsection.2.9.4}%
-\contentsline {section}{\numberline {2.10}Securitatea în mediul agentic}{52}{section.2.10}%
-\contentsline {subsection}{\numberline {2.10.1}Medii securizate de execuție}{52}{subsection.2.10.1}%
-\contentsline {subsection}{\numberline {2.10.2}Permisiuni pentru aprobarea umană a acțiunilor}{53}{subsection.2.10.2}%
-\contentsline {subsection}{\numberline {2.10.3}Filtre, gestionarea intențiilor periculoase și cereri în afara scopului (\ac {oos})}{53}{subsection.2.10.3}%
-\contentsline {section}{\numberline {2.11}Observabilitatea}{53}{section.2.11}%
-\contentsline {subsection}{\numberline {2.11.1}Urmărirea execuției prin Langfuse}{54}{subsection.2.11.1}%
-\contentsline {subsection}{\numberline {2.11.2}Panoul web proprietar}{55}{subsection.2.11.2}%
-\contentsline {chapter}{\numberline {3}EVALUAREA SOLUȚIEI ȘI REZULTATE EXPERIMENTALE}{58}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Poziționarea finală față de concurență}{58}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}Funcționalități prezente în concordanță cu aplicațiile concurente proprietare și \ac {oss}}{60}{subsection.3.1.1}%
-\contentsline {subsection}{\numberline {3.1.2}Funcționalități absente față de aplicațiile concurente}{61}{subsection.3.1.2}%
-\contentsline {section}{\numberline {3.2}Influența lungimii și a exactității instrucțiunilor asupra performanței. De ce un prompt prea exact nu garantează rezultate mai bune.}{61}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Contextul în mediul agentic. Consecințele metodelor de compactare.}{65}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}Metode care elimină date din context}{65}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}Metode care parafrazează contextul}{65}{subsection.3.3.2}%
-\contentsline {subsection}{\numberline {3.3.3}Metode auxiliare}{66}{subsection.3.3.3}%
-\contentsline {subsection}{\numberline {3.3.4}Secvență recomandată de metode de compactare }{66}{subsection.3.3.4}%
-\contentsline {section}{\numberline {3.4}Modele optime pentru sarcini de programare. Influența datelor de antrenare și a mărimii modelului.}{66}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}Rezultate}{67}{subsection.3.4.1}%
-\contentsline {subsection}{\numberline {3.4.2}Analiza rezultatelor}{68}{subsection.3.4.2}%
-\contentsline {subsection}{\numberline {3.4.3}Modelele open-source: evaluarea valorii și a potențialului de utilizare}{70}{subsection.3.4.3}%
-\contentsline {chapter}{\numberline {4}DEZVOLTĂRI VIITOARE}{71}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Automatizări, integrări cu alte programe}{71}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Integrarea cu mediile de dezvoltare}{71}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Suport nativ pentru Windows}{71}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Construirea unui graf de cunoștințe pentru optimizarea înțelegerii proiectelor}{72}{section.4.4}%
-\contentsline {section}{\numberline {4.5}Suport pentru metode de compactare și sandboxing avansate. \ac {sdk} pentru agenți}{72}{section.4.5}%
-\contentsline {unnumberedsection}{CONCLUZII}{73}{chapter*.70}%
-\contentsline {unnumberedsection}{BIBLIOGRAFIE}{74}{chapter*.71}%
-\contentsline {chapter}{ANEXE}{79}{chapter*.72}%
-\contentsline {section}{Anexa 1: config/config.yml}{79}{section*.73}%
+\contentsline {chapter}{LISTA FIGURILOR}{9}{chapter*.2}%
+\contentsline {chapter}{LISTA TABELELOR}{11}{chapter*.3}%
+\contentsline {unnumberedsection}{LISTA DE ACRONIME}{12}{chapter*.4}%
+\contentsline {chapter}{INTRODUCERE}{13}{chapter*.5}%
+\contentsline {section}{CONTEXT ȘI MOTIVAȚIE}{13}{section*.6}%
+\contentsline {section}{SCOPUL ȘI OBIECTIVELE LUCRĂRII}{13}{section*.7}%
+\contentsline {section}{METODOLOGIE}{14}{section*.8}%
+\contentsline {section}{CONTRIBUȚII PROPRII ȘI REZULTATE}{14}{section*.9}%
+\contentsline {section}{STRUCTURA LUCRĂRII}{15}{section*.10}%
+\contentsline {chapter}{\numberline {1}CONTEXT, POZIȚIONARE ȘI DECIZII ARHITECTURALE}{16}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Evoluția către modelele mari de limbaj (\ac {llm})}{16}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Maturizarea modelelor mari de limbaj și cercetări actuale}{17}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Fundamentele arhitecturilor agentice și cercetări actuale}{19}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Limitări ale arhitecturilor agentice}{22}{section.1.4}%
+\contentsline {section}{\numberline {1.5}Analiză preliminară a peisajului actual în domeniul inteligenței artificiale concentrată pe aplicații de dezvoltare software}{23}{section.1.5}%
+\contentsline {section}{\numberline {1.6}Plasarea în industrie și oportunități identificate}{24}{section.1.6}%
+\contentsline {subsection}{\numberline {1.6.1}Analiza ecosistemelor proprietare}{24}{subsection.1.6.1}%
+\contentsline {subsection}{\numberline {1.6.2}Analiza soluțiilor open-source}{25}{subsection.1.6.2}%
+\contentsline {subsection}{\numberline {1.6.3}Cerințe pentru o soluție agentică în dezvoltarea software}{26}{subsection.1.6.3}%
+\contentsline {subsection}{\numberline {1.6.4}Nevoia de personalizare}{27}{subsection.1.6.4}%
+\contentsline {subsection}{\numberline {1.6.5}Lipsa de observabilitate}{27}{subsection.1.6.5}%
+\contentsline {subsection}{\numberline {1.6.6}Securitate și confidențialitate}{27}{subsection.1.6.6}%
+\contentsline {subsection}{\numberline {1.6.7}Costul de utilizare}{27}{subsection.1.6.7}%
+\contentsline {section}{\numberline {1.7}Analiză proprie a necesităților și decizii arhitecturale}{27}{section.1.7}%
+\contentsline {subsection}{\numberline {1.7.1}Adoptarea unei arhitecturi modulare}{28}{subsection.1.7.1}%
+\contentsline {subsection}{\numberline {1.7.2}Alegerea limbajului de programare și a cadrului de lucru agentic}{28}{subsection.1.7.2}%
+\contentsline {subsection}{\numberline {1.7.3}Adoptarea motorului pentru interfața cu utilizatorul}{28}{subsection.1.7.3}%
+\contentsline {subsection}{\numberline {1.7.4}Tehnici proprii de gestionare a contextului și a apelurilor la unelte}{30}{subsection.1.7.4}%
+\contentsline {subsection}{\numberline {1.7.5}Suportul pentru date multi-modale}{30}{subsection.1.7.5}%
+\contentsline {subsection}{\numberline {1.7.6}Observabilitate în două straturi}{30}{subsection.1.7.6}%
+\contentsline {subsection}{\numberline {1.7.7}Cercetarea tehnicilor de utilizare optimă pentru arhitecturi locale în dezvoltarea software}{30}{subsection.1.7.7}%
+\contentsline {subsection}{\numberline {1.7.8}Sinteza recomandărilor extrase din experimente}{31}{subsection.1.7.8}%
+\contentsline {chapter}{\numberline {2}IMPLEMENTARE}{32}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Mediul de dezvoltare}{32}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Structura aplicației}{32}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Prezentarea procesului de configurare}{34}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Interfața cu utilizatorul}{34}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Funcționalități de nivel înalt}{36}{section.2.5}%
+\contentsline {section}{\numberline {2.6}Instalare și utilizare}{37}{section.2.6}%
+\contentsline {subsection}{\numberline {2.6.1}Cerințe preliminare}{37}{subsection.2.6.1}%
+\contentsline {subsection}{\numberline {2.6.2}Instrucțiuni de instalare}{37}{subsection.2.6.2}%
+\contentsline {subsection}{\numberline {2.6.3}Configurare la prima rulare}{37}{subsection.2.6.3}%
+\contentsline {subsection}{\numberline {2.6.4}Utilizarea aplicației}{37}{subsection.2.6.4}%
+\contentsline {subsection}{\numberline {2.6.5}Modul neinteractiv}{38}{subsection.2.6.5}%
+\contentsline {section}{\numberline {2.7}Gestionarea contextului și a memoriei}{39}{section.2.7}%
+\contentsline {subsection}{\numberline {2.7.1}Memoria și istoricul conversației}{39}{subsection.2.7.1}%
+\contentsline {subsection}{\numberline {2.7.2}Contextul}{39}{subsection.2.7.2}%
+\contentsline {subsection}{\numberline {2.7.3}\ac {rag}}{40}{subsection.2.7.3}%
+\contentsline {subsection}{\numberline {2.7.4}Gestionarea datelor multi-modale}{40}{subsection.2.7.4}%
+\contentsline {subsection}{\numberline {2.7.5}Compactarea}{42}{subsection.2.7.5}%
+\contentsline {subsection}{\numberline {2.7.6}Tehnici pentru eficientizarea ferestrei de context}{43}{subsection.2.7.6}%
+\contentsline {section}{\numberline {2.8}Implementarea componentelor arhitecturilor agentice moderne}{43}{section.2.8}%
+\contentsline {subsection}{\numberline {2.8.1}Uneltele}{43}{subsection.2.8.1}%
+\contentsline {subsection}{\numberline {2.8.2}Modul de planificare}{46}{subsection.2.8.2}%
+\contentsline {subsection}{\numberline {2.8.3}Capabilitățile predefinite}{46}{subsection.2.8.3}%
+\contentsline {subsection}{\numberline {2.8.4}Subagenții}{47}{subsection.2.8.4}%
+\contentsline {section}{\numberline {2.9}Extensibilitatea}{49}{section.2.9}%
+\contentsline {subsection}{\numberline {2.9.1}\ac {mcp} și suplimentarea uneltelor}{49}{subsection.2.9.1}%
+\contentsline {subsection}{\numberline {2.9.2}Extinderea echipei de subagenți}{49}{subsection.2.9.2}%
+\contentsline {subsection}{\numberline {2.9.3}Dezvoltarea capabilităților și personalizare}{50}{subsection.2.9.3}%
+\contentsline {subsection}{\numberline {2.9.4}Extinderea tehnicilor de compactare}{50}{subsection.2.9.4}%
+\contentsline {section}{\numberline {2.10}Securitatea în mediul agentic}{51}{section.2.10}%
+\contentsline {subsection}{\numberline {2.10.1}Medii securizate de execuție}{51}{subsection.2.10.1}%
+\contentsline {subsection}{\numberline {2.10.2}Permisiuni pentru aprobarea umană a acțiunilor}{52}{subsection.2.10.2}%
+\contentsline {subsection}{\numberline {2.10.3}Filtre, gestionarea intențiilor periculoase și cereri în afara scopului (\ac {oos})}{52}{subsection.2.10.3}%
+\contentsline {section}{\numberline {2.11}Observabilitatea}{52}{section.2.11}%
+\contentsline {subsection}{\numberline {2.11.1}Urmărirea execuției prin Langfuse}{52}{subsection.2.11.1}%
+\contentsline {subsection}{\numberline {2.11.2}Panoul web proprietar}{53}{subsection.2.11.2}%
+\contentsline {chapter}{\numberline {3}EVALUAREA SOLUȚIEI ȘI REZULTATE EXPERIMENTALE}{57}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Poziționarea finală față de concurență}{57}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Funcționalități prezente în concordanță cu aplicațiile concurente proprietare și \ac {oss}}{59}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Funcționalități absente față de aplicațiile concurente}{60}{subsection.3.1.2}%
+\contentsline {section}{\numberline {3.2}Influența lungimii și a exactității instrucțiunilor asupra performanței. De ce un prompt prea exact nu garantează rezultate mai bune.}{60}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Contextul în mediul agentic. Consecințele metodelor de compactare.}{63}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Metode care elimină date din context}{64}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Metode care parafrazează contextul}{64}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}Metode auxiliare}{64}{subsection.3.3.3}%
+\contentsline {subsection}{\numberline {3.3.4}Secvență recomandată de metode de compactare }{64}{subsection.3.3.4}%
+\contentsline {section}{\numberline {3.4}Modele optime pentru sarcini de programare. Influența datelor de antrenare și a mărimii modelului.}{65}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Rezultate}{66}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}Analiza rezultatelor}{66}{subsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.4.3}Modelele open-source: evaluarea valorii și a potențialului de utilizare}{69}{subsection.3.4.3}%
+\contentsline {chapter}{\numberline {4}DEZVOLTĂRI VIITOARE}{70}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Automatizări, integrări cu alte programe}{70}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Integrarea cu mediile de dezvoltare}{70}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Construirea unui graf de cunoștințe pentru optimizarea înțelegerii proiectelor}{70}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Suport pentru metode de compactare și sandboxing avansate. \ac {sdk} pentru agenți}{71}{section.4.4}%
+\contentsline {unnumberedsection}{CONCLUZII}{72}{chapter*.70}%
+\contentsline {unnumberedsection}{BIBLIOGRAFIE}{73}{chapter*.71}%
+\contentsline {chapter}{ANEXE}{78}{chapter*.72}%
+\contentsline {section}{Anexa 1: config/config.yml}{78}{section*.73}%
+\contentsline {section}{Anexa 2: config/agentic\_bench.yaml}{78}{section*.74}%
+\contentsline {section}{Anexa 3: src/artifacts.py}{80}{section*.75}%
+\contentsline {section}{Anexa 4: src/attachments.py}{81}{section*.76}%
+\contentsline {section}{Anexa 5: src/capabilities.py}{83}{section*.77}%
+\contentsline {section}{Anexa 6: src/clipboard.py}{83}{section*.78}%
+\contentsline {section}{Anexa 7: src/compaction/base.py}{84}{section*.79}%
+\contentsline {section}{Anexa 8: src/compaction/stages/bulk.py}{84}{section*.80}%
+\contentsline {section}{Anexa 9: src/compaction/stages/ref\_substitute.py}{85}{section*.81}%
+\contentsline {section}{Anexa 10: src/compaction/stages/tool\_truncate.py}{85}{section*.82}%
+\contentsline {section}{Anexa 11: src/main.py}{85}{section*.83}%
+\contentsline {section}{Anexa 12: src/multimodal.py}{88}{section*.84}%
+\contentsline {section}{Anexa 13: src/permissions.py}{89}{section*.85}%
+\contentsline {section}{Anexa 14: src/providers.py}{89}{section*.86}%
+\contentsline {section}{Anexa 15: src/sandbox.py}{91}{section*.87}%
+\contentsline {section}{Anexa 16: src/subagents/base.py}{92}{section*.88}%
+\contentsline {section}{Anexa 18: src/subagents/types/web\_research.py}{95}{section*.89}%
+\contentsline {section}{Anexa 19: src/tool\_guards.py}{95}{section*.90}%
+\contentsline {section}{Anexa 20: src/tools.py}{96}{section*.91}%
+\contentsline {section}{Anexa 21: src/tracing.py}{99}{section*.92}%
+\contentsline {section}{Anexa 22: ui/skills.py}{100}{section*.93}%
+\contentsline {section}{Anexa 23: ui/vibe\_md.py}{102}{section*.94}%

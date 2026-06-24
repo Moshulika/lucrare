@@ -66,10 +66,10 @@
     {🖼}{{[img]}}5
 }
 \lstdefinestyle{anexa}{
-    basicstyle=\ttfamily\tiny,
+    basicstyle=\fontsize{4.5}{6}\selectfont\ttfamily,
     breaklines=true,
     breakatwhitespace=false,
-    columns=fullflexible,
+    columns=fixed,
     keepspaces=true,
     numbers=left,
     numberstyle=\tiny\color{codegray},
@@ -144,459 +144,158 @@
 \chapter*{ANEXE}
 \addcontentsline{toc}{chapter}{ANEXE}
 \markboth{ANEXE}{ANEXE}
-\label{anexe:cod}
-
-\noindent Această anexă reproduce codul sursă al aplicației \texttt{vibe-cli}, organizat pe
-fișiere; fiecare anexă conține un fișier, listat pe două coloane. Au fost omise fișierele
-binare, directoarele de cache (\texttt{\_\_pycache\_\_}) și fișierele de inițializare goale
-sau care conțin doar comentarii.
-\bigskip
 
 
-\section*{Anexa 1: \texttt{Makefile}}
-\addcontentsline{toc}{section}{Anexa 1: Makefile}
-\begin{multicols}{2}
-\lstinputlisting[style=anexa,language=make]{cod/implementare/Makefile}
-\end{multicols}
-
-
-\section*{Anexa 2: \texttt{config/config.yml}}
-\addcontentsline{toc}{section}{Anexa 2: config/config.yml}
+\section*{Anexa 1: \texttt{config/config.yml}}
+\addcontentsline{toc}{section}{Anexa 1: config/config.yml}
 \label{anexa:config}
 \begin{multicols}{2}
 \lstinputlisting[style=anexa,language=YAMLX]{cod/implementare/config/config.yml}
 \end{multicols}
 
 
-\section*{Anexa 3: \texttt{config/eval.yml}}
-\addcontentsline{toc}{section}{Anexa 3: config/eval.yml}
+\section*{Anexa 2: \texttt{config/agentic\_bench.yaml}}
+\addcontentsline{toc}{section}{Anexa 2: config/agentic\_bench.yaml}
 \begin{multicols}{2}
-\lstinputlisting[style=anexa,language=YAMLX]{cod/implementare/config/eval.yml}
+\lstinputlisting[style=anexa,language=YAMLX]{cod/implementare/config/agentic_bench.yaml}
 \end{multicols}
 
 
-\section*{Anexa 4: \texttt{pyproject.toml}}
-\addcontentsline{toc}{section}{Anexa 4: pyproject.toml}
-\begin{multicols}{2}
-\lstinputlisting[style=anexa,language={}]{cod/implementare/pyproject.toml}
-\end{multicols}
-
-
-\section*{Anexa 5: \texttt{scripts/install.sh}}
-\addcontentsline{toc}{section}{Anexa 5: scripts/install.sh}
-\begin{multicols}{2}
-\lstinputlisting[style=anexa,language=bash]{cod/implementare/scripts/install.sh}
-\end{multicols}
-
-
-\section*{Anexa 6: \texttt{src/artifacts.py}}
-\addcontentsline{toc}{section}{Anexa 6: src/artifacts.py}
+\section*{Anexa 3: \texttt{src/artifacts.py}}
+\addcontentsline{toc}{section}{Anexa 3: src/artifacts.py}
 \begin{multicols}{2}
 \lstinputlisting[style=anexa,language=Python]{cod/implementare/src/artifacts.py}
 \end{multicols}
 
 
-\section*{Anexa 7: \texttt{src/attachments.py}}
-\addcontentsline{toc}{section}{Anexa 7: src/attachments.py}
+\section*{Anexa 4: \texttt{src/attachments.py}}
+\addcontentsline{toc}{section}{Anexa 4: src/attachments.py}
 \begin{multicols}{2}
 \lstinputlisting[style=anexa,language=Python]{cod/implementare/src/attachments.py}
 \end{multicols}
 
 
-\section*{Anexa 8: \texttt{src/capabilities.py}}
-\addcontentsline{toc}{section}{Anexa 8: src/capabilities.py}
+\section*{Anexa 5: \texttt{src/capabilities.py}}
+\addcontentsline{toc}{section}{Anexa 5: src/capabilities.py}
 \begin{multicols}{2}
 \lstinputlisting[style=anexa,language=Python]{cod/implementare/src/capabilities.py}
 \end{multicols}
 
 
-\section*{Anexa 9: \texttt{src/clipboard.py}}
-\addcontentsline{toc}{section}{Anexa 9: src/clipboard.py}
+\section*{Anexa 6: \texttt{src/clipboard.py}}
+\addcontentsline{toc}{section}{Anexa 6: src/clipboard.py}
 \begin{multicols}{2}
 \lstinputlisting[style=anexa,language=Python]{cod/implementare/src/clipboard.py}
 \end{multicols}
 
 
-\section*{Anexa 10: \texttt{src/compaction/README.md}}
-\addcontentsline{toc}{section}{Anexa 10: src/compaction/README.md}
-\begin{multicols}{2}
-\lstinputlisting[style=anexa,language={}]{cod/implementare/src/compaction/README.md}
-\end{multicols}
-
-
-\section*{Anexa 11: \texttt{src/compaction/\_\_init\_\_.py}}
-\addcontentsline{toc}{section}{Anexa 11: src/compaction/\_\_init\_\_.py}
-\begin{multicols}{2}
-\lstinputlisting[style=anexa,language=Python]{cod/implementare/src/compaction/__init__.py}
-\end{multicols}
-
-
-\section*{Anexa 12: \texttt{src/compaction/base.py}}
-\addcontentsline{toc}{section}{Anexa 12: src/compaction/base.py}
+\section*{Anexa 7: \texttt{src/compaction/base.py}}
+\addcontentsline{toc}{section}{Anexa 7: src/compaction/base.py}
 \begin{multicols}{2}
 \lstinputlisting[style=anexa,language=Python]{cod/implementare/src/compaction/base.py}
 \end{multicols}
 
 
-\section*{Anexa 13: \texttt{src/compaction/stages/\_tool\_helpers.py}}
-\addcontentsline{toc}{section}{Anexa 13: src/compaction/stages/\_tool\_helpers.py}
-\begin{multicols}{2}
-\lstinputlisting[style=anexa,language=Python]{cod/implementare/src/compaction/stages/_tool_helpers.py}
-\end{multicols}
-
-
-\section*{Anexa 14: \texttt{src/compaction/stages/bulk.py}}
-\addcontentsline{toc}{section}{Anexa 14: src/compaction/stages/bulk.py}
+\section*{Anexa 8: \texttt{src/compaction/stages/bulk.py}}
+\addcontentsline{toc}{section}{Anexa 8: src/compaction/stages/bulk.py}
 \begin{multicols}{2}
 \lstinputlisting[style=anexa,language=Python]{cod/implementare/src/compaction/stages/bulk.py}
 \end{multicols}
 
 
-\section*{Anexa 15: \texttt{src/compaction/stages/dedupe.py}}
-\addcontentsline{toc}{section}{Anexa 15: src/compaction/stages/dedupe.py}
-\begin{multicols}{2}
-\lstinputlisting[style=anexa,language=Python]{cod/implementare/src/compaction/stages/dedupe.py}
-\end{multicols}
-
-
-\section*{Anexa 16: \texttt{src/compaction/stages/format\_compress.py}}
-\addcontentsline{toc}{section}{Anexa 16: src/compaction/stages/format\_compress.py}
-\begin{multicols}{2}
-\lstinputlisting[style=anexa,language=Python]{cod/implementare/src/compaction/stages/format_compress.py}
-\end{multicols}
-
-
-\section*{Anexa 17: \texttt{src/compaction/stages/importance\_prune.py}}
-\addcontentsline{toc}{section}{Anexa 17: src/compaction/stages/importance\_prune.py}
-\begin{multicols}{2}
-\lstinputlisting[style=anexa,language=Python]{cod/implementare/src/compaction/stages/importance_prune.py}
-\end{multicols}
-
-
-\section*{Anexa 18: \texttt{src/compaction/stages/ref\_substitute.py}}
-\addcontentsline{toc}{section}{Anexa 18: src/compaction/stages/ref\_substitute.py}
+\section*{Anexa 9: \texttt{src/compaction/stages/ref\_substitute.py}}
+\addcontentsline{toc}{section}{Anexa 9: src/compaction/stages/ref\_substitute.py}
 \begin{multicols}{2}
 \lstinputlisting[style=anexa,language=Python]{cod/implementare/src/compaction/stages/ref_substitute.py}
 \end{multicols}
 
 
-\section*{Anexa 19: \texttt{src/compaction/stages/tool\_summarize.py}}
-\addcontentsline{toc}{section}{Anexa 19: src/compaction/stages/tool\_summarize.py}
-\begin{multicols}{2}
-\lstinputlisting[style=anexa,language=Python]{cod/implementare/src/compaction/stages/tool_summarize.py}
-\end{multicols}
-
-
-\section*{Anexa 20: \texttt{src/compaction/stages/tool\_truncate.py}}
-\addcontentsline{toc}{section}{Anexa 20: src/compaction/stages/tool\_truncate.py}
+\section*{Anexa 10: \texttt{src/compaction/stages/tool\_truncate.py}}
+\addcontentsline{toc}{section}{Anexa 10: src/compaction/stages/tool\_truncate.py}
 \begin{multicols}{2}
 \lstinputlisting[style=anexa,language=Python]{cod/implementare/src/compaction/stages/tool_truncate.py}
 \end{multicols}
 
 
-\section*{Anexa 21: \texttt{src/log\_context.py}}
-\addcontentsline{toc}{section}{Anexa 21: src/log\_context.py}
-\begin{multicols}{2}
-\lstinputlisting[style=anexa,language=Python]{cod/implementare/src/log_context.py}
-\end{multicols}
-
-
-\section*{Anexa 22: \texttt{src/logging\_setup.py}}
-\addcontentsline{toc}{section}{Anexa 22: src/logging\_setup.py}
-\begin{multicols}{2}
-\lstinputlisting[style=anexa,language=Python]{cod/implementare/src/logging_setup.py}
-\end{multicols}
-
-
-\section*{Anexa 23: \texttt{src/main.py}}
-\addcontentsline{toc}{section}{Anexa 23: src/main.py}
+\section*{Anexa 11: \texttt{src/main.py}}
+\addcontentsline{toc}{section}{Anexa 11: src/main.py}
 \begin{multicols}{2}
 \lstinputlisting[style=anexa,language=Python]{cod/implementare/src/main.py}
 \end{multicols}
 
 
-\section*{Anexa 24: \texttt{src/mcp\_client.py}}
-\addcontentsline{toc}{section}{Anexa 24: src/mcp\_client.py}
-\begin{multicols}{2}
-\lstinputlisting[style=anexa,language=Python]{cod/implementare/src/mcp_client.py}
-\end{multicols}
-
-
-\section*{Anexa 25: \texttt{src/multimodal.py}}
-\addcontentsline{toc}{section}{Anexa 25: src/multimodal.py}
+\section*{Anexa 12: \texttt{src/multimodal.py}}
+\addcontentsline{toc}{section}{Anexa 12: src/multimodal.py}
 \begin{multicols}{2}
 \lstinputlisting[style=anexa,language=Python]{cod/implementare/src/multimodal.py}
 \end{multicols}
 
 
-\section*{Anexa 26: \texttt{src/permissions.py}}
-\addcontentsline{toc}{section}{Anexa 26: src/permissions.py}
+\section*{Anexa 13: \texttt{src/permissions.py}}
+\addcontentsline{toc}{section}{Anexa 13: src/permissions.py}
 \begin{multicols}{2}
 \lstinputlisting[style=anexa,language=Python]{cod/implementare/src/permissions.py}
 \end{multicols}
 
 
-\section*{Anexa 27: \texttt{src/providers.py}}
-\addcontentsline{toc}{section}{Anexa 27: src/providers.py}
+\section*{Anexa 14: \texttt{src/providers.py}}
+\addcontentsline{toc}{section}{Anexa 14: src/providers.py}
 \begin{multicols}{2}
 \lstinputlisting[style=anexa,language=Python]{cod/implementare/src/providers.py}
 \end{multicols}
 
 
-\section*{Anexa 28: \texttt{src/sandbox.py}}
-\addcontentsline{toc}{section}{Anexa 28: src/sandbox.py}
+\section*{Anexa 15: \texttt{src/sandbox.py}}
+\addcontentsline{toc}{section}{Anexa 15: src/sandbox.py}
 \begin{multicols}{2}
 \lstinputlisting[style=anexa,language=Python]{cod/implementare/src/sandbox.py}
 \end{multicols}
 
 
-\section*{Anexa 29: \texttt{src/subagents/README.md}}
-\addcontentsline{toc}{section}{Anexa 29: src/subagents/README.md}
-\begin{multicols}{2}
-\lstinputlisting[style=anexa,language={}]{cod/implementare/src/subagents/README.md}
-\end{multicols}
-
-
-\section*{Anexa 30: \texttt{src/subagents/\_\_init\_\_.py}}
-\addcontentsline{toc}{section}{Anexa 30: src/subagents/\_\_init\_\_.py}
-\begin{multicols}{2}
-\lstinputlisting[style=anexa,language=Python]{cod/implementare/src/subagents/__init__.py}
-\end{multicols}
-
-
-\section*{Anexa 31: \texttt{src/subagents/base.py}}
-\addcontentsline{toc}{section}{Anexa 31: src/subagents/base.py}
+\section*{Anexa 16: \texttt{src/subagents/base.py}}
+\addcontentsline{toc}{section}{Anexa 16: src/subagents/base.py}
 \begin{multicols}{2}
 \lstinputlisting[style=anexa,language=Python]{cod/implementare/src/subagents/base.py}
 \end{multicols}
 
 
-\section*{Anexa 32: \texttt{src/subagents/compaction.py}}
-\addcontentsline{toc}{section}{Anexa 32: src/subagents/compaction.py}
-\begin{multicols}{2}
-\lstinputlisting[style=anexa,language=Python]{cod/implementare/src/subagents/compaction.py}
-\end{multicols}
-
-
-\section*{Anexa 33: \texttt{src/subagents/types/code\_search.py}}
-\addcontentsline{toc}{section}{Anexa 33: src/subagents/types/code\_search.py}
-\begin{multicols}{2}
-\lstinputlisting[style=anexa,language=Python]{cod/implementare/src/subagents/types/code_search.py}
-\end{multicols}
-
-
-\section*{Anexa 34: \texttt{src/subagents/types/general.py}}
-\addcontentsline{toc}{section}{Anexa 34: src/subagents/types/general.py}
-\begin{multicols}{2}
-\lstinputlisting[style=anexa,language=Python]{cod/implementare/src/subagents/types/general.py}
-\end{multicols}
-
-
-\section*{Anexa 35: \texttt{src/subagents/types/web\_research.py}}
-\addcontentsline{toc}{section}{Anexa 35: src/subagents/types/web\_research.py}
+\section*{Anexa 17: \texttt{src/subagents/types/web\_research.py}}
+\addcontentsline{toc}{section}{Anexa 18: src/subagents/types/web\_research.py}
 \begin{multicols}{2}
 \lstinputlisting[style=anexa,language=Python]{cod/implementare/src/subagents/types/web_research.py}
 \end{multicols}
 
 
-\section*{Anexa 36: \texttt{src/tool\_guards.py}}
-\addcontentsline{toc}{section}{Anexa 36: src/tool\_guards.py}
+\section*{Anexa 18: \texttt{src/tool\_guards.py}}
+\addcontentsline{toc}{section}{Anexa 19: src/tool\_guards.py}
 \begin{multicols}{2}
 \lstinputlisting[style=anexa,language=Python]{cod/implementare/src/tool_guards.py}
 \end{multicols}
 
 
-\section*{Anexa 37: \texttt{src/tools.py}}
-\addcontentsline{toc}{section}{Anexa 37: src/tools.py}
+\section*{Anexa 19: \texttt{src/tools.py}}
+\addcontentsline{toc}{section}{Anexa 20: src/tools.py}
 \begin{multicols}{2}
 \lstinputlisting[style=anexa,language=Python]{cod/implementare/src/tools.py}
 \end{multicols}
 
 
-\section*{Anexa 38: \texttt{src/tracing.py}}
-\addcontentsline{toc}{section}{Anexa 38: src/tracing.py}
+\section*{Anexa 20: \texttt{src/tracing.py}}
+\addcontentsline{toc}{section}{Anexa 21: src/tracing.py}
 \begin{multicols}{2}
 \lstinputlisting[style=anexa,language=Python]{cod/implementare/src/tracing.py}
 \end{multicols}
 
 
-\section*{Anexa 39: \texttt{ui/app.py}}
-\addcontentsline{toc}{section}{Anexa 39: ui/app.py}
-\begin{multicols}{2}
-\lstinputlisting[style=anexa,language=Python]{cod/implementare/ui/app.py}
-\end{multicols}
-
-
-\section*{Anexa 40: \texttt{ui/commands.py}}
-\addcontentsline{toc}{section}{Anexa 40: ui/commands.py}
-\begin{multicols}{2}
-\lstinputlisting[style=anexa,language=Python]{cod/implementare/ui/commands.py}
-\end{multicols}
-
-
-\section*{Anexa 41: \texttt{ui/config\_init.py}}
-\addcontentsline{toc}{section}{Anexa 41: ui/config\_init.py}
-\begin{multicols}{2}
-\lstinputlisting[style=anexa,language=Python]{cod/implementare/ui/config_init.py}
-\end{multicols}
-
-
-\section*{Anexa 42: \texttt{ui/pastes.py}}
-\addcontentsline{toc}{section}{Anexa 42: ui/pastes.py}
-\begin{multicols}{2}
-\lstinputlisting[style=anexa,language=Python]{cod/implementare/ui/pastes.py}
-\end{multicols}
-
-
-\section*{Anexa 43: \texttt{ui/paths.py}}
-\addcontentsline{toc}{section}{Anexa 43: ui/paths.py}
-\begin{multicols}{2}
-\lstinputlisting[style=anexa,language=Python]{cod/implementare/ui/paths.py}
-\end{multicols}
-
-
-\section*{Anexa 44: \texttt{ui/preferences.py}}
-\addcontentsline{toc}{section}{Anexa 44: ui/preferences.py}
-\begin{multicols}{2}
-\lstinputlisting[style=anexa,language=Python]{cod/implementare/ui/preferences.py}
-\end{multicols}
-
-
-\section*{Anexa 45: \texttt{ui/profile.py}}
-\addcontentsline{toc}{section}{Anexa 45: ui/profile.py}
-\begin{multicols}{2}
-\lstinputlisting[style=anexa,language=Python]{cod/implementare/ui/profile.py}
-\end{multicols}
-
-
-\section*{Anexa 46: \texttt{ui/provider\_handler.py}}
-\addcontentsline{toc}{section}{Anexa 46: ui/provider\_handler.py}
-\begin{multicols}{2}
-\lstinputlisting[style=anexa,language=Python]{cod/implementare/ui/provider_handler.py}
-\end{multicols}
-
-
-\section*{Anexa 47: \texttt{ui/sessions.py}}
-\addcontentsline{toc}{section}{Anexa 47: ui/sessions.py}
-\begin{multicols}{2}
-\lstinputlisting[style=anexa,language=Python]{cod/implementare/ui/sessions.py}
-\end{multicols}
-
-
-\section*{Anexa 48: \texttt{ui/skills.py}}
-\addcontentsline{toc}{section}{Anexa 48: ui/skills.py}
+\section*{Anexa 21: \texttt{ui/skills.py}}
+\addcontentsline{toc}{section}{Anexa 22: ui/skills.py}
 \begin{multicols}{2}
 \lstinputlisting[style=anexa,language=Python]{cod/implementare/ui/skills.py}
 \end{multicols}
 
 
-\section*{Anexa 49: \texttt{ui/ui.py}}
-\addcontentsline{toc}{section}{Anexa 49: ui/ui.py}
-\begin{multicols}{2}
-\lstinputlisting[style=anexa,language=Python]{cod/implementare/ui/ui.py}
-\end{multicols}
-
-
-\section*{Anexa 50: \texttt{ui/updater.py}}
-\addcontentsline{toc}{section}{Anexa 50: ui/updater.py}
-\begin{multicols}{2}
-\lstinputlisting[style=anexa,language=Python]{cod/implementare/ui/updater.py}
-\end{multicols}
-
-
-\section*{Anexa 51: \texttt{ui/vibe\_md.py}}
-\addcontentsline{toc}{section}{Anexa 51: ui/vibe\_md.py}
+\section*{Anexa 22: \texttt{ui/vibe\_md.py}}
+\addcontentsline{toc}{section}{Anexa 23: ui/vibe\_md.py}
 \begin{multicols}{2}
 \lstinputlisting[style=anexa,language=Python]{cod/implementare/ui/vibe_md.py}
-\end{multicols}
-
-
-\section*{Anexa 52: \texttt{web/app.py}}
-\addcontentsline{toc}{section}{Anexa 52: web/app.py}
-\begin{multicols}{2}
-\lstinputlisting[style=anexa,language=Python]{cod/implementare/web/app.py}
-\end{multicols}
-
-
-\section*{Anexa 53: \texttt{web/config.py}}
-\addcontentsline{toc}{section}{Anexa 53: web/config.py}
-\begin{multicols}{2}
-\lstinputlisting[style=anexa,language=Python]{cod/implementare/web/config.py}
-\end{multicols}
-
-
-\section*{Anexa 54: \texttt{web/data/metrics.py}}
-\addcontentsline{toc}{section}{Anexa 54: web/data/metrics.py}
-\begin{multicols}{2}
-\lstinputlisting[style=anexa,language=Python]{cod/implementare/web/data/metrics.py}
-\end{multicols}
-
-
-\section*{Anexa 55: \texttt{web/data/model\_context.py}}
-\addcontentsline{toc}{section}{Anexa 55: web/data/model\_context.py}
-\begin{multicols}{2}
-\lstinputlisting[style=anexa,language=Python]{cod/implementare/web/data/model_context.py}
-\end{multicols}
-
-
-\section*{Anexa 56: \texttt{web/data/pricing.py}}
-\addcontentsline{toc}{section}{Anexa 56: web/data/pricing.py}
-\begin{multicols}{2}
-\lstinputlisting[style=anexa,language=Python]{cod/implementare/web/data/pricing.py}
-\end{multicols}
-
-
-\section*{Anexa 57: \texttt{web/data/repo.py}}
-\addcontentsline{toc}{section}{Anexa 57: web/data/repo.py}
-\begin{multicols}{2}
-\lstinputlisting[style=anexa,language=Python]{cod/implementare/web/data/repo.py}
-\end{multicols}
-
-
-\section*{Anexa 58: \texttt{web/data/sysinfo.py}}
-\addcontentsline{toc}{section}{Anexa 58: web/data/sysinfo.py}
-\begin{multicols}{2}
-\lstinputlisting[style=anexa,language=Python]{cod/implementare/web/data/sysinfo.py}
-\end{multicols}
-
-
-\section*{Anexa 59: \texttt{web/routes/api.py}}
-\addcontentsline{toc}{section}{Anexa 59: web/routes/api.py}
-\begin{multicols}{2}
-\lstinputlisting[style=anexa,language=Python]{cod/implementare/web/routes/api.py}
-\end{multicols}
-
-
-\section*{Anexa 60: \texttt{web/routes/pages.py}}
-\addcontentsline{toc}{section}{Anexa 60: web/routes/pages.py}
-\begin{multicols}{2}
-\lstinputlisting[style=anexa,language=Python]{cod/implementare/web/routes/pages.py}
-\end{multicols}
-
-
-\section*{Anexa 61: \texttt{web/static/css/glass.css}}
-\addcontentsline{toc}{section}{Anexa 61: web/static/css/glass.css}
-\begin{multicols}{2}
-\lstinputlisting[style=anexa,language={}]{cod/implementare/web/static/css/glass.css}
-\end{multicols}
-
-
-\section*{Anexa 62: \texttt{web/static/js/app.js}}
-\addcontentsline{toc}{section}{Anexa 62: web/static/js/app.js}
-\begin{multicols}{2}
-\lstinputlisting[style=anexa,language={}]{cod/implementare/web/static/js/app.js}
-\end{multicols}
-
-
-\section*{Anexa 63: \texttt{web/static/js/charts.js}}
-\addcontentsline{toc}{section}{Anexa 63: web/static/js/charts.js}
-\begin{multicols}{2}
-\lstinputlisting[style=anexa,language={}]{cod/implementare/web/static/js/charts.js}
-\end{multicols}
-
-
-\section*{Anexa 64: \texttt{web/templates/index.html}}
-\addcontentsline{toc}{section}{Anexa 64: web/templates/index.html}
-\begin{multicols}{2}
-\lstinputlisting[style=anexa,language=HTML]{cod/implementare/web/templates/index.html}
 \end{multicols}

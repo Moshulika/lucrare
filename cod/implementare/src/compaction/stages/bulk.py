@@ -1,42 +1,6 @@
-"""
-bulk — threshold stage that brings session size under the target budget by
-acting on whole turns at once. Three strategies share this single stage.
-
-Strategies
-----------
-- **trim**       Drop the oldest whole turns until size <= target. Cheapest
-                 and most predictable; loses information.
-- **summarize**  Drop the oldest whole turns *and* LLM-summarize their
-                 content into a single SystemMessage so the model retains
-                 high-level continuity.
-- **hybrid**     Keep the most recent `min_turns_kept` turns verbatim and
-                 LLM-summarize all earlier dropped turns.
-
-Auto-fallback
--------------
-If the configured strategy is `summarize` or `hybrid` but no LLM is supplied
-(`tctx.llm is None`), the stage transparently falls back to `trim` and
-records the fallback in `notes["fallback"]`. The startup wiring is expected
-to log a one-line warning whenever the active model can't be resolved for
-compaction.
-
-Config (under `compaction.pipeline.<n>.bulk`):
-  enabled:    bool                       default false
-  strategy:   trim | summarize | hybrid  default "hybrid"
-  summarize:
-    model:               (reserved — currently uses the active provider's model)
-    max_summary_tokens:  int               default 1500
-
-`min_turns_kept` is read from the top-level `compaction.trigger.min_turns_kept`
-via the orchestrator (passed in `tctx.min_turns_kept`).
-"""
-
 from __future__ import annotations
-
 from typing import Any
-
 from langchain_core.messages import HumanMessage, SystemMessage
-
 from src.compaction.base import (
     ThresholdContext,
     ThresholdResult,
@@ -49,7 +13,6 @@ from ui.sessions import (
     KIND_HUMAN,
     KIND_SYSTEM_PROMPT,
 )
-
 
 class Bulk(ThresholdStage):
     name = "bulk"
@@ -65,14 +28,12 @@ class Bulk(ThresholdStage):
         self.max_summary_tokens: int = int(sumcfg.get("max_summary_tokens", 1500))
 
     async def apply_threshold(self, tctx: ThresholdContext) -> ThresholdResult:
-        # Resolve effective strategy with auto-fallback.
         effective = self.strategy
         fallback_reason: str | None = None
         if effective in ("summarize", "hybrid") and tctx.llm is None:
-            fallback_reason = f"{effective} requested but no LLM available — using trim"
+            fallback_reason = f"{effective} requested but no LLM available - using trim"
             effective = "trim"
 
-        # Build turn-ordered groupings of events.
         turn_order: list[str] = []
         events_by_turn: dict[str, list[dict]] = {}
         for evt in tctx.events:
@@ -86,14 +47,9 @@ class Bulk(ThresholdStage):
 
         if not turn_order:
             return ThresholdResult(notes={"reason": "no turns yet"})
-
-        # Determine which turns to drop. Always preserve the last
-        # `min_turns_kept` turns. Then drop oldest until estimated size is
-        # below target.
         protected = set(turn_order[-tctx.min_turns_kept :]) if tctx.min_turns_kept > 0 else set()
         droppable = [t for t in turn_order if t not in protected]
 
-        # Cheap per-turn size estimate from current event projections.
         def _turn_size(tid: str) -> int:
             return sum(
                 approx_tokens(stringify(e.get("projected") or e.get("content")))
@@ -118,8 +74,6 @@ class Bulk(ThresholdStage):
             evt["id"]
             for tid in drop
             for evt in events_by_turn[tid]
-            # System prompts are never dropped — they live outside the turn flow
-            # but defensive guard in case they were ever stamped with a turn_id.
             if evt["kind"] != KIND_SYSTEM_PROMPT
         ]
 
@@ -145,7 +99,6 @@ class Bulk(ThresholdStage):
 
     async def _summarize_turns(self, llm, turn_event_lists: list[list[dict]]) -> str:
         """Ask the LLM to compress dropped turns into a short summary."""
-        # Build a transcript of the dropped turns from human + final assistant text.
         lines: list[str] = []
         for evts in turn_event_lists:
             human = next((e for e in evts if e["kind"] == KIND_HUMAN), None)

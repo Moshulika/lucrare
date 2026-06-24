@@ -1,1 +1,0 @@
-"""vibe-cli web analytics panel — read-only Flask UI over ~/.vibe-cli/sessions."""

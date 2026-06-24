@@ -1,40 +1,4 @@
-"""
-vibe-cli — Content-addressed artifact store.
-
-Large tool outputs (file reads, search results, command output) that would
-otherwise dominate the LLM context can be moved here and replaced in the
-projected message stream with a small handle:
-
-    @artifact:<sha256-prefix>
-
-The `fetch_artifact` tool lets the agent re-hydrate a payload (optionally a
-byte range) when it actually needs the content again.
-
-Layout
-------
-    ~/.vibe-cli/artifacts/<session-id>/<sha256>.<ext>
-    ~/.vibe-cli/artifacts/<session-id>/<sha256>.meta.json   (kind, bytes, ts)
-
-Storage is sha256-keyed so identical payloads stored twice within a session
-deduplicate naturally on disk.
-
-Lifecycle
----------
-- TTL: 30 days from last-modified time.
-- Delete-on-session-delete: when a session file is removed, callers should
-  invoke `purge_session(session_id)` to drop its artifact directory.
-- GC is lazy and stat-based — `gc_expired()` walks the artifact root once,
-  triggered opportunistically (e.g. on session open). There is no daemon.
-
-Future work
------------
-- Cross-session deduplication (a single global content-addressed pool with
-  per-session reference counting). Skipped for now to keep deletion simple.
-- Compression of stored payloads for large text artifacts.
-"""
-
 from __future__ import annotations
-
 import hashlib
 import json
 import shutil
@@ -42,25 +6,16 @@ import time
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Literal
-
 from langchain_core.tools import tool
-
 from ui.paths import ARTIFACTS_DIR, session_artifacts_dir
 
-# 30 days, in seconds. Documented in the module docstring.
 ARTIFACT_TTL_SECONDS = 30 * 24 * 60 * 60
 
 HANDLE_PREFIX = "@artifact:"
-SHA_PREFIX_LEN = 12  # short handle length for in-context references
+SHA_PREFIX_LEN = 12 
 
-
-# ---------------------------------------------------------
-# Data
-# ---------------------------------------------------------
 @dataclass(frozen=True)
 class ArtifactRef:
-    """A handle pointing at a stored artifact payload."""
-
     session_id: str
     sha256: str
     kind: str
@@ -84,13 +39,7 @@ class ArtifactRef:
             "ts": time.time(),
         }
 
-
-# ---------------------------------------------------------
-# Store
-# ---------------------------------------------------------
 class ArtifactStore:
-    """Per-session content-addressed store."""
-
     def __init__(self, session_id: str):
         self.session_id = session_id
         self.root = session_artifacts_dir(session_id)
@@ -108,7 +57,6 @@ class ArtifactStore:
         kind: str = "text",
         ext: str = "txt",
     ) -> ArtifactRef:
-        """Write a payload, returning its ref. Idempotent on identical bytes."""
         data = payload.encode("utf-8") if isinstance(payload, str) else payload
         sha = hashlib.sha256(data).hexdigest()
         self.root.mkdir(parents=True, exist_ok=True)
@@ -132,7 +80,6 @@ class ArtifactStore:
         return ref
 
     def resolve(self, short_or_full: str) -> ArtifactRef | None:
-        """Resolve a short or full sha to a ref by scanning meta files."""
         if not self.root.exists():
             return None
         prefix = short_or_full
@@ -171,27 +118,13 @@ class ArtifactStore:
                 data = fh.read(max(0, end - start))
         return data.decode("utf-8", errors="replace") if mode == "text" else data
 
-
-# ---------------------------------------------------------
-# Lifecycle helpers
-# ---------------------------------------------------------
 def purge_session(session_id: str) -> None:
-    """Remove a session's entire artifact directory.
-
-    Call this from the session-delete path so artifacts don't outlive the
-    session that referenced them.
-    """
     d = session_artifacts_dir(session_id)
     if d.exists():
         shutil.rmtree(d, ignore_errors=True)
 
 
 def gc_expired(now: float | None = None) -> int:
-    """Lazy garbage collect artifact dirs older than ARTIFACT_TTL_SECONDS.
-
-    Returns the number of session directories removed. Stat-based, no daemon —
-    intended to be invoked opportunistically (e.g. once on session open).
-    """
     if not ARTIFACTS_DIR.exists():
         return 0
     cutoff = (now if now is not None else time.time()) - ARTIFACT_TTL_SECONDS
@@ -208,16 +141,8 @@ def gc_expired(now: float | None = None) -> int:
             removed += 1
     return removed
 
-
-# ---------------------------------------------------------
-# Tool exposed to the agent
-# ---------------------------------------------------------
 def make_fetch_artifact_tool(session_id: str):
-    """Build a `fetch_artifact` tool bound to a specific session's store.
 
-    The tool is built per-session because handles are session-scoped. Wire
-    this into the agent's tool list at session start.
-    """
     store = ArtifactStore(session_id)
 
     @tool
@@ -236,18 +161,13 @@ def make_fetch_artifact_tool(session_id: str):
         data = store.read(h, mode="text", byte_range=byte_range)
         if data is None:
             return f"Artifact not found: {handle}"
-        return data  # type: ignore[return-value]
+        return data
 
     return fetch_artifact
 
 
 __all__ = [
-    "ArtifactRef",
-    "ArtifactStore",
-    "HANDLE_PREFIX",
-    "SHA_PREFIX_LEN",
-    "ARTIFACT_TTL_SECONDS",
-    "purge_session",
-    "gc_expired",
-    "make_fetch_artifact_tool",
+    "ArtifactRef","ArtifactStore","HANDLE_PREFIX",
+    "SHA_PREFIX_LEN","ARTIFACT_TTL_SECONDS","purge_session",
+    "gc_expired","make_fetch_artifact_tool",
 ]

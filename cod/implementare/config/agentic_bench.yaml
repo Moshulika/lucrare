@@ -1,0 +1,284 @@
+name: agentic_bench
+description: >
+  Five-stage agentic software-development benchmark targeting the
+  vibe-cli repository. Each task stresses one additional capability:
+  Task 1 (read-only comprehension) → Task 2 (multi-file navigation +
+  surgical edit) → Task 3 (cross-file refactor + tests) → Task 4
+  (subtle bug hunt) → Task 5 (greenfield feature design). Stages 2–5
+  run in throwaway git worktrees so the source repo is never modified.
+cases:
+  - id: task_01_comprehension
+    workspace: null   # read-only; runs in the source tree directly
+    allowed_tools: "read_file,list_directory"
+    max_turns: 6
+    input: |
+      Read the file `src/tools.py` in the current working directory and
+      produce a numbered list of every Python function decorated with
+      `@tool` (the langchain decorator). For each one, give a one-sentence
+      description of what it does.
+
+      Do not modify any files. Reply with only the numbered list — no
+      preamble.
+    expected_output: |
+      1. web_search — performs a DuckDuckGo web search
+      2. read_file — reads a file from disk
+      3. write_file — writes content to a file
+      4. edit_file — edits a file by replacing a string
+      5. list_directory — lists files in a directory
+      6. run_command — executes a shell command
+      7. run_skill — loads and applies a skill
+      8. remember — appends a learning to VIBE.md
+      9. fetch_artifact — retrieves a stored artifact by handle
+    expected_tools: [read_file]
+    tags: [baseline, comprehension]
+    checks: []
+  - id: task_02_focused_edit
+    workspace: fresh_worktree
+    allowed_tools: "read_file,list_directory,write_file,edit_file,run_command"
+    max_turns: 15
+    input: |
+      The vibe-cli project (you are in the project root) has a slash-command
+      registry. Locate it yourself — do not ask. Add a new command named
+      `/health` that, when invoked, prints exactly `vibe-cli OK` to the
+      console.
+
+      Requirements:
+      - The command must be registered using the same pattern as existing
+        commands (look at e.g. `/help` or `/preferences` for reference).
+      - Importing `ui.commands` must place the string "health" as a key in
+        the `COMMANDS` dict (no leading slash).
+      - Do not break any existing command.
+
+      When done, reply with the file path and line where you registered it.
+    expected_output: ""
+    expected_tools: [read_file, write_file]
+    tags: [navigation, edit]
+    checks:
+      - name: command_registered_in_source
+        type: file_check
+        paths:
+          - path: ui/commands.py
+            must_contain: "health"
+      - name: command_runs
+        type: command_check
+        cmd: |
+          $VIBE_PYTHON -c "import sys; sys.path.insert(0, '.'); from ui.commands import COMMANDS; assert 'health' in COMMANDS, 'health not in COMMANDS'; print('OK')"
+        timeout: 20
+  - id: task_03_passthrough_stage
+    workspace: fresh_worktree
+    allowed_tools: "read_file,list_directory,write_file,edit_file,run_command"
+    max_turns: 25
+    input: |
+      Add a new no-op compaction stage called `passthrough` to the
+      vibe-cli project (you are in the project root).
+
+      Requirements:
+      - File: `src/compaction/stages/passthrough.py`.
+      - It must define a class that inherits from `src.compaction.base.Stage`
+        with `mode = "eager"`. The class name is up to you.
+      - The class's `apply_eager(event, *, store)` must leave the event
+        byte-for-byte unchanged and return False.
+      - Register it under the key `"passthrough"` in `EAGER_REGISTRY`
+        in `src/compaction/__init__.py`.
+      - Honor the existing `enabled` config convention (the base class
+        already handles this — don't reinvent it).
+
+      Look at `src/compaction/stages/format_compress.py` for a working
+      example of how an eager stage is structured.
+
+      When done, reply with a one-line summary.
+    expected_output: ""
+    expected_tools: [read_file, write_file]
+    tags: [refactor, registry]
+    inject_files:
+      - src: eval/examples/hidden_tests/task_03_passthrough_test.py
+        dst: tests/hidden/task_03_passthrough_test.py
+    checks:
+      - name: stage_file_exists
+        type: file_check
+        paths:
+          - path: src/compaction/stages/passthrough.py
+            importable: true
+          - path: src/compaction/__init__.py
+            must_contain: "passthrough"
+      - name: hidden_tests_pass
+        type: command_check
+        cmd: "$VIBE_PYTHON -m pytest tests/hidden/task_03_passthrough_test.py -q --no-header 2>&1"
+        timeout: 90
+  - id: task_04_bug_hunt
+    workspace: fresh_worktree
+    allowed_tools: "read_file,list_directory,write_file,edit_file,run_command"
+    max_turns: 20
+    input: |
+      In `ui/app.py` of the vibe-cli project (you are in the project root),
+      read the function `_resolve_compaction_llm` carefully.
+
+      Question: what happens on the next threshold-pass compaction if a
+      user previously set `preferences.compaction_model` to a provider
+      whose API key has since been removed from
+      `preferences.api_keys` — but the cached provider config still
+      reports a (stale) value for that key?
+
+      Identify the failure mode by reading the code only — do not try
+      to reproduce. Then implement a minimal fix that:
+      - falls back to the chat model when the stale-key path would have
+        led to a downstream failure,
+      - logs a single-line warning at WARNING level via
+        `emit_event(get_logger("compaction"), "compaction.llm_resolve", ...)`
+        (consistent with the existing pattern in that function),
+      - does NOT silently swallow unrelated errors.
+
+      State your hypothesis BEFORE you edit. After editing, explain in
+      one paragraph why your fix doesn't mask other failure modes.
+    expected_output: ""
+    expected_tools: [read_file]
+    tags: [bug_hunt, reasoning]
+    checks:
+      - name: function_modified
+        type: command_check
+        cmd: |
+          $VIBE_PYTHON -c "import re, pathlib; t = pathlib.Path('ui/app.py').read_text(); n = len(re.findall(r'compaction\\.llm_resolve', t)); assert n >= 3, f'expected >=3 emissions of compaction.llm_resolve (baseline=2; fix must add one), got {n}'; print('OK')"
+        timeout: 20
+      - name: hypothesis_quality
+        type: llm_judge
+        provider: bedrock
+        model: us.anthropic.claude-sonnet-4-5-20250929-v1:0
+        rubric_path: eval/examples/judge_rubrics/task_04_bug_hunt.md
+        max_score: 3
+  - id: task_05_compliance_evaluator
+    workspace: fresh_worktree
+    allowed_tools: "read_file,list_directory,write_file,edit_file,run_command"
+    max_turns: 40
+    timeout: 1200
+    input: |
+      Design and implement an instruction-compliance evaluator for
+      vibe-cli (you are in the project root).
+
+      Requirements:
+      1. Create `src/evals/instruction_compliance.py` (creating
+         `src/evals/__init__.py` if it doesn't exist).
+      2. Expose a public function with signature
+            score_turn(session_event: dict, instructions: str) -> dict
+         returning `{"score": float, "rationale": str}` where score is in
+         [0, 1].
+      3. Internally, resolve the judge LLM by reusing the same logic
+         that `_resolve_compaction_llm` in `ui/app.py` uses — IMPORT it,
+         do NOT re-implement model selection.
+      4. If the resolver returns `None`, your function must return
+         `{"score": 0.0, "rationale": "no LLM available"}` and not raise.
+      5. Add a `/eval-last` slash command that scores the most recent
+         `assistant_text` event in the current session and prints the
+         dict (use the `@command` decorator from `ui/commands.py`).
+      6. When `ctx["last_trace_id"]` is set, post the score to LangFuse
+         via `post_score()` from `src/tracing.py`.
+      7. Include one unit test under `tests/test_instruction_compliance.py`
+         that mocks the LLM (no network call).
+
+      When done, reply with: design choices, any deviations from the
+      spec, and one tradeoff you accepted.
+    expected_output: ""
+    expected_tools: [read_file, write_file]
+    tags: [feature, design]
+    inject_files:
+      - src: eval/examples/hidden_tests/task_05_compliance_test.py
+        dst: tests/hidden/task_05_compliance_test.py
+    checks:
+      - name: module_exists
+        type: file_check
+        paths:
+          - path: src/evals/instruction_compliance.py
+            must_contain_symbol: score_turn
+      - name: command_registered
+        type: file_check
+        paths:
+          - path: ui/commands.py
+            must_contain: "eval-last"
+      - name: hidden_tests_pass
+        type: command_check
+        cmd: "$VIBE_PYTHON -m pytest tests/hidden/task_05_compliance_test.py -q --no-header 2>&1"
+        timeout: 90
+      - name: design_quality
+        type: llm_judge
+        provider: bedrock
+        model: us.anthropic.claude-sonnet-4-6
+        rubric_path: eval/examples/judge_rubrics/task_05_feature.md
+        max_score: 3
+  - id: task_06_recency_window_stage
+    workspace: fresh_worktree
+    allowed_tools: "read_file,list_directory,write_file,edit_file,run_command"
+    max_turns: 40
+    timeout: 1200
+    input: |
+      Add a new *threshold-mode* compaction stage called `recency_window`
+      to the vibe-cli project (you are in the project root). It trims
+      the session log down to the N most-recent complete turns when
+      context utilisation crosses the threshold.
+
+      Requirements:
+      - File: `src/compaction/stages/recency_window.py`.
+      - Define a class inheriting from
+        `src.compaction.base.ThresholdStage` (class name is up to you;
+        e.g. `RecencyWindow`). It must have `mode = "threshold"`.
+      - Implement `async def apply_threshold(self, tctx: ThresholdContext)
+        -> ThresholdResult`. The stage must:
+          * Group `tctx.events` into "turns": a turn starts at a
+            `human` event (`KIND_HUMAN`) and contains every event up
+            to (but not including) the next `human` event. Any events
+            *before* the first `human` (`system_prompt`, etc.) belong
+            to a synthetic "turn 0" that the stage MUST always keep
+            (those are session-scoped, not turn-scoped).
+          * Keep the most-recent `keep_turns` turns
+            (`self.config["keep_turns"]`, default 6).
+          * NEVER drop below `tctx.min_turns_kept` — that floor wins
+            even if `keep_turns` is smaller.
+          * Return `ThresholdResult(removed_event_ids=[...])` listing
+            every event ID in the dropped older turns. The orchestrator
+            handles freeing-estimate accounting and the
+            `KIND_COMPACTION` event — your stage just declares which
+            IDs go.
+      - Register the stage under the key `"recency_window"` in
+        `THRESHOLD_REGISTRY` in `src/compaction/__init__.py`.
+      - Honor `self.enabled` (the base class already gates this — don't
+        re-implement).
+
+      Look at `src/compaction/stages/dedupe.py` for a working threshold
+      stage and at `src/compaction/__init__.py` (around `THRESHOLD_REGISTRY`)
+      for the registry wiring.
+
+      Edge cases the implementation must handle correctly:
+      1. Fewer than `keep_turns` total turns → return empty
+         `removed_event_ids` (the stage is a no-op).
+      2. `keep_turns < tctx.min_turns_kept` → the floor wins; behave as
+         if `keep_turns = tctx.min_turns_kept`.
+      3. The synthetic "turn 0" (events before the first `KIND_HUMAN`)
+         is never dropped, even if it pushes the kept-count above
+         `keep_turns`.
+      4. An event with no `id` field — defensive: skip it (don't crash,
+         don't add `None` to `removed_event_ids`).
+
+      When done, reply with: design choices, the turn-grouping
+      invariant in one sentence, and one tradeoff you accepted.
+    expected_output: ""
+    expected_tools: [read_file, write_file]
+    tags: [refactor, registry, design]
+    inject_files:
+      - src: eval/examples/hidden_tests/task_06_recency_test.py
+        dst: tests/hidden/task_06_recency_test.py
+    checks:
+      - name: stage_file_exists
+        type: file_check
+        paths:
+          - path: src/compaction/stages/recency_window.py
+            importable: true
+          - path: src/compaction/__init__.py
+            must_contain: "recency_window"
+      - name: hidden_tests_pass
+        type: command_check
+        cmd: "$VIBE_PYTHON -m pytest tests/hidden/task_06_recency_test.py -q --no-header 2>&1"
+        timeout: 90
+      - name: design_quality
+        type: llm_judge
+        provider: bedrock
+        model: us.anthropic.claude-sonnet-4-6
+        rubric_path: eval/examples/judge_rubrics/task_06_threshold_stage.md
+        max_score: 3

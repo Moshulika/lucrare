@@ -42,7 +42,7 @@ fig.savefig("figuri/chart_overall_metrics.pdf", bbox_inches="tight")
 fig.savefig("figuri/chart_overall_metrics.png", dpi=180, bbox_inches="tight")
 print("Saved chart_overall_metrics")
 
-# ── Chart 2: Precision–Recall scatter per project ───────────────────────────
+# ── Chart 2: Precision-Recall scatter per project ───────────────────────────
 
 projects = [
     "cal.com", "discourse-\ngraphite", "grafana",

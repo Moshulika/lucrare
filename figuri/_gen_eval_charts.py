@@ -184,7 +184,7 @@ def plot_tools():
         ax.plot(xs, m * xs + b, color="black", linestyle="--", linewidth=1.4,
                 alpha=0.85, label=f"regresie liniară (r={r:.2f})")
 
-    ax.set_xlabel("Tool match — F1 al apelurilor de unelte")
+    ax.set_xlabel("Tool match - F1 al apelurilor de unelte")
     ax.set_ylabel("Scor pe sarcină")
     ax.set_title("Calitatea utilizării uneltelor vs. scor final")
     ax.set_xlim(-0.05, 1.05)

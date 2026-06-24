@@ -1,57 +1,33 @@
-"""
-vibe-cli — Tool permission system.
-
-Mediates tool calls (built-in and MCP) through an interactive approval
-prompt with four outcomes:
-
-  1. Allow this call only
-  2. Allow for the rest of this session (in-memory)
-  3. Always allow (persisted to preferences)
-  4. Deny + free-text reason fed back to the LLM
-
-When ctx["skip_permissions"] is True, every call is auto-allowed.
-"""
-
 from __future__ import annotations
-
 import json
 from dataclasses import dataclass
 from typing import Any
-
 from prompt_toolkit import PromptSession
 from prompt_toolkit.formatted_text import HTML
 from prompt_toolkit.patch_stdout import patch_stdout
 from rich.panel import Panel
 from rich.text import Text
-
 from src.logging_setup import emit_event, get_logger
 from ui import preferences
 from ui.ui import console
 
 _perm_log = get_logger("permission")
 
-
 @dataclass
 class Decision:
     allow: bool
     reason: str = ""
 
-
-# In-memory session approvals. Cleared on app restart.
 _session_allow: set[str] = set()
-
 
 def reset_session():
     _session_allow.clear()
 
-
 def session_allow(tool_name: str):
     _session_allow.add(tool_name)
 
-
 def is_session_allowed(tool_name: str) -> bool:
     return tool_name in _session_allow
-
 
 def _format_args(tool_args: Any) -> str:
     try:
@@ -61,7 +37,6 @@ def _format_args(tool_args: Any) -> str:
     if len(s) > 1500:
         s = s[:1500] + "\n… (truncated)"
     return s
-
 
 def _render_prompt_panel(tool_name: str, tool_args: Any):
     body = Text()
@@ -89,14 +64,12 @@ def _render_prompt_panel(tool_name: str, tool_args: Any):
         )
     )
 
-
 async def _prompt_choice(session: PromptSession | None) -> str:
     prompt_msg = HTML('<style fg="#a78bfa"><b>permission ❯ </b></style>')
     if session is None:
         session = PromptSession()
     with patch_stdout():
         return (await session.prompt_async(prompt_msg)).strip().lower()
-
 
 async def _prompt_reason(session: PromptSession | None) -> str:
     prompt_msg = HTML('<style fg="#a78bfa"><b>reason ❯ </b></style>')
@@ -105,21 +78,11 @@ async def _prompt_reason(session: PromptSession | None) -> str:
     with patch_stdout():
         return (await session.prompt_async(prompt_msg)).strip()
 
-
 async def request_permission(
     tool_name: str,
     tool_args: Any,
     ctx: dict | None = None,
 ) -> Decision:
-    """Decide whether `tool_name` may run with `tool_args`.
-
-    Order of checks:
-      1. ctx["skip_permissions"] (--skip-permissions)
-      2. always_deny in preferences
-      3. always_allow in preferences
-      4. session_allow (in-memory)
-      5. interactive prompt
-    """
     ctx = ctx or {}
 
     if ctx.get("skip_permissions"):
@@ -166,7 +129,6 @@ async def request_permission(
                 status.start()
             except Exception:
                 pass
-
 
 async def _interactive_prompt(
     tool_name: str,

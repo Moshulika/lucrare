@@ -1,56 +1,22 @@
-"""
-vibe-cli — Agent tools.
-
-Simple tools for web search, file operations, and terminal commands.
-
-When `sandboxing.enabled: true` in config.yml and the Docker daemon is
-reachable, `run_command` is routed through a per-session container and a
-sibling tool `run_command_host` is exposed for the rare cases where the agent
-needs to step outside the box (always permission-gated). When sandboxing is
-off, behavior is identical to pre-sandboxing vibe-cli.
-
-The tool ↔ runtime-ctx bridge is a `contextvars.ContextVar` set by
-`src.main.permissioned_tools_node` for the duration of each `tool.ainvoke`.
-That keeps the model-visible tool signatures clean (no extra args).
-"""
-
 from __future__ import annotations
-
 import contextvars
 import subprocess
 from pathlib import Path
-
 from langchain_core.tools import InjectedToolCallId, tool
 from typing_extensions import Annotated
 
-
-# ---------------------------------------------------------
-# Runtime ctx bridge
-# ---------------------------------------------------------
-# Set by permissioned_tools_node before each tool.ainvoke. Default None means
-# "no ctx wired" — every tool falls back to its host-execution path so this
-# module stays usable in tests / direct CLI runs without the full app.
 _tool_ctx: contextvars.ContextVar["dict | None"] = contextvars.ContextVar(
-    "vibe_tool_ctx", default=None
-)
-
+    "vibe_tool_ctx", default=None)
 
 def set_tool_ctx(ctx: dict | None):
-    """Set the per-call runtime ctx. Returns a token for `_tool_ctx.reset()`."""
     return _tool_ctx.set(ctx)
-
 
 def reset_tool_ctx(token) -> None:
     _tool_ctx.reset(token)
 
-
 def _ctx() -> dict:
     return _tool_ctx.get() or {}
 
-
-# ---------------------------------------------------------
-# Web search
-# ---------------------------------------------------------
 @tool
 def run_skill(skill_name: str) -> str:
     """Load the full instructions for a previously-listed skill.
@@ -153,11 +119,6 @@ def run_skill(skill_name: str) -> str:
         ok=True,
         body_bytes=len(skill.body),
     )
-    # Frame the body as in-turn instructions, not data. Some models
-    # (especially with thinking enabled) otherwise treat the tool result as
-    # "information" and close the turn without a user-facing reply. The
-    # closing line is critical: it explicitly tells the model that the next
-    # action is to write a response, not to call another tool or stop.
     return (
         f"=== Skill: {name} ===\n"
         "Apply the following instructions for the REST OF THIS TURN, then "
@@ -175,9 +136,9 @@ def remember(scope: str, content: str) -> str:
 
     Use this when you learn something the next conversation should know:
 
-    - scope="global" → a user-wide preference (tone, naming style, "always do
+    - scope="global" -> a user-wide preference (tone, naming style, "always do
       X", tools they prefer). Saved to ~/.vibe-cli/VIBE.md.
-    - scope="project" → a non-obvious fact about THIS repo (an architectural
+    - scope="project" -> a non-obvious fact about THIS repo (an architectural
       decision, owner, gotcha, convention). Saved to ./.vibe/VIBE.md.
 
     Do NOT use this for ephemeral task state, recent diffs, anything derivable
@@ -270,10 +231,6 @@ def web_search(query: str, max_results: int = 5) -> str:
     except Exception as e:
         return f"Search error: {e}"
 
-
-# ---------------------------------------------------------
-# File operations
-# ---------------------------------------------------------
 @tool
 def read_file(path: str, offset: int = 1, limit: int = 500) -> str:
     """Read a slice of a file by line range.
@@ -281,7 +238,7 @@ def read_file(path: str, offset: int = 1, limit: int = 500) -> str:
     Returns the requested lines prefixed with a header showing the slice and
     the file's total line count, e.g. `=== path (lines 1-500 of 1843) ===`.
     Use `offset` + `limit` to page through large files; widen `limit` only
-    when you actually need more context — pulling thousands of lines wastes
+    when you actually need more context - pulling thousands of lines wastes
     the context window.
 
     Args:
@@ -324,7 +281,7 @@ def write_file(path: str, content: str) -> str:
     if needed.
 
     Use for **new files** or **complete rewrites**. For surgical changes to an
-    existing file, prefer `edit_file` — rewriting a whole file just to change a
+    existing file, prefer `edit_file` - rewriting a whole file just to change a
     few lines wastes tokens and risks dropping unrelated content.
 
     Args:
@@ -348,7 +305,7 @@ def edit_file(path: str, old_string: str, new_string: str) -> str:
 
     `old_string` must match **exactly once** in the file (including whitespace
     and indentation). If it matches zero or multiple times the edit is
-    rejected — widen `old_string` with surrounding context to make it unique,
+    rejected - widen `old_string` with surrounding context to make it unique,
     then retry. Pass an empty `new_string` to delete the matched text.
 
     Prefer this over `write_file` whenever you're modifying an existing file:
@@ -434,10 +391,6 @@ def list_directory(path: str = ".", show_hidden: bool = False) -> str:
     except Exception as e:
         return f"Error listing directory: {e}"
 
-
-# ---------------------------------------------------------
-# Terminal commands
-# ---------------------------------------------------------
 def _format_run_output(
     stdout: str,
     stderr: str,
@@ -492,7 +445,7 @@ def run_command(command: str, timeout: int = 30) -> str:
     /workspace are ephemeral.
 
     If you genuinely need host-only access (paths outside cwd, host-only
-    binaries), use `run_command_host` instead — it requires explicit user
+    binaries), use `run_command_host` instead - it requires explicit user
     approval per call.
 
     **Keep outputs small.** Output is truncated at 10k chars, which loses the
@@ -507,7 +460,7 @@ def run_command(command: str, timeout: int = 30) -> str:
 
     For repetitive or one-off data work, drive Python from the shell:
     `python3 -c '...'` for short snippets, or `python3 path/to/script.py` for
-    longer logic. Same truncation rules apply — print only what you need.
+    longer logic. Same truncation rules apply - print only what you need.
 
     Args:
         command: The shell command to execute.
@@ -531,7 +484,7 @@ def run_command_host(command: str, timeout: int = 30) -> str:
     """Execute a shell command on the HOST (outside the sandbox).
 
     Use only when you need access to files or tools that aren't available
-    inside the sandbox container — for example, reading a sibling repo, or
+    inside the sandbox container - for example, reading a sibling repo, or
     invoking a host-only binary. The user is prompted for permission per
     call; expect denials.
 
@@ -541,10 +494,6 @@ def run_command_host(command: str, timeout: int = 30) -> str:
     """
     return _run_on_host(command, timeout)
 
-
-# ---------------------------------------------------------
-# Subagent spawn
-# ---------------------------------------------------------
 @tool
 async def spawn_subagent(
     subagent_type: str,
@@ -556,17 +505,17 @@ async def spawn_subagent(
 
     The subagent runs its own tool-calling loop with a filtered toolset and a
     dedicated system prompt, then returns a single final report. You only see
-    that report — the subagent's intermediate steps are not surfaced. Use
+    that report - the subagent's intermediate steps are not surfaced. Use
     this to parallelise independent work or to delegate a deep dive without
     polluting your own context.
 
     Pick a `subagent_type` that matches the work:
-      - `general`      — open-ended research / multi-step tasks (full toolset)
-      - `code_search`  — read-only code lookups (paths, symbols, snippets)
-      - `web_research` — web search + synthesis (no file/shell access)
+      - `general`      - open-ended research / multi-step tasks (full toolset)
+      - `code_search`  - read-only code lookups (paths, symbols, snippets)
+      - `web_research` - web search + synthesis (no file/shell access)
 
     Call this tool multiple times in one assistant turn to spawn subagents
-    in parallel — they run independently.
+    in parallel - they run independently.
 
     Args:
         subagent_type: One of the registered types above.
@@ -585,8 +534,6 @@ async def spawn_subagent(
         timeout_s=timeout_s,
         parent_tool_call_id=tool_call_id or None,
     )
-    # Surface result + usage to the parent via the ctx so the tools node
-    # can log a SUBAGENT_RESULT session event with proper token attribution.
     if tool_call_id:
         parent_ctx.setdefault("pending_subagent_results", {})[tool_call_id] = {
             "subagent_type": (subagent_type or "").strip(),
@@ -601,12 +548,7 @@ async def spawn_subagent(
         }
     return result.text
 
-
-# ---------------------------------------------------------
-# Multimodal: on-demand PDF page reading
-# ---------------------------------------------------------
 _PDF_PAGE_RANGE_CAP = 20
-
 
 @tool
 def read_pdf_pages(
@@ -627,7 +569,7 @@ def read_pdf_pages(
         end: Last page (1-indexed, inclusive). Defaults to `start`.
             Max 20 pages per call regardless of `as_image`.
         as_image: When True, render each page to a PNG. The rendered
-            images are delivered to you in the NEXT message — this tool
+            images are delivered to you in the NEXT message - this tool
             call returns only a short confirmation, then a synthesized
             user-style message follows with the actual image blocks.
             Only works on image-capable models; refused otherwise.
@@ -641,7 +583,6 @@ def read_pdf_pages(
     registry = ctx.get("session_attachments") or {}
     att = registry.get(name)
     if att is None:
-        # Try a fuzzy match on basename (the model sometimes invents paths).
         for key, val in registry.items():
             if Path(key).name == Path(name).name:
                 att = val
@@ -670,24 +611,20 @@ def read_pdf_pages(
     if end - start + 1 > _PDF_PAGE_RANGE_CAP:
         return (
             f"Error: range too wide ({end - start + 1} pages). "
-            f"Limit is {_PDF_PAGE_RANGE_CAP} pages per call — narrow the range "
+            f"Limit is {_PDF_PAGE_RANGE_CAP} pages per call - narrow the range "
             "and call again."
         )
 
     session_id = ctx.get("session").id if ctx.get("session") else ""
     if not session_id:
-        return "Error: no active session — cannot fetch PDF bytes."
+        return "Error: no active session - cannot fetch PDF bytes."
 
     data = _atts.fetch_bytes(session_id, att.sha)
     if data is None:
         return f"Error: PDF bytes for {name!r} are no longer in the artifact store."
 
     if as_image:
-        # Vision capability check — refuse early rather than wasting tokens.
         provider = ctx.get("provider") or ""
-        # The active model lives in provider_configs[provider]["model"]; ctx
-        # carries it under "provider" + the per-provider entry. Read it
-        # defensively in case the headless caller didn't populate it.
         model = ctx.get("model") or ""
         if not model:
             try:
@@ -708,11 +645,6 @@ def read_pdf_pages(
         except Exception:
             pass
 
-        # Render pages, store the PNGs, and stage image blocks for the next
-        # turn via the synthesized-HumanMessage injection drain (handled in
-        # `src/main.py:permissioned_tools_node`). Returning a short text
-        # confirmation here keeps the tool result compact; the actual
-        # images arrive in the follow-up user-shaped message.
         try:
             shas = _render_pdf_pages_for_injection(
                 data,
@@ -748,24 +680,23 @@ def read_pdf_pages(
             }
         )
         return (
-            f"Rendered pages {start}–{end} of {att.name} ({len(shas)} image"
+            f"Rendered pages {start}-{end} of {att.name} ({len(shas)} image"
             f"{'s' if len(shas) != 1 else ''}). Images delivered in the next "
             "message."
         )
 
-    # Text path — pypdf-based extraction (base dep, should always be present).
     try:
         from pypdf import PdfReader  # type: ignore[import-not-found]
     except ImportError:
         return (
-            "Error: text extraction needs `pypdf` (base dep — refresh with "
+            "Error: text extraction needs `pypdf` (base dep - refresh with "
             "`make setup` or `uv pip install pypdf`)."
         )
 
     import io
 
     reader = PdfReader(io.BytesIO(data))
-    out: list[str] = [f"# {name} — pages {start}–{end} of {page_count}"]
+    out: list[str] = [f"# {name} - pages {start}-{end} of {page_count}"]
     for i in range(start, end + 1):
         try:
             txt = reader.pages[i - 1].extract_text() or ""
@@ -783,15 +714,8 @@ def _render_pdf_pages_for_injection(
     session_id: str,
     dpi: int,
 ) -> list[str]:
-    """Render pages `start`–`end` (1-indexed, inclusive) from `data` to PNG
-    via pymupdf, store each in the session artifact store, return the list
-    of shas (page-ordered).
-
-    Raises:
-        RuntimeError: if pymupdf is not installed.
-    """
     try:
-        import fitz  # type: ignore[import-not-found]  # PyMuPDF
+        import fitz 
     except ImportError as exc:
         raise RuntimeError(
             "PyMuPDF (`pymupdf`) is needed for as_image=True. "
@@ -815,22 +739,8 @@ def _render_pdf_pages_for_injection(
         doc.close()
     return shas
 
-
-# ---------------------------------------------------------
-# All tools list
-# ---------------------------------------------------------
-# `run_command_host` is intentionally NOT in this default list — it is added
-# by ui.app._refresh_active_tools only when a sandbox is actually running, so
-# it doesn't show up as a duplicate of `run_command` when sandboxing is off.
 ALL_TOOLS = [
-    web_search,
-    read_file,
-    write_file,
-    edit_file,
-    list_directory,
-    run_command,
-    run_skill,
-    remember,
-    spawn_subagent,
-    read_pdf_pages,
+    web_search,read_file,write_file,
+    edit_file,list_directory,run_command,run_skill,
+    remember,spawn_subagent,read_pdf_pages,
 ]

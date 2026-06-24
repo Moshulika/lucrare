@@ -1,82 +1,37 @@
-"""
-vibe-cli — Docker-backed sandbox for agent shell commands.
-
-When `sandboxing.enabled: true` in config.yml, the app boots a single
-container per session and routes `run_command` through `docker exec`. The
-user's cwd is bind-mounted at /workspace so file edits persist to the host
-directly — no apply / sync step.
-
-Two independent gates protect the user:
-
-  1. Docker daemon probe — `docker info` with a 2s timeout. If it fails,
-     `Sandbox.try_start()` returns (None, "<reason>") and the caller falls
-     back to host execution.
-
-  2. cwd safety policy — refuses to bind-mount obvious "personal" directories
-     ($HOME, /Users, ~/Desktop, ...) or anything over 500 MB / 10k files
-     without project markers. Override with VIBE_SANDBOX_FORCE=1.
-
-Neither gate raises. Failure paths are designed to be silent for the rest of
-the app: when sandbox is off or unavailable, every tool keeps its existing
-host-execution behavior.
-
-Full design notes: docs/sandboxing.md
-"""
-
 from __future__ import annotations
-
 import os
 import shutil
 import subprocess
 from dataclasses import dataclass
 from pathlib import Path
 
-# ---------------------------------------------------------
-# CWD safety policy
-# ---------------------------------------------------------
 PROJECT_MARKERS = (
-    ".git",
-    "pyproject.toml",
-    "package.json",
-    "Cargo.toml",
-    "go.mod",
-    "Gemfile",
-    "requirements.txt",
-    "Makefile",
-    ".vibe-cli",
+    ".git","pyproject.toml","package.json",
+    "Cargo.toml","go.mod","Gemfile",
+    "requirements.txt","Makefile",".vibe-cli",
 )
 
 _HARD_DENY_ABSOLUTE = {"/", "/tmp", "/var/tmp"}
 
 _HOME_PERSONAL_SUBDIRS = {
-    "Desktop",
-    "Documents",
-    "Downloads",
-    "Movies",
-    "Music",
-    "Pictures",
-    "Library",
+    "Desktop","Documents","Downloads",
+    "Movies","Music","Pictures","Library",
 }
 
-# Refuse the silent mount over these size / file-count thresholds when no
-# project marker is present (overridable via config.yml sandboxing section).
 _AMBIGUOUS_MAX_MB = 500
 _AMBIGUOUS_MAX_FILES = 10_000
-
 
 @dataclass
 class PolicyResult:
     allow: bool
     reason: str
-    silent: bool = True  # if False, caller should print `reason` as a notice
-
+    silent: bool = True
 
 def _is_hard_denied(cwd: Path, home: Path) -> bool:
     if str(cwd) in _HARD_DENY_ABSOLUTE:
         return True
     if cwd == home:
         return True
-    # Direct child of /Users or /home (e.g. /Users/alice).
     parts = cwd.parts
     if len(parts) == 3 and parts[0] == "/" and parts[1] in ("Users", "home"):
         return True
@@ -84,17 +39,14 @@ def _is_hard_denied(cwd: Path, home: Path) -> bool:
         return True
     return False
 
-
 def _has_project_marker(cwd: Path) -> bool:
     return any((cwd / m).exists() for m in PROJECT_MARKERS)
 
 
 def _estimate_size(cwd: Path) -> tuple[int, int]:
-    """Return (mb, file_count). 0/0 on any failure — policy treats unknown as 0."""
     mb = 0
     file_count = 0
     try:
-        # `du -sk` is fast on macOS/Linux; cap with timeout.
         r = subprocess.run(
             ["du", "-sk", str(cwd)],
             capture_output=True,
@@ -107,7 +59,6 @@ def _estimate_size(cwd: Path) -> tuple[int, int]:
     except Exception:
         pass
     try:
-        # File count: cheap-ish find with a depth cap.
         r = subprocess.run(
             ["find", str(cwd), "-type", "f"],
             capture_output=True,
@@ -120,32 +71,17 @@ def _estimate_size(cwd: Path) -> tuple[int, int]:
         pass
     return mb, file_count
 
-
 def cwd_policy(
     cwd: Path,
     max_mb: int = _AMBIGUOUS_MAX_MB,
     max_files: int = _AMBIGUOUS_MAX_FILES,
 ) -> PolicyResult:
-    """Decide whether `cwd` is safe to bind-mount as /workspace.
-
-    Order:
-      1. VIBE_SANDBOX_FORCE=1 — bypass everything, allow.
-      2. Hard-deny list — refuse silently with a notice (never silent=True
-         for refusals; the user always sees why we fell back).
-      3. Project marker present — allow silently.
-      4. Ambiguous: size/file-count cap. Over the cap → refuse with notice.
-         Under the cap → allow but print a notice so the user knows what
-         got mounted.
-    """
-    # Use the literal path the user passed (don't .resolve()): on macOS
-    # /home/alice → /System/Volumes/Data/home/alice via symlink resolution,
-    # which would defeat the hard-deny check. Path.cwd() is already canonical.
     home = Path.home()
 
     if os.environ.get("VIBE_SANDBOX_FORCE") == "1":
         return PolicyResult(
             allow=True,
-            reason="VIBE_SANDBOX_FORCE=1 — policy bypassed",
+            reason="VIBE_SANDBOX_FORCE=1 - policy bypassed",
             silent=False,
         )
 
@@ -188,12 +124,7 @@ def cwd_policy(
         silent=False,
     )
 
-
-# ---------------------------------------------------------
-# Docker daemon probe
-# ---------------------------------------------------------
 def docker_available() -> tuple[bool, str]:
-    """Return (ok, reason). Never raises."""
     if shutil.which("docker") is None:
         return False, "docker CLI not found in PATH"
     try:
@@ -208,17 +139,10 @@ def docker_available() -> tuple[bool, str]:
     except Exception as e:
         return False, f"docker info failed: {e}"
     if r.returncode != 0:
-        # First line of stderr is usually the most useful: "Cannot connect to
-        # the Docker daemon at unix:///var/run/docker.sock. Is the docker
-        # daemon running?"
         first = (r.stderr or "").strip().splitlines()[:1]
         return False, first[0] if first else "docker daemon unreachable"
     return True, "ok"
 
-
-# ---------------------------------------------------------
-# Sandbox
-# ---------------------------------------------------------
 @dataclass
 class RunResult:
     stdout: str
@@ -226,14 +150,7 @@ class RunResult:
     exit_code: int
     timed_out: bool = False
 
-
 class Sandbox:
-    """A single-container session sandbox.
-
-    Use `Sandbox.try_start(cfg, workspace)` to build one — it returns
-    (Sandbox, "ok") on success or (None, "<reason>") on any failure. The
-    caller is responsible for surfacing the reason to the user.
-    """
 
     def __init__(
         self,
@@ -275,27 +192,13 @@ class Sandbox:
         timeout_default = int(cfg.get("timeout_default") or 30)
 
         cmd = [
-            "docker",
-            "run",
-            "-d",
-            "--rm",
-            "-v",
+            "docker","run","-d","--rm","-v",
             f"{workspace.resolve()}:/workspace:rw",
-            "-w",
-            "/workspace",
-            "--network",
-            str(network),
-            "--memory",
-            memory,
-            "--cpus",
-            cpus,
-            "--cap-drop",
-            "ALL",
-            "--user",
-            f"{os.getuid()}:{os.getgid()}",
-            image,
-            "sleep",
-            "infinity",
+            "-w","/workspace","--network",
+            str(network),"--memory",memory,
+            "--cpus",cpus,"--cap-drop","ALL",
+            "--user",f"{os.getuid()}:{os.getgid()}",image,
+            "sleep","infinity",
         ]
         try:
             r = subprocess.run(cmd, capture_output=True, text=True, timeout=60)
@@ -316,12 +219,6 @@ class Sandbox:
         return cls(cid, workspace, image, timeout_default), notice or "ok"
 
     def run(self, command: str, timeout: int | None = None) -> RunResult:
-        """Execute `command` inside the container via `docker exec`.
-
-        Never raises. Returns RunResult with `timed_out=True` on timeout. If
-        the container has been closed, returns a result with a synthetic
-        error in stderr.
-        """
         if self._closed:
             return RunResult(
                 stdout="",
@@ -361,7 +258,6 @@ class Sandbox:
             return RunResult(stdout="", stderr=f"sandbox exec error: {e}", exit_code=-1)
 
     def close(self) -> None:
-        """Stop the container. Idempotent; never raises."""
         if self._closed:
             return
         self._closed = True
