@@ -127,6 +127,22 @@ OpenAI.
 Tom~B. Brown, Benjamin Mann, Nick Ryder, Melanie Subbiah, Jared Kaplan, Prafulla Dhariwal, Arvind Neelakantan, Pranav Shyam, Girish Sastry, Amanda Askell, Sandhini Agarwal, Ariel Herbert-Voss, Gretchen Krueger, Tom Henighan, Rewon Child, Aditya Ramesh, Daniel~M. Ziegler, Jeffrey Wu, Clemens Winter, Christopher Hesse, Mark Chen, Eric Sigler, Mateusz Litwin, Scott Gray, Benjamin Chess, Jack Clark, Christopher Berner, Sam {McCandlish}, Alec Radford, Ilya Sutskever, and Dario Amodei.
 \newblock Language models are few-shot learners.
 
+\bibitem{openaiGPT4TechnicalReport2024}
+{OpenAI}, Josh Achiam, Steven Adler, Sandhini Agarwal, Lama Ahmad, Ilge Akkaya, Florencia~Leoni Aleman, Diogo Almeida, Janko Altenschmidt, Sam Altman, Shyamal Anadkat, Red Avila, Igor Babuschkin, Suchir Balaji, Valerie Balcom, Paul Baltescu, Haiming Bao, Mohammad Bavarian, Jeff Belgum, Irwan Bello, Jake Berdine, Gabriel Bernadett-Shapiro, Christopher Berner, Lenny Bogdonoff, Oleg Boiko, Madelaine Boyd, Anna-Luisa Brakman, Greg Brockman, Tim Brooks, Miles Brundage, Kevin Button, Trevor Cai, Rosie Campbell, Andrew Cann, Brittany Carey, Chelsea Carlson, Rory Carmichael, Brooke Chan, Che Chang, Fotis Chantzis, Derek Chen, Sully Chen, Ruby Chen, Jason Chen, Mark Chen, Ben Chess, Chester Cho, Casey Chu, Hyung~Won Chung, Dave Cummings, Jeremiah Currier, Yunxing Dai, Cory Decareaux, Thomas Degry, Noah Deutsch, Damien Deville, Arka Dhar, David Dohan, Steve Dowling, Sheila Dunning, Adrien Ecoffet, Atty Eleti, Tyna Eloundou, David Farhi, Liam Fedus, Niko Felix, Simón~Posada Fishman, Juston Forte, Isabella Fulford, Leo Gao, Elie Georges, Christian Gibson, Vik Goel, Tarun Gogineni, Gabriel Goh, Rapha Gontijo-Lopes, Jonathan Gordon, Morgan Grafstein, Scott Gray, Ryan Greene, Joshua Gross, Shixiang~Shane Gu, Yufei Guo, Chris Hallacy, Jesse Han, Jeff Harris, Yuchen He, Mike Heaton, Johannes Heidecke, Chris Hesse, Alan Hickey, Wade Hickey, Peter Hoeschele, Brandon Houghton, Kenny Hsu, Shengli Hu, Xin Hu, Joost Huizinga, Shantanu Jain, Shawn Jain, Joanne Jang, Angela Jiang, Roger Jiang, Haozhun Jin, Denny Jin, Shino Jomoto, Billie Jonn, Heewoo Jun, Tomer Kaftan, Łukasz Kaiser, Ali Kamali, Ingmar Kanitscheider, Nitish~Shirish Keskar, Tabarak Khan, Logan Kilpatrick, Jong~Wook Kim, Christina Kim, Yongjik Kim, Jan~Hendrik Kirchner, Jamie Kiros, Matt Knight, Daniel Kokotajlo, Łukasz Kondraciuk, Andrew Kondrich, Aris Konstantinidis, Kyle Kosic, Gretchen Krueger, Vishal Kuo, Michael Lampe, Ikai Lan, Teddy Lee, Jan Leike, Jade Leung, Daniel Levy, Chak~Ming Li, Rachel Lim, Molly Lin, Stephanie Lin, Mateusz Litwin, Theresa Lopez, Ryan Lowe, Patricia Lue, Anna Makanju, Kim Malfacini, Sam Manning, Todor Markov, Yaniv Markovski, Bianca Martin, Katie Mayer, Andrew Mayne, Bob {McGrew}, Scott~Mayer {McKinney}, Christine {McLeavey}, Paul {McMillan}, Jake {McNeil}, David Medina, Aalok Mehta, Jacob Menick, Luke Metz, Andrey Mishchenko, Pamela Mishkin, Vinnie Monaco, Evan Morikawa, Daniel Mossing, Tong Mu, Mira Murati, Oleg Murk, David Mély, Ashvin Nair, Reiichiro Nakano, Rajeev Nayak, Arvind Neelakantan, Richard Ngo, Hyeonwoo Noh, Long Ouyang, Cullen O'Keefe, Jakub Pachocki, Alex Paino, Joe Palermo, Ashley Pantuliano, Giambattista Parascandolo, Joel Parish, Emy Parparita, Alex Passos, Mikhail Pavlov, Andrew Peng, Adam Perelman, Filipe de Avila~Belbute Peres, Michael Petrov, Henrique Ponde de~Oliveira Pinto, Michael, Pokorny, Michelle Pokrass, Vitchyr~H. Pong, Tolly Powell, Alethea Power, Boris Power, Elizabeth Proehl, Raul Puri, Alec Radford, Jack Rae, Aditya Ramesh, Cameron Raymond, Francis Real, Kendra Rimbach, Carl Ross, Bob Rotsted, Henri Roussez, Nick Ryder, Mario Saltarelli, Ted Sanders, Shibani Santurkar, Girish Sastry, Heather Schmidt, David Schnurr, John Schulman, Daniel Selsam, Kyla Sheppard, Toki Sherbakov, Jessica Shieh, Sarah Shoker, Pranav Shyam, Szymon Sidor, Eric Sigler, Maddie Simens, Jordan Sitkin, Katarina Slama, Ian Sohl, Benjamin Sokolowsky, Yang Song, Natalie Staudacher, Felipe~Petroski Such, Natalie Summers, Ilya Sutskever, Jie Tang, Nikolas Tezak, Madeleine~B. Thompson, Phil Tillet, Amin Tootoonchian, Elizabeth Tseng, Preston Tuggle, Nick Turley, Jerry Tworek, Juan Felipe~Cerón Uribe, Andrea Vallone, Arun Vijayvergiya, Chelsea Voss, Carroll Wainwright, Justin~Jay Wang, Alvin Wang, Ben Wang, Jonathan Ward, Jason Wei, C.~J. Weinmann, Akila Welihinda, Peter Welinder, Jiayi Weng, Lilian Weng, Matt Wiethoff, Dave Willner, Clemens Winter, Samuel Wolrich, Hannah Wong, Lauren Workman, Sherwin Wu, Jeff Wu, Michael Wu, Kai Xiao, Tao Xu, Sarah Yoo, Kevin Yu, Qiming Yuan, Wojciech Zaremba, Rowan Zellers, Chong Zhang, Marvin Zhang, Shengjia Zhao, Tianhao Zheng, Juntang Zhuang, William Zhuk, and Barret Zoph.
+\newblock {GPT}-4 technical report.
+
+\bibitem{api_openai_models}
+OpenAI.
+\newblock Openai api: Models documentation.
+\newblock disponibil la: \url{https://developers.openai.com/api/docs/models}, 2026.
+\newblock accesat la data: 25.05.2026.
+
+\bibitem{api_anthropic_models}
+Anthropic.
+\newblock Anthropic api: Models overview.
+\newblock disponibil la: \url{https://platform.claude.com/docs/en/about-claude/models/overview}, 2026.
+\newblock accesat la data: 08.05.2026.
+
 \bibitem{xu_kv_2026}
 Yichun Xu, Navjot~K. Khaira, and Tejinder Singh.
 \newblock {KV} cache optimization strategies for scalable and efficient {LLM} inference.
@@ -214,17 +230,23 @@ Amazon~Web Services.
 \newblock disponibil la: \url{https://kiro.dev}, 2026.
 \newblock accesat la data: 18.06.2026.
 
-\bibitem{api_anthropic_models}
-Anthropic.
-\newblock Anthropic api: Models overview.
-\newblock disponibil la: \url{https://platform.claude.com/docs/en/about-claude/models/overview}, 2026.
-\newblock accesat la data: 08.05.2026.
+\bibitem{gh_openhands}
+OpenHands Contributors.
+\newblock Openhands: Code less, make more, github.
+\newblock disponibil la: \url{https://github.com/OpenHands/OpenHands}, 2026.
+\newblock accesat la data: 21.04.2026.
 
-\bibitem{api_openai_models}
-OpenAI.
-\newblock Openai api: Models documentation.
-\newblock disponibil la: \url{https://developers.openai.com/api/docs/models}, 2026.
-\newblock accesat la data: 25.05.2026.
+\bibitem{gh_cline}
+Cline Contributors.
+\newblock Cline: Autonomous coding agent for vs code, github.
+\newblock disponibil la: \url{https://github.com/cline/cline}, 2026.
+\newblock accesat la data: 14.05.2026.
+
+\bibitem{gh_aider}
+Aider Contributors.
+\newblock Aider: Ai pair programming in your terminal, github.
+\newblock disponibil la: \url{https://github.com/Aider-AI/aider}, 2026.
+\newblock accesat la data: 06.05.2026.
 
 \bibitem{api_gemini_models}
 Google.
@@ -376,12 +398,6 @@ Google.
 \newblock disponibil la: \url{https://www.android.com}, 2026.
 \newblock accesat la data: 13.04.2026.
 
-\bibitem{gh_openhands}
-OpenHands Contributors.
-\newblock Openhands: Code less, make more, github.
-\newblock disponibil la: \url{https://github.com/OpenHands/OpenHands}, 2026.
-\newblock accesat la data: 21.04.2026.
-
 \bibitem{web_kubernetes}
 Cloud Native~Computing Foundation.
 \newblock Kubernetes: Production-grade container orchestration.
@@ -393,12 +409,6 @@ Atlassian.
 \newblock Jira: Issue \& project tracking software.
 \newblock disponibil la: \url{https://www.atlassian.com/software/jira}, 2026.
 \newblock accesat la data: 21.04.2026.
-
-\bibitem{gh_cline}
-Cline Contributors.
-\newblock Cline: Autonomous coding agent for vs code, github.
-\newblock disponibil la: \url{https://github.com/cline/cline}, 2026.
-\newblock accesat la data: 14.05.2026.
 
 \bibitem{web_nodejs}
 OpenJS Foundation.
@@ -417,12 +427,6 @@ Rust Foundation.
 \newblock Rust programming language official website.
 \newblock disponibil la: \url{https://www.rust-lang.org}, 2026.
 \newblock accesat la data: 08.04.2026.
-
-\bibitem{gh_aider}
-Aider Contributors.
-\newblock Aider: Ai pair programming in your terminal, github.
-\newblock disponibil la: \url{https://github.com/Aider-AI/aider}, 2026.
-\newblock accesat la data: 06.05.2026.
 
 \bibitem{web_git}
 Git Project.

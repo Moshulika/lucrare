@@ -339,18 +339,22 @@ Catedra \@catedra} \par\nobreak % DN
     prezentată în cadrul Facultăţii de Electronică, Telecomunicaţii şi
     Tehnologia Informaţiei a Universităţii “Politehnica” din Bucureşti
     ca cerinţă parţială pentru obţinerea titlului de {\it{\@titlulobtinut}}
-    în domeniul Inginerie Electronică şi Telecomunicaţii/ Calculatoare
+    în domeniul Calculatoare
     şi Tehnologia Informaţiei, programul de studii {\it{\@program}}
     este scrisă de mine şi nu a mai fost prezentată niciodată la o
     facultate sau instituţie de învăţământ superior din ţară sau
-    străinătate.  Declar că toate sursele utilizate, inclusiv cele de
+    străinătate.  
+    
+    Declar că toate sursele utilizate, inclusiv cele de
     pe Internet, sunt indicate în lucrare, ca referinţe
     bibliografice. Fragmentele de text din alte surse, reproduse
     exact, chiar şi în traducere proprie din altă limbă, sunt scrise
     între ghilimele şi fac referinţă la sursă. Reformularea în cuvinte
     proprii a textelor scrise de către alţi autori face referinţă la
     sursă. Înţeleg că plagiatul constituie infracţiune şi se
-    sancţionează conform legilor în vigoare.  Declar că toate
+    sancţionează conform legilor în vigoare.  
+    
+    Declar că toate
     rezultatele simulărilor, experimentelor şi măsurătorilor pe care
     le prezint ca fiind făcute de mine, precum şi metodele prin care
     au fost obţinute, sunt reale şi provin din respectivele simulări,
@@ -362,10 +366,18 @@ Catedra \@catedra} \par\nobreak % DN
 Bucureşti,  {\@month} {\@year}. 
 
 Absolvent: {\@author}
-\\
-\\
+~\\
+~\\
 
 ...........................
+
+~\\
+~\\
+~\\
+~\\
+~\\
+
+Autorul acordă POLITEHNICA București dreptul de a reproduce și de a distribui public copii pe hârtie sau electronice ale acestei lucrări, în formă integrală sau parțială.
 
 \vfil\newpage}
 
